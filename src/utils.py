@@ -1,10 +1,10 @@
-KEY_SUCCESS = "Success"
-KEY_MESSAGE = "Message"
-KEY_ERROR = "Error"
-KEY_CONTENT = "Content"
+KEY_SUCCESS = "success"
+KEY_MESSAGE = "message"
+KEY_ERROR = "error"
+KEY_CONTENT = "content"
 
 
-def success_response(msg: str = None, content : dict = None):
+def success_response(msg: str = None, content: dict = None):
     r = {KEY_SUCCESS: True}
     if msg is not None:
         r[KEY_MESSAGE] = msg
@@ -13,7 +13,7 @@ def success_response(msg: str = None, content : dict = None):
     return r
 
 
-def error_response(error: str = None, content : dict = None):
+def error_response(error: str = None, content: dict = None):
     r = {KEY_SUCCESS: False}
     if error is not None:
         r[KEY_ERROR] = error

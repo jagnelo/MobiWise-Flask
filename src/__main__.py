@@ -1,5 +1,5 @@
-import sumo_controller
+import simulation
 
 
 def main(args):
-    return sumo_controller.main(args)
+    return simulation.main(args)

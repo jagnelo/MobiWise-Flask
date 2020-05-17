@@ -1,3 +1,9 @@
+# PyCharm project
+src/.idea/
+
+# SUMO simulation stream
+src/output/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
