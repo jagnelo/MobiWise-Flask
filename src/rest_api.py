@@ -30,10 +30,9 @@ def stream_frames():
     while simulation.g_sim_running:
         start_time = datetime.datetime.now()
         last = last_frame()
-        remaining_secs = (1/30) - (datetime.datetime.now() - start_time).total_seconds()
+        remaining_secs = (1/24) - (datetime.datetime.now() - start_time).total_seconds()
         if remaining_secs > 0:
             time.sleep(remaining_secs)
-        # print("[curr %s] remaining_secs %f" % (last, remaining_secs))
         yield b"--frame\r\n"b"Content-Type: image/jpeg\r\n\r\n" + load_frame_by_name(last) + b"\r\n"
 
 
@@ -62,30 +61,33 @@ def load_frame_by_step(step: int):
     return load_frame_by_name(simulation.g_img_name % step)
 
 
-def get_frames():
-    i = 1
-    last_frame = None
-    while simulation.g_sim_running or i <= simulation.g_sim_step:   # simulation.g_sim_step resets to 0 and this ends
-        file_name = simulation.g_img_name % i
-        file_path = os.path.join("output", file_name)
-        sleep_secs = simulation.g_sim_delta_secs if simulation.g_sim_running else 1 / 30
-        while not os.path.exists(file_path):
-            print("Waiting for file %s to be created..." % file_name)
-            if last_frame is not None:
-                yield b"--frame\r\n"b"Content-Type: image/jpeg\r\n\r\n" + last_frame + b"\r\n"
-            time.sleep(sleep_secs)
+@app.route("/api/simulation/replay", methods=["GET"])
+def replay():
+    if simulation.g_sim_running:
+        return utils.error_response("Cannot replay a running simulation"), 400
+    return Response(replay_frames(), mimetype="multipart/x-mixed-replace; boundary=frame")
+
+
+@app.route("/api/simulation/replay/<start>", methods=["GET"])
+def replay_start(start):
+    if simulation.g_sim_running:
+        return utils.error_response("Cannot replay a running simulation"), 400
+    if not str(start).isdigit() or (str(start).isdigit() and int(start) < 0):
+        return utils.error_response("Parameter <start> must be a positive integer"), 404
+    return Response(replay_frames(int(start)), mimetype="multipart/x-mixed-replace; boundary=frame")
+
+
+def replay_frames(start: int = None):
+    frames = available_frames()
+    if start is not None and 0 < start < len(frames):
+        frames = frames[start:]
+    for frame in frames:
         start_time = datetime.datetime.now()
-        with open(file_path, "rb") as fd:
-            frame = fd.read()
-            last_frame = bytes(frame)
-            delta_secs = (datetime.datetime.now() - start_time).total_seconds()
-            remaining_secs = sleep_secs - delta_secs
-            if remaining_secs > 0:
-                time.sleep(remaining_secs)
-            print("[step %d, file %s] remaining_secs %f" % (i, file_name, remaining_secs))
-            yield b"--frame\r\n"b"Content-Type: image/jpeg\r\n\r\n" + last_frame + b"\r\n"
-        i += 1
+        remaining_secs = (1/24) - (datetime.datetime.now() - start_time).total_seconds()
+        if remaining_secs > 0:
+            time.sleep(remaining_secs)
+        yield b"--frame\r\n"b"Content-Type: image/jpeg\r\n\r\n" + load_frame_by_name(frame) + b"\r\n"
 
 
 if __name__ == "__main__":
-    app.run(port=8000)
+    app.run(port=5000)
