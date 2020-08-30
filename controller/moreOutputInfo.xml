@@ -1,0 +1,10 @@
+<additional>
+<!--  Emissoes dos veiculos com rotas "dinamicas"  -->
+<!-- <edgeData id="emissions-detector" type="emissions" file="ecocars-emission-by-edges-out.xml" vTypes="EcoRoutingSN Car" excludeEmpty="false" withInternal="true" /> -->
+
+<!--  Emissoes dos todos os veiculos    -->
+<edgeData id="emissions-detector" type="emissions" file="basecars-emission-by-edges-out.xml" vTypes="Static SCar EcoRoutingSN Car" excludeEmpty="false" withInternal="true" />
+
+<!--  Informacao estatica da rede  -->
+<edgeData id="edgedataid" file="edge-data-out.xml" excludeEmpty="false" withInternal="true" />
+</additional>

@@ -1,0 +1,5173 @@
+NAME MOBITEST
+OBJSENSE
+ MIN
+ROWS
+ N length
+ N ttime
+ E NNone
+ E NJ-26-1T
+ E NJ-25-1F
+ E NJ-78-1T
+ E NJ-79-1F
+ E NJ-77-1T
+ E NJ-76-1F
+ E NJ-45-1T
+ E NJ-gneJ7-1F
+ E NJ-gneJ7-1T
+ E NJ-48-1F
+ E NJ-48-1T
+ E NJ-51-1F
+ E NJ-10-1T
+ E NJ-11-1F
+ E NJ-11-1T
+ E NJ-12-1F
+ E NJ-12-1T
+ E NJ-13-1F
+ E NJ-13-1T
+ E NJ-14-1F
+ E NJ-14-1T
+ E NJ-8-1F
+ E NJ-13-2T
+ E NJ-158-1F
+ E NJ-8-1T
+ E NJ-7-1F
+ E NJ-159-1T
+ E NJ-2-1F
+ E NJ-162-1T
+ E NJ-165-1F
+ E NJ-199-1T
+ E NJ-162-1F
+ E NJ-51-1T
+ E NJ-53-1F
+ E NJ-183-1T
+ E NJ-181-1F
+ E NJ-186-1T
+ E NJ-189-1F
+ E NJ-80-1T
+ E NJ-82-1F
+ E NJ-81-1T
+ E NJ-70-1F
+ E NJ-73-1T
+ E NJ-79-2F
+ E NJ-187-1T
+ E NJ-194-1F
+ E NJ-193-1T
+ E NJ-185-1F
+ E NJ-194-1T
+ E NJ-196-1F
+ E NJ-166-1T
+ E NJ-167-1F
+ E NJ-163-1T
+ E NJ-198-1F
+ E NJ-198-1T
+ E NJ-146-1F
+ E NJ-53-1T
+ E NJ-54-1F
+ E NJ-182-1T
+ E NJ-184-1F
+ E NJ-181-1T
+ E NJ-180-1F
+ E NJ-93-1T
+ E NJ-95-1F
+ E NJ-93-2T
+ E NJ-99-1F
+ E NJ-172-1T
+ E NJ-173-1F
+ E NJ-171-1T
+ E NJ-169-1F
+ E NJ-128-1T
+ E NJ-138-1F
+ E NJ-117-1T
+ E NJ-118-1F
+ E NJ-109-1T
+ E NJ-117-1F
+ E NJ-59-1T
+ E NJ-60-1F
+ E NJ-43-1T
+ E NJ-41-1F
+ E NJ-66-1T
+ E NJ-67-1F
+ E NJ-15-1T
+ E NJ-203-1F
+ E NJ-105-1T
+ E NJ-107-1F
+ E NJ-106-1T
+ E NJ-104-1F
+ E NJ-3-1T
+ E NJ-2-2F
+ E NJ-2-1T
+ E NJ-1-1F
+ E NJ-203-1T
+ E NJ-16-1F
+ E NJ-16-1T
+ E NJ-17-1F
+ E NJ-79-1T
+ E NJ-78-1F
+ E NJ-17-1T
+ E NJ-192-1F
+ E NJ-192-1T
+ E NJ-18-1F
+ E NJ-18-1T
+ E NJ-19-1F
+ E NJ-19-1T
+ E NJ-20-1F
+ E NJ-20-1T
+ E NJ-21-1F
+ E NJ-82-1T
+ E NJ-83-1F
+ E NJ-83-1T
+ E NJ-84-1F
+ E NJ-84-1T
+ E NJ-85-1F
+ E NJ-85-1T
+ E NJ-86-1F
+ E NJ-86-1T
+ E NJ-87-1F
+ E NJ-147-1T
+ E NJ-199-1F
+ E NJ-87-1T
+ E NJ-81-1F
+ E NJ-137-1T
+ E NJ-134-1F
+ E NJ-128-2T
+ E NJ-133-1F
+ E NJ-130-1T
+ E NJ-126-1F
+ E NJ-115-1T
+ E NJ-114-1F
+ E NJ-110-1T
+ E NJ-117-2F
+ E NJ-187-2T
+ E NJ-185-2F
+ E NJ-189-1T
+ E NJ-190-1F
+ E NJ-179-1T
+ E NJ-182-1F
+ E NJ-31-1T
+ E NJ-22-1F
+ E NJ-30-1T
+ E NJ-31-1F
+ E NJ-31-2T
+ E NJ-23-1F
+ E NJ-23-1T
+ E NJ-24-1F
+ E NJ-24-1T
+ E NJ-27-1F
+ E NJ-27-1T
+ E NJ-28-1F
+ E NJ-28-1T
+ E NJ-29-1F
+ E NJ-29-1T
+ E NJ-30-1F
+ E NJ-20-2T
+ E NJ-19-2F
+ E NJ-19-2T
+ E NJ-18-2F
+ E NJ-32-1T
+ E NJ-29-2F
+ E NJ-26-2T
+ E NJ-27-2F
+ E NJ-25-1T
+ E NJ-26-1F
+ E NJ-33-1T
+ E NJ-34-1F
+ E NJ-39-1T
+ E NJ-37-1F
+ E NJ-41-1T
+ E NJ-40-1F
+ E NJ-40-1T
+ E NJ-39-1F
+ E NJ-45-2T
+ E NJ-gneJ8-1F
+ E NJ-gneJ8-1T
+ E NJ-43-1F
+ E NJ-51-2T
+ E NJ-48-2F
+ E NJ-48-2T
+ E NJ-gneJ7-2F
+ E NJ-gneJ7-2T
+ E NJ-45-1F
+ E NJ-21-1T
+ E NJ-22-2F
+ E NJ-76-1T
+ E NJ-72-1F
+ E NJ-79-2T
+ E NJ-74-1F
+ E NJ-67-1T
+ E NJ-68-1F
+ E NJ-22-1T
+ E NJ-23-2F
+ E NJ-1-1T
+ E NJ-2-3F
+ E NJ-2-2T
+ E NJ-3-1F
+ E NJ-3-2T
+ E NJ-4-1F
+ E NJ-96-1T
+ E NJ-99-2F
+ E NJ-3-3T
+ E NJ-152-1F
+ E NJ-4-1T
+ E NJ-3-2F
+ E NJ-4-2T
+ E NJ-6-1F
+ E NJ-6-1T
+ E NJ-10-1F
+ E NJ-94-1T
+ E NJ-92-1F
+ E NJ-92-1T
+ E NJ-90-1F
+ E NJ-98-1T
+ E NJ-96-1F
+ E NJ-104-1T
+ E NJ-102-1F
+ E NJ-99-1T
+ E NJ-101-1F
+ E NJ-102-1T
+ E NJ-100-1F
+ E NJ-101-1T
+ E NJ-103-1F
+ E NJ-95-1T
+ E NJ-97-1F
+ E NJ-100-1T
+ E NJ-95-2F
+ E NJ-103-1T
+ E NJ-105-1F
+ E NJ-114-1T
+ E NJ-113-1F
+ E NJ-107-1T
+ E NJ-109-1F
+ E NJ-109-2T
+ E NJ-114-2F
+ E NJ-108-1T
+ E NJ-200-1F
+ E NJ-111-1T
+ E NJ-110-1F
+ E NJ-112-1T
+ E NJ-111-1F
+ E NJ-200-1T
+ E NJ-106-1F
+ E NJ-115-2T
+ E NJ-116-1F
+ E NJ-100-2T
+ E NJ-94-1F
+ E NJ-140-1T
+ E NJ-142-1F
+ E NJ-143-1T
+ E NJ-141-1F
+ E NJ-144-1T
+ E NJ-145-1F
+ E NJ-148-1T
+ E NJ-147-1F
+ E NJ-138-1T
+ E NJ-140-1F
+ E NJ-147-2T
+ E NJ-143-1F
+ E NJ-145-1T
+ E NJ-149-1F
+ E NJ-152-1T
+ E NJ-148-1F
+ E NJ-153-1T
+ E NJ-154-1F
+ E NJ-169-1T
+ E NJ-168-1F
+ E NJ-170-1T
+ E NJ-172-1F
+ E NJ-146-1T
+ E NJ-143-2F
+ E NJ-166-2T
+ E NJ-149-2F
+ E NJ-15-2T
+ E NJ-12-2F
+ E NJ-11-2T
+ E NJ-15-1F
+ E NJ-120-1T
+ E NJ-123-1F
+ E NJ-122-1T
+ E NJ-119-1F
+ E NJ-127-1T
+ E NJ-128-1F
+ E NJ-126-1T
+ E NJ-124-1F
+ E NJ-129-1T
+ E NJ-126-2F
+ E NJ-118-1T
+ E NJ-121-1F
+ E NJ-119-1T
+ E NJ-115-1F
+ E NJ-123-1T
+ E NJ-125-1F
+ E NJ-125-1T
+ E NJ-127-1F
+ E NJ-118-2T
+ E NJ-120-1F
+ E NJ-116-1T
+ E NJ-108-1F
+ E NJ-121-1T
+ E NJ-123-2F
+ E NJ-139-1T
+ E NJ-137-1F
+ E NJ-137-2T
+ E NJ-136-1F
+ E NJ-131-1T
+ E NJ-138-2F
+ E NJ-141-1T
+ E NJ-139-1F
+ E NJ-196-1T
+ E NJ-86-2F
+ E NJ-85-2T
+ E NJ-201-1F
+ E NJ-124-1T
+ E NJ-122-1F
+ E NJ-142-1T
+ E NJ-144-1F
+ E NJ-168-1T
+ E NJ-166-1F
+ E NJ-167-1T
+ E NJ-164-1F
+ E NJ-164-1T
+ E NJ-163-1F
+ E NJ-150-1T
+ E NJ-151-1F
+ E NJ-151-1T
+ E NJ-153-1F
+ E NJ-7-1T
+ E NJ-5-1F
+ E NJ-5-1T
+ E NJ-4-2F
+ E NJ-159-2T
+ E NJ-157-1F
+ E NJ-158-1T
+ E NJ-160-1F
+ E NJ-155-1T
+ E NJ-158-2F
+ E NJ-161-1T
+ E NJ-159-1F
+ E NJ-32-2T
+ E NJ-33-1F
+ E NJ-191-1T
+ E NJ-188-1F
+ E NJ-184-1T
+ E NJ-186-1F
+ E NJ-188-1T
+ E NJ-187-1F
+ E NJ-173-1T
+ E NJ-175-1F
+ E NJ-177-1T
+ E NJ-176-1F
+ E NJ-175-1T
+ E NJ-179-1F
+ E NJ-59-2T
+ E NJ-57-1F
+ E NJ-60-1T
+ E NJ-61-1F
+ E NJ-66-2T
+ E NJ-64-1F
+ E NJ-22-2T
+ E NJ-21-2F
+ E NJ-24-2T
+ E NJ-26-2F
+ E NJ-17-2T
+ E NJ-16-2F
+ E NJ-16-2T
+ E NJ-15-2F
+ E NJ-149-1T
+ E NJ-150-1F
+ E NJ-174-1T
+ E NJ-171-1F
+ E NJ-176-1T
+ E NJ-174-1F
+ E NJ-178-1T
+ E NJ-177-1F
+ E NJ-180-1T
+ E NJ-178-1F
+ E NJ-185-1T
+ E NJ-183-1F
+ E NJ-39-2T
+ E NJ-40-2F
+ E NJ-21-2T
+ E NJ-20-2F
+ E NJ-18-2T
+ E NJ-192-2F
+ E NJ-192-2T
+ E NJ-17-2F
+ E NJ-186-2T
+ E NJ-196-2F
+ E NJ-165-1T
+ E NJ-170-1F
+ E NJ-145-2T
+ E NJ-165-2F
+ E NJ-201-1T
+ E NJ-189-2F
+ E NJ-201-2T
+ E NJ-193-1F
+ E NJ-40-2T
+ E NJ-41-2F
+ E NJ-41-2T
+ E NJ-gneJ4-1F
+ E NJ-76-2T
+ E NJ-77-1F
+ E NJ-67-2T
+ E NJ-66-1F
+ E NJ-75-1T
+ E NJ-67-2F
+ E NJ-53-2T
+ E NJ-51-2F
+ E NJ-69-1T
+ E NJ-70-2F
+ E NJ-70-1T
+ E NJ-71-1F
+ E NJ-71-1T
+ E NJ-72-2F
+ E NJ-72-1T
+ E NJ-73-1F
+ E NJ-73-2T
+ E NJ-74-2F
+ E NJ-74-1T
+ E NJ-75-1F
+ E NJ-75-2T
+ E NJ-68-2F
+ E NJ-68-1T
+ E NJ-69-1F
+ E NJ-71-2T
+ E NJ-76-2F
+ E NJ-62-1T
+ E NJ-63-1F
+ E NJ-64-1T
+ E NJ-65-1F
+ E NJ-61-1T
+ E NJ-62-1F
+ E NJ-69-2T
+ E NJ-80-1F
+ E NJ-65-1T
+ E NJ-60-2F
+ E NJ-56-1T
+ E NJ-59-1F
+ E NJ-34-1T
+ E NJ-35-1F
+ E NJ-35-1T
+ E NJ-36-1F
+ E NJ-37-1T
+ E NJ-38-1F
+ E NJ-58-1T
+ E NJ-53-2F
+ E NJ-63-1T
+ E NJ-66-2F
+ E NJ-55-1T
+ E NJ-56-1F
+ E NJ-57-1T
+ E NJ-58-1F
+ E NJ-54-1T
+ E NJ-55-1F
+ E NJ-60-2T
+ E NJ-59-2F
+ E NJ-38-1T
+ E NJ-33-2F
+ E NJ-33-2T
+ E NJ-32-1F
+ E NJ-gneJ4-1T
+ E NJ-43-2F
+ E NJ-43-2T
+ E NJ-45-2F
+ E NJ-135-1T
+ E NJ-136-2F
+ E NJ-110-2T
+ E NJ-108-2F
+ E NJ-133-1T
+ E NJ-135-1F
+ E NJ-134-1T
+ E NJ-132-1F
+ E NJ-132-1T
+ E NJ-129-1F
+ E NJ-90-1T
+ E NJ-91-1F
+ E NJ-88-1T
+ E NJ-89-1F
+ E NJ-89-1T
+ E NJ-202-1F
+ E NJ-202-1T
+ E NJ-93-1F
+ E NJ-157-1T
+ E NJ-156-1F
+ E NJ-156-1T
+ E NJ-152-2F
+ E NJ-155-2T
+ E NJ-14-2F
+ E NJ-154-1T
+ E NJ-155-1F
+ E NJ-83-2T
+ E NJ-88-1F
+ E NJ-91-1T
+ E NJ-84-2F
+ E NJ-28-2T
+ E NJ-32-2F
+ E NJ-36-1T
+ E NJ-39-2F
+COLUMNS
+	L:10_0	length	17
+	L:10_0	ttime	2
+	L:10_0	NNone	-1
+	L:10_0	NNone	1
+	L:10_1	length	17
+	L:10_1	ttime	0
+	L:10_1	NNone	-1
+	L:10_1	NNone	1
+	L:100_0	length	29
+	L:100_0	ttime	2
+	L:100_0	NNone	-1
+	L:100_0	NNone	1
+	L:100_1	length	30
+	L:100_1	ttime	1
+	L:100_1	NNone	-1
+	L:100_1	NNone	1
+	L:101_0	length	8
+	L:101_0	ttime	0
+	L:101_0	NNone	-1
+	L:101_0	NNone	1
+	L:102_0	length	8
+	L:102_0	ttime	0
+	L:102_0	NNone	-1
+	L:102_0	NNone	1
+	L:103_0	length	8
+	L:103_0	ttime	0
+	L:103_0	NNone	-1
+	L:103_0	NNone	1
+	L:104_0	length	8
+	L:104_0	ttime	0
+	L:104_0	NNone	-1
+	L:104_0	NNone	1
+	L:105_0	length	0
+	L:105_0	ttime	0
+	L:105_0	NNone	-1
+	L:105_0	NNone	1
+	L:106_0	length	0
+	L:106_0	ttime	0
+	L:106_0	NNone	-1
+	L:106_0	NNone	1
+	L:107_0	length	8
+	L:107_0	ttime	0
+	L:107_0	NNone	-1
+	L:107_0	NNone	1
+	L:108_0	length	12
+	L:108_0	ttime	1
+	L:108_0	NNone	-1
+	L:108_0	NNone	1
+	L:108_1	length	13
+	L:108_1	ttime	1
+	L:108_1	NNone	-1
+	L:108_1	NNone	1
+	L:109_0	length	13
+	L:109_0	ttime	1
+	L:109_0	NNone	-1
+	L:109_0	NNone	1
+	L:109_1	length	19
+	L:109_1	ttime	1
+	L:109_1	NNone	-1
+	L:109_1	NNone	1
+	L:11_0	length	18
+	L:11_0	ttime	2
+	L:11_0	NNone	-1
+	L:11_0	NNone	1
+	L:11_1	length	18
+	L:11_1	ttime	2
+	L:11_1	NNone	-1
+	L:11_1	NNone	1
+	L:110_0	length	15
+	L:110_0	ttime	1
+	L:110_0	NNone	-1
+	L:110_0	NNone	1
+	L:110_1	length	15
+	L:110_1	ttime	1
+	L:110_1	NNone	-1
+	L:110_1	NNone	1
+	L:111_0	length	8
+	L:111_0	ttime	0
+	L:111_0	NNone	-1
+	L:111_0	NNone	1
+	L:114_0	length	14
+	L:114_0	ttime	1
+	L:114_0	NNone	-1
+	L:114_0	NNone	1
+	L:114_1	length	14
+	L:114_1	ttime	1
+	L:114_1	NNone	-1
+	L:114_1	NNone	1
+	L:115_0	length	8
+	L:115_0	ttime	1
+	L:115_0	NNone	-1
+	L:115_0	NNone	1
+	L:115_1	length	9
+	L:115_1	ttime	1
+	L:115_1	NNone	-1
+	L:115_1	NNone	1
+	L:116_0	length	7
+	L:116_0	ttime	1
+	L:116_0	NNone	-1
+	L:116_0	NNone	1
+	L:117_0	length	8
+	L:117_0	ttime	1
+	L:117_0	NNone	-1
+	L:117_0	NNone	1
+	L:117_1	length	9
+	L:117_1	ttime	1
+	L:117_1	NNone	-1
+	L:117_1	NNone	1
+	L:118_0	length	62
+	L:118_0	ttime	4
+	L:118_0	NNone	-1
+	L:118_0	NNone	1
+	L:118_4	length	62
+	L:118_4	ttime	4
+	L:118_4	NNone	-1
+	L:118_4	NNone	1
+	L:118_5	length	61
+	L:118_5	ttime	4
+	L:118_5	NNone	-1
+	L:118_5	NNone	1
+	L:119_0	length	9
+	L:119_0	ttime	1
+	L:119_0	NNone	-1
+	L:119_0	NNone	1
+	L:12_0	length	20
+	L:12_0	ttime	2
+	L:12_0	NNone	-1
+	L:12_0	NNone	1
+	L:12_1	length	20
+	L:12_1	ttime	2
+	L:12_1	NNone	-1
+	L:12_1	NNone	1
+	L:120_0	length	0
+	L:120_0	ttime	0
+	L:120_0	NNone	-1
+	L:120_0	NNone	1
+	L:121_0	length	0
+	L:121_0	ttime	0
+	L:121_0	NNone	-1
+	L:121_0	NNone	1
+	L:122_0	length	9
+	L:122_0	ttime	1
+	L:122_0	NNone	-1
+	L:122_0	NNone	1
+	L:123_0	length	49
+	L:123_0	ttime	4
+	L:123_0	NNone	-1
+	L:123_0	NNone	1
+	L:123_1	length	49
+	L:123_1	ttime	0
+	L:123_1	NNone	-1
+	L:123_1	NNone	1
+	L:123_2	length	49
+	L:123_2	ttime	4
+	L:123_2	NNone	-1
+	L:123_2	NNone	1
+	L:123_3	length	48
+	L:123_3	ttime	3
+	L:123_3	NNone	-1
+	L:123_3	NNone	1
+	L:123_5	length	49
+	L:123_5	ttime	0
+	L:123_5	NNone	-1
+	L:123_5	NNone	1
+	L:123_6	length	50
+	L:123_6	ttime	3
+	L:123_6	NNone	-1
+	L:123_6	NNone	1
+	L:124_0	length	8
+	L:124_0	ttime	0
+	L:124_0	NNone	-1
+	L:124_0	NNone	1
+	L:125_0	length	3
+	L:125_0	ttime	0
+	L:125_0	NNone	-1
+	L:125_0	NNone	1
+	L:125_3	length	4
+	L:125_3	ttime	0
+	L:125_3	NNone	-1
+	L:125_3	NNone	1
+	L:126_0	length	6
+	L:126_0	ttime	1
+	L:126_0	NNone	-1
+	L:126_0	NNone	1
+	L:126_1	length	6
+	L:126_1	ttime	0
+	L:126_1	NNone	-1
+	L:126_1	NNone	1
+	L:127_0	length	8
+	L:127_0	ttime	0
+	L:127_0	NNone	-1
+	L:127_0	NNone	1
+	L:128_0	length	12
+	L:128_0	ttime	1
+	L:128_0	NNone	-1
+	L:128_0	NNone	1
+	L:128_1	length	12
+	L:128_1	ttime	1
+	L:128_1	NNone	-1
+	L:128_1	NNone	1
+	L:129_0	length	8
+	L:129_0	ttime	0
+	L:129_0	NNone	-1
+	L:129_0	NNone	1
+	L:13_0	length	27
+	L:13_0	ttime	2
+	L:13_0	NNone	-1
+	L:13_0	NNone	1
+	L:13_1	length	19
+	L:13_1	ttime	2
+	L:13_1	NNone	-1
+	L:13_1	NNone	1
+	L:132_0	length	0
+	L:132_0	ttime	0
+	L:132_0	NNone	-1
+	L:132_0	NNone	1
+	L:133_0	length	0
+	L:133_0	ttime	0
+	L:133_0	NNone	-1
+	L:133_0	NNone	1
+	L:134_0	length	0
+	L:134_0	ttime	0
+	L:134_0	NNone	-1
+	L:134_0	NNone	1
+	L:135_0	length	0
+	L:135_0	ttime	0
+	L:135_0	NNone	-1
+	L:135_0	NNone	1
+	L:137_0	length	8
+	L:137_0	ttime	1
+	L:137_0	NNone	-1
+	L:137_0	NNone	1
+	L:137_1	length	8
+	L:137_1	ttime	0
+	L:137_1	NNone	-1
+	L:137_1	NNone	1
+	L:138_0	length	6
+	L:138_0	ttime	1
+	L:138_0	NNone	-1
+	L:138_0	NNone	1
+	L:138_1	length	7
+	L:138_1	ttime	0
+	L:138_1	NNone	-1
+	L:138_1	NNone	1
+	L:139_0	length	8
+	L:139_0	ttime	0
+	L:139_0	NNone	-1
+	L:139_0	NNone	1
+	L:14_0	length	6
+	L:14_0	ttime	1
+	L:14_0	NNone	-1
+	L:14_0	NNone	1
+	L:14_1	length	6
+	L:14_1	ttime	1
+	L:14_1	NNone	-1
+	L:14_1	NNone	1
+	L:140_0	length	8
+	L:140_0	ttime	0
+	L:140_0	NNone	-1
+	L:140_0	NNone	1
+	L:141_0	length	8
+	L:141_0	ttime	0
+	L:141_0	NNone	-1
+	L:141_0	NNone	1
+	L:142_0	length	0
+	L:142_0	ttime	0
+	L:142_0	NNone	-1
+	L:142_0	NNone	1
+	L:143_0	length	26
+	L:143_0	ttime	1
+	L:143_0	NNone	-1
+	L:143_0	NNone	1
+	L:143_1	length	26
+	L:143_1	ttime	1
+	L:143_1	NNone	-1
+	L:143_1	NNone	1
+	L:144_0	length	8
+	L:144_0	ttime	0
+	L:144_0	NNone	-1
+	L:144_0	NNone	1
+	L:145_0	length	15
+	L:145_0	ttime	1
+	L:145_0	NNone	-1
+	L:145_0	NNone	1
+	L:145_1	length	15
+	L:145_1	ttime	1
+	L:145_1	NNone	-1
+	L:145_1	NNone	1
+	L:146_0	length	8
+	L:146_0	ttime	0
+	L:146_0	NNone	-1
+	L:146_0	NNone	1
+	L:147_0	length	23
+	L:147_0	ttime	1
+	L:147_0	NNone	-1
+	L:147_0	NNone	1
+	L:147_1	length	24
+	L:147_1	ttime	1
+	L:147_1	NNone	-1
+	L:147_1	NNone	1
+	L:147_2	length	24
+	L:147_2	ttime	1
+	L:147_2	NNone	-1
+	L:147_2	NNone	1
+	L:148_0	length	8
+	L:148_0	ttime	0
+	L:148_0	NNone	-1
+	L:148_0	NNone	1
+	L:149_0	length	15
+	L:149_0	ttime	1
+	L:149_0	NNone	-1
+	L:149_0	NNone	1
+	L:149_2	length	15
+	L:149_2	ttime	1
+	L:149_2	NNone	-1
+	L:149_2	NNone	1
+	L:15_0	length	0
+	L:15_0	ttime	0
+	L:15_0	NNone	-1
+	L:15_0	NNone	1
+	L:15_1	length	0
+	L:15_1	ttime	0
+	L:15_1	NNone	-1
+	L:15_1	NNone	1
+	L:150_0	length	8
+	L:150_0	ttime	0
+	L:150_0	NNone	-1
+	L:150_0	NNone	1
+	L:151_0	length	8
+	L:151_0	ttime	0
+	L:151_0	NNone	-1
+	L:151_0	NNone	1
+	L:152_0	length	16
+	L:152_0	ttime	1
+	L:152_0	NNone	-1
+	L:152_0	NNone	1
+	L:152_1	length	17
+	L:152_1	ttime	1
+	L:152_1	NNone	-1
+	L:152_1	NNone	1
+	L:153_0	length	8
+	L:153_0	ttime	0
+	L:153_0	NNone	-1
+	L:153_0	NNone	1
+	L:154_0	length	0
+	L:154_0	ttime	0
+	L:154_0	NNone	-1
+	L:154_0	NNone	1
+	L:155_0	length	10
+	L:155_0	ttime	1
+	L:155_0	NNone	-1
+	L:155_0	NNone	1
+	L:155_1	length	8
+	L:155_1	ttime	0
+	L:155_1	NNone	-1
+	L:155_1	NNone	1
+	L:156_0	length	18
+	L:156_0	ttime	0
+	L:156_0	NNone	-1
+	L:156_0	NNone	1
+	L:156_1	length	18
+	L:156_1	ttime	1
+	L:156_1	NNone	-1
+	L:156_1	NNone	1
+	L:157_0	length	12
+	L:157_0	ttime	0
+	L:157_0	NNone	-1
+	L:157_0	NNone	1
+	L:157_1	length	12
+	L:157_1	ttime	1
+	L:157_1	NNone	-1
+	L:157_1	NNone	1
+	L:158_0	length	24
+	L:158_0	ttime	1
+	L:158_0	NNone	-1
+	L:158_0	NNone	1
+	L:158_1	length	23
+	L:158_1	ttime	1
+	L:158_1	NNone	-1
+	L:158_1	NNone	1
+	L:159_0	length	17
+	L:159_0	ttime	1
+	L:159_0	NNone	-1
+	L:159_0	NNone	1
+	L:159_1	length	17
+	L:159_1	ttime	1
+	L:159_1	NNone	-1
+	L:159_1	NNone	1
+	L:16_0	length	0
+	L:16_0	ttime	0
+	L:16_0	NNone	-1
+	L:16_0	NNone	1
+	L:16_1	length	1
+	L:16_1	ttime	0
+	L:16_1	NNone	-1
+	L:16_1	NNone	1
+	L:162_0	length	1
+	L:162_0	ttime	0
+	L:162_0	NNone	-1
+	L:162_0	NNone	1
+	L:163_0	length	1
+	L:163_0	ttime	0
+	L:163_0	NNone	-1
+	L:163_0	NNone	1
+	L:164_0	length	8
+	L:164_0	ttime	0
+	L:164_0	NNone	-1
+	L:164_0	NNone	1
+	L:165_0	length	20
+	L:165_0	ttime	1
+	L:165_0	NNone	-1
+	L:165_0	NNone	1
+	L:165_1	length	20
+	L:165_1	ttime	1
+	L:165_1	NNone	-1
+	L:165_1	NNone	1
+	L:166_0	length	19
+	L:166_0	ttime	1
+	L:166_0	NNone	-1
+	L:166_0	NNone	1
+	L:166_1	length	20
+	L:166_1	ttime	1
+	L:166_1	NNone	-1
+	L:166_1	NNone	1
+	L:166_2	length	20
+	L:166_2	ttime	1
+	L:166_2	NNone	-1
+	L:166_2	NNone	1
+	L:167_0	length	0
+	L:167_0	ttime	0
+	L:167_0	NNone	-1
+	L:167_0	NNone	1
+	L:168_0	length	0
+	L:168_0	ttime	0
+	L:168_0	NNone	-1
+	L:168_0	NNone	1
+	L:169_0	length	8
+	L:169_0	ttime	0
+	L:169_0	NNone	-1
+	L:169_0	NNone	1
+	L:17_0	length	0
+	L:17_0	ttime	0
+	L:17_0	NNone	-1
+	L:17_0	NNone	1
+	L:17_1	length	0
+	L:17_1	ttime	0
+	L:17_1	NNone	-1
+	L:17_1	NNone	1
+	L:170_0	length	8
+	L:170_0	ttime	0
+	L:170_0	NNone	-1
+	L:170_0	NNone	1
+	L:171_0	length	0
+	L:171_0	ttime	0
+	L:171_0	NNone	-1
+	L:171_0	NNone	1
+	L:172_0	length	0
+	L:172_0	ttime	0
+	L:172_0	NNone	-1
+	L:172_0	NNone	1
+	L:173_0	length	0
+	L:173_0	ttime	0
+	L:173_0	NNone	-1
+	L:173_0	NNone	1
+	L:174_0	length	8
+	L:174_0	ttime	0
+	L:174_0	NNone	-1
+	L:174_0	NNone	1
+	L:175_0	length	0
+	L:175_0	ttime	0
+	L:175_0	NNone	-1
+	L:175_0	NNone	1
+	L:176_0	length	8
+	L:176_0	ttime	0
+	L:176_0	NNone	-1
+	L:176_0	NNone	1
+	L:177_0	length	8
+	L:177_0	ttime	0
+	L:177_0	NNone	-1
+	L:177_0	NNone	1
+	L:178_0	length	8
+	L:178_0	ttime	0
+	L:178_0	NNone	-1
+	L:178_0	NNone	1
+	L:179_0	length	0
+	L:179_0	ttime	0
+	L:179_0	NNone	-1
+	L:179_0	NNone	1
+	L:18_0	length	0
+	L:18_0	ttime	0
+	L:18_0	NNone	-1
+	L:18_0	NNone	1
+	L:18_1	length	1
+	L:18_1	ttime	0
+	L:18_1	NNone	-1
+	L:18_1	NNone	1
+	L:180_0	length	0
+	L:180_0	ttime	0
+	L:180_0	NNone	-1
+	L:180_0	NNone	1
+	L:181_0	length	0
+	L:181_0	ttime	0
+	L:181_0	NNone	-1
+	L:181_0	NNone	1
+	L:182_0	length	0
+	L:182_0	ttime	0
+	L:182_0	NNone	-1
+	L:182_0	NNone	1
+	L:183_0	length	8
+	L:183_0	ttime	0
+	L:183_0	NNone	-1
+	L:183_0	NNone	1
+	L:184_0	length	0
+	L:184_0	ttime	0
+	L:184_0	NNone	-1
+	L:184_0	NNone	1
+	L:185_0	length	14
+	L:185_0	ttime	1
+	L:185_0	NNone	-1
+	L:185_0	NNone	1
+	L:185_1	length	15
+	L:185_1	ttime	1
+	L:185_1	NNone	-1
+	L:185_1	NNone	1
+	L:186_0	length	21
+	L:186_0	ttime	1
+	L:186_0	NNone	-1
+	L:186_0	NNone	1
+	L:186_1	length	21
+	L:186_1	ttime	1
+	L:186_1	NNone	-1
+	L:186_1	NNone	1
+	L:187_0	length	20
+	L:187_0	ttime	1
+	L:187_0	NNone	-1
+	L:187_0	NNone	1
+	L:187_1	length	20
+	L:187_1	ttime	1
+	L:187_1	NNone	-1
+	L:187_1	NNone	1
+	L:187_2	length	20
+	L:187_2	ttime	1
+	L:187_2	NNone	-1
+	L:187_2	NNone	1
+	L:188_0	length	8
+	L:188_0	ttime	0
+	L:188_0	NNone	-1
+	L:188_0	NNone	1
+	L:189_0	length	30
+	L:189_0	ttime	3
+	L:189_0	NNone	-1
+	L:189_0	NNone	1
+	L:189_1	length	30
+	L:189_1	ttime	1
+	L:189_1	NNone	-1
+	L:189_1	NNone	1
+	L:19_0	length	0
+	L:19_0	ttime	0
+	L:19_0	NNone	-1
+	L:19_0	NNone	1
+	L:19_1	length	0
+	L:19_1	ttime	0
+	L:19_1	NNone	-1
+	L:19_1	NNone	1
+	L:192_0	length	1
+	L:192_0	ttime	0
+	L:192_0	NNone	-1
+	L:192_0	NNone	1
+	L:192_1	length	0
+	L:192_1	ttime	0
+	L:192_1	NNone	-1
+	L:192_1	NNone	1
+	L:193_0	length	0
+	L:193_0	ttime	0
+	L:193_0	NNone	-1
+	L:193_0	NNone	1
+	L:194_0	length	0
+	L:194_0	ttime	0
+	L:194_0	NNone	-1
+	L:194_0	NNone	1
+	L:196_0	length	11
+	L:196_0	ttime	1
+	L:196_0	NNone	-1
+	L:196_0	NNone	1
+	L:196_1	length	9
+	L:196_1	ttime	1
+	L:196_1	NNone	-1
+	L:196_1	NNone	1
+	L:198_0	length	1
+	L:198_0	ttime	0
+	L:198_0	NNone	-1
+	L:198_0	NNone	1
+	L:199_0	length	1
+	L:199_0	ttime	0
+	L:199_0	NNone	-1
+	L:199_0	NNone	1
+	L:2_0	length	12
+	L:2_0	ttime	1
+	L:2_0	NNone	-1
+	L:2_0	NNone	1
+	L:2_1	length	12
+	L:2_1	ttime	1
+	L:2_1	NNone	-1
+	L:2_1	NNone	1
+	L:2_2	length	12
+	L:2_2	ttime	1
+	L:2_2	NNone	-1
+	L:2_2	NNone	1
+	L:20_0	length	0
+	L:20_0	ttime	0
+	L:20_0	NNone	-1
+	L:20_0	NNone	1
+	L:20_1	length	0
+	L:20_1	ttime	0
+	L:20_1	NNone	-1
+	L:20_1	NNone	1
+	L:200_0	length	8
+	L:200_0	ttime	0
+	L:200_0	NNone	-1
+	L:200_0	NNone	1
+	L:201_0	length	14
+	L:201_0	ttime	1
+	L:201_0	NNone	-1
+	L:201_0	NNone	1
+	L:201_1	length	10
+	L:201_1	ttime	1
+	L:201_1	NNone	-1
+	L:201_1	NNone	1
+	L:202_0	length	0
+	L:202_0	ttime	0
+	L:202_0	NNone	-1
+	L:202_0	NNone	1
+	L:203_0	length	0
+	L:203_0	ttime	0
+	L:203_0	NNone	-1
+	L:203_0	NNone	1
+	L:21_0	length	0
+	L:21_0	ttime	0
+	L:21_0	NNone	-1
+	L:21_0	NNone	1
+	L:21_1	length	0
+	L:21_1	ttime	0
+	L:21_1	NNone	-1
+	L:21_1	NNone	1
+	L:22_0	length	5
+	L:22_0	ttime	0
+	L:22_0	NNone	-1
+	L:22_0	NNone	1
+	L:22_1	length	4
+	L:22_1	ttime	0
+	L:22_1	NNone	-1
+	L:22_1	NNone	1
+	L:23_0	length	11
+	L:23_0	ttime	1
+	L:23_0	NNone	-1
+	L:23_0	NNone	1
+	L:23_1	length	12
+	L:23_1	ttime	1
+	L:23_1	NNone	-1
+	L:23_1	NNone	1
+	L:24_0	length	8
+	L:24_0	ttime	1
+	L:24_0	NNone	-1
+	L:24_0	NNone	1
+	L:24_1	length	8
+	L:24_1	ttime	1
+	L:24_1	NNone	-1
+	L:24_1	NNone	1
+	L:26_0	length	5
+	L:26_0	ttime	1
+	L:26_0	NNone	-1
+	L:26_0	NNone	1
+	L:26_1	length	5
+	L:26_1	ttime	1
+	L:26_1	NNone	-1
+	L:26_1	NNone	1
+	L:27_0	length	8
+	L:27_0	ttime	1
+	L:27_0	NNone	-1
+	L:27_0	NNone	1
+	L:27_1	length	8
+	L:27_1	ttime	1
+	L:27_1	NNone	-1
+	L:27_1	NNone	1
+	L:28_0	length	6
+	L:28_0	ttime	1
+	L:28_0	NNone	-1
+	L:28_0	NNone	1
+	L:28_1	length	5
+	L:28_1	ttime	1
+	L:28_1	NNone	-1
+	L:28_1	NNone	1
+	L:29_0	length	7
+	L:29_0	ttime	1
+	L:29_0	NNone	-1
+	L:29_0	NNone	1
+	L:29_1	length	7
+	L:29_1	ttime	1
+	L:29_1	NNone	-1
+	L:29_1	NNone	1
+	L:3_0	length	11
+	L:3_0	ttime	1
+	L:3_0	NNone	-1
+	L:3_0	NNone	1
+	L:3_1	length	11
+	L:3_1	ttime	1
+	L:3_1	NNone	-1
+	L:3_1	NNone	1
+	L:3_2	length	11
+	L:3_2	ttime	1
+	L:3_2	NNone	-1
+	L:3_2	NNone	1
+	L:30_0	length	1
+	L:30_0	ttime	0
+	L:30_0	NNone	-1
+	L:30_0	NNone	1
+	L:31_0	length	6
+	L:31_0	ttime	1
+	L:31_0	NNone	-1
+	L:31_0	NNone	1
+	L:31_1	length	6
+	L:31_1	ttime	1
+	L:31_1	NNone	-1
+	L:31_1	NNone	1
+	L:32_0	length	6
+	L:32_0	ttime	1
+	L:32_0	NNone	-1
+	L:32_0	NNone	1
+	L:32_1	length	5
+	L:32_1	ttime	0
+	L:32_1	NNone	-1
+	L:32_1	NNone	1
+	L:32_3	length	8
+	L:32_3	ttime	0
+	L:32_3	NNone	-1
+	L:32_3	NNone	1
+	L:32_2	length	14
+	L:32_2	ttime	1
+	L:32_2	NNone	-1
+	L:32_2	NNone	1
+	L:33_0	length	5
+	L:33_0	ttime	1
+	L:33_0	NNone	-1
+	L:33_0	NNone	1
+	L:33_1	length	4
+	L:33_1	ttime	0
+	L:33_1	NNone	-1
+	L:33_1	NNone	1
+	L:34_0	length	20
+	L:34_0	ttime	2
+	L:34_0	NNone	-1
+	L:34_0	NNone	1
+	L:34_1	length	14
+	L:34_1	ttime	0
+	L:34_1	NNone	-1
+	L:34_1	NNone	1
+	L:35_0	length	1
+	L:35_0	ttime	0
+	L:35_0	NNone	-1
+	L:35_0	NNone	1
+	L:36_0	length	13
+	L:36_0	ttime	1
+	L:36_0	NNone	-1
+	L:36_0	NNone	1
+	L:36_1	length	11
+	L:36_1	ttime	0
+	L:36_1	NNone	-1
+	L:36_1	NNone	1
+	L:37_0	length	7
+	L:37_0	ttime	0
+	L:37_0	NNone	-1
+	L:37_0	NNone	1
+	L:37_2	length	8
+	L:37_2	ttime	1
+	L:37_2	NNone	-1
+	L:37_2	NNone	1
+	L:38_0	length	17
+	L:38_0	ttime	1
+	L:38_0	NNone	-1
+	L:38_0	NNone	1
+	L:38_1	length	13
+	L:38_1	ttime	0
+	L:38_1	NNone	-1
+	L:38_1	NNone	1
+	L:39_0	length	3
+	L:39_0	ttime	0
+	L:39_0	NNone	-1
+	L:39_0	NNone	1
+	L:39_1	length	5
+	L:39_1	ttime	0
+	L:39_1	NNone	-1
+	L:39_1	NNone	1
+	L:39_3	length	5
+	L:39_3	ttime	0
+	L:39_3	NNone	-1
+	L:39_3	NNone	1
+	L:39_2	length	4
+	L:39_2	ttime	0
+	L:39_2	NNone	-1
+	L:39_2	NNone	1
+	L:4_0	length	6
+	L:4_0	ttime	0
+	L:4_0	NNone	-1
+	L:4_0	NNone	1
+	L:4_1	length	7
+	L:4_1	ttime	0
+	L:4_1	NNone	-1
+	L:4_1	NNone	1
+	L:40_0	length	0
+	L:40_0	ttime	0
+	L:40_0	NNone	-1
+	L:40_0	NNone	1
+	L:40_1	length	0
+	L:40_1	ttime	0
+	L:40_1	NNone	-1
+	L:40_1	NNone	1
+	L:41_0	length	7
+	L:41_0	ttime	1
+	L:41_0	NNone	-1
+	L:41_0	NNone	1
+	L:41_1	length	2
+	L:41_1	ttime	1
+	L:41_1	NNone	-1
+	L:41_1	NNone	1
+	L:43_0	length	1
+	L:43_0	ttime	0
+	L:43_0	NNone	-1
+	L:43_0	NNone	1
+	L:43_1	length	0
+	L:43_1	ttime	0
+	L:43_1	NNone	-1
+	L:43_1	NNone	1
+	L:45_0	length	0
+	L:45_0	ttime	0
+	L:45_0	NNone	-1
+	L:45_0	NNone	1
+	L:45_1	length	0
+	L:45_1	ttime	0
+	L:45_1	NNone	-1
+	L:45_1	NNone	1
+	L:48_0	length	0
+	L:48_0	ttime	0
+	L:48_0	NNone	-1
+	L:48_0	NNone	1
+	L:48_1	length	0
+	L:48_1	ttime	0
+	L:48_1	NNone	-1
+	L:48_1	NNone	1
+	L:5_0	length	19
+	L:5_0	ttime	0
+	L:5_0	NNone	-1
+	L:5_0	NNone	1
+	L:5_1	length	20
+	L:5_1	ttime	1
+	L:5_1	NNone	-1
+	L:5_1	NNone	1
+	L:51_0	length	0
+	L:51_0	ttime	0
+	L:51_0	NNone	-1
+	L:51_0	NNone	1
+	L:51_1	length	0
+	L:51_1	ttime	0
+	L:51_1	NNone	-1
+	L:51_1	NNone	1
+	L:53_0	length	10
+	L:53_0	ttime	1
+	L:53_0	NNone	-1
+	L:53_0	NNone	1
+	L:53_1	length	7
+	L:53_1	ttime	0
+	L:53_1	NNone	-1
+	L:53_1	NNone	1
+	L:53_3	length	4
+	L:53_3	ttime	0
+	L:53_3	NNone	-1
+	L:53_3	NNone	1
+	L:53_2	length	6
+	L:53_2	ttime	1
+	L:53_2	NNone	-1
+	L:53_2	NNone	1
+	L:54_0	length	7
+	L:54_0	ttime	1
+	L:54_0	NNone	-1
+	L:54_0	NNone	1
+	L:54_1	length	7
+	L:54_1	ttime	0
+	L:54_1	NNone	-1
+	L:54_1	NNone	1
+	L:55_0	length	1
+	L:55_0	ttime	0
+	L:55_0	NNone	-1
+	L:55_0	NNone	1
+	L:56_0	length	7
+	L:56_0	ttime	1
+	L:56_0	NNone	-1
+	L:56_0	NNone	1
+	L:56_1	length	7
+	L:56_1	ttime	0
+	L:56_1	NNone	-1
+	L:56_1	NNone	1
+	L:57_0	length	7
+	L:57_0	ttime	1
+	L:57_0	NNone	-1
+	L:57_0	NNone	1
+	L:57_1	length	7
+	L:57_1	ttime	0
+	L:57_1	NNone	-1
+	L:57_1	NNone	1
+	L:58_0	length	6
+	L:58_0	ttime	1
+	L:58_0	NNone	-1
+	L:58_0	NNone	1
+	L:58_1	length	6
+	L:58_1	ttime	0
+	L:58_1	NNone	-1
+	L:58_1	NNone	1
+	L:59_0	length	4
+	L:59_0	ttime	0
+	L:59_0	NNone	-1
+	L:59_0	NNone	1
+	L:59_1	length	3
+	L:59_1	ttime	0
+	L:59_1	NNone	-1
+	L:59_1	NNone	1
+	L:59_2	length	9
+	L:59_2	ttime	0
+	L:59_2	NNone	-1
+	L:59_2	NNone	1
+	L:6_0	length	12
+	L:6_0	ttime	0
+	L:6_0	NNone	-1
+	L:6_0	NNone	1
+	L:6_1	length	12
+	L:6_1	ttime	1
+	L:6_1	NNone	-1
+	L:6_1	NNone	1
+	L:60_0	length	3
+	L:60_0	ttime	0
+	L:60_0	NNone	-1
+	L:60_0	NNone	1
+	L:60_1	length	10
+	L:60_1	ttime	0
+	L:60_1	NNone	-1
+	L:60_1	NNone	1
+	L:60_2	length	4
+	L:60_2	ttime	0
+	L:60_2	NNone	-1
+	L:60_2	NNone	1
+	L:61_0	length	6
+	L:61_0	ttime	1
+	L:61_0	NNone	-1
+	L:61_0	NNone	1
+	L:61_1	length	6
+	L:61_1	ttime	0
+	L:61_1	NNone	-1
+	L:61_1	NNone	1
+	L:62_0	length	1
+	L:62_0	ttime	0
+	L:62_0	NNone	-1
+	L:62_0	NNone	1
+	L:63_0	length	7
+	L:63_0	ttime	1
+	L:63_0	NNone	-1
+	L:63_0	NNone	1
+	L:63_1	length	7
+	L:63_1	ttime	0
+	L:63_1	NNone	-1
+	L:63_1	NNone	1
+	L:64_0	length	6
+	L:64_0	ttime	1
+	L:64_0	NNone	-1
+	L:64_0	NNone	1
+	L:64_1	length	6
+	L:64_1	ttime	0
+	L:64_1	NNone	-1
+	L:64_1	NNone	1
+	L:65_0	length	7
+	L:65_0	ttime	1
+	L:65_0	NNone	-1
+	L:65_0	NNone	1
+	L:65_1	length	7
+	L:65_1	ttime	0
+	L:65_1	NNone	-1
+	L:65_1	NNone	1
+	L:66_0	length	4
+	L:66_0	ttime	0
+	L:66_0	NNone	-1
+	L:66_0	NNone	1
+	L:66_1	length	4
+	L:66_1	ttime	0
+	L:66_1	NNone	-1
+	L:66_1	NNone	1
+	L:66_2	length	4
+	L:66_2	ttime	0
+	L:66_2	NNone	-1
+	L:66_2	NNone	1
+	L:66_3	length	4
+	L:66_3	ttime	0
+	L:66_3	NNone	-1
+	L:66_3	NNone	1
+	L:67_0	length	8
+	L:67_0	ttime	1
+	L:67_0	NNone	-1
+	L:67_0	NNone	1
+	L:67_1	length	8
+	L:67_1	ttime	1
+	L:67_1	NNone	-1
+	L:67_1	NNone	1
+	L:68_0	length	13
+	L:68_0	ttime	1
+	L:68_0	NNone	-1
+	L:68_0	NNone	1
+	L:68_2	length	13
+	L:68_2	ttime	1
+	L:68_2	NNone	-1
+	L:68_2	NNone	1
+	L:69_0	length	13
+	L:69_0	ttime	1
+	L:69_0	NNone	-1
+	L:69_0	NNone	1
+	L:69_1	length	13
+	L:69_1	ttime	0
+	L:69_1	NNone	-1
+	L:69_1	NNone	1
+	L:69_2	length	13
+	L:69_2	ttime	1
+	L:69_2	NNone	-1
+	L:69_2	NNone	1
+	L:7_0	length	8
+	L:7_0	ttime	1
+	L:7_0	NNone	-1
+	L:7_0	NNone	1
+	L:70_0	length	13
+	L:70_0	ttime	1
+	L:70_0	NNone	-1
+	L:70_0	NNone	1
+	L:70_2	length	13
+	L:70_2	ttime	1
+	L:70_2	NNone	-1
+	L:70_2	NNone	1
+	L:71_0	length	12
+	L:71_0	ttime	1
+	L:71_0	NNone	-1
+	L:71_0	NNone	1
+	L:71_1	length	12
+	L:71_1	ttime	1
+	L:71_1	NNone	-1
+	L:71_1	NNone	1
+	L:72_0	length	13
+	L:72_0	ttime	1
+	L:72_0	NNone	-1
+	L:72_0	NNone	1
+	L:72_2	length	13
+	L:72_2	ttime	1
+	L:72_2	NNone	-1
+	L:72_2	NNone	1
+	L:73_0	length	5
+	L:73_0	ttime	1
+	L:73_0	NNone	-1
+	L:73_0	NNone	1
+	L:73_1	length	5
+	L:73_1	ttime	0
+	L:73_1	NNone	-1
+	L:73_1	NNone	1
+	L:74_0	length	12
+	L:74_0	ttime	1
+	L:74_0	NNone	-1
+	L:74_0	NNone	1
+	L:74_2	length	13
+	L:74_2	ttime	1
+	L:74_2	NNone	-1
+	L:74_2	NNone	1
+	L:75_0	length	12
+	L:75_0	ttime	1
+	L:75_0	NNone	-1
+	L:75_0	NNone	1
+	L:75_1	length	12
+	L:75_1	ttime	1
+	L:75_1	NNone	-1
+	L:75_1	NNone	1
+	L:76_0	length	12
+	L:76_0	ttime	1
+	L:76_0	NNone	-1
+	L:76_0	NNone	1
+	L:76_1	length	12
+	L:76_1	ttime	1
+	L:76_1	NNone	-1
+	L:76_1	NNone	1
+	L:79_0	length	14
+	L:79_0	ttime	1
+	L:79_0	NNone	-1
+	L:79_0	NNone	1
+	L:79_1	length	14
+	L:79_1	ttime	1
+	L:79_1	NNone	-1
+	L:79_1	NNone	1
+	L:8_0	length	11
+	L:8_0	ttime	1
+	L:8_0	NNone	-1
+	L:8_0	NNone	1
+	L:8_1	length	11
+	L:8_1	ttime	0
+	L:8_1	NNone	-1
+	L:8_1	NNone	1
+	L:80_0	length	0
+	L:80_0	ttime	0
+	L:80_0	NNone	-1
+	L:80_0	NNone	1
+	L:81_0	length	0
+	L:81_0	ttime	0
+	L:81_0	NNone	-1
+	L:81_0	NNone	1
+	L:82_0	length	14
+	L:82_0	ttime	1
+	L:82_0	NNone	-1
+	L:82_0	NNone	1
+	L:82_2	length	14
+	L:82_2	ttime	0
+	L:82_2	NNone	-1
+	L:82_2	NNone	1
+	L:83_0	length	11
+	L:83_0	ttime	1
+	L:83_0	NNone	-1
+	L:83_0	NNone	1
+	L:83_1	length	12
+	L:83_1	ttime	0
+	L:83_1	NNone	-1
+	L:83_1	NNone	1
+	L:83_2	length	12
+	L:83_2	ttime	1
+	L:83_2	NNone	-1
+	L:83_2	NNone	1
+	L:84_0	length	11
+	L:84_0	ttime	1
+	L:84_0	NNone	-1
+	L:84_0	NNone	1
+	L:84_2	length	11
+	L:84_2	ttime	1
+	L:84_2	NNone	-1
+	L:84_2	NNone	1
+	L:85_0	length	14
+	L:85_0	ttime	1
+	L:85_0	NNone	-1
+	L:85_0	NNone	1
+	L:85_2	length	14
+	L:85_2	ttime	1
+	L:85_2	NNone	-1
+	L:85_2	NNone	1
+	L:86_0	length	10
+	L:86_0	ttime	1
+	L:86_0	NNone	-1
+	L:86_0	NNone	1
+	L:86_2	length	10
+	L:86_2	ttime	1
+	L:86_2	NNone	-1
+	L:86_2	NNone	1
+	L:87_0	length	16
+	L:87_0	ttime	1
+	L:87_0	NNone	-1
+	L:87_0	NNone	1
+	L:87_2	length	17
+	L:87_2	ttime	0
+	L:87_2	NNone	-1
+	L:87_2	NNone	1
+	L:88_0	length	12
+	L:88_0	ttime	0
+	L:88_0	NNone	-1
+	L:88_0	NNone	1
+	L:88_2	length	10
+	L:88_2	ttime	1
+	L:88_2	NNone	-1
+	L:88_2	NNone	1
+	L:88_3	length	13
+	L:88_3	ttime	0
+	L:88_3	NNone	-1
+	L:88_3	NNone	1
+	L:89_0	length	14
+	L:89_0	ttime	1
+	L:89_0	NNone	-1
+	L:89_0	NNone	1
+	L:89_2	length	14
+	L:89_2	ttime	0
+	L:89_2	NNone	-1
+	L:89_2	NNone	1
+	L:9_0	length	1
+	L:9_0	ttime	0
+	L:9_0	NNone	-1
+	L:9_0	NNone	1
+	L:90_0	length	13
+	L:90_0	ttime	1
+	L:90_0	NNone	-1
+	L:90_0	NNone	1
+	L:90_2	length	13
+	L:90_2	ttime	0
+	L:90_2	NNone	-1
+	L:90_2	NNone	1
+	L:91_0	length	13
+	L:91_0	ttime	1
+	L:91_0	NNone	-1
+	L:91_0	NNone	1
+	L:91_1	length	14
+	L:91_1	ttime	0
+	L:91_1	NNone	-1
+	L:91_1	NNone	1
+	L:91_2	length	14
+	L:91_2	ttime	0
+	L:91_2	NNone	-1
+	L:91_2	NNone	1
+	L:92_0	length	0
+	L:92_0	ttime	0
+	L:92_0	NNone	-1
+	L:92_0	NNone	1
+	L:93_0	length	14
+	L:93_0	ttime	1
+	L:93_0	NNone	-1
+	L:93_0	NNone	1
+	L:93_1	length	10
+	L:93_1	ttime	1
+	L:93_1	NNone	-1
+	L:93_1	NNone	1
+	L:94_0	length	13
+	L:94_0	ttime	0
+	L:94_0	NNone	-1
+	L:94_0	NNone	1
+	L:94_1	length	13
+	L:94_1	ttime	1
+	L:94_1	NNone	-1
+	L:94_1	NNone	1
+	L:95_0	length	6
+	L:95_0	ttime	1
+	L:95_0	NNone	-1
+	L:95_0	NNone	1
+	L:95_1	length	7
+	L:95_1	ttime	0
+	L:95_1	NNone	-1
+	L:95_1	NNone	1
+	L:96_0	length	23
+	L:96_0	ttime	0
+	L:96_0	NNone	-1
+	L:96_0	NNone	1
+	L:96_1	length	23
+	L:96_1	ttime	1
+	L:96_1	NNone	-1
+	L:96_1	NNone	1
+	L:99_0	length	9
+	L:99_0	ttime	1
+	L:99_0	NNone	-1
+	L:99_0	NNone	1
+	L:99_1	length	10
+	L:99_1	ttime	0
+	L:99_1	NNone	-1
+	L:99_1	NNone	1
+	L:gneJ4_0	length	0
+	L:gneJ4_0	ttime	0
+	L:gneJ4_0	NNone	-1
+	L:gneJ4_0	NNone	1
+	L:gneJ7_0	length	0
+	L:gneJ7_0	ttime	0
+	L:gneJ7_0	NNone	-1
+	L:gneJ7_0	NNone	1
+	L:gneJ7_1	length	0
+	L:gneJ7_1	ttime	0
+	L:gneJ7_1	NNone	-1
+	L:gneJ7_1	NNone	1
+	L:gneJ8_0	length	0
+	L:gneJ8_0	ttime	0
+	L:gneJ8_0	NNone	-1
+	L:gneJ8_0	NNone	1
+	L-248846659#1	length	145
+	L-248846659#1	ttime	14
+	L-248846659#1	NJ-26-1T	-1
+	L-248846659#1	NJ-25-1F	1
+	L1	length	142
+	L1	ttime	11
+	L1	NJ-78-1T	-1
+	L1	NJ-79-1F	1
+	L100	length	222
+	L100	ttime	14
+	L100	NJ-77-1T	-1
+	L100	NJ-76-1F	1
+	L11	length	173
+	L11	ttime	14
+	L11	NJ-45-1T	-1
+	L11	NJ-gneJ7-1F	1
+	L12	length	432
+	L12	ttime	32
+	L12	NJ-gneJ7-1T	-1
+	L12	NJ-48-1F	1
+	L13	length	192
+	L13	ttime	15
+	L13	NJ-48-1T	-1
+	L13	NJ-51-1F	1
+	L132017141#1	length	17
+	L132017141#1	ttime	2
+	L132017141#1	NJ-10-1T	-1
+	L132017141#1	NJ-11-1F	1
+	L132017141#2	length	13
+	L132017141#2	ttime	1
+	L132017141#2	NJ-11-1T	-1
+	L132017141#2	NJ-12-1F	1
+	L132017141#3	length	7
+	L132017141#3	ttime	1
+	L132017141#3	NJ-12-1T	-1
+	L132017141#3	NJ-13-1F	1
+	L132017141#4	length	13
+	L132017141#4	ttime	1
+	L132017141#4	NJ-13-1T	-1
+	L132017141#4	NJ-14-1F	1
+	L132017141#5	length	7
+	L132017141#5	ttime	1
+	L132017141#5	NJ-14-1T	-1
+	L132017141#5	NJ-8-1F	1
+	L132017142	length	337
+	L132017142	ttime	21
+	L132017142	NJ-13-2T	-1
+	L132017142	NJ-158-1F	1
+	L132017149	length	146
+	L132017149	ttime	12
+	L132017149	NJ-8-1T	-1
+	L132017149	NJ-7-1F	1
+	L132017151	length	308
+	L132017151	ttime	23
+	L132017151	NJ-159-1T	-1
+	L132017151	NJ-2-1F	1
+	L135657120	length	312
+	L135657120	ttime	15
+	L135657120	NJ-162-1T	-1
+	L135657120	NJ-165-1F	1
+	L135657123	length	53
+	L135657123	ttime	3
+	L135657123	NJ-199-1T	-1
+	L135657123	NJ-162-1F	1
+	L14	length	700
+	L14	ttime	45
+	L14	NJ-51-1T	-1
+	L14	NJ-53-1F	1
+	L142362576	length	2356
+	L142362576	ttime	109
+	L142362576	NJ-183-1T	-1
+	L142362576	NJ-181-1F	1
+	L142362585	length	350
+	L142362585	ttime	16
+	L142362585	NJ-186-1T	-1
+	L142362585	NJ-189-1F	1
+	L142362611	length	240
+	L142362611	ttime	14
+	L142362611	NJ-80-1T	-1
+	L142362611	NJ-82-1F	1
+	L142362617	length	208
+	L142362617	ttime	13
+	L142362617	NJ-81-1T	-1
+	L142362617	NJ-70-1F	1
+	L142362623	length	35
+	L142362623	ttime	3
+	L142362623	NJ-73-1T	-1
+	L142362623	NJ-79-2F	1
+	L142362634	length	256
+	L142362634	ttime	16
+	L142362634	NJ-187-1T	-1
+	L142362634	NJ-194-1F	1
+	L142362639	length	321
+	L142362639	ttime	21
+	L142362639	NJ-193-1T	-1
+	L142362639	NJ-185-1F	1
+	L142362642	length	284
+	L142362642	ttime	22
+	L142362642	NJ-194-1T	-1
+	L142362642	NJ-196-1F	1
+	L148050996	length	2
+	L148050996	ttime	0
+	L148050996	NJ-166-1T	-1
+	L148050996	NJ-167-1F	1
+	L148051000	length	53
+	L148051000	ttime	3
+	L148051000	NJ-163-1T	-1
+	L148051000	NJ-198-1F	1
+	L148051003	length	335
+	L148051003	ttime	21
+	L148051003	NJ-198-1T	-1
+	L148051003	NJ-146-1F	1
+	L15	length	16
+	L15	ttime	2
+	L15	NJ-53-1T	-1
+	L15	NJ-54-1F	1
+	L152051288	length	2354
+	L152051288	ttime	109
+	L152051288	NJ-182-1T	-1
+	L152051288	NJ-184-1F	1
+	L152051296	length	1236
+	L152051296	ttime	57
+	L152051296	NJ-181-1T	-1
+	L152051296	NJ-180-1F	1
+	L158879913	length	624
+	L158879913	ttime	48
+	L158879913	NJ-93-1T	-1
+	L158879913	NJ-95-1F	1
+	L158879917	length	351
+	L158879917	ttime	22
+	L158879917	NJ-93-2T	-1
+	L158879917	NJ-99-1F	1
+	L158888001	length	1159
+	L158888001	ttime	54
+	L158888001	NJ-172-1T	-1
+	L158888001	NJ-173-1F	1
+	L158888002	length	4908
+	L158888002	ttime	228
+	L158888002	NJ-171-1T	-1
+	L158888002	NJ-169-1F	1
+	L158888013	length	432
+	L158888013	ttime	28
+	L158888013	NJ-128-1T	-1
+	L158888013	NJ-138-1F	1
+	L158888040	length	77
+	L158888040	ttime	5
+	L158888040	NJ-117-1T	-1
+	L158888040	NJ-118-1F	1
+	L158888049	length	263
+	L158888049	ttime	20
+	L158888049	NJ-109-1T	-1
+	L158888049	NJ-117-1F	1
+	L16	length	562
+	L16	ttime	36
+	L16	NJ-59-1T	-1
+	L16	NJ-60-1F	1
+	L160289846#0	length	681
+	L160289846#0	ttime	68
+	L160289846#0	NJ-43-1T	-1
+	L160289846#0	NJ-41-1F	1
+	L17	length	645
+	L17	ttime	41
+	L17	NJ-66-1T	-1
+	L17	NJ-67-1F	1
+	L18	length	663
+	L18	ttime	51
+	L18	NJ-15-1T	-1
+	L18	NJ-203-1F	1
+	L185675533	length	8379
+	L185675533	ttime	388
+	L185675533	NJ-105-1T	-1
+	L185675533	NJ-107-1F	1
+	L185675534	length	1052
+	L185675534	ttime	49
+	L185675534	NJ-106-1T	-1
+	L185675534	NJ-104-1F	1
+	L188949094#0	length	39
+	L188949094#0	ttime	4
+	L188949094#0	NJ-3-1T	-1
+	L188949094#0	NJ-2-2F	1
+	L188949094#1	length	37
+	L188949094#1	ttime	3
+	L188949094#1	NJ-2-1T	-1
+	L188949094#1	NJ-1-1F	1
+	L19	length	230
+	L19	ttime	21
+	L19	NJ-203-1T	-1
+	L19	NJ-16-1F	1
+	L19a	length	266
+	L19a	ttime	18
+	L19a	NJ-16-1T	-1
+	L19a	NJ-17-1F	1
+	L2	length	142
+	L2	ttime	11
+	L2	NJ-79-1T	-1
+	L2	NJ-78-1F	1
+	L20	length	374
+	L20	ttime	24
+	L20	NJ-17-1T	-1
+	L20	NJ-192-1F	1
+	L21	length	223
+	L21	ttime	12
+	L21	NJ-192-1T	-1
+	L21	NJ-18-1F	1
+	L22	length	1070
+	L22	ttime	86
+	L22	NJ-18-1T	-1
+	L22	NJ-19-1F	1
+	L23	length	836
+	L23	ttime	65
+	L23	NJ-19-1T	-1
+	L23	NJ-20-1F	1
+	L24	length	408
+	L24	ttime	23
+	L24	NJ-20-1T	-1
+	L24	NJ-21-1F	1
+	L24328854#1	length	49
+	L24328854#1	ttime	4
+	L24328854#1	NJ-82-1T	-1
+	L24328854#1	NJ-83-1F	1
+	L24328854#2	length	14
+	L24328854#2	ttime	1
+	L24328854#2	NJ-83-1T	-1
+	L24328854#2	NJ-84-1F	1
+	L24328854#3	length	10
+	L24328854#3	ttime	1
+	L24328854#3	NJ-84-1T	-1
+	L24328854#3	NJ-85-1F	1
+	L24328854#4	length	15
+	L24328854#4	ttime	1
+	L24328854#4	NJ-85-1T	-1
+	L24328854#4	NJ-86-1F	1
+	L24328854#5	length	3
+	L24328854#5	ttime	0
+	L24328854#5	NJ-86-1T	-1
+	L24328854#5	NJ-87-1F	1
+	L24330636	length	451
+	L24330636	ttime	29
+	L24330636	NJ-147-1T	-1
+	L24330636	NJ-199-1F	1
+	L24347613	length	237
+	L24347613	ttime	13
+	L24347613	NJ-87-1T	-1
+	L24347613	NJ-81-1F	1
+	L24443869	length	387
+	L24443869	ttime	30
+	L24443869	NJ-137-1T	-1
+	L24443869	NJ-134-1F	1
+	L24443872	length	115
+	L24443872	ttime	9
+	L24443872	NJ-128-2T	-1
+	L24443872	NJ-133-1F	1
+	L24443879.82	length	216
+	L24443879.82	ttime	14
+	L24443879.82	NJ-130-1T	-1
+	L24443879.82	NJ-126-1F	1
+	L24443883	length	332
+	L24443883	ttime	26
+	L24443883	NJ-115-1T	-1
+	L24443883	NJ-114-1F	1
+	L24443886	length	511
+	L24443886	ttime	39
+	L24443886	NJ-110-1T	-1
+	L24443886	NJ-117-2F	1
+	L245327987	length	179
+	L245327987	ttime	8
+	L245327987	NJ-187-2T	-1
+	L245327987	NJ-185-2F	1
+	L245327988#1	length	180
+	L245327988#1	ttime	8
+	L245327988#1	NJ-189-1T	-1
+	L245327988#1	NJ-190-1F	1
+	L245328442	length	1315
+	L245328442	ttime	61
+	L245328442	NJ-179-1T	-1
+	L245328442	NJ-182-1F	1
+	L248722719	length	15
+	L248722719	ttime	1
+	L248722719	NJ-31-1T	-1
+	L248722719	NJ-22-1F	1
+	L248722721#0	length	20
+	L248722721#0	ttime	2
+	L248722721#0	NJ-30-1T	-1
+	L248722721#0	NJ-31-1F	1
+	L248722721#1	length	7
+	L248722721#1	ttime	1
+	L248722721#1	NJ-31-2T	-1
+	L248722721#1	NJ-23-1F	1
+	L248722721#2	length	2
+	L248722721#2	ttime	0
+	L248722721#2	NJ-23-1T	-1
+	L248722721#2	NJ-24-1F	1
+	L248722721#3	length	8
+	L248722721#3	ttime	1
+	L248722721#3	NJ-24-1T	-1
+	L248722721#3	NJ-27-1F	1
+	L248722721#4	length	4
+	L248722721#4	ttime	1
+	L248722721#4	NJ-27-1T	-1
+	L248722721#4	NJ-28-1F	1
+	L248722721#5	length	11
+	L248722721#5	ttime	1
+	L248722721#5	NJ-28-1T	-1
+	L248722721#5	NJ-29-1F	1
+	L248722721#6	length	3
+	L248722721#6	ttime	0
+	L248722721#6	NJ-29-1T	-1
+	L248722721#6	NJ-30-1F	1
+	L248722722#0	length	838
+	L248722722#0	ttime	69
+	L248722722#0	NJ-20-2T	-1
+	L248722722#0	NJ-19-2F	1
+	L248722722#1	length	1068
+	L248722722#1	ttime	85
+	L248722722#1	NJ-19-2T	-1
+	L248722722#1	NJ-18-2F	1
+	L248722725	length	15
+	L248722725	ttime	2
+	L248722725	NJ-32-1T	-1
+	L248722725	NJ-29-2F	1
+	L248722726	length	15
+	L248722726	ttime	2
+	L248722726	NJ-26-2T	-1
+	L248722726	NJ-27-2F	1
+	L248846659#1.206	length	143
+	L248846659#1.206	ttime	14
+	L248846659#1.206	NJ-25-1T	-1
+	L248846659#1.206	NJ-26-1F	1
+	L248927010	length	3
+	L248927010	ttime	0
+	L248927010	NJ-33-1T	-1
+	L248927010	NJ-34-1F	1
+	L248927011	length	19
+	L248927011	ttime	2
+	L248927011	NJ-39-1T	-1
+	L248927011	NJ-37-1F	1
+	L249236831	length	148
+	L249236831	ttime	15
+	L249236831	NJ-41-1T	-1
+	L249236831	NJ-40-1F	1
+	L249236832	length	164
+	L249236832	ttime	13
+	L249236832	NJ-40-1T	-1
+	L249236832	NJ-39-1F	1
+	L249270205#0	length	177
+	L249270205#0	ttime	15
+	L249270205#0	NJ-45-2T	-1
+	L249270205#0	NJ-gneJ8-1F	1
+	L249270205#0.177	length	13
+	L249270205#0.177	ttime	1
+	L249270205#0.177	NJ-gneJ8-1T	-1
+	L249270205#0.177	NJ-43-1F	1
+	L249443656#0	length	192
+	L249443656#0	ttime	15
+	L249443656#0	NJ-51-2T	-1
+	L249443656#0	NJ-48-2F	1
+	L249443656#3	length	432
+	L249443656#3	ttime	32
+	L249443656#3	NJ-48-2T	-1
+	L249443656#3	NJ-gneJ7-2F	1
+	L249443656#3.432	length	173
+	L249443656#3.432	ttime	12
+	L249443656#3.432	NJ-gneJ7-2T	-1
+	L249443656#3.432	NJ-45-1F	1
+	L25	length	955
+	L25	ttime	74
+	L25	NJ-21-1T	-1
+	L25	NJ-22-2F	1
+	L251259917	length	166
+	L251259917	ttime	14
+	L251259917	NJ-76-1T	-1
+	L251259917	NJ-72-1F	1
+	L251259918	length	34
+	L251259918	ttime	4
+	L251259918	NJ-79-2T	-1
+	L251259918	NJ-74-1F	1
+	L251259919	length	117
+	L251259919	ttime	10
+	L251259919	NJ-67-1T	-1
+	L251259919	NJ-68-1F	1
+	L26	length	16
+	L26	ttime	2
+	L26	NJ-22-1T	-1
+	L26	NJ-23-2F	1
+	L27	length	37
+	L27	ttime	2
+	L27	NJ-1-1T	-1
+	L27	NJ-2-3F	1
+	L28	length	39
+	L28	ttime	3
+	L28	NJ-2-2T	-1
+	L28	NJ-3-1F	1
+	L29	length	58
+	L29	ttime	4
+	L29	NJ-3-2T	-1
+	L29	NJ-4-1F	1
+	L294492782	length	382
+	L294492782	ttime	18
+	L294492782	NJ-96-1T	-1
+	L294492782	NJ-99-2F	1
+	L30	length	447
+	L30	ttime	35
+	L30	NJ-3-3T	-1
+	L30	NJ-152-1F	1
+	L311202397	length	58
+	L311202397	ttime	4
+	L311202397	NJ-4-1T	-1
+	L311202397	NJ-3-2F	1
+	L311202398#0	length	55
+	L311202398#0	ttime	5
+	L311202398#0	NJ-4-2T	-1
+	L311202398#0	NJ-6-1F	1
+	L311202398#1	length	164
+	L311202398#1	ttime	14
+	L311202398#1	NJ-6-1T	-1
+	L311202398#1	NJ-10-1F	1
+	L319611361#1	length	90
+	L319611361#1	ttime	6
+	L319611361#1	NJ-94-1T	-1
+	L319611361#1	NJ-92-1F	1
+	L319611361#1.82	length	109
+	L319611361#1.82	ttime	8
+	L319611361#1.82	NJ-92-1T	-1
+	L319611361#1.82	NJ-90-1F	1
+	L319611362	length	205
+	L319611362	ttime	10
+	L319611362	NJ-98-1T	-1
+	L319611362	NJ-96-1F	1
+	L319611363	length	58
+	L319611363	ttime	3
+	L319611363	NJ-104-1T	-1
+	L319611363	NJ-102-1F	1
+	L319611365	length	124
+	L319611365	ttime	6
+	L319611365	NJ-99-1T	-1
+	L319611365	NJ-101-1F	1
+	L319611367	length	180
+	L319611367	ttime	8
+	L319611367	NJ-102-1T	-1
+	L319611367	NJ-100-1F	1
+	L319611368	length	194
+	L319611368	ttime	9
+	L319611368	NJ-101-1T	-1
+	L319611368	NJ-103-1F	1
+	L319611370	length	380
+	L319611370	ttime	18
+	L319611370	NJ-95-1T	-1
+	L319611370	NJ-97-1F	1
+	L319611372	length	300
+	L319611372	ttime	14
+	L319611372	NJ-100-1T	-1
+	L319611372	NJ-95-2F	1
+	L319611376	length	1060
+	L319611376	ttime	49
+	L319611376	NJ-103-1T	-1
+	L319611376	NJ-105-1F	1
+	L319615436	length	126
+	L319615436	ttime	6
+	L319615436	NJ-114-1T	-1
+	L319615436	NJ-113-1F	1
+	L319615438	length	151
+	L319615438	ttime	7
+	L319615438	NJ-107-1T	-1
+	L319615438	NJ-109-1F	1
+	L319615439	length	472
+	L319615439	ttime	22
+	L319615439	NJ-109-2T	-1
+	L319615439	NJ-114-2F	1
+	L319615440	length	244
+	L319615440	ttime	11
+	L319615440	NJ-108-1T	-1
+	L319615440	NJ-200-1F	1
+	L319615442	length	181
+	L319615442	ttime	8
+	L319615442	NJ-111-1T	-1
+	L319615442	NJ-110-1F	1
+	L319615443	length	186
+	L319615443	ttime	9
+	L319615443	NJ-112-1T	-1
+	L319615443	NJ-111-1F	1
+	L319615444	length	8135
+	L319615444	ttime	377
+	L319615444	NJ-200-1T	-1
+	L319615444	NJ-106-1F	1
+	L319615445	length	51
+	L319615445	ttime	3
+	L319615445	NJ-115-2T	-1
+	L319615445	NJ-116-1F	1
+	L34634650	length	762
+	L34634650	ttime	57
+	L34634650	NJ-100-2T	-1
+	L34634650	NJ-94-1F	1
+	L354388194	length	870
+	L354388194	ttime	40
+	L354388194	NJ-140-1T	-1
+	L354388194	NJ-142-1F	1
+	L354388196	length	190
+	L354388196	ttime	9
+	L354388196	NJ-143-1T	-1
+	L354388196	NJ-141-1F	1
+	L354388197	length	214
+	L354388197	ttime	10
+	L354388197	NJ-144-1T	-1
+	L354388197	NJ-145-1F	1
+	L354388200	length	208
+	L354388200	ttime	10
+	L354388200	NJ-148-1T	-1
+	L354388200	NJ-147-1F	1
+	L354388205	length	126
+	L354388205	ttime	7
+	L354388205	NJ-138-1T	-1
+	L354388205	NJ-140-1F	1
+	L354388209	length	433
+	L354388209	ttime	20
+	L354388209	NJ-147-2T	-1
+	L354388209	NJ-143-1F	1
+	L354388212	length	593
+	L354388212	ttime	28
+	L354388212	NJ-145-1T	-1
+	L354388212	NJ-149-1F	1
+	L354388214	length	469
+	L354388214	ttime	22
+	L354388214	NJ-152-1T	-1
+	L354388214	NJ-148-1F	1
+	L354388217	length	287
+	L354388217	ttime	13
+	L354388217	NJ-153-1T	-1
+	L354388217	NJ-154-1F	1
+	L354388220	length	105
+	L354388220	ttime	5
+	L354388220	NJ-169-1T	-1
+	L354388220	NJ-168-1F	1
+	L354388221	length	4906
+	L354388221	ttime	227
+	L354388221	NJ-170-1T	-1
+	L354388221	NJ-172-1F	1
+	L354388223	length	213
+	L354388223	ttime	11
+	L354388223	NJ-146-1T	-1
+	L354388223	NJ-143-2F	1
+	L354388224	length	584
+	L354388224	ttime	28
+	L354388224	NJ-166-2T	-1
+	L354388224	NJ-149-2F	1
+	L354388229	length	152
+	L354388229	ttime	13
+	L354388229	NJ-15-2T	-1
+	L354388229	NJ-12-2F	1
+	L354388232	length	145
+	L354388232	ttime	11
+	L354388232	NJ-11-2T	-1
+	L354388232	NJ-15-1F	1
+	L354388234	length	154
+	L354388234	ttime	11
+	L354388234	NJ-120-1T	-1
+	L354388234	NJ-123-1F	1
+	L354388235	length	170
+	L354388235	ttime	11
+	L354388235	NJ-122-1T	-1
+	L354388235	NJ-119-1F	1
+	L354388253	length	49
+	L354388253	ttime	3
+	L354388253	NJ-127-1T	-1
+	L354388253	NJ-128-1F	1
+	L354388254	length	33
+	L354388254	ttime	2
+	L354388254	NJ-126-1T	-1
+	L354388254	NJ-124-1F	1
+	L354388265	length	62
+	L354388265	ttime	3
+	L354388265	NJ-129-1T	-1
+	L354388265	NJ-126-2F	1
+	L354388269	length	50
+	L354388269	ttime	8
+	L354388269	NJ-118-1T	-1
+	L354388269	NJ-121-1F	1
+	L354388273#0	length	106
+	L354388273#0	ttime	7
+	L354388273#0	NJ-119-1T	-1
+	L354388273#0	NJ-115-1F	1
+	L354388274#0	length	39
+	L354388274#0	ttime	2
+	L354388274#0	NJ-123-1T	-1
+	L354388274#0	NJ-125-1F	1
+	L354388274#1	length	18
+	L354388274#1	ttime	1
+	L354388274#1	NJ-125-1T	-1
+	L354388274#1	NJ-127-1F	1
+	L354388275	length	46
+	L354388275	ttime	3
+	L354388275	NJ-118-2T	-1
+	L354388275	NJ-120-1F	1
+	L354388279	length	648
+	L354388279	ttime	50
+	L354388279	NJ-116-1T	-1
+	L354388279	NJ-108-1F	1
+	L354388286	length	156
+	L354388286	ttime	13
+	L354388286	NJ-121-1T	-1
+	L354388286	NJ-123-2F	1
+	L389783905	length	112
+	L389783905	ttime	5
+	L389783905	NJ-139-1T	-1
+	L389783905	NJ-137-1F	1
+	L389783908	length	273
+	L389783908	ttime	13
+	L389783908	NJ-137-2T	-1
+	L389783908	NJ-136-1F	1
+	L389783911.154	length	484
+	L389783911.154	ttime	22
+	L389783911.154	NJ-131-1T	-1
+	L389783911.154	NJ-138-2F	1
+	L389783912	length	923
+	L389783912	ttime	43
+	L389783912	NJ-141-1T	-1
+	L389783912	NJ-139-1F	1
+	L404935451	length	105
+	L404935451	ttime	9
+	L404935451	NJ-196-1T	-1
+	L404935451	NJ-86-2F	1
+	L404935462	length	143
+	L404935462	ttime	11
+	L404935462	NJ-85-2T	-1
+	L404935462	NJ-201-1F	1
+	L462392853	length	10
+	L462392853	ttime	1
+	L462392853	NJ-124-1T	-1
+	L462392853	NJ-122-1F	1
+	L462392854	length	184
+	L462392854	ttime	9
+	L462392854	NJ-142-1T	-1
+	L462392854	NJ-144-1F	1
+	L462392856	length	287
+	L462392856	ttime	13
+	L462392856	NJ-168-1T	-1
+	L462392856	NJ-166-1F	1
+	L462392857	length	58
+	L462392857	ttime	3
+	L462392857	NJ-167-1T	-1
+	L462392857	NJ-164-1F	1
+	L462392859	length	312
+	L462392859	ttime	15
+	L462392859	NJ-164-1T	-1
+	L462392859	NJ-163-1F	1
+	L462392864	length	82
+	L462392864	ttime	4
+	L462392864	NJ-150-1T	-1
+	L462392864	NJ-151-1F	1
+	L462392865	length	149
+	L462392865	ttime	7
+	L462392865	NJ-151-1T	-1
+	L462392865	NJ-153-1F	1
+	L462392866	length	22
+	L462392866	ttime	1
+	L462392866	NJ-7-1T	-1
+	L462392866	NJ-5-1F	1
+	L462392867	length	31
+	L462392867	ttime	2
+	L462392867	NJ-5-1T	-1
+	L462392867	NJ-4-2F	1
+	L462392868	length	231
+	L462392868	ttime	11
+	L462392868	NJ-159-2T	-1
+	L462392868	NJ-157-1F	1
+	L462392869	length	125
+	L462392869	ttime	6
+	L462392869	NJ-158-1T	-1
+	L462392869	NJ-160-1F	1
+	L462392870	length	255
+	L462392870	ttime	12
+	L462392870	NJ-155-1T	-1
+	L462392870	NJ-158-2F	1
+	L462392872	length	156
+	L462392872	ttime	7
+	L462392872	NJ-161-1T	-1
+	L462392872	NJ-159-1F	1
+	L5	length	1523
+	L5	ttime	118
+	L5	NJ-32-2T	-1
+	L5	NJ-33-1F	1
+	L516175821	length	333
+	L516175821	ttime	15
+	L516175821	NJ-191-1T	-1
+	L516175821	NJ-188-1F	1
+	L527319195	length	323
+	L527319195	ttime	15
+	L527319195	NJ-184-1T	-1
+	L527319195	NJ-186-1F	1
+	L527319202	length	123
+	L527319202	ttime	6
+	L527319202	NJ-188-1T	-1
+	L527319202	NJ-187-1F	1
+	L527319204	length	236
+	L527319204	ttime	11
+	L527319204	NJ-173-1T	-1
+	L527319204	NJ-175-1F	1
+	L527319205	length	313
+	L527319205	ttime	15
+	L527319205	NJ-177-1T	-1
+	L527319205	NJ-176-1F	1
+	L527319206	length	766
+	L527319206	ttime	36
+	L527319206	NJ-175-1T	-1
+	L527319206	NJ-179-1F	1
+	L549319302	length	9
+	L549319302	ttime	1
+	L549319302	NJ-59-2T	-1
+	L549319302	NJ-57-1F	1
+	L549319303	length	13
+	L549319303	ttime	2
+	L549319303	NJ-60-1T	-1
+	L549319303	NJ-61-1F	1
+	L549319305	length	10
+	L549319305	ttime	1
+	L549319305	NJ-66-2T	-1
+	L549319305	NJ-64-1F	1
+	L549517179#0	length	957
+	L549517179#0	ttime	75
+	L549517179#0	NJ-22-2T	-1
+	L549517179#0	NJ-21-2F	1
+	L549802402	length	18
+	L549802402	ttime	2
+	L549802402	NJ-24-2T	-1
+	L549802402	NJ-26-2F	1
+	L561990751#1	length	267
+	L561990751#1	ttime	22
+	L561990751#1	NJ-17-2T	-1
+	L561990751#1	NJ-16-2F	1
+	L561990751#2	length	887
+	L561990751#2	ttime	51
+	L561990751#2	NJ-16-2T	-1
+	L561990751#2	NJ-15-2F	1
+	L598399304	length	190
+	L598399304	ttime	9
+	L598399304	NJ-149-1T	-1
+	L598399304	NJ-150-1F	1
+	L598399305	length	1232
+	L598399305	ttime	57
+	L598399305	NJ-174-1T	-1
+	L598399305	NJ-171-1F	1
+	L598399306	length	205
+	L598399306	ttime	9
+	L598399306	NJ-176-1T	-1
+	L598399306	NJ-174-1F	1
+	L598399307	length	119
+	L598399307	ttime	6
+	L598399307	NJ-178-1T	-1
+	L598399307	NJ-177-1F	1
+	L598399308	length	339
+	L598399308	ttime	16
+	L598399308	NJ-180-1T	-1
+	L598399308	NJ-178-1F	1
+	L598399309	length	241
+	L598399309	ttime	11
+	L598399309	NJ-185-1T	-1
+	L598399309	NJ-183-1F	1
+	L6	length	163
+	L6	ttime	13
+	L6	NJ-39-2T	-1
+	L6	NJ-40-2F	1
+	L621945350	length	406
+	L621945350	ttime	23
+	L621945350	NJ-21-2T	-1
+	L621945350	NJ-20-2F	1
+	L621945352	length	223
+	L621945352	ttime	13
+	L621945352	NJ-18-2T	-1
+	L621945352	NJ-192-2F	1
+	L621945353	length	375
+	L621945353	ttime	25
+	L621945353	NJ-192-2T	-1
+	L621945353	NJ-17-2F	1
+	L67446110	length	272
+	L67446110	ttime	19
+	L67446110	NJ-186-2T	-1
+	L67446110	NJ-196-2F	1
+	L67446155	length	482
+	L67446155	ttime	22
+	L67446155	NJ-165-1T	-1
+	L67446155	NJ-170-1F	1
+	L67446165	length	426
+	L67446165	ttime	21
+	L67446165	NJ-145-2T	-1
+	L67446165	NJ-165-2F	1
+	L67446167	length	340
+	L67446167	ttime	19
+	L67446167	NJ-201-1T	-1
+	L67446167	NJ-189-2F	1
+	L67446185	length	257
+	L67446185	ttime	21
+	L67446185	NJ-201-2T	-1
+	L67446185	NJ-193-1F	1
+	L6a	length	148
+	L6a	ttime	16
+	L6a	NJ-40-2T	-1
+	L6a	NJ-41-2F	1
+	L7	length	663
+	L7	ttime	70
+	L7	NJ-41-2T	-1
+	L7	NJ-gneJ4-1F	1
+	L77477309	length	222
+	L77477309	ttime	14
+	L77477309	NJ-76-2T	-1
+	L77477309	NJ-77-1F	1
+	L77477317	length	645
+	L77477317	ttime	41
+	L77477317	NJ-67-2T	-1
+	L77477317	NJ-66-1F	1
+	L77477323	length	116
+	L77477323	ttime	9
+	L77477323	NJ-75-1T	-1
+	L77477323	NJ-67-2F	1
+	L77477324#0	length	701
+	L77477324#0	ttime	48
+	L77477324#0	NJ-53-2T	-1
+	L77477324#0	NJ-51-2F	1
+	L77477329#0	length	19
+	L77477329#0	ttime	2
+	L77477329#0	NJ-69-1T	-1
+	L77477329#0	NJ-70-2F	1
+	L77477329#1	length	5
+	L77477329#1	ttime	0
+	L77477329#1	NJ-70-1T	-1
+	L77477329#1	NJ-71-1F	1
+	L77477329#2	length	18
+	L77477329#2	ttime	2
+	L77477329#2	NJ-71-1T	-1
+	L77477329#2	NJ-72-2F	1
+	L77477329#3	length	9
+	L77477329#3	ttime	1
+	L77477329#3	NJ-72-1T	-1
+	L77477329#3	NJ-73-1F	1
+	L77477329#4	length	16
+	L77477329#4	ttime	1
+	L77477329#4	NJ-73-2T	-1
+	L77477329#4	NJ-74-2F	1
+	L77477329#5	length	5
+	L77477329#5	ttime	0
+	L77477329#5	NJ-74-1T	-1
+	L77477329#5	NJ-75-1F	1
+	L77477329#6	length	20
+	L77477329#6	ttime	2
+	L77477329#6	NJ-75-2T	-1
+	L77477329#6	NJ-68-2F	1
+	L77477329#7	length	7
+	L77477329#7	ttime	1
+	L77477329#7	NJ-68-1T	-1
+	L77477329#7	NJ-69-1F	1
+	L77477331	length	168
+	L77477331	ttime	13
+	L77477331	NJ-71-2T	-1
+	L77477331	NJ-76-2F	1
+	L77477334#0	length	4
+	L77477334#0	ttime	0
+	L77477334#0	NJ-62-1T	-1
+	L77477334#0	NJ-63-1F	1
+	L77477334#2	length	36
+	L77477334#2	ttime	4
+	L77477334#2	NJ-64-1T	-1
+	L77477334#2	NJ-65-1F	1
+	L77477334#4	length	30
+	L77477334#4	ttime	3
+	L77477334#4	NJ-61-1T	-1
+	L77477334#4	NJ-62-1F	1
+	L77477351	length	213
+	L77477351	ttime	12
+	L77477351	NJ-69-2T	-1
+	L77477351	NJ-80-1F	1
+	L77477353	length	15
+	L77477353	ttime	1
+	L77477353	NJ-65-1T	-1
+	L77477353	NJ-60-2F	1
+	L77477359	length	11
+	L77477359	ttime	1
+	L77477359	NJ-56-1T	-1
+	L77477359	NJ-59-1F	1
+	L77477369#1	length	54
+	L77477369#1	ttime	5
+	L77477369#1	NJ-34-1T	-1
+	L77477369#1	NJ-35-1F	1
+	L77477369#2	length	5
+	L77477369#2	ttime	1
+	L77477369#2	NJ-35-1T	-1
+	L77477369#2	NJ-36-1F	1
+	L77477369#4	length	67
+	L77477369#4	ttime	5
+	L77477369#4	NJ-37-1T	-1
+	L77477369#4	NJ-38-1F	1
+	L77477376	length	10
+	L77477376	ttime	1
+	L77477376	NJ-58-1T	-1
+	L77477376	NJ-53-2F	1
+	L77477384	length	12
+	L77477384	ttime	1
+	L77477384	NJ-63-1T	-1
+	L77477384	NJ-66-2F	1
+	L77477389#0	length	3
+	L77477389#0	ttime	0
+	L77477389#0	NJ-55-1T	-1
+	L77477389#0	NJ-56-1F	1
+	L77477389#2	length	37
+	L77477389#2	ttime	4
+	L77477389#2	NJ-57-1T	-1
+	L77477389#2	NJ-58-1F	1
+	L77477389#4	length	25
+	L77477389#4	ttime	3
+	L77477389#4	NJ-54-1T	-1
+	L77477389#4	NJ-55-1F	1
+	L77477395	length	562
+	L77477395	ttime	36
+	L77477395	NJ-60-2T	-1
+	L77477395	NJ-59-2F	1
+	L77477398	length	6
+	L77477398	ttime	1
+	L77477398	NJ-38-1T	-1
+	L77477398	NJ-33-2F	1
+	L77477402	length	1523
+	L77477402	ttime	120
+	L77477402	NJ-33-2T	-1
+	L77477402	NJ-32-1F	1
+	L8	length	23
+	L8	ttime	2
+	L8	NJ-gneJ4-1T	-1
+	L8	NJ-43-2F	1
+	L9	length	190
+	L9	ttime	15
+	L9	NJ-43-2T	-1
+	L9	NJ-45-2F	1
+	L95223234	length	261
+	L95223234	ttime	20
+	L95223234	NJ-135-1T	-1
+	L95223234	NJ-136-2F	1
+	L95223237	length	274
+	L95223237	ttime	13
+	L95223237	NJ-110-2T	-1
+	L95223237	NJ-108-2F	1
+	L95223238	length	70
+	L95223238	ttime	5
+	L95223238	NJ-133-1T	-1
+	L95223238	NJ-135-1F	1
+	L95223244	length	69
+	L95223244	ttime	4
+	L95223244	NJ-134-1T	-1
+	L95223244	NJ-132-1F	1
+	L95223248	length	133
+	L95223248	ttime	8
+	L95223248	NJ-132-1T	-1
+	L95223248	NJ-129-1F	1
+	L95710171#1	length	35
+	L95710171#1	ttime	3
+	L95710171#1	NJ-90-1T	-1
+	L95710171#1	NJ-91-1F	1
+	L95710171#3	length	40
+	L95710171#3	ttime	3
+	L95710171#3	NJ-88-1T	-1
+	L95710171#3	NJ-89-1F	1
+	L95710174	length	101
+	L95710174	ttime	6
+	L95710174	NJ-89-1T	-1
+	L95710174	NJ-202-1F	1
+	L95710174.113	length	157
+	L95710174.113	ttime	10
+	L95710174.113	NJ-202-1T	-1
+	L95710174.113	NJ-93-1F	1
+	L96039763	length	92
+	L96039763	ttime	4
+	L96039763	NJ-157-1T	-1
+	L96039763	NJ-156-1F	1
+	L96039766	length	329
+	L96039766	ttime	15
+	L96039766	NJ-156-1T	-1
+	L96039766	NJ-152-2F	1
+	L96065606	length	196
+	L96065606	ttime	16
+	L96065606	NJ-155-2T	-1
+	L96065606	NJ-14-2F	1
+	L96065608	length	84
+	L96065608	ttime	4
+	L96065608	NJ-154-1T	-1
+	L96065608	NJ-155-1F	1
+	L96183767	length	817
+	L96183767	ttime	42
+	L96183767	NJ-83-2T	-1
+	L96183767	NJ-88-1F	1
+	L96183778	length	824
+	L96183778	ttime	41
+	L96183778	NJ-91-1T	-1
+	L96183778	NJ-84-2F	1
+	LgneE1	length	25
+	LgneE1	ttime	2
+	LgneE1	NJ-28-2T	-1
+	LgneE1	NJ-32-2F	1
+	LgneE2	length	22
+	LgneE2	ttime	2
+	LgneE2	NJ-36-1T	-1
+	LgneE2	NJ-39-2F	1
+	LJ-76-1	length	12
+	LJ-76-1	ttime	1
+	LJ-76-1	NJ-76-1F	-1
+	LJ-76-1	NJ-76-1T	1
+	LJ-72-1	length	13
+	LJ-72-1	ttime	1
+	LJ-72-1	NJ-72-1F	-1
+	LJ-72-1	NJ-72-1T	1
+	LJ-73-1	length	5
+	LJ-73-1	ttime	0
+	LJ-73-1	NJ-73-1F	-1
+	LJ-73-1	NJ-73-2T	1
+	LJ-73-2	length	5
+	LJ-73-2	ttime	0
+	LJ-73-2	NJ-73-1F	-1
+	LJ-73-2	NJ-73-1T	1
+	LJ-74-1	length	13
+	LJ-74-1	ttime	1
+	LJ-74-1	NJ-74-2F	-1
+	LJ-74-1	NJ-74-1T	1
+	LJ-75-1	length	12
+	LJ-75-1	ttime	1
+	LJ-75-1	NJ-75-1F	-1
+	LJ-75-1	NJ-75-1T	1
+	LJ-75-2	length	12
+	LJ-75-2	ttime	1
+	LJ-75-2	NJ-75-1F	-1
+	LJ-75-2	NJ-75-2T	1
+	LJ-67-1	length	8
+	LJ-67-1	ttime	1
+	LJ-67-1	NJ-67-2F	-1
+	LJ-67-1	NJ-67-2T	1
+	LJ-66-1	length	4
+	LJ-66-1	ttime	0
+	LJ-66-1	NJ-66-1F	-1
+	LJ-66-1	NJ-66-2T	1
+	LJ-64-1	length	6
+	LJ-64-1	ttime	1
+	LJ-64-1	NJ-64-1F	-1
+	LJ-64-1	NJ-64-1T	1
+	LJ-65-1	length	7
+	LJ-65-1	ttime	1
+	LJ-65-1	NJ-65-1F	-1
+	LJ-65-1	NJ-65-1T	1
+	LJ-60-1	length	6
+	LJ-60-1	ttime	0
+	LJ-60-1	NJ-60-2F	-1
+	LJ-60-1	NJ-60-2T	1
+	LJ-59-1	length	5
+	LJ-59-1	ttime	0
+	LJ-59-1	NJ-59-2F	-1
+	LJ-59-1	NJ-59-2T	1
+	LJ-57-1	length	7
+	LJ-57-1	ttime	1
+	LJ-57-1	NJ-57-1F	-1
+	LJ-57-1	NJ-57-1T	1
+	LJ-58-1	length	6
+	LJ-58-1	ttime	1
+	LJ-58-1	NJ-58-1F	-1
+	LJ-58-1	NJ-58-1T	1
+	LJ-53-1	length	6
+	LJ-53-1	ttime	1
+	LJ-53-1	NJ-53-2F	-1
+	LJ-53-1	NJ-53-2T	1
+	LJ-51-1	length	0
+	LJ-51-1	ttime	0
+	LJ-51-1	NJ-51-2F	-1
+	LJ-51-1	NJ-51-2T	1
+	LJ-48-1	length	0
+	LJ-48-1	ttime	0
+	LJ-48-1	NJ-48-2F	-1
+	LJ-48-1	NJ-48-2T	1
+	LJ-gneJ7-1	length	0
+	LJ-gneJ7-1	ttime	0
+	LJ-gneJ7-1	NJ-gneJ7-2F	-1
+	LJ-gneJ7-1	NJ-gneJ7-2T	1
+	LJ-45-1	length	0
+	LJ-45-1	ttime	0
+	LJ-45-1	NJ-45-1F	-1
+	LJ-45-1	NJ-45-2T	1
+	LJ-gneJ8-1	length	0
+	LJ-gneJ8-1	ttime	0
+	LJ-gneJ8-1	NJ-gneJ8-1F	-1
+	LJ-gneJ8-1	NJ-gneJ8-1T	1
+	LJ-43-1	length	0
+	LJ-43-1	ttime	0
+	LJ-43-1	NJ-43-1F	-1
+	LJ-43-1	NJ-43-1T	1
+	LJ-41-1	length	5
+	LJ-41-1	ttime	1
+	LJ-41-1	NJ-41-1F	-1
+	LJ-41-1	NJ-41-1T	1
+	LJ-40-1	length	0
+	LJ-40-1	ttime	0
+	LJ-40-1	NJ-40-1F	-1
+	LJ-40-1	NJ-40-1T	1
+	LJ-39-1	length	4
+	LJ-39-1	ttime	0
+	LJ-39-1	NJ-39-1F	-1
+	LJ-39-1	NJ-39-1T	1
+	LJ-37-1	length	7
+	LJ-37-1	ttime	1
+	LJ-37-1	NJ-37-1F	-1
+	LJ-37-1	NJ-37-1T	1
+	LJ-38-1	length	15
+	LJ-38-1	ttime	1
+	LJ-38-1	NJ-38-1F	-1
+	LJ-38-1	NJ-38-1T	1
+	LJ-33-1	length	4
+	LJ-33-1	ttime	1
+	LJ-33-1	NJ-33-2F	-1
+	LJ-33-1	NJ-33-2T	1
+	LJ-32-1	length	9
+	LJ-32-1	ttime	1
+	LJ-32-1	NJ-32-1F	-1
+	LJ-32-1	NJ-32-1T	1
+	LJ-29-1	length	7
+	LJ-29-1	ttime	1
+	LJ-29-1	NJ-29-2F	-1
+	LJ-29-1	NJ-29-1T	1
+	LJ-30-1	length	1
+	LJ-30-1	ttime	0
+	LJ-30-1	NJ-30-1F	-1
+	LJ-30-1	NJ-30-1T	1
+	LJ-31-1	length	6
+	LJ-31-1	ttime	1
+	LJ-31-1	NJ-31-1F	-1
+	LJ-31-1	NJ-31-1T	1
+	LJ-31-2	length	6
+	LJ-31-2	ttime	1
+	LJ-31-2	NJ-31-1F	-1
+	LJ-31-2	NJ-31-2T	1
+	LJ-22-1	length	4
+	LJ-22-1	ttime	0
+	LJ-22-1	NJ-22-1F	-1
+	LJ-22-1	NJ-22-2T	1
+	LJ-21-1	length	0
+	LJ-21-1	ttime	0
+	LJ-21-1	NJ-21-2F	-1
+	LJ-21-1	NJ-21-2T	1
+	LJ-20-1	length	0
+	LJ-20-1	ttime	0
+	LJ-20-1	NJ-20-2F	-1
+	LJ-20-1	NJ-20-2T	1
+	LJ-19-1	length	0
+	LJ-19-1	ttime	0
+	LJ-19-1	NJ-19-2F	-1
+	LJ-19-1	NJ-19-2T	1
+	LJ-18-1	length	1
+	LJ-18-1	ttime	0
+	LJ-18-1	NJ-18-2F	-1
+	LJ-18-1	NJ-18-2T	1
+	LJ-192-1	length	1
+	LJ-192-1	ttime	0
+	LJ-192-1	NJ-192-2F	-1
+	LJ-192-1	NJ-192-2T	1
+	LJ-17-1	length	0
+	LJ-17-1	ttime	0
+	LJ-17-1	NJ-17-2F	-1
+	LJ-17-1	NJ-17-2T	1
+	LJ-16-1	length	0
+	LJ-16-1	ttime	0
+	LJ-16-1	NJ-16-2F	-1
+	LJ-16-1	NJ-16-2T	1
+	LJ-15-1	length	0
+	LJ-15-1	ttime	0
+	LJ-15-1	NJ-15-2F	-1
+	LJ-15-1	NJ-15-2T	1
+	LJ-12-1	length	20
+	LJ-12-1	ttime	2
+	LJ-12-1	NJ-12-2F	-1
+	LJ-12-1	NJ-12-1T	1
+	LJ-13-1	length	22
+	LJ-13-1	ttime	2
+	LJ-13-1	NJ-13-1F	-1
+	LJ-13-1	NJ-13-1T	1
+	LJ-13-2	length	22
+	LJ-13-2	ttime	2
+	LJ-13-2	NJ-13-1F	-1
+	LJ-13-2	NJ-13-2T	1
+	LJ-14-1	length	6
+	LJ-14-1	ttime	1
+	LJ-14-1	NJ-14-1F	-1
+	LJ-14-1	NJ-14-1T	1
+	LJ-8-1	length	11
+	LJ-8-1	ttime	1
+	LJ-8-1	NJ-8-1F	-1
+	LJ-8-1	NJ-8-1T	1
+	LJ-7-1	length	8
+	LJ-7-1	ttime	1
+	LJ-7-1	NJ-7-1F	-1
+	LJ-7-1	NJ-7-1T	1
+	LJ-5-1	length	20
+	LJ-5-1	ttime	1
+	LJ-5-1	NJ-5-1F	-1
+	LJ-5-1	NJ-5-1T	1
+	LJ-4-1	length	7
+	LJ-4-1	ttime	0
+	LJ-4-1	NJ-4-2F	-1
+	LJ-4-1	NJ-4-1T	1
+	LJ-3-1	length	11
+	LJ-3-1	ttime	1
+	LJ-3-1	NJ-3-2F	-1
+	LJ-3-1	NJ-3-1T	1
+	LJ-2-1	length	12
+	LJ-2-1	ttime	1
+	LJ-2-1	NJ-2-2F	-1
+	LJ-2-1	NJ-2-1T	1
+	LJ-2-2	length	12
+	LJ-2-2	ttime	1
+	LJ-2-2	NJ-2-3F	-1
+	LJ-2-2	NJ-2-2T	1
+	LJ-3-2	length	11
+	LJ-3-2	ttime	1
+	LJ-3-2	NJ-3-1F	-1
+	LJ-3-2	NJ-3-2T	1
+	LJ-3-3	length	11
+	LJ-3-3	ttime	1
+	LJ-3-3	NJ-3-1F	-1
+	LJ-3-3	NJ-3-3T	1
+	LJ-4-2	length	7
+	LJ-4-2	ttime	0
+	LJ-4-2	NJ-4-1F	-1
+	LJ-4-2	NJ-4-2T	1
+	LJ-6-1	length	12
+	LJ-6-1	ttime	1
+	LJ-6-1	NJ-6-1F	-1
+	LJ-6-1	NJ-6-1T	1
+	LJ-10-1	length	17
+	LJ-10-1	ttime	2
+	LJ-10-1	NJ-10-1F	-1
+	LJ-10-1	NJ-10-1T	1
+	LJ-11-1	length	18
+	LJ-11-1	ttime	2
+	LJ-11-1	NJ-11-1F	-1
+	LJ-11-1	NJ-11-2T	1
+	LJ-11-2	length	18
+	LJ-11-2	ttime	2
+	LJ-11-2	NJ-11-1F	-1
+	LJ-11-2	NJ-11-1T	1
+	LJ-15-2	length	0
+	LJ-15-2	ttime	0
+	LJ-15-2	NJ-15-1F	-1
+	LJ-15-2	NJ-15-1T	1
+	LJ-203-1	length	0
+	LJ-203-1	ttime	0
+	LJ-203-1	NJ-203-1F	-1
+	LJ-203-1	NJ-203-1T	1
+	LJ-16-2	length	0
+	LJ-16-2	ttime	0
+	LJ-16-2	NJ-16-1F	-1
+	LJ-16-2	NJ-16-1T	1
+	LJ-17-2	length	0
+	LJ-17-2	ttime	0
+	LJ-17-2	NJ-17-1F	-1
+	LJ-17-2	NJ-17-1T	1
+	LJ-192-2	length	1
+	LJ-192-2	ttime	0
+	LJ-192-2	NJ-192-1F	-1
+	LJ-192-2	NJ-192-1T	1
+	LJ-18-2	length	1
+	LJ-18-2	ttime	0
+	LJ-18-2	NJ-18-1F	-1
+	LJ-18-2	NJ-18-1T	1
+	LJ-19-2	length	0
+	LJ-19-2	ttime	0
+	LJ-19-2	NJ-19-1F	-1
+	LJ-19-2	NJ-19-1T	1
+	LJ-20-2	length	0
+	LJ-20-2	ttime	0
+	LJ-20-2	NJ-20-1F	-1
+	LJ-20-2	NJ-20-1T	1
+	LJ-21-2	length	0
+	LJ-21-2	ttime	0
+	LJ-21-2	NJ-21-1F	-1
+	LJ-21-2	NJ-21-1T	1
+	LJ-22-2	length	4
+	LJ-22-2	ttime	0
+	LJ-22-2	NJ-22-2F	-1
+	LJ-22-2	NJ-22-1T	1
+	LJ-23-1	length	11
+	LJ-23-1	ttime	1
+	LJ-23-1	NJ-23-2F	-1
+	LJ-23-1	NJ-23-1T	1
+	LJ-24-1	length	8
+	LJ-24-1	ttime	1
+	LJ-24-1	NJ-24-1F	-1
+	LJ-24-1	NJ-24-1T	1
+	LJ-24-2	length	8
+	LJ-24-2	ttime	1
+	LJ-24-2	NJ-24-1F	-1
+	LJ-24-2	NJ-24-2T	1
+	LJ-27-1	length	8
+	LJ-27-1	ttime	1
+	LJ-27-1	NJ-27-1F	-1
+	LJ-27-1	NJ-27-1T	1
+	LJ-28-1	length	5
+	LJ-28-1	ttime	1
+	LJ-28-1	NJ-28-1F	-1
+	LJ-28-1	NJ-28-2T	1
+	LJ-28-2	length	5
+	LJ-28-2	ttime	1
+	LJ-28-2	NJ-28-1F	-1
+	LJ-28-2	NJ-28-1T	1
+	LJ-32-2	length	9
+	LJ-32-2	ttime	1
+	LJ-32-2	NJ-32-2F	-1
+	LJ-32-2	NJ-32-2T	1
+	LJ-33-2	length	4
+	LJ-33-2	ttime	1
+	LJ-33-2	NJ-33-1F	-1
+	LJ-33-2	NJ-33-1T	1
+	LJ-34-1	length	16
+	LJ-34-1	ttime	2
+	LJ-34-1	NJ-34-1F	-1
+	LJ-34-1	NJ-34-1T	1
+	LJ-35-1	length	1
+	LJ-35-1	ttime	0
+	LJ-35-1	NJ-35-1F	-1
+	LJ-35-1	NJ-35-1T	1
+	LJ-36-1	length	12
+	LJ-36-1	ttime	1
+	LJ-36-1	NJ-36-1F	-1
+	LJ-36-1	NJ-36-1T	1
+	LJ-39-2	length	4
+	LJ-39-2	ttime	0
+	LJ-39-2	NJ-39-2F	-1
+	LJ-39-2	NJ-39-2T	1
+	LJ-40-2	length	0
+	LJ-40-2	ttime	0
+	LJ-40-2	NJ-40-2F	-1
+	LJ-40-2	NJ-40-2T	1
+	LJ-41-2	length	5
+	LJ-41-2	ttime	1
+	LJ-41-2	NJ-41-2F	-1
+	LJ-41-2	NJ-41-2T	1
+	LJ-gneJ4-1	length	0
+	LJ-gneJ4-1	ttime	0
+	LJ-gneJ4-1	NJ-gneJ4-1F	-1
+	LJ-gneJ4-1	NJ-gneJ4-1T	1
+	LJ-43-2	length	0
+	LJ-43-2	ttime	0
+	LJ-43-2	NJ-43-2F	-1
+	LJ-43-2	NJ-43-2T	1
+	LJ-45-2	length	0
+	LJ-45-2	ttime	0
+	LJ-45-2	NJ-45-2F	-1
+	LJ-45-2	NJ-45-1T	1
+	LJ-gneJ7-2	length	0
+	LJ-gneJ7-2	ttime	0
+	LJ-gneJ7-2	NJ-gneJ7-1F	-1
+	LJ-gneJ7-2	NJ-gneJ7-1T	1
+	LJ-48-2	length	0
+	LJ-48-2	ttime	0
+	LJ-48-2	NJ-48-1F	-1
+	LJ-48-2	NJ-48-1T	1
+	LJ-51-2	length	0
+	LJ-51-2	ttime	0
+	LJ-51-2	NJ-51-1F	-1
+	LJ-51-2	NJ-51-1T	1
+	LJ-53-2	length	6
+	LJ-53-2	ttime	1
+	LJ-53-2	NJ-53-1F	-1
+	LJ-53-2	NJ-53-1T	1
+	LJ-54-1	length	7
+	LJ-54-1	ttime	1
+	LJ-54-1	NJ-54-1F	-1
+	LJ-54-1	NJ-54-1T	1
+	LJ-55-1	length	1
+	LJ-55-1	ttime	0
+	LJ-55-1	NJ-55-1F	-1
+	LJ-55-1	NJ-55-1T	1
+	LJ-56-1	length	7
+	LJ-56-1	ttime	1
+	LJ-56-1	NJ-56-1F	-1
+	LJ-56-1	NJ-56-1T	1
+	LJ-59-2	length	5
+	LJ-59-2	ttime	0
+	LJ-59-2	NJ-59-1F	-1
+	LJ-59-2	NJ-59-1T	1
+	LJ-60-2	length	6
+	LJ-60-2	ttime	0
+	LJ-60-2	NJ-60-1F	-1
+	LJ-60-2	NJ-60-1T	1
+	LJ-61-1	length	6
+	LJ-61-1	ttime	1
+	LJ-61-1	NJ-61-1F	-1
+	LJ-61-1	NJ-61-1T	1
+	LJ-62-1	length	1
+	LJ-62-1	ttime	0
+	LJ-62-1	NJ-62-1F	-1
+	LJ-62-1	NJ-62-1T	1
+	LJ-63-1	length	7
+	LJ-63-1	ttime	1
+	LJ-63-1	NJ-63-1F	-1
+	LJ-63-1	NJ-63-1T	1
+	LJ-66-2	length	4
+	LJ-66-2	ttime	0
+	LJ-66-2	NJ-66-2F	-1
+	LJ-66-2	NJ-66-1T	1
+	LJ-67-2	length	8
+	LJ-67-2	ttime	1
+	LJ-67-2	NJ-67-1F	-1
+	LJ-67-2	NJ-67-1T	1
+	LJ-68-1	length	13
+	LJ-68-1	ttime	1
+	LJ-68-1	NJ-68-1F	-1
+	LJ-68-1	NJ-68-1T	1
+	LJ-69-1	length	13
+	LJ-69-1	ttime	1
+	LJ-69-1	NJ-69-1F	-1
+	LJ-69-1	NJ-69-1T	1
+	LJ-69-2	length	13
+	LJ-69-2	ttime	1
+	LJ-69-2	NJ-69-1F	-1
+	LJ-69-2	NJ-69-2T	1
+	LJ-70-1	length	13
+	LJ-70-1	ttime	1
+	LJ-70-1	NJ-70-2F	-1
+	LJ-70-1	NJ-70-1T	1
+	LJ-71-1	length	12
+	LJ-71-1	ttime	1
+	LJ-71-1	NJ-71-1F	-1
+	LJ-71-1	NJ-71-2T	1
+	LJ-71-2	length	12
+	LJ-71-2	ttime	1
+	LJ-71-2	NJ-71-1F	-1
+	LJ-71-2	NJ-71-1T	1
+	LJ-76-2	length	12
+	LJ-76-2	ttime	1
+	LJ-76-2	NJ-76-2F	-1
+	LJ-76-2	NJ-76-2T	1
+	LJ-68-2	length	13
+	LJ-68-2	ttime	1
+	LJ-68-2	NJ-68-2F	-1
+	LJ-68-2	NJ-68-1T	1
+	LJ-80-1	length	0
+	LJ-80-1	ttime	0
+	LJ-80-1	NJ-80-1F	-1
+	LJ-80-1	NJ-80-1T	1
+	LJ-82-1	length	14
+	LJ-82-1	ttime	1
+	LJ-82-1	NJ-82-1F	-1
+	LJ-82-1	NJ-82-1T	1
+	LJ-83-1	length	12
+	LJ-83-1	ttime	1
+	LJ-83-1	NJ-83-1F	-1
+	LJ-83-1	NJ-83-2T	1
+	LJ-83-2	length	12
+	LJ-83-2	ttime	1
+	LJ-83-2	NJ-83-1F	-1
+	LJ-83-2	NJ-83-1T	1
+	LJ-88-1	length	12
+	LJ-88-1	ttime	1
+	LJ-88-1	NJ-88-1F	-1
+	LJ-88-1	NJ-88-1T	1
+	LJ-89-1	length	14
+	LJ-89-1	ttime	1
+	LJ-89-1	NJ-89-1F	-1
+	LJ-89-1	NJ-89-1T	1
+	LJ-202-1	length	0
+	LJ-202-1	ttime	0
+	LJ-202-1	NJ-202-1F	-1
+	LJ-202-1	NJ-202-1T	1
+	LJ-93-1	length	12
+	LJ-93-1	ttime	1
+	LJ-93-1	NJ-93-1F	-1
+	LJ-93-1	NJ-93-2T	1
+	LJ-93-2	length	12
+	LJ-93-2	ttime	1
+	LJ-93-2	NJ-93-1F	-1
+	LJ-93-2	NJ-93-1T	1
+	LJ-99-1	length	9
+	LJ-99-1	ttime	0
+	LJ-99-1	NJ-99-1F	-1
+	LJ-99-1	NJ-99-1T	1
+	LJ-101-1	length	8
+	LJ-101-1	ttime	0
+	LJ-101-1	NJ-101-1F	-1
+	LJ-101-1	NJ-101-1T	1
+	LJ-103-1	length	8
+	LJ-103-1	ttime	0
+	LJ-103-1	NJ-103-1F	-1
+	LJ-103-1	NJ-103-1T	1
+	LJ-105-1	length	0
+	LJ-105-1	ttime	0
+	LJ-105-1	NJ-105-1F	-1
+	LJ-105-1	NJ-105-1T	1
+	LJ-107-1	length	8
+	LJ-107-1	ttime	0
+	LJ-107-1	NJ-107-1F	-1
+	LJ-107-1	NJ-107-1T	1
+	LJ-109-1	length	17
+	LJ-109-1	ttime	1
+	LJ-109-1	NJ-109-1F	-1
+	LJ-109-1	NJ-109-1T	1
+	LJ-109-2	length	17
+	LJ-109-2	ttime	1
+	LJ-109-2	NJ-109-1F	-1
+	LJ-109-2	NJ-109-2T	1
+	LJ-117-1	length	9
+	LJ-117-1	ttime	1
+	LJ-117-1	NJ-117-1F	-1
+	LJ-117-1	NJ-117-1T	1
+	LJ-118-1	length	62
+	LJ-118-1	ttime	4
+	LJ-118-1	NJ-118-1F	-1
+	LJ-118-1	NJ-118-1T	1
+	LJ-118-2	length	62
+	LJ-118-2	ttime	4
+	LJ-118-2	NJ-118-1F	-1
+	LJ-118-2	NJ-118-2T	1
+	LJ-121-1	length	0
+	LJ-121-1	ttime	0
+	LJ-121-1	NJ-121-1F	-1
+	LJ-121-1	NJ-121-1T	1
+	LJ-123-1	length	49
+	LJ-123-1	ttime	3
+	LJ-123-1	NJ-123-2F	-1
+	LJ-123-1	NJ-123-1T	1
+	LJ-125-1	length	3
+	LJ-125-1	ttime	0
+	LJ-125-1	NJ-125-1F	-1
+	LJ-125-1	NJ-125-1T	1
+	LJ-127-1	length	8
+	LJ-127-1	ttime	0
+	LJ-127-1	NJ-127-1F	-1
+	LJ-127-1	NJ-127-1T	1
+	LJ-128-1	length	12
+	LJ-128-1	ttime	1
+	LJ-128-1	NJ-128-1F	-1
+	LJ-128-1	NJ-128-1T	1
+	LJ-128-2	length	12
+	LJ-128-2	ttime	1
+	LJ-128-2	NJ-128-1F	-1
+	LJ-128-2	NJ-128-2T	1
+	LJ-138-1	length	7
+	LJ-138-1	ttime	0
+	LJ-138-1	NJ-138-1F	-1
+	LJ-138-1	NJ-138-1T	1
+	LJ-140-1	length	8
+	LJ-140-1	ttime	0
+	LJ-140-1	NJ-140-1F	-1
+	LJ-140-1	NJ-140-1T	1
+	LJ-142-1	length	0
+	LJ-142-1	ttime	0
+	LJ-142-1	NJ-142-1F	-1
+	LJ-142-1	NJ-142-1T	1
+	LJ-144-1	length	8
+	LJ-144-1	ttime	0
+	LJ-144-1	NJ-144-1F	-1
+	LJ-144-1	NJ-144-1T	1
+	LJ-145-1	length	15
+	LJ-145-1	ttime	1
+	LJ-145-1	NJ-145-1F	-1
+	LJ-145-1	NJ-145-1T	1
+	LJ-145-2	length	15
+	LJ-145-2	ttime	1
+	LJ-145-2	NJ-145-1F	-1
+	LJ-145-2	NJ-145-2T	1
+	LJ-149-1	length	15
+	LJ-149-1	ttime	1
+	LJ-149-1	NJ-149-1F	-1
+	LJ-149-1	NJ-149-1T	1
+	LJ-150-1	length	8
+	LJ-150-1	ttime	0
+	LJ-150-1	NJ-150-1F	-1
+	LJ-150-1	NJ-150-1T	1
+	LJ-151-1	length	8
+	LJ-151-1	ttime	0
+	LJ-151-1	NJ-151-1F	-1
+	LJ-151-1	NJ-151-1T	1
+	LJ-153-1	length	8
+	LJ-153-1	ttime	0
+	LJ-153-1	NJ-153-1F	-1
+	LJ-153-1	NJ-153-1T	1
+	LJ-154-1	length	0
+	LJ-154-1	ttime	0
+	LJ-154-1	NJ-154-1F	-1
+	LJ-154-1	NJ-154-1T	1
+	LJ-155-1	length	9
+	LJ-155-1	ttime	0
+	LJ-155-1	NJ-155-1F	-1
+	LJ-155-1	NJ-155-2T	1
+	LJ-155-2	length	9
+	LJ-155-2	ttime	0
+	LJ-155-2	NJ-155-1F	-1
+	LJ-155-2	NJ-155-1T	1
+	LJ-14-2	length	6
+	LJ-14-2	ttime	1
+	LJ-14-2	NJ-14-2F	-1
+	LJ-14-2	NJ-14-1T	1
+	LJ-152-1	length	16
+	LJ-152-1	ttime	1
+	LJ-152-1	NJ-152-1F	-1
+	LJ-152-1	NJ-152-1T	1
+	LJ-148-1	length	8
+	LJ-148-1	ttime	0
+	LJ-148-1	NJ-148-1F	-1
+	LJ-148-1	NJ-148-1T	1
+	LJ-147-1	length	24
+	LJ-147-1	ttime	1
+	LJ-147-1	NJ-147-1F	-1
+	LJ-147-1	NJ-147-2T	1
+	LJ-147-2	length	24
+	LJ-147-2	ttime	1
+	LJ-147-2	NJ-147-1F	-1
+	LJ-147-2	NJ-147-1T	1
+	LJ-143-1	length	26
+	LJ-143-1	ttime	1
+	LJ-143-1	NJ-143-1F	-1
+	LJ-143-1	NJ-143-1T	1
+	LJ-141-1	length	8
+	LJ-141-1	ttime	0
+	LJ-141-1	NJ-141-1F	-1
+	LJ-141-1	NJ-141-1T	1
+	LJ-139-1	length	8
+	LJ-139-1	ttime	0
+	LJ-139-1	NJ-139-1F	-1
+	LJ-139-1	NJ-139-1T	1
+	LJ-137-1	length	8
+	LJ-137-1	ttime	0
+	LJ-137-1	NJ-137-1F	-1
+	LJ-137-1	NJ-137-1T	1
+	LJ-137-2	length	8
+	LJ-137-2	ttime	0
+	LJ-137-2	NJ-137-1F	-1
+	LJ-137-2	NJ-137-2T	1
+	LJ-134-1	length	0
+	LJ-134-1	ttime	0
+	LJ-134-1	NJ-134-1F	-1
+	LJ-134-1	NJ-134-1T	1
+	LJ-132-1	length	0
+	LJ-132-1	ttime	0
+	LJ-132-1	NJ-132-1F	-1
+	LJ-132-1	NJ-132-1T	1
+	LJ-129-1	length	8
+	LJ-129-1	ttime	0
+	LJ-129-1	NJ-129-1F	-1
+	LJ-129-1	NJ-129-1T	1
+	LJ-126-1	length	6
+	LJ-126-1	ttime	0
+	LJ-126-1	NJ-126-2F	-1
+	LJ-126-1	NJ-126-1T	1
+	LJ-124-1	length	8
+	LJ-124-1	ttime	0
+	LJ-124-1	NJ-124-1F	-1
+	LJ-124-1	NJ-124-1T	1
+	LJ-122-1	length	9
+	LJ-122-1	ttime	1
+	LJ-122-1	NJ-122-1F	-1
+	LJ-122-1	NJ-122-1T	1
+	LJ-119-1	length	9
+	LJ-119-1	ttime	1
+	LJ-119-1	NJ-119-1F	-1
+	LJ-119-1	NJ-119-1T	1
+	LJ-115-1	length	9
+	LJ-115-1	ttime	1
+	LJ-115-1	NJ-115-1F	-1
+	LJ-115-1	NJ-115-2T	1
+	LJ-115-2	length	9
+	LJ-115-2	ttime	1
+	LJ-115-2	NJ-115-1F	-1
+	LJ-115-2	NJ-115-1T	1
+	LJ-116-1	length	7
+	LJ-116-1	ttime	1
+	LJ-116-1	NJ-116-1F	-1
+	LJ-116-1	NJ-116-1T	1
+	LJ-108-1	length	13
+	LJ-108-1	ttime	1
+	LJ-108-1	NJ-108-1F	-1
+	LJ-108-1	NJ-108-1T	1
+	LJ-200-1	length	8
+	LJ-200-1	ttime	0
+	LJ-200-1	NJ-200-1F	-1
+	LJ-200-1	NJ-200-1T	1
+	LJ-106-1	length	0
+	LJ-106-1	ttime	0
+	LJ-106-1	NJ-106-1F	-1
+	LJ-106-1	NJ-106-1T	1
+	LJ-104-1	length	8
+	LJ-104-1	ttime	0
+	LJ-104-1	NJ-104-1F	-1
+	LJ-104-1	NJ-104-1T	1
+	LJ-102-1	length	8
+	LJ-102-1	ttime	0
+	LJ-102-1	NJ-102-1F	-1
+	LJ-102-1	NJ-102-1T	1
+	LJ-100-1	length	29
+	LJ-100-1	ttime	1
+	LJ-100-1	NJ-100-1F	-1
+	LJ-100-1	NJ-100-2T	1
+	LJ-100-2	length	29
+	LJ-100-2	ttime	1
+	LJ-100-2	NJ-100-1F	-1
+	LJ-100-2	NJ-100-1T	1
+	LJ-94-1	length	13
+	LJ-94-1	ttime	1
+	LJ-94-1	NJ-94-1F	-1
+	LJ-94-1	NJ-94-1T	1
+	LJ-92-1	length	0
+	LJ-92-1	ttime	0
+	LJ-92-1	NJ-92-1F	-1
+	LJ-92-1	NJ-92-1T	1
+	LJ-90-1	length	13
+	LJ-90-1	ttime	1
+	LJ-90-1	NJ-90-1F	-1
+	LJ-90-1	NJ-90-1T	1
+	LJ-91-1	length	14
+	LJ-91-1	ttime	1
+	LJ-91-1	NJ-91-1F	-1
+	LJ-91-1	NJ-91-1T	1
+	LJ-84-1	length	11
+	LJ-84-1	ttime	1
+	LJ-84-1	NJ-84-2F	-1
+	LJ-84-1	NJ-84-1T	1
+	LJ-85-1	length	14
+	LJ-85-1	ttime	1
+	LJ-85-1	NJ-85-1F	-1
+	LJ-85-1	NJ-85-1T	1
+	LJ-85-2	length	14
+	LJ-85-2	ttime	1
+	LJ-85-2	NJ-85-1F	-1
+	LJ-85-2	NJ-85-2T	1
+	LJ-86-1	length	10
+	LJ-86-1	ttime	1
+	LJ-86-1	NJ-86-1F	-1
+	LJ-86-1	NJ-86-1T	1
+	LJ-87-1	length	17
+	LJ-87-1	ttime	1
+	LJ-87-1	NJ-87-1F	-1
+	LJ-87-1	NJ-87-1T	1
+	LJ-81-1	length	0
+	LJ-81-1	ttime	0
+	LJ-81-1	NJ-81-1F	-1
+	LJ-81-1	NJ-81-1T	1
+	LJ-70-2	length	13
+	LJ-70-2	ttime	1
+	LJ-70-2	NJ-70-1F	-1
+	LJ-70-2	NJ-70-1T	1
+	LJ-199-1	length	1
+	LJ-199-1	ttime	0
+	LJ-199-1	NJ-199-1F	-1
+	LJ-199-1	NJ-199-1T	1
+	LJ-162-1	length	1
+	LJ-162-1	ttime	0
+	LJ-162-1	NJ-162-1F	-1
+	LJ-162-1	NJ-162-1T	1
+	LJ-165-1	length	20
+	LJ-165-1	ttime	1
+	LJ-165-1	NJ-165-1F	-1
+	LJ-165-1	NJ-165-1T	1
+	LJ-170-1	length	8
+	LJ-170-1	ttime	0
+	LJ-170-1	NJ-170-1F	-1
+	LJ-170-1	NJ-170-1T	1
+	LJ-172-1	length	0
+	LJ-172-1	ttime	0
+	LJ-172-1	NJ-172-1F	-1
+	LJ-172-1	NJ-172-1T	1
+	LJ-173-1	length	0
+	LJ-173-1	ttime	0
+	LJ-173-1	NJ-173-1F	-1
+	LJ-173-1	NJ-173-1T	1
+	LJ-175-1	length	0
+	LJ-175-1	ttime	0
+	LJ-175-1	NJ-175-1F	-1
+	LJ-175-1	NJ-175-1T	1
+	LJ-179-1	length	0
+	LJ-179-1	ttime	0
+	LJ-179-1	NJ-179-1F	-1
+	LJ-179-1	NJ-179-1T	1
+	LJ-182-1	length	0
+	LJ-182-1	ttime	0
+	LJ-182-1	NJ-182-1F	-1
+	LJ-182-1	NJ-182-1T	1
+	LJ-184-1	length	0
+	LJ-184-1	ttime	0
+	LJ-184-1	NJ-184-1F	-1
+	LJ-184-1	NJ-184-1T	1
+	LJ-186-1	length	21
+	LJ-186-1	ttime	1
+	LJ-186-1	NJ-186-1F	-1
+	LJ-186-1	NJ-186-2T	1
+	LJ-186-2	length	21
+	LJ-186-2	ttime	1
+	LJ-186-2	NJ-186-1F	-1
+	LJ-186-2	NJ-186-1T	1
+	LJ-196-1	length	10
+	LJ-196-1	ttime	1
+	LJ-196-1	NJ-196-2F	-1
+	LJ-196-1	NJ-196-1T	1
+	LJ-86-2	length	10
+	LJ-86-2	ttime	1
+	LJ-86-2	NJ-86-2F	-1
+	LJ-86-2	NJ-86-1T	1
+	LJ-84-2	length	11
+	LJ-84-2	ttime	1
+	LJ-84-2	NJ-84-1F	-1
+	LJ-84-2	NJ-84-1T	1
+	LJ-201-1	length	12
+	LJ-201-1	ttime	1
+	LJ-201-1	NJ-201-1F	-1
+	LJ-201-1	NJ-201-2T	1
+	LJ-201-2	length	12
+	LJ-201-2	ttime	1
+	LJ-201-2	NJ-201-1F	-1
+	LJ-201-2	NJ-201-1T	1
+	LJ-193-1	length	0
+	LJ-193-1	ttime	0
+	LJ-193-1	NJ-193-1F	-1
+	LJ-193-1	NJ-193-1T	1
+	LJ-185-1	length	14
+	LJ-185-1	ttime	1
+	LJ-185-1	NJ-185-1F	-1
+	LJ-185-1	NJ-185-1T	1
+	LJ-183-1	length	8
+	LJ-183-1	ttime	0
+	LJ-183-1	NJ-183-1F	-1
+	LJ-183-1	NJ-183-1T	1
+	LJ-181-1	length	0
+	LJ-181-1	ttime	0
+	LJ-181-1	NJ-181-1F	-1
+	LJ-181-1	NJ-181-1T	1
+	LJ-180-1	length	0
+	LJ-180-1	ttime	0
+	LJ-180-1	NJ-180-1F	-1
+	LJ-180-1	NJ-180-1T	1
+	LJ-178-1	length	8
+	LJ-178-1	ttime	0
+	LJ-178-1	NJ-178-1F	-1
+	LJ-178-1	NJ-178-1T	1
+	LJ-177-1	length	8
+	LJ-177-1	ttime	0
+	LJ-177-1	NJ-177-1F	-1
+	LJ-177-1	NJ-177-1T	1
+	LJ-176-1	length	8
+	LJ-176-1	ttime	0
+	LJ-176-1	NJ-176-1F	-1
+	LJ-176-1	NJ-176-1T	1
+	LJ-174-1	length	8
+	LJ-174-1	ttime	0
+	LJ-174-1	NJ-174-1F	-1
+	LJ-174-1	NJ-174-1T	1
+	LJ-171-1	length	0
+	LJ-171-1	ttime	0
+	LJ-171-1	NJ-171-1F	-1
+	LJ-171-1	NJ-171-1T	1
+	LJ-169-1	length	8
+	LJ-169-1	ttime	0
+	LJ-169-1	NJ-169-1F	-1
+	LJ-169-1	NJ-169-1T	1
+	LJ-168-1	length	0
+	LJ-168-1	ttime	0
+	LJ-168-1	NJ-168-1F	-1
+	LJ-168-1	NJ-168-1T	1
+	LJ-166-1	length	19
+	LJ-166-1	ttime	1
+	LJ-166-1	NJ-166-1F	-1
+	LJ-166-1	NJ-166-2T	1
+	LJ-166-2	length	19
+	LJ-166-2	ttime	1
+	LJ-166-2	NJ-166-1F	-1
+	LJ-166-2	NJ-166-1T	1
+	LJ-149-2	length	15
+	LJ-149-2	ttime	1
+	LJ-149-2	NJ-149-2F	-1
+	LJ-149-2	NJ-149-1T	1
+	LJ-111-1	length	8
+	LJ-111-1	ttime	0
+	LJ-111-1	NJ-111-1F	-1
+	LJ-111-1	NJ-111-1T	1
+	LJ-110-1	length	15
+	LJ-110-1	ttime	1
+	LJ-110-1	NJ-110-1F	-1
+	LJ-110-1	NJ-110-2T	1
+	LJ-110-2	length	15
+	LJ-110-2	ttime	1
+	LJ-110-2	NJ-110-1F	-1
+	LJ-110-2	NJ-110-1T	1
+	LJ-108-2	length	13
+	LJ-108-2	ttime	1
+	LJ-108-2	NJ-108-2F	-1
+	LJ-108-2	NJ-108-1T	1
+	LJ-95-1	length	7
+	LJ-95-1	ttime	0
+	LJ-95-1	NJ-95-2F	-1
+	LJ-95-1	NJ-95-1T	1
+	LJ-96-1	length	23
+	LJ-96-1	ttime	1
+	LJ-96-1	NJ-96-1F	-1
+	LJ-96-1	NJ-96-1T	1
+	LJ-99-2	length	9
+	LJ-99-2	ttime	0
+	LJ-99-2	NJ-99-2F	-1
+	LJ-99-2	NJ-99-1T	1
+	LJ-114-1	length	14
+	LJ-114-1	ttime	1
+	LJ-114-1	NJ-114-2F	-1
+	LJ-114-1	NJ-114-1T	1
+	LJ-159-1	length	17
+	LJ-159-1	ttime	1
+	LJ-159-1	NJ-159-1F	-1
+	LJ-159-1	NJ-159-2T	1
+	LJ-159-2	length	17
+	LJ-159-2	ttime	1
+	LJ-159-2	NJ-159-1F	-1
+	LJ-159-2	NJ-159-1T	1
+	LJ-157-1	length	12
+	LJ-157-1	ttime	1
+	LJ-157-1	NJ-157-1F	-1
+	LJ-157-1	NJ-157-1T	1
+	LJ-156-1	length	18
+	LJ-156-1	ttime	1
+	LJ-156-1	NJ-156-1F	-1
+	LJ-156-1	NJ-156-1T	1
+	LJ-152-2	length	16
+	LJ-152-2	ttime	1
+	LJ-152-2	NJ-152-2F	-1
+	LJ-152-2	NJ-152-1T	1
+	LJ-138-2	length	7
+	LJ-138-2	ttime	0
+	LJ-138-2	NJ-138-2F	-1
+	LJ-138-2	NJ-138-1T	1
+	LJ-158-1	length	23
+	LJ-158-1	ttime	1
+	LJ-158-1	NJ-158-2F	-1
+	LJ-158-1	NJ-158-1T	1
+	LJ-79-1	length	14
+	LJ-79-1	ttime	1
+	LJ-79-1	NJ-79-1F	-1
+	LJ-79-1	NJ-79-2T	1
+	LJ-74-2	length	13
+	LJ-74-2	ttime	1
+	LJ-74-2	NJ-74-1F	-1
+	LJ-74-2	NJ-74-1T	1
+	LJ-95-2	length	7
+	LJ-95-2	ttime	0
+	LJ-95-2	NJ-95-1F	-1
+	LJ-95-2	NJ-95-1T	1
+	LJ-189-1	length	30
+	LJ-189-1	ttime	1
+	LJ-189-1	NJ-189-2F	-1
+	LJ-189-1	NJ-189-1T	1
+	LJ-23-2	length	11
+	LJ-23-2	ttime	1
+	LJ-23-2	NJ-23-1F	-1
+	LJ-23-2	NJ-23-1T	1
+	LJ-26-1	length	5
+	LJ-26-1	ttime	1
+	LJ-26-1	NJ-26-2F	-1
+	LJ-26-1	NJ-26-1T	1
+	LJ-79-2	length	14
+	LJ-79-2	ttime	1
+	LJ-79-2	NJ-79-2F	-1
+	LJ-79-2	NJ-79-1T	1
+	LJ-188-1	length	8
+	LJ-188-1	ttime	0
+	LJ-188-1	NJ-188-1F	-1
+	LJ-188-1	NJ-188-1T	1
+	LJ-187-1	length	20
+	LJ-187-1	ttime	1
+	LJ-187-1	NJ-187-1F	-1
+	LJ-187-1	NJ-187-1T	1
+	LJ-187-2	length	20
+	LJ-187-2	ttime	1
+	LJ-187-2	NJ-187-1F	-1
+	LJ-187-2	NJ-187-2T	1
+	LJ-194-1	length	0
+	LJ-194-1	ttime	0
+	LJ-194-1	NJ-194-1F	-1
+	LJ-194-1	NJ-194-1T	1
+	LJ-196-2	length	10
+	LJ-196-2	ttime	1
+	LJ-196-2	NJ-196-1F	-1
+	LJ-196-2	NJ-196-1T	1
+	LJ-72-2	length	13
+	LJ-72-2	ttime	1
+	LJ-72-2	NJ-72-2F	-1
+	LJ-72-2	NJ-72-1T	1
+	LJ-185-2	length	14
+	LJ-185-2	ttime	1
+	LJ-185-2	NJ-185-2F	-1
+	LJ-185-2	NJ-185-1T	1
+	LJ-167-1	length	0
+	LJ-167-1	ttime	0
+	LJ-167-1	NJ-167-1F	-1
+	LJ-167-1	NJ-167-1T	1
+	LJ-164-1	length	8
+	LJ-164-1	ttime	0
+	LJ-164-1	NJ-164-1F	-1
+	LJ-164-1	NJ-164-1T	1
+	LJ-163-1	length	1
+	LJ-163-1	ttime	0
+	LJ-163-1	NJ-163-1F	-1
+	LJ-163-1	NJ-163-1T	1
+	LJ-198-1	length	1
+	LJ-198-1	ttime	0
+	LJ-198-1	NJ-198-1F	-1
+	LJ-198-1	NJ-198-1T	1
+	LJ-146-1	length	8
+	LJ-146-1	ttime	0
+	LJ-146-1	NJ-146-1F	-1
+	LJ-146-1	NJ-146-1T	1
+	LJ-143-2	length	26
+	LJ-143-2	ttime	1
+	LJ-143-2	NJ-143-2F	-1
+	LJ-143-2	NJ-143-1T	1
+	LJ-12-2	length	20
+	LJ-12-2	ttime	2
+	LJ-12-2	NJ-12-1F	-1
+	LJ-12-2	NJ-12-1T	1
+	LJ-158-2	length	23
+	LJ-158-2	ttime	1
+	LJ-158-2	NJ-158-1F	-1
+	LJ-158-2	NJ-158-1T	1
+	LJ-189-2	length	30
+	LJ-189-2	ttime	1
+	LJ-189-2	NJ-189-1F	-1
+	LJ-189-2	NJ-189-1T	1
+	LJ-114-2	length	14
+	LJ-114-2	ttime	1
+	LJ-114-2	NJ-114-1F	-1
+	LJ-114-2	NJ-114-1T	1
+	LJ-133-1	length	0
+	LJ-133-1	ttime	0
+	LJ-133-1	NJ-133-1F	-1
+	LJ-133-1	NJ-133-1T	1
+	LJ-135-1	length	0
+	LJ-135-1	ttime	0
+	LJ-135-1	NJ-135-1F	-1
+	LJ-135-1	NJ-135-1T	1
+	LJ-120-1	length	0
+	LJ-120-1	ttime	0
+	LJ-120-1	NJ-120-1F	-1
+	LJ-120-1	NJ-120-1T	1
+	LJ-123-2	length	49
+	LJ-123-2	ttime	3
+	LJ-123-2	NJ-123-1F	-1
+	LJ-123-2	NJ-123-1T	1
+	LJ-117-2	length	9
+	LJ-117-2	ttime	1
+	LJ-117-2	NJ-117-2F	-1
+	LJ-117-2	NJ-117-1T	1
+	LJ-26-2	length	5
+	LJ-26-2	ttime	1
+	LJ-26-2	NJ-26-1F	-1
+	LJ-26-2	NJ-26-2T	1
+	LJ-27-2	length	8
+	LJ-27-2	ttime	1
+	LJ-27-2	NJ-27-2F	-1
+	LJ-27-2	NJ-27-1T	1
+	LJ-29-2	length	7
+	LJ-29-2	ttime	1
+	LJ-29-2	NJ-29-1F	-1
+	LJ-29-2	NJ-29-1T	1
+	LJ-2-3	length	12
+	LJ-2-3	ttime	1
+	LJ-2-3	NJ-2-1F	-1
+	LJ-2-3	NJ-2-1T	1
+	LJ-126-2	length	6
+	LJ-126-2	ttime	0
+	LJ-126-2	NJ-126-1F	-1
+	LJ-126-2	NJ-126-1T	1
+	LJ-165-2	length	20
+	LJ-165-2	ttime	1
+	LJ-165-2	NJ-165-2F	-1
+	LJ-165-2	NJ-165-1T	1
+RHS
+	RHS	NNone	0
+	RHS	NJ-26-1T	0
+	RHS	NJ-25-1F	0
+	RHS	NJ-78-1T	0
+	RHS	NJ-79-1F	0
+	RHS	NJ-77-1T	0
+	RHS	NJ-76-1F	0
+	RHS	NJ-45-1T	0
+	RHS	NJ-gneJ7-1F	0
+	RHS	NJ-gneJ7-1T	0
+	RHS	NJ-48-1F	0
+	RHS	NJ-48-1T	0
+	RHS	NJ-51-1F	0
+	RHS	NJ-10-1T	0
+	RHS	NJ-11-1F	0
+	RHS	NJ-11-1T	0
+	RHS	NJ-12-1F	0
+	RHS	NJ-12-1T	0
+	RHS	NJ-13-1F	0
+	RHS	NJ-13-1T	0
+	RHS	NJ-14-1F	0
+	RHS	NJ-14-1T	0
+	RHS	NJ-8-1F	0
+	RHS	NJ-13-2T	0
+	RHS	NJ-158-1F	0
+	RHS	NJ-8-1T	0
+	RHS	NJ-7-1F	0
+	RHS	NJ-159-1T	0
+	RHS	NJ-2-1F	0
+	RHS	NJ-162-1T	0
+	RHS	NJ-165-1F	0
+	RHS	NJ-199-1T	0
+	RHS	NJ-162-1F	0
+	RHS	NJ-51-1T	0
+	RHS	NJ-53-1F	0
+	RHS	NJ-183-1T	0
+	RHS	NJ-181-1F	0
+	RHS	NJ-186-1T	0
+	RHS	NJ-189-1F	0
+	RHS	NJ-80-1T	0
+	RHS	NJ-82-1F	0
+	RHS	NJ-81-1T	0
+	RHS	NJ-70-1F	0
+	RHS	NJ-73-1T	0
+	RHS	NJ-79-2F	0
+	RHS	NJ-187-1T	0
+	RHS	NJ-194-1F	0
+	RHS	NJ-193-1T	0
+	RHS	NJ-185-1F	0
+	RHS	NJ-194-1T	0
+	RHS	NJ-196-1F	0
+	RHS	NJ-166-1T	0
+	RHS	NJ-167-1F	0
+	RHS	NJ-163-1T	0
+	RHS	NJ-198-1F	0
+	RHS	NJ-198-1T	0
+	RHS	NJ-146-1F	0
+	RHS	NJ-53-1T	0
+	RHS	NJ-54-1F	0
+	RHS	NJ-182-1T	0
+	RHS	NJ-184-1F	0
+	RHS	NJ-181-1T	0
+	RHS	NJ-180-1F	0
+	RHS	NJ-93-1T	0
+	RHS	NJ-95-1F	0
+	RHS	NJ-93-2T	0
+	RHS	NJ-99-1F	0
+	RHS	NJ-172-1T	0
+	RHS	NJ-173-1F	0
+	RHS	NJ-171-1T	0
+	RHS	NJ-169-1F	0
+	RHS	NJ-128-1T	0
+	RHS	NJ-138-1F	0
+	RHS	NJ-117-1T	0
+	RHS	NJ-118-1F	0
+	RHS	NJ-109-1T	0
+	RHS	NJ-117-1F	0
+	RHS	NJ-59-1T	0
+	RHS	NJ-60-1F	0
+	RHS	NJ-43-1T	0
+	RHS	NJ-41-1F	0
+	RHS	NJ-66-1T	0
+	RHS	NJ-67-1F	0
+	RHS	NJ-15-1T	0
+	RHS	NJ-203-1F	0
+	RHS	NJ-105-1T	0
+	RHS	NJ-107-1F	0
+	RHS	NJ-106-1T	0
+	RHS	NJ-104-1F	0
+	RHS	NJ-3-1T	0
+	RHS	NJ-2-2F	0
+	RHS	NJ-2-1T	0
+	RHS	NJ-1-1F	0
+	RHS	NJ-203-1T	0
+	RHS	NJ-16-1F	0
+	RHS	NJ-16-1T	0
+	RHS	NJ-17-1F	0
+	RHS	NJ-79-1T	0
+	RHS	NJ-78-1F	0
+	RHS	NJ-17-1T	0
+	RHS	NJ-192-1F	0
+	RHS	NJ-192-1T	0
+	RHS	NJ-18-1F	0
+	RHS	NJ-18-1T	0
+	RHS	NJ-19-1F	0
+	RHS	NJ-19-1T	0
+	RHS	NJ-20-1F	0
+	RHS	NJ-20-1T	0
+	RHS	NJ-21-1F	0
+	RHS	NJ-82-1T	0
+	RHS	NJ-83-1F	0
+	RHS	NJ-83-1T	0
+	RHS	NJ-84-1F	0
+	RHS	NJ-84-1T	0
+	RHS	NJ-85-1F	0
+	RHS	NJ-85-1T	0
+	RHS	NJ-86-1F	0
+	RHS	NJ-86-1T	0
+	RHS	NJ-87-1F	0
+	RHS	NJ-147-1T	0
+	RHS	NJ-199-1F	0
+	RHS	NJ-87-1T	0
+	RHS	NJ-81-1F	0
+	RHS	NJ-137-1T	0
+	RHS	NJ-134-1F	0
+	RHS	NJ-128-2T	0
+	RHS	NJ-133-1F	0
+	RHS	NJ-130-1T	0
+	RHS	NJ-126-1F	0
+	RHS	NJ-115-1T	0
+	RHS	NJ-114-1F	0
+	RHS	NJ-110-1T	0
+	RHS	NJ-117-2F	0
+	RHS	NJ-187-2T	0
+	RHS	NJ-185-2F	0
+	RHS	NJ-189-1T	0
+	RHS	NJ-190-1F	0
+	RHS	NJ-179-1T	0
+	RHS	NJ-182-1F	0
+	RHS	NJ-31-1T	0
+	RHS	NJ-22-1F	0
+	RHS	NJ-30-1T	0
+	RHS	NJ-31-1F	0
+	RHS	NJ-31-2T	0
+	RHS	NJ-23-1F	0
+	RHS	NJ-23-1T	0
+	RHS	NJ-24-1F	0
+	RHS	NJ-24-1T	0
+	RHS	NJ-27-1F	0
+	RHS	NJ-27-1T	0
+	RHS	NJ-28-1F	0
+	RHS	NJ-28-1T	0
+	RHS	NJ-29-1F	0
+	RHS	NJ-29-1T	0
+	RHS	NJ-30-1F	0
+	RHS	NJ-20-2T	0
+	RHS	NJ-19-2F	0
+	RHS	NJ-19-2T	0
+	RHS	NJ-18-2F	0
+	RHS	NJ-32-1T	0
+	RHS	NJ-29-2F	0
+	RHS	NJ-26-2T	0
+	RHS	NJ-27-2F	0
+	RHS	NJ-25-1T	0
+	RHS	NJ-26-1F	0
+	RHS	NJ-33-1T	0
+	RHS	NJ-34-1F	0
+	RHS	NJ-39-1T	0
+	RHS	NJ-37-1F	0
+	RHS	NJ-41-1T	0
+	RHS	NJ-40-1F	0
+	RHS	NJ-40-1T	0
+	RHS	NJ-39-1F	0
+	RHS	NJ-45-2T	0
+	RHS	NJ-gneJ8-1F	0
+	RHS	NJ-gneJ8-1T	0
+	RHS	NJ-43-1F	0
+	RHS	NJ-51-2T	0
+	RHS	NJ-48-2F	0
+	RHS	NJ-48-2T	0
+	RHS	NJ-gneJ7-2F	0
+	RHS	NJ-gneJ7-2T	0
+	RHS	NJ-45-1F	0
+	RHS	NJ-21-1T	0
+	RHS	NJ-22-2F	0
+	RHS	NJ-76-1T	0
+	RHS	NJ-72-1F	0
+	RHS	NJ-79-2T	0
+	RHS	NJ-74-1F	0
+	RHS	NJ-67-1T	0
+	RHS	NJ-68-1F	0
+	RHS	NJ-22-1T	0
+	RHS	NJ-23-2F	0
+	RHS	NJ-1-1T	-16
+	RHS	NJ-2-3F	0
+	RHS	NJ-2-2T	0
+	RHS	NJ-3-1F	0
+	RHS	NJ-3-2T	0
+	RHS	NJ-4-1F	0
+	RHS	NJ-96-1T	0
+	RHS	NJ-99-2F	0
+	RHS	NJ-3-3T	0
+	RHS	NJ-152-1F	0
+	RHS	NJ-4-1T	0
+	RHS	NJ-3-2F	0
+	RHS	NJ-4-2T	0
+	RHS	NJ-6-1F	0
+	RHS	NJ-6-1T	0
+	RHS	NJ-10-1F	0
+	RHS	NJ-94-1T	0
+	RHS	NJ-92-1F	0
+	RHS	NJ-92-1T	0
+	RHS	NJ-90-1F	0
+	RHS	NJ-98-1T	0
+	RHS	NJ-96-1F	0
+	RHS	NJ-104-1T	0
+	RHS	NJ-102-1F	0
+	RHS	NJ-99-1T	0
+	RHS	NJ-101-1F	0
+	RHS	NJ-102-1T	0
+	RHS	NJ-100-1F	0
+	RHS	NJ-101-1T	0
+	RHS	NJ-103-1F	0
+	RHS	NJ-95-1T	0
+	RHS	NJ-97-1F	0
+	RHS	NJ-100-1T	0
+	RHS	NJ-95-2F	0
+	RHS	NJ-103-1T	0
+	RHS	NJ-105-1F	0
+	RHS	NJ-114-1T	0
+	RHS	NJ-113-1F	0
+	RHS	NJ-107-1T	0
+	RHS	NJ-109-1F	0
+	RHS	NJ-109-2T	0
+	RHS	NJ-114-2F	0
+	RHS	NJ-108-1T	0
+	RHS	NJ-200-1F	0
+	RHS	NJ-111-1T	0
+	RHS	NJ-110-1F	0
+	RHS	NJ-112-1T	0
+	RHS	NJ-111-1F	0
+	RHS	NJ-200-1T	0
+	RHS	NJ-106-1F	0
+	RHS	NJ-115-2T	0
+	RHS	NJ-116-1F	0
+	RHS	NJ-100-2T	0
+	RHS	NJ-94-1F	0
+	RHS	NJ-140-1T	0
+	RHS	NJ-142-1F	0
+	RHS	NJ-143-1T	0
+	RHS	NJ-141-1F	0
+	RHS	NJ-144-1T	0
+	RHS	NJ-145-1F	0
+	RHS	NJ-148-1T	0
+	RHS	NJ-147-1F	0
+	RHS	NJ-138-1T	0
+	RHS	NJ-140-1F	0
+	RHS	NJ-147-2T	0
+	RHS	NJ-143-1F	0
+	RHS	NJ-145-1T	0
+	RHS	NJ-149-1F	0
+	RHS	NJ-152-1T	0
+	RHS	NJ-148-1F	0
+	RHS	NJ-153-1T	0
+	RHS	NJ-154-1F	0
+	RHS	NJ-169-1T	0
+	RHS	NJ-168-1F	0
+	RHS	NJ-170-1T	0
+	RHS	NJ-172-1F	0
+	RHS	NJ-146-1T	0
+	RHS	NJ-143-2F	0
+	RHS	NJ-166-2T	0
+	RHS	NJ-149-2F	0
+	RHS	NJ-15-2T	0
+	RHS	NJ-12-2F	0
+	RHS	NJ-11-2T	0
+	RHS	NJ-15-1F	0
+	RHS	NJ-120-1T	0
+	RHS	NJ-123-1F	0
+	RHS	NJ-122-1T	0
+	RHS	NJ-119-1F	0
+	RHS	NJ-127-1T	0
+	RHS	NJ-128-1F	0
+	RHS	NJ-126-1T	0
+	RHS	NJ-124-1F	0
+	RHS	NJ-129-1T	0
+	RHS	NJ-126-2F	0
+	RHS	NJ-118-1T	0
+	RHS	NJ-121-1F	0
+	RHS	NJ-119-1T	0
+	RHS	NJ-115-1F	0
+	RHS	NJ-123-1T	0
+	RHS	NJ-125-1F	0
+	RHS	NJ-125-1T	0
+	RHS	NJ-127-1F	0
+	RHS	NJ-118-2T	0
+	RHS	NJ-120-1F	0
+	RHS	NJ-116-1T	0
+	RHS	NJ-108-1F	0
+	RHS	NJ-121-1T	0
+	RHS	NJ-123-2F	0
+	RHS	NJ-139-1T	0
+	RHS	NJ-137-1F	0
+	RHS	NJ-137-2T	0
+	RHS	NJ-136-1F	0
+	RHS	NJ-131-1T	0
+	RHS	NJ-138-2F	0
+	RHS	NJ-141-1T	0
+	RHS	NJ-139-1F	0
+	RHS	NJ-196-1T	0
+	RHS	NJ-86-2F	0
+	RHS	NJ-85-2T	0
+	RHS	NJ-201-1F	0
+	RHS	NJ-124-1T	0
+	RHS	NJ-122-1F	0
+	RHS	NJ-142-1T	0
+	RHS	NJ-144-1F	0
+	RHS	NJ-168-1T	0
+	RHS	NJ-166-1F	0
+	RHS	NJ-167-1T	0
+	RHS	NJ-164-1F	0
+	RHS	NJ-164-1T	0
+	RHS	NJ-163-1F	0
+	RHS	NJ-150-1T	0
+	RHS	NJ-151-1F	0
+	RHS	NJ-151-1T	0
+	RHS	NJ-153-1F	0
+	RHS	NJ-7-1T	0
+	RHS	NJ-5-1F	0
+	RHS	NJ-5-1T	0
+	RHS	NJ-4-2F	0
+	RHS	NJ-159-2T	0
+	RHS	NJ-157-1F	0
+	RHS	NJ-158-1T	0
+	RHS	NJ-160-1F	0
+	RHS	NJ-155-1T	0
+	RHS	NJ-158-2F	0
+	RHS	NJ-161-1T	0
+	RHS	NJ-159-1F	0
+	RHS	NJ-32-2T	0
+	RHS	NJ-33-1F	0
+	RHS	NJ-191-1T	0
+	RHS	NJ-188-1F	0
+	RHS	NJ-184-1T	0
+	RHS	NJ-186-1F	0
+	RHS	NJ-188-1T	0
+	RHS	NJ-187-1F	0
+	RHS	NJ-173-1T	0
+	RHS	NJ-175-1F	0
+	RHS	NJ-177-1T	0
+	RHS	NJ-176-1F	0
+	RHS	NJ-175-1T	0
+	RHS	NJ-179-1F	0
+	RHS	NJ-59-2T	0
+	RHS	NJ-57-1F	0
+	RHS	NJ-60-1T	0
+	RHS	NJ-61-1F	0
+	RHS	NJ-66-2T	0
+	RHS	NJ-64-1F	0
+	RHS	NJ-22-2T	0
+	RHS	NJ-21-2F	0
+	RHS	NJ-24-2T	0
+	RHS	NJ-26-2F	0
+	RHS	NJ-17-2T	0
+	RHS	NJ-16-2F	0
+	RHS	NJ-16-2T	0
+	RHS	NJ-15-2F	0
+	RHS	NJ-149-1T	0
+	RHS	NJ-150-1F	0
+	RHS	NJ-174-1T	0
+	RHS	NJ-171-1F	0
+	RHS	NJ-176-1T	0
+	RHS	NJ-174-1F	0
+	RHS	NJ-178-1T	0
+	RHS	NJ-177-1F	0
+	RHS	NJ-180-1T	0
+	RHS	NJ-178-1F	0
+	RHS	NJ-185-1T	0
+	RHS	NJ-183-1F	0
+	RHS	NJ-39-2T	0
+	RHS	NJ-40-2F	0
+	RHS	NJ-21-2T	0
+	RHS	NJ-20-2F	0
+	RHS	NJ-18-2T	0
+	RHS	NJ-192-2F	0
+	RHS	NJ-192-2T	0
+	RHS	NJ-17-2F	0
+	RHS	NJ-186-2T	0
+	RHS	NJ-196-2F	0
+	RHS	NJ-165-1T	0
+	RHS	NJ-170-1F	0
+	RHS	NJ-145-2T	0
+	RHS	NJ-165-2F	0
+	RHS	NJ-201-1T	0
+	RHS	NJ-189-2F	0
+	RHS	NJ-201-2T	0
+	RHS	NJ-193-1F	0
+	RHS	NJ-40-2T	0
+	RHS	NJ-41-2F	0
+	RHS	NJ-41-2T	0
+	RHS	NJ-gneJ4-1F	0
+	RHS	NJ-76-2T	0
+	RHS	NJ-77-1F	16
+	RHS	NJ-67-2T	0
+	RHS	NJ-66-1F	0
+	RHS	NJ-75-1T	0
+	RHS	NJ-67-2F	0
+	RHS	NJ-53-2T	0
+	RHS	NJ-51-2F	0
+	RHS	NJ-69-1T	0
+	RHS	NJ-70-2F	0
+	RHS	NJ-70-1T	0
+	RHS	NJ-71-1F	0
+	RHS	NJ-71-1T	0
+	RHS	NJ-72-2F	0
+	RHS	NJ-72-1T	0
+	RHS	NJ-73-1F	0
+	RHS	NJ-73-2T	0
+	RHS	NJ-74-2F	0
+	RHS	NJ-74-1T	0
+	RHS	NJ-75-1F	0
+	RHS	NJ-75-2T	0
+	RHS	NJ-68-2F	0
+	RHS	NJ-68-1T	0
+	RHS	NJ-69-1F	0
+	RHS	NJ-71-2T	0
+	RHS	NJ-76-2F	0
+	RHS	NJ-62-1T	0
+	RHS	NJ-63-1F	0
+	RHS	NJ-64-1T	0
+	RHS	NJ-65-1F	0
+	RHS	NJ-61-1T	0
+	RHS	NJ-62-1F	0
+	RHS	NJ-69-2T	0
+	RHS	NJ-80-1F	0
+	RHS	NJ-65-1T	0
+	RHS	NJ-60-2F	0
+	RHS	NJ-56-1T	0
+	RHS	NJ-59-1F	0
+	RHS	NJ-34-1T	0
+	RHS	NJ-35-1F	0
+	RHS	NJ-35-1T	0
+	RHS	NJ-36-1F	0
+	RHS	NJ-37-1T	0
+	RHS	NJ-38-1F	0
+	RHS	NJ-58-1T	0
+	RHS	NJ-53-2F	0
+	RHS	NJ-63-1T	0
+	RHS	NJ-66-2F	0
+	RHS	NJ-55-1T	0
+	RHS	NJ-56-1F	0
+	RHS	NJ-57-1T	0
+	RHS	NJ-58-1F	0
+	RHS	NJ-54-1T	0
+	RHS	NJ-55-1F	0
+	RHS	NJ-60-2T	0
+	RHS	NJ-59-2F	0
+	RHS	NJ-38-1T	0
+	RHS	NJ-33-2F	0
+	RHS	NJ-33-2T	0
+	RHS	NJ-32-1F	0
+	RHS	NJ-gneJ4-1T	0
+	RHS	NJ-43-2F	0
+	RHS	NJ-43-2T	0
+	RHS	NJ-45-2F	0
+	RHS	NJ-135-1T	0
+	RHS	NJ-136-2F	0
+	RHS	NJ-110-2T	0
+	RHS	NJ-108-2F	0
+	RHS	NJ-133-1T	0
+	RHS	NJ-135-1F	0
+	RHS	NJ-134-1T	0
+	RHS	NJ-132-1F	0
+	RHS	NJ-132-1T	0
+	RHS	NJ-129-1F	0
+	RHS	NJ-90-1T	0
+	RHS	NJ-91-1F	0
+	RHS	NJ-88-1T	0
+	RHS	NJ-89-1F	0
+	RHS	NJ-89-1T	0
+	RHS	NJ-202-1F	0
+	RHS	NJ-202-1T	0
+	RHS	NJ-93-1F	0
+	RHS	NJ-157-1T	0
+	RHS	NJ-156-1F	0
+	RHS	NJ-156-1T	0
+	RHS	NJ-152-2F	0
+	RHS	NJ-155-2T	0
+	RHS	NJ-14-2F	0
+	RHS	NJ-154-1T	0
+	RHS	NJ-155-1F	0
+	RHS	NJ-83-2T	0
+	RHS	NJ-88-1F	0
+	RHS	NJ-91-1T	0
+	RHS	NJ-84-2F	0
+	RHS	NJ-28-2T	0
+	RHS	NJ-32-2F	0
+	RHS	NJ-36-1T	0
+	RHS	NJ-39-2F	0
+BOUNDS
+	UI	BOUNDS	L:10_0	1000000
+	UI	BOUNDS	L:10_1	1000000
+	UI	BOUNDS	L:100_0	1000000
+	UI	BOUNDS	L:100_1	1000000
+	UI	BOUNDS	L:101_0	1000000
+	UI	BOUNDS	L:102_0	1000000
+	UI	BOUNDS	L:103_0	1000000
+	UI	BOUNDS	L:104_0	1000000
+	UI	BOUNDS	L:105_0	1000000
+	UI	BOUNDS	L:106_0	1000000
+	UI	BOUNDS	L:107_0	1000000
+	UI	BOUNDS	L:108_0	1000000
+	UI	BOUNDS	L:108_1	1000000
+	UI	BOUNDS	L:109_0	1000000
+	UI	BOUNDS	L:109_1	1000000
+	UI	BOUNDS	L:11_0	1000000
+	UI	BOUNDS	L:11_1	1000000
+	UI	BOUNDS	L:110_0	1000000
+	UI	BOUNDS	L:110_1	1000000
+	UI	BOUNDS	L:111_0	1000000
+	UI	BOUNDS	L:114_0	1000000
+	UI	BOUNDS	L:114_1	1000000
+	UI	BOUNDS	L:115_0	1000000
+	UI	BOUNDS	L:115_1	1000000
+	UI	BOUNDS	L:116_0	1000000
+	UI	BOUNDS	L:117_0	1000000
+	UI	BOUNDS	L:117_1	1000000
+	UI	BOUNDS	L:118_0	1000000
+	UI	BOUNDS	L:118_4	1000000
+	UI	BOUNDS	L:118_5	1000000
+	UI	BOUNDS	L:119_0	1000000
+	UI	BOUNDS	L:12_0	1000000
+	UI	BOUNDS	L:12_1	1000000
+	UI	BOUNDS	L:120_0	1000000
+	UI	BOUNDS	L:121_0	1000000
+	UI	BOUNDS	L:122_0	1000000
+	UI	BOUNDS	L:123_0	1000000
+	UI	BOUNDS	L:123_1	1000000
+	UI	BOUNDS	L:123_2	1000000
+	UI	BOUNDS	L:123_3	1000000
+	UI	BOUNDS	L:123_5	1000000
+	UI	BOUNDS	L:123_6	1000000
+	UI	BOUNDS	L:124_0	1000000
+	UI	BOUNDS	L:125_0	1000000
+	UI	BOUNDS	L:125_3	1000000
+	UI	BOUNDS	L:126_0	1000000
+	UI	BOUNDS	L:126_1	1000000
+	UI	BOUNDS	L:127_0	1000000
+	UI	BOUNDS	L:128_0	1000000
+	UI	BOUNDS	L:128_1	1000000
+	UI	BOUNDS	L:129_0	1000000
+	UI	BOUNDS	L:13_0	1000000
+	UI	BOUNDS	L:13_1	1000000
+	UI	BOUNDS	L:132_0	1000000
+	UI	BOUNDS	L:133_0	1000000
+	UI	BOUNDS	L:134_0	1000000
+	UI	BOUNDS	L:135_0	1000000
+	UI	BOUNDS	L:137_0	1000000
+	UI	BOUNDS	L:137_1	1000000
+	UI	BOUNDS	L:138_0	1000000
+	UI	BOUNDS	L:138_1	1000000
+	UI	BOUNDS	L:139_0	1000000
+	UI	BOUNDS	L:14_0	1000000
+	UI	BOUNDS	L:14_1	1000000
+	UI	BOUNDS	L:140_0	1000000
+	UI	BOUNDS	L:141_0	1000000
+	UI	BOUNDS	L:142_0	1000000
+	UI	BOUNDS	L:143_0	1000000
+	UI	BOUNDS	L:143_1	1000000
+	UI	BOUNDS	L:144_0	1000000
+	UI	BOUNDS	L:145_0	1000000
+	UI	BOUNDS	L:145_1	1000000
+	UI	BOUNDS	L:146_0	1000000
+	UI	BOUNDS	L:147_0	1000000
+	UI	BOUNDS	L:147_1	1000000
+	UI	BOUNDS	L:147_2	1000000
+	UI	BOUNDS	L:148_0	1000000
+	UI	BOUNDS	L:149_0	1000000
+	UI	BOUNDS	L:149_2	1000000
+	UI	BOUNDS	L:15_0	1000000
+	UI	BOUNDS	L:15_1	1000000
+	UI	BOUNDS	L:150_0	1000000
+	UI	BOUNDS	L:151_0	1000000
+	UI	BOUNDS	L:152_0	1000000
+	UI	BOUNDS	L:152_1	1000000
+	UI	BOUNDS	L:153_0	1000000
+	UI	BOUNDS	L:154_0	1000000
+	UI	BOUNDS	L:155_0	1000000
+	UI	BOUNDS	L:155_1	1000000
+	UI	BOUNDS	L:156_0	1000000
+	UI	BOUNDS	L:156_1	1000000
+	UI	BOUNDS	L:157_0	1000000
+	UI	BOUNDS	L:157_1	1000000
+	UI	BOUNDS	L:158_0	1000000
+	UI	BOUNDS	L:158_1	1000000
+	UI	BOUNDS	L:159_0	1000000
+	UI	BOUNDS	L:159_1	1000000
+	UI	BOUNDS	L:16_0	1000000
+	UI	BOUNDS	L:16_1	1000000
+	UI	BOUNDS	L:162_0	1000000
+	UI	BOUNDS	L:163_0	1000000
+	UI	BOUNDS	L:164_0	1000000
+	UI	BOUNDS	L:165_0	1000000
+	UI	BOUNDS	L:165_1	1000000
+	UI	BOUNDS	L:166_0	1000000
+	UI	BOUNDS	L:166_1	1000000
+	UI	BOUNDS	L:166_2	1000000
+	UI	BOUNDS	L:167_0	1000000
+	UI	BOUNDS	L:168_0	1000000
+	UI	BOUNDS	L:169_0	1000000
+	UI	BOUNDS	L:17_0	1000000
+	UI	BOUNDS	L:17_1	1000000
+	UI	BOUNDS	L:170_0	1000000
+	UI	BOUNDS	L:171_0	1000000
+	UI	BOUNDS	L:172_0	1000000
+	UI	BOUNDS	L:173_0	1000000
+	UI	BOUNDS	L:174_0	1000000
+	UI	BOUNDS	L:175_0	1000000
+	UI	BOUNDS	L:176_0	1000000
+	UI	BOUNDS	L:177_0	1000000
+	UI	BOUNDS	L:178_0	1000000
+	UI	BOUNDS	L:179_0	1000000
+	UI	BOUNDS	L:18_0	1000000
+	UI	BOUNDS	L:18_1	1000000
+	UI	BOUNDS	L:180_0	1000000
+	UI	BOUNDS	L:181_0	1000000
+	UI	BOUNDS	L:182_0	1000000
+	UI	BOUNDS	L:183_0	1000000
+	UI	BOUNDS	L:184_0	1000000
+	UI	BOUNDS	L:185_0	1000000
+	UI	BOUNDS	L:185_1	1000000
+	UI	BOUNDS	L:186_0	1000000
+	UI	BOUNDS	L:186_1	1000000
+	UI	BOUNDS	L:187_0	1000000
+	UI	BOUNDS	L:187_1	1000000
+	UI	BOUNDS	L:187_2	1000000
+	UI	BOUNDS	L:188_0	1000000
+	UI	BOUNDS	L:189_0	1000000
+	UI	BOUNDS	L:189_1	1000000
+	UI	BOUNDS	L:19_0	1000000
+	UI	BOUNDS	L:19_1	1000000
+	UI	BOUNDS	L:192_0	1000000
+	UI	BOUNDS	L:192_1	1000000
+	UI	BOUNDS	L:193_0	1000000
+	UI	BOUNDS	L:194_0	1000000
+	UI	BOUNDS	L:196_0	1000000
+	UI	BOUNDS	L:196_1	1000000
+	UI	BOUNDS	L:198_0	1000000
+	UI	BOUNDS	L:199_0	1000000
+	UI	BOUNDS	L:2_0	1000000
+	UI	BOUNDS	L:2_1	1000000
+	UI	BOUNDS	L:2_2	1000000
+	UI	BOUNDS	L:20_0	1000000
+	UI	BOUNDS	L:20_1	1000000
+	UI	BOUNDS	L:200_0	1000000
+	UI	BOUNDS	L:201_0	1000000
+	UI	BOUNDS	L:201_1	1000000
+	UI	BOUNDS	L:202_0	1000000
+	UI	BOUNDS	L:203_0	1000000
+	UI	BOUNDS	L:21_0	1000000
+	UI	BOUNDS	L:21_1	1000000
+	UI	BOUNDS	L:22_0	1000000
+	UI	BOUNDS	L:22_1	1000000
+	UI	BOUNDS	L:23_0	1000000
+	UI	BOUNDS	L:23_1	1000000
+	UI	BOUNDS	L:24_0	1000000
+	UI	BOUNDS	L:24_1	1000000
+	UI	BOUNDS	L:26_0	1000000
+	UI	BOUNDS	L:26_1	1000000
+	UI	BOUNDS	L:27_0	1000000
+	UI	BOUNDS	L:27_1	1000000
+	UI	BOUNDS	L:28_0	1000000
+	UI	BOUNDS	L:28_1	1000000
+	UI	BOUNDS	L:29_0	1000000
+	UI	BOUNDS	L:29_1	1000000
+	UI	BOUNDS	L:3_0	1000000
+	UI	BOUNDS	L:3_1	1000000
+	UI	BOUNDS	L:3_2	1000000
+	UI	BOUNDS	L:30_0	1000000
+	UI	BOUNDS	L:31_0	1000000
+	UI	BOUNDS	L:31_1	1000000
+	UI	BOUNDS	L:32_0	1000000
+	UI	BOUNDS	L:32_1	1000000
+	UI	BOUNDS	L:32_3	1000000
+	UI	BOUNDS	L:32_2	1000000
+	UI	BOUNDS	L:33_0	1000000
+	UI	BOUNDS	L:33_1	1000000
+	UI	BOUNDS	L:34_0	1000000
+	UI	BOUNDS	L:34_1	1000000
+	UI	BOUNDS	L:35_0	1000000
+	UI	BOUNDS	L:36_0	1000000
+	UI	BOUNDS	L:36_1	1000000
+	UI	BOUNDS	L:37_0	1000000
+	UI	BOUNDS	L:37_2	1000000
+	UI	BOUNDS	L:38_0	1000000
+	UI	BOUNDS	L:38_1	1000000
+	UI	BOUNDS	L:39_0	1000000
+	UI	BOUNDS	L:39_1	1000000
+	UI	BOUNDS	L:39_3	1000000
+	UI	BOUNDS	L:39_2	1000000
+	UI	BOUNDS	L:4_0	1000000
+	UI	BOUNDS	L:4_1	1000000
+	UI	BOUNDS	L:40_0	1000000
+	UI	BOUNDS	L:40_1	1000000
+	UI	BOUNDS	L:41_0	1000000
+	UI	BOUNDS	L:41_1	1000000
+	UI	BOUNDS	L:43_0	1000000
+	UI	BOUNDS	L:43_1	1000000
+	UI	BOUNDS	L:45_0	1000000
+	UI	BOUNDS	L:45_1	1000000
+	UI	BOUNDS	L:48_0	1000000
+	UI	BOUNDS	L:48_1	1000000
+	UI	BOUNDS	L:5_0	1000000
+	UI	BOUNDS	L:5_1	1000000
+	UI	BOUNDS	L:51_0	1000000
+	UI	BOUNDS	L:51_1	1000000
+	UI	BOUNDS	L:53_0	1000000
+	UI	BOUNDS	L:53_1	1000000
+	UI	BOUNDS	L:53_3	1000000
+	UI	BOUNDS	L:53_2	1000000
+	UI	BOUNDS	L:54_0	1000000
+	UI	BOUNDS	L:54_1	1000000
+	UI	BOUNDS	L:55_0	1000000
+	UI	BOUNDS	L:56_0	1000000
+	UI	BOUNDS	L:56_1	1000000
+	UI	BOUNDS	L:57_0	1000000
+	UI	BOUNDS	L:57_1	1000000
+	UI	BOUNDS	L:58_0	1000000
+	UI	BOUNDS	L:58_1	1000000
+	UI	BOUNDS	L:59_0	1000000
+	UI	BOUNDS	L:59_1	1000000
+	UI	BOUNDS	L:59_2	1000000
+	UI	BOUNDS	L:6_0	1000000
+	UI	BOUNDS	L:6_1	1000000
+	UI	BOUNDS	L:60_0	1000000
+	UI	BOUNDS	L:60_1	1000000
+	UI	BOUNDS	L:60_2	1000000
+	UI	BOUNDS	L:61_0	1000000
+	UI	BOUNDS	L:61_1	1000000
+	UI	BOUNDS	L:62_0	1000000
+	UI	BOUNDS	L:63_0	1000000
+	UI	BOUNDS	L:63_1	1000000
+	UI	BOUNDS	L:64_0	1000000
+	UI	BOUNDS	L:64_1	1000000
+	UI	BOUNDS	L:65_0	1000000
+	UI	BOUNDS	L:65_1	1000000
+	UI	BOUNDS	L:66_0	1000000
+	UI	BOUNDS	L:66_1	1000000
+	UI	BOUNDS	L:66_2	1000000
+	UI	BOUNDS	L:66_3	1000000
+	UI	BOUNDS	L:67_0	1000000
+	UI	BOUNDS	L:67_1	1000000
+	UI	BOUNDS	L:68_0	1000000
+	UI	BOUNDS	L:68_2	1000000
+	UI	BOUNDS	L:69_0	1000000
+	UI	BOUNDS	L:69_1	1000000
+	UI	BOUNDS	L:69_2	1000000
+	UI	BOUNDS	L:7_0	1000000
+	UI	BOUNDS	L:70_0	1000000
+	UI	BOUNDS	L:70_2	1000000
+	UI	BOUNDS	L:71_0	1000000
+	UI	BOUNDS	L:71_1	1000000
+	UI	BOUNDS	L:72_0	1000000
+	UI	BOUNDS	L:72_2	1000000
+	UI	BOUNDS	L:73_0	1000000
+	UI	BOUNDS	L:73_1	1000000
+	UI	BOUNDS	L:74_0	1000000
+	UI	BOUNDS	L:74_2	1000000
+	UI	BOUNDS	L:75_0	1000000
+	UI	BOUNDS	L:75_1	1000000
+	UI	BOUNDS	L:76_0	1000000
+	UI	BOUNDS	L:76_1	1000000
+	UI	BOUNDS	L:79_0	1000000
+	UI	BOUNDS	L:79_1	1000000
+	UI	BOUNDS	L:8_0	1000000
+	UI	BOUNDS	L:8_1	1000000
+	UI	BOUNDS	L:80_0	1000000
+	UI	BOUNDS	L:81_0	1000000
+	UI	BOUNDS	L:82_0	1000000
+	UI	BOUNDS	L:82_2	1000000
+	UI	BOUNDS	L:83_0	1000000
+	UI	BOUNDS	L:83_1	1000000
+	UI	BOUNDS	L:83_2	1000000
+	UI	BOUNDS	L:84_0	1000000
+	UI	BOUNDS	L:84_2	1000000
+	UI	BOUNDS	L:85_0	1000000
+	UI	BOUNDS	L:85_2	1000000
+	UI	BOUNDS	L:86_0	1000000
+	UI	BOUNDS	L:86_2	1000000
+	UI	BOUNDS	L:87_0	1000000
+	UI	BOUNDS	L:87_2	1000000
+	UI	BOUNDS	L:88_0	1000000
+	UI	BOUNDS	L:88_2	1000000
+	UI	BOUNDS	L:88_3	1000000
+	UI	BOUNDS	L:89_0	1000000
+	UI	BOUNDS	L:89_2	1000000
+	UI	BOUNDS	L:9_0	1000000
+	UI	BOUNDS	L:90_0	1000000
+	UI	BOUNDS	L:90_2	1000000
+	UI	BOUNDS	L:91_0	1000000
+	UI	BOUNDS	L:91_1	1000000
+	UI	BOUNDS	L:91_2	1000000
+	UI	BOUNDS	L:92_0	1000000
+	UI	BOUNDS	L:93_0	1000000
+	UI	BOUNDS	L:93_1	1000000
+	UI	BOUNDS	L:94_0	1000000
+	UI	BOUNDS	L:94_1	1000000
+	UI	BOUNDS	L:95_0	1000000
+	UI	BOUNDS	L:95_1	1000000
+	UI	BOUNDS	L:96_0	1000000
+	UI	BOUNDS	L:96_1	1000000
+	UI	BOUNDS	L:99_0	1000000
+	UI	BOUNDS	L:99_1	1000000
+	UI	BOUNDS	L:gneJ4_0	1000000
+	UI	BOUNDS	L:gneJ7_0	1000000
+	UI	BOUNDS	L:gneJ7_1	1000000
+	UI	BOUNDS	L:gneJ8_0	1000000
+	UI	BOUNDS	L-248846659#1	1000000
+	UI	BOUNDS	L1	1000000
+	UI	BOUNDS	L100	1000000
+	UI	BOUNDS	L11	1000000
+	UI	BOUNDS	L12	1000000
+	UI	BOUNDS	L13	1000000
+	UI	BOUNDS	L132017141#1	1000000
+	UI	BOUNDS	L132017141#2	1000000
+	UI	BOUNDS	L132017141#3	1000000
+	UI	BOUNDS	L132017141#4	1000000
+	UI	BOUNDS	L132017141#5	1000000
+	UI	BOUNDS	L132017142	1000000
+	UI	BOUNDS	L132017149	1000000
+	UI	BOUNDS	L132017151	1000000
+	UI	BOUNDS	L135657120	1000000
+	UI	BOUNDS	L135657123	1000000
+	UI	BOUNDS	L14	1000000
+	UI	BOUNDS	L142362576	1000000
+	UI	BOUNDS	L142362585	1000000
+	UI	BOUNDS	L142362611	1000000
+	UI	BOUNDS	L142362617	1000000
+	UI	BOUNDS	L142362623	1000000
+	UI	BOUNDS	L142362634	1000000
+	UI	BOUNDS	L142362639	1000000
+	UI	BOUNDS	L142362642	1000000
+	UI	BOUNDS	L148050996	1000000
+	UI	BOUNDS	L148051000	1000000
+	UI	BOUNDS	L148051003	1000000
+	UI	BOUNDS	L15	1000000
+	UI	BOUNDS	L152051288	1000000
+	UI	BOUNDS	L152051296	1000000
+	UI	BOUNDS	L158879913	1000000
+	UI	BOUNDS	L158879917	1000000
+	UI	BOUNDS	L158888001	1000000
+	UI	BOUNDS	L158888002	1000000
+	UI	BOUNDS	L158888013	1000000
+	UI	BOUNDS	L158888040	1000000
+	UI	BOUNDS	L158888049	1000000
+	UI	BOUNDS	L16	1000000
+	UI	BOUNDS	L160289846#0	1000000
+	UI	BOUNDS	L17	1000000
+	UI	BOUNDS	L18	1000000
+	UI	BOUNDS	L185675533	1000000
+	UI	BOUNDS	L185675534	1000000
+	UI	BOUNDS	L188949094#0	1000000
+	UI	BOUNDS	L188949094#1	1000000
+	UI	BOUNDS	L19	1000000
+	UI	BOUNDS	L19a	1000000
+	UI	BOUNDS	L2	1000000
+	UI	BOUNDS	L20	1000000
+	UI	BOUNDS	L21	1000000
+	UI	BOUNDS	L22	1000000
+	UI	BOUNDS	L23	1000000
+	UI	BOUNDS	L24	1000000
+	UI	BOUNDS	L24328854#1	1000000
+	UI	BOUNDS	L24328854#2	1000000
+	UI	BOUNDS	L24328854#3	1000000
+	UI	BOUNDS	L24328854#4	1000000
+	UI	BOUNDS	L24328854#5	1000000
+	UI	BOUNDS	L24330636	1000000
+	UI	BOUNDS	L24347613	1000000
+	UI	BOUNDS	L24443869	1000000
+	UI	BOUNDS	L24443872	1000000
+	UI	BOUNDS	L24443879.82	1000000
+	UI	BOUNDS	L24443883	1000000
+	UI	BOUNDS	L24443886	1000000
+	UI	BOUNDS	L245327987	1000000
+	UI	BOUNDS	L245327988#1	1000000
+	UI	BOUNDS	L245328442	1000000
+	UI	BOUNDS	L248722719	1000000
+	UI	BOUNDS	L248722721#0	1000000
+	UI	BOUNDS	L248722721#1	1000000
+	UI	BOUNDS	L248722721#2	1000000
+	UI	BOUNDS	L248722721#3	1000000
+	UI	BOUNDS	L248722721#4	1000000
+	UI	BOUNDS	L248722721#5	1000000
+	UI	BOUNDS	L248722721#6	1000000
+	UI	BOUNDS	L248722722#0	1000000
+	UI	BOUNDS	L248722722#1	1000000
+	UI	BOUNDS	L248722725	1000000
+	UI	BOUNDS	L248722726	1000000
+	UI	BOUNDS	L248846659#1.206	1000000
+	UI	BOUNDS	L248927010	1000000
+	UI	BOUNDS	L248927011	1000000
+	UI	BOUNDS	L249236831	1000000
+	UI	BOUNDS	L249236832	1000000
+	UI	BOUNDS	L249270205#0	1000000
+	UI	BOUNDS	L249270205#0.177	1000000
+	UI	BOUNDS	L249443656#0	1000000
+	UI	BOUNDS	L249443656#3	1000000
+	UI	BOUNDS	L249443656#3.432	1000000
+	UI	BOUNDS	L25	1000000
+	UI	BOUNDS	L251259917	1000000
+	UI	BOUNDS	L251259918	1000000
+	UI	BOUNDS	L251259919	1000000
+	UI	BOUNDS	L26	1000000
+	UI	BOUNDS	L27	1000000
+	UI	BOUNDS	L28	1000000
+	UI	BOUNDS	L29	1000000
+	UI	BOUNDS	L294492782	1000000
+	UI	BOUNDS	L30	1000000
+	UI	BOUNDS	L311202397	1000000
+	UI	BOUNDS	L311202398#0	1000000
+	UI	BOUNDS	L311202398#1	1000000
+	UI	BOUNDS	L319611361#1	1000000
+	UI	BOUNDS	L319611361#1.82	1000000
+	UI	BOUNDS	L319611362	1000000
+	UI	BOUNDS	L319611363	1000000
+	UI	BOUNDS	L319611365	1000000
+	UI	BOUNDS	L319611367	1000000
+	UI	BOUNDS	L319611368	1000000
+	UI	BOUNDS	L319611370	1000000
+	UI	BOUNDS	L319611372	1000000
+	UI	BOUNDS	L319611376	1000000
+	UI	BOUNDS	L319615436	1000000
+	UI	BOUNDS	L319615438	1000000
+	UI	BOUNDS	L319615439	1000000
+	UI	BOUNDS	L319615440	1000000
+	UI	BOUNDS	L319615442	1000000
+	UI	BOUNDS	L319615443	1000000
+	UI	BOUNDS	L319615444	1000000
+	UI	BOUNDS	L319615445	1000000
+	UI	BOUNDS	L34634650	1000000
+	UI	BOUNDS	L354388194	1000000
+	UI	BOUNDS	L354388196	1000000
+	UI	BOUNDS	L354388197	1000000
+	UI	BOUNDS	L354388200	1000000
+	UI	BOUNDS	L354388205	1000000
+	UI	BOUNDS	L354388209	1000000
+	UI	BOUNDS	L354388212	1000000
+	UI	BOUNDS	L354388214	1000000
+	UI	BOUNDS	L354388217	1000000
+	UI	BOUNDS	L354388220	1000000
+	UI	BOUNDS	L354388221	1000000
+	UI	BOUNDS	L354388223	1000000
+	UI	BOUNDS	L354388224	1000000
+	UI	BOUNDS	L354388229	1000000
+	UI	BOUNDS	L354388232	1000000
+	UI	BOUNDS	L354388234	1000000
+	UI	BOUNDS	L354388235	1000000
+	UI	BOUNDS	L354388253	1000000
+	UI	BOUNDS	L354388254	1000000
+	UI	BOUNDS	L354388265	1000000
+	UI	BOUNDS	L354388269	1000000
+	UI	BOUNDS	L354388273#0	1000000
+	UI	BOUNDS	L354388274#0	1000000
+	UI	BOUNDS	L354388274#1	1000000
+	UI	BOUNDS	L354388275	1000000
+	UI	BOUNDS	L354388279	1000000
+	UI	BOUNDS	L354388286	1000000
+	UI	BOUNDS	L389783905	1000000
+	UI	BOUNDS	L389783908	1000000
+	UI	BOUNDS	L389783911.154	1000000
+	UI	BOUNDS	L389783912	1000000
+	UI	BOUNDS	L404935451	1000000
+	UI	BOUNDS	L404935462	1000000
+	UI	BOUNDS	L462392853	1000000
+	UI	BOUNDS	L462392854	1000000
+	UI	BOUNDS	L462392856	1000000
+	UI	BOUNDS	L462392857	1000000
+	UI	BOUNDS	L462392859	1000000
+	UI	BOUNDS	L462392864	1000000
+	UI	BOUNDS	L462392865	1000000
+	UI	BOUNDS	L462392866	1000000
+	UI	BOUNDS	L462392867	1000000
+	UI	BOUNDS	L462392868	1000000
+	UI	BOUNDS	L462392869	1000000
+	UI	BOUNDS	L462392870	1000000
+	UI	BOUNDS	L462392872	1000000
+	UI	BOUNDS	L5	1000000
+	UI	BOUNDS	L516175821	1000000
+	UI	BOUNDS	L527319195	1000000
+	UI	BOUNDS	L527319202	1000000
+	UI	BOUNDS	L527319204	1000000
+	UI	BOUNDS	L527319205	1000000
+	UI	BOUNDS	L527319206	1000000
+	UI	BOUNDS	L549319302	1000000
+	UI	BOUNDS	L549319303	1000000
+	UI	BOUNDS	L549319305	1000000
+	UI	BOUNDS	L549517179#0	1000000
+	UI	BOUNDS	L549802402	1000000
+	UI	BOUNDS	L561990751#1	1000000
+	UI	BOUNDS	L561990751#2	1000000
+	UI	BOUNDS	L598399304	1000000
+	UI	BOUNDS	L598399305	1000000
+	UI	BOUNDS	L598399306	1000000
+	UI	BOUNDS	L598399307	1000000
+	UI	BOUNDS	L598399308	1000000
+	UI	BOUNDS	L598399309	1000000
+	UI	BOUNDS	L6	1000000
+	UI	BOUNDS	L621945350	1000000
+	UI	BOUNDS	L621945352	1000000
+	UI	BOUNDS	L621945353	1000000
+	UI	BOUNDS	L67446110	1000000
+	UI	BOUNDS	L67446155	1000000
+	UI	BOUNDS	L67446165	1000000
+	UI	BOUNDS	L67446167	1000000
+	UI	BOUNDS	L67446185	1000000
+	UI	BOUNDS	L6a	1000000
+	UI	BOUNDS	L7	1000000
+	UI	BOUNDS	L77477309	1000000
+	UI	BOUNDS	L77477317	1000000
+	UI	BOUNDS	L77477323	1000000
+	UI	BOUNDS	L77477324#0	1000000
+	UI	BOUNDS	L77477329#0	1000000
+	UI	BOUNDS	L77477329#1	1000000
+	UI	BOUNDS	L77477329#2	1000000
+	UI	BOUNDS	L77477329#3	1000000
+	UI	BOUNDS	L77477329#4	1000000
+	UI	BOUNDS	L77477329#5	1000000
+	UI	BOUNDS	L77477329#6	1000000
+	UI	BOUNDS	L77477329#7	1000000
+	UI	BOUNDS	L77477331	1000000
+	UI	BOUNDS	L77477334#0	1000000
+	UI	BOUNDS	L77477334#2	1000000
+	UI	BOUNDS	L77477334#4	1000000
+	UI	BOUNDS	L77477351	1000000
+	UI	BOUNDS	L77477353	1000000
+	UI	BOUNDS	L77477359	1000000
+	UI	BOUNDS	L77477369#1	1000000
+	UI	BOUNDS	L77477369#2	1000000
+	UI	BOUNDS	L77477369#4	1000000
+	UI	BOUNDS	L77477376	1000000
+	UI	BOUNDS	L77477384	1000000
+	UI	BOUNDS	L77477389#0	1000000
+	UI	BOUNDS	L77477389#2	1000000
+	UI	BOUNDS	L77477389#4	1000000
+	UI	BOUNDS	L77477395	1000000
+	UI	BOUNDS	L77477398	1000000
+	UI	BOUNDS	L77477402	1000000
+	UI	BOUNDS	L8	1000000
+	UI	BOUNDS	L9	1000000
+	UI	BOUNDS	L95223234	1000000
+	UI	BOUNDS	L95223237	1000000
+	UI	BOUNDS	L95223238	1000000
+	UI	BOUNDS	L95223244	1000000
+	UI	BOUNDS	L95223248	1000000
+	UI	BOUNDS	L95710171#1	1000000
+	UI	BOUNDS	L95710171#3	1000000
+	UI	BOUNDS	L95710174	1000000
+	UI	BOUNDS	L95710174.113	1000000
+	UI	BOUNDS	L96039763	1000000
+	UI	BOUNDS	L96039766	1000000
+	UI	BOUNDS	L96065606	1000000
+	UI	BOUNDS	L96065608	1000000
+	UI	BOUNDS	L96183767	1000000
+	UI	BOUNDS	L96183778	1000000
+	UI	BOUNDS	LgneE1	1000000
+	UI	BOUNDS	LgneE2	1000000
+	UI	BOUNDS	LJ-76-1	1000000
+	UI	BOUNDS	LJ-72-1	1000000
+	UI	BOUNDS	LJ-73-1	1000000
+	UI	BOUNDS	LJ-73-2	1000000
+	UI	BOUNDS	LJ-74-1	1000000
+	UI	BOUNDS	LJ-75-1	1000000
+	UI	BOUNDS	LJ-75-2	1000000
+	UI	BOUNDS	LJ-67-1	1000000
+	UI	BOUNDS	LJ-66-1	1000000
+	UI	BOUNDS	LJ-64-1	1000000
+	UI	BOUNDS	LJ-65-1	1000000
+	UI	BOUNDS	LJ-60-1	1000000
+	UI	BOUNDS	LJ-59-1	1000000
+	UI	BOUNDS	LJ-57-1	1000000
+	UI	BOUNDS	LJ-58-1	1000000
+	UI	BOUNDS	LJ-53-1	1000000
+	UI	BOUNDS	LJ-51-1	1000000
+	UI	BOUNDS	LJ-48-1	1000000
+	UI	BOUNDS	LJ-gneJ7-1	1000000
+	UI	BOUNDS	LJ-45-1	1000000
+	UI	BOUNDS	LJ-gneJ8-1	1000000
+	UI	BOUNDS	LJ-43-1	1000000
+	UI	BOUNDS	LJ-41-1	1000000
+	UI	BOUNDS	LJ-40-1	1000000
+	UI	BOUNDS	LJ-39-1	1000000
+	UI	BOUNDS	LJ-37-1	1000000
+	UI	BOUNDS	LJ-38-1	1000000
+	UI	BOUNDS	LJ-33-1	1000000
+	UI	BOUNDS	LJ-32-1	1000000
+	UI	BOUNDS	LJ-29-1	1000000
+	UI	BOUNDS	LJ-30-1	1000000
+	UI	BOUNDS	LJ-31-1	1000000
+	UI	BOUNDS	LJ-31-2	1000000
+	UI	BOUNDS	LJ-22-1	1000000
+	UI	BOUNDS	LJ-21-1	1000000
+	UI	BOUNDS	LJ-20-1	1000000
+	UI	BOUNDS	LJ-19-1	1000000
+	UI	BOUNDS	LJ-18-1	1000000
+	UI	BOUNDS	LJ-192-1	1000000
+	UI	BOUNDS	LJ-17-1	1000000
+	UI	BOUNDS	LJ-16-1	1000000
+	UI	BOUNDS	LJ-15-1	1000000
+	UI	BOUNDS	LJ-12-1	1000000
+	UI	BOUNDS	LJ-13-1	1000000
+	UI	BOUNDS	LJ-13-2	1000000
+	UI	BOUNDS	LJ-14-1	1000000
+	UI	BOUNDS	LJ-8-1	1000000
+	UI	BOUNDS	LJ-7-1	1000000
+	UI	BOUNDS	LJ-5-1	1000000
+	UI	BOUNDS	LJ-4-1	1000000
+	UI	BOUNDS	LJ-3-1	1000000
+	UI	BOUNDS	LJ-2-1	1000000
+	UI	BOUNDS	LJ-2-2	1000000
+	UI	BOUNDS	LJ-3-2	1000000
+	UI	BOUNDS	LJ-3-3	1000000
+	UI	BOUNDS	LJ-4-2	1000000
+	UI	BOUNDS	LJ-6-1	1000000
+	UI	BOUNDS	LJ-10-1	1000000
+	UI	BOUNDS	LJ-11-1	1000000
+	UI	BOUNDS	LJ-11-2	1000000
+	UI	BOUNDS	LJ-15-2	1000000
+	UI	BOUNDS	LJ-203-1	1000000
+	UI	BOUNDS	LJ-16-2	1000000
+	UI	BOUNDS	LJ-17-2	1000000
+	UI	BOUNDS	LJ-192-2	1000000
+	UI	BOUNDS	LJ-18-2	1000000
+	UI	BOUNDS	LJ-19-2	1000000
+	UI	BOUNDS	LJ-20-2	1000000
+	UI	BOUNDS	LJ-21-2	1000000
+	UI	BOUNDS	LJ-22-2	1000000
+	UI	BOUNDS	LJ-23-1	1000000
+	UI	BOUNDS	LJ-24-1	1000000
+	UI	BOUNDS	LJ-24-2	1000000
+	UI	BOUNDS	LJ-27-1	1000000
+	UI	BOUNDS	LJ-28-1	1000000
+	UI	BOUNDS	LJ-28-2	1000000
+	UI	BOUNDS	LJ-32-2	1000000
+	UI	BOUNDS	LJ-33-2	1000000
+	UI	BOUNDS	LJ-34-1	1000000
+	UI	BOUNDS	LJ-35-1	1000000
+	UI	BOUNDS	LJ-36-1	1000000
+	UI	BOUNDS	LJ-39-2	1000000
+	UI	BOUNDS	LJ-40-2	1000000
+	UI	BOUNDS	LJ-41-2	1000000
+	UI	BOUNDS	LJ-gneJ4-1	1000000
+	UI	BOUNDS	LJ-43-2	1000000
+	UI	BOUNDS	LJ-45-2	1000000
+	UI	BOUNDS	LJ-gneJ7-2	1000000
+	UI	BOUNDS	LJ-48-2	1000000
+	UI	BOUNDS	LJ-51-2	1000000
+	UI	BOUNDS	LJ-53-2	1000000
+	UI	BOUNDS	LJ-54-1	1000000
+	UI	BOUNDS	LJ-55-1	1000000
+	UI	BOUNDS	LJ-56-1	1000000
+	UI	BOUNDS	LJ-59-2	1000000
+	UI	BOUNDS	LJ-60-2	1000000
+	UI	BOUNDS	LJ-61-1	1000000
+	UI	BOUNDS	LJ-62-1	1000000
+	UI	BOUNDS	LJ-63-1	1000000
+	UI	BOUNDS	LJ-66-2	1000000
+	UI	BOUNDS	LJ-67-2	1000000
+	UI	BOUNDS	LJ-68-1	1000000
+	UI	BOUNDS	LJ-69-1	1000000
+	UI	BOUNDS	LJ-69-2	1000000
+	UI	BOUNDS	LJ-70-1	1000000
+	UI	BOUNDS	LJ-71-1	1000000
+	UI	BOUNDS	LJ-71-2	1000000
+	UI	BOUNDS	LJ-76-2	1000000
+	UI	BOUNDS	LJ-68-2	1000000
+	UI	BOUNDS	LJ-80-1	1000000
+	UI	BOUNDS	LJ-82-1	1000000
+	UI	BOUNDS	LJ-83-1	1000000
+	UI	BOUNDS	LJ-83-2	1000000
+	UI	BOUNDS	LJ-88-1	1000000
+	UI	BOUNDS	LJ-89-1	1000000
+	UI	BOUNDS	LJ-202-1	1000000
+	UI	BOUNDS	LJ-93-1	1000000
+	UI	BOUNDS	LJ-93-2	1000000
+	UI	BOUNDS	LJ-99-1	1000000
+	UI	BOUNDS	LJ-101-1	1000000
+	UI	BOUNDS	LJ-103-1	1000000
+	UI	BOUNDS	LJ-105-1	1000000
+	UI	BOUNDS	LJ-107-1	1000000
+	UI	BOUNDS	LJ-109-1	1000000
+	UI	BOUNDS	LJ-109-2	1000000
+	UI	BOUNDS	LJ-117-1	1000000
+	UI	BOUNDS	LJ-118-1	1000000
+	UI	BOUNDS	LJ-118-2	1000000
+	UI	BOUNDS	LJ-121-1	1000000
+	UI	BOUNDS	LJ-123-1	1000000
+	UI	BOUNDS	LJ-125-1	1000000
+	UI	BOUNDS	LJ-127-1	1000000
+	UI	BOUNDS	LJ-128-1	1000000
+	UI	BOUNDS	LJ-128-2	1000000
+	UI	BOUNDS	LJ-138-1	1000000
+	UI	BOUNDS	LJ-140-1	1000000
+	UI	BOUNDS	LJ-142-1	1000000
+	UI	BOUNDS	LJ-144-1	1000000
+	UI	BOUNDS	LJ-145-1	1000000
+	UI	BOUNDS	LJ-145-2	1000000
+	UI	BOUNDS	LJ-149-1	1000000
+	UI	BOUNDS	LJ-150-1	1000000
+	UI	BOUNDS	LJ-151-1	1000000
+	UI	BOUNDS	LJ-153-1	1000000
+	UI	BOUNDS	LJ-154-1	1000000
+	UI	BOUNDS	LJ-155-1	1000000
+	UI	BOUNDS	LJ-155-2	1000000
+	UI	BOUNDS	LJ-14-2	1000000
+	UI	BOUNDS	LJ-152-1	1000000
+	UI	BOUNDS	LJ-148-1	1000000
+	UI	BOUNDS	LJ-147-1	1000000
+	UI	BOUNDS	LJ-147-2	1000000
+	UI	BOUNDS	LJ-143-1	1000000
+	UI	BOUNDS	LJ-141-1	1000000
+	UI	BOUNDS	LJ-139-1	1000000
+	UI	BOUNDS	LJ-137-1	1000000
+	UI	BOUNDS	LJ-137-2	1000000
+	UI	BOUNDS	LJ-134-1	1000000
+	UI	BOUNDS	LJ-132-1	1000000
+	UI	BOUNDS	LJ-129-1	1000000
+	UI	BOUNDS	LJ-126-1	1000000
+	UI	BOUNDS	LJ-124-1	1000000
+	UI	BOUNDS	LJ-122-1	1000000
+	UI	BOUNDS	LJ-119-1	1000000
+	UI	BOUNDS	LJ-115-1	1000000
+	UI	BOUNDS	LJ-115-2	1000000
+	UI	BOUNDS	LJ-116-1	1000000
+	UI	BOUNDS	LJ-108-1	1000000
+	UI	BOUNDS	LJ-200-1	1000000
+	UI	BOUNDS	LJ-106-1	1000000
+	UI	BOUNDS	LJ-104-1	1000000
+	UI	BOUNDS	LJ-102-1	1000000
+	UI	BOUNDS	LJ-100-1	1000000
+	UI	BOUNDS	LJ-100-2	1000000
+	UI	BOUNDS	LJ-94-1	1000000
+	UI	BOUNDS	LJ-92-1	1000000
+	UI	BOUNDS	LJ-90-1	1000000
+	UI	BOUNDS	LJ-91-1	1000000
+	UI	BOUNDS	LJ-84-1	1000000
+	UI	BOUNDS	LJ-85-1	1000000
+	UI	BOUNDS	LJ-85-2	1000000
+	UI	BOUNDS	LJ-86-1	1000000
+	UI	BOUNDS	LJ-87-1	1000000
+	UI	BOUNDS	LJ-81-1	1000000
+	UI	BOUNDS	LJ-70-2	1000000
+	UI	BOUNDS	LJ-199-1	1000000
+	UI	BOUNDS	LJ-162-1	1000000
+	UI	BOUNDS	LJ-165-1	1000000
+	UI	BOUNDS	LJ-170-1	1000000
+	UI	BOUNDS	LJ-172-1	1000000
+	UI	BOUNDS	LJ-173-1	1000000
+	UI	BOUNDS	LJ-175-1	1000000
+	UI	BOUNDS	LJ-179-1	1000000
+	UI	BOUNDS	LJ-182-1	1000000
+	UI	BOUNDS	LJ-184-1	1000000
+	UI	BOUNDS	LJ-186-1	1000000
+	UI	BOUNDS	LJ-186-2	1000000
+	UI	BOUNDS	LJ-196-1	1000000
+	UI	BOUNDS	LJ-86-2	1000000
+	UI	BOUNDS	LJ-84-2	1000000
+	UI	BOUNDS	LJ-201-1	1000000
+	UI	BOUNDS	LJ-201-2	1000000
+	UI	BOUNDS	LJ-193-1	1000000
+	UI	BOUNDS	LJ-185-1	1000000
+	UI	BOUNDS	LJ-183-1	1000000
+	UI	BOUNDS	LJ-181-1	1000000
+	UI	BOUNDS	LJ-180-1	1000000
+	UI	BOUNDS	LJ-178-1	1000000
+	UI	BOUNDS	LJ-177-1	1000000
+	UI	BOUNDS	LJ-176-1	1000000
+	UI	BOUNDS	LJ-174-1	1000000
+	UI	BOUNDS	LJ-171-1	1000000
+	UI	BOUNDS	LJ-169-1	1000000
+	UI	BOUNDS	LJ-168-1	1000000
+	UI	BOUNDS	LJ-166-1	1000000
+	UI	BOUNDS	LJ-166-2	1000000
+	UI	BOUNDS	LJ-149-2	1000000
+	UI	BOUNDS	LJ-111-1	1000000
+	UI	BOUNDS	LJ-110-1	1000000
+	UI	BOUNDS	LJ-110-2	1000000
+	UI	BOUNDS	LJ-108-2	1000000
+	UI	BOUNDS	LJ-95-1	1000000
+	UI	BOUNDS	LJ-96-1	1000000
+	UI	BOUNDS	LJ-99-2	1000000
+	UI	BOUNDS	LJ-114-1	1000000
+	UI	BOUNDS	LJ-159-1	1000000
+	UI	BOUNDS	LJ-159-2	1000000
+	UI	BOUNDS	LJ-157-1	1000000
+	UI	BOUNDS	LJ-156-1	1000000
+	UI	BOUNDS	LJ-152-2	1000000
+	UI	BOUNDS	LJ-138-2	1000000
+	UI	BOUNDS	LJ-158-1	1000000
+	UI	BOUNDS	LJ-79-1	1000000
+	UI	BOUNDS	LJ-74-2	1000000
+	UI	BOUNDS	LJ-95-2	1000000
+	UI	BOUNDS	LJ-189-1	1000000
+	UI	BOUNDS	LJ-23-2	1000000
+	UI	BOUNDS	LJ-26-1	1000000
+	UI	BOUNDS	LJ-79-2	1000000
+	UI	BOUNDS	LJ-188-1	1000000
+	UI	BOUNDS	LJ-187-1	1000000
+	UI	BOUNDS	LJ-187-2	1000000
+	UI	BOUNDS	LJ-194-1	1000000
+	UI	BOUNDS	LJ-196-2	1000000
+	UI	BOUNDS	LJ-72-2	1000000
+	UI	BOUNDS	LJ-185-2	1000000
+	UI	BOUNDS	LJ-167-1	1000000
+	UI	BOUNDS	LJ-164-1	1000000
+	UI	BOUNDS	LJ-163-1	1000000
+	UI	BOUNDS	LJ-198-1	1000000
+	UI	BOUNDS	LJ-146-1	1000000
+	UI	BOUNDS	LJ-143-2	1000000
+	UI	BOUNDS	LJ-12-2	1000000
+	UI	BOUNDS	LJ-158-2	1000000
+	UI	BOUNDS	LJ-189-2	1000000
+	UI	BOUNDS	LJ-114-2	1000000
+	UI	BOUNDS	LJ-133-1	1000000
+	UI	BOUNDS	LJ-135-1	1000000
+	UI	BOUNDS	LJ-120-1	1000000
+	UI	BOUNDS	LJ-123-2	1000000
+	UI	BOUNDS	LJ-117-2	1000000
+	UI	BOUNDS	LJ-26-2	1000000
+	UI	BOUNDS	LJ-27-2	1000000
+	UI	BOUNDS	LJ-29-2	1000000
+	UI	BOUNDS	LJ-2-3	1000000
+	UI	BOUNDS	LJ-126-2	1000000
+	UI	BOUNDS	LJ-165-2	1000000
+ENDATA

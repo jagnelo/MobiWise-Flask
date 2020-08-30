@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 01/22/20 16:18:09 by Eclipse SUMO netedit Version 1.3.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="C:\Porto_10_01_2020\8AM9AM\Porto.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Porto_10_01_2020\8AM9AM\Porto.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <opposites.guess.fix-lengths value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <additional-files value="C:\Porto_10_01_2020\8AM9AM\LoopDetectors.xml"/>
+    </netedit>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <busStop id="busStop_12319876#1_0_297" lane="12319876#1_0" startPos="41.25" endPos="51.25"/>
+    <busStop id="busStop_39911779_0_317" lane="39911779_0" startPos="61.38" endPos="81.38" lines="18ES"/>
+    <busStop id="busStop_AAL1Aliados216972581#1_0_146" lane="216972581#1_0" startPos="12.70" endPos="32.70" name="AAL1 - Aliados" lines="304 600 202"/>
+    <busStop id="busStop_AAL2Aliados434872534#5_0_150" lane="434872534#5_0" startPos="65.06" endPos="85.06" name="AAL2 - Aliados" lines="600 208"/>
+    <busStop id="busStop_AAL4Aliados216972581#1_0_220" lane="216972581#1_0" startPos="81.27" endPos="101.27" name="AAL4 - Aliados" lines="202"/>
+    <busStop id="busStop_AAL4Aliados434872534#5_0_151" lane="434872534#5_0" startPos="33.92" endPos="53.92" name="AAL4 - Aliados" lines="202 703"/>
+    <busStop id="busStop_AAL9Aliados216972581#4_0_274" lane="216972581#4_0" startPos="19.74" endPos="39.74" name="AAL9 - Aliados" lines="400"/>
+    <busStop id="busStop_ABSS1_Bessa_446557317#4_0_40" lane="446557317#4_0" startPos="24.78" endPos="44.78" name="ABSS1 - Avenida do Bessa" lines="202 208 501"/>
+    <busStop id="busStop_ABSS2_Bessa_227574867#3_0_39" lane="227574867#3_0" startPos="31.82" endPos="51.82" name="ABSS2 - Avenida do Bessa" lines="202 208 501"/>
+    <busStop id="busStop_ACN1AntonioCandido252525258#0_0_123" lane="252525258#0_0" startPos="25.25" endPos="45.25" name="ACN1 - Antonio Candido" lines="206"/>
+    <busStop id="busStop_ACRD1AntonioCardoso705491645#5_0_46" lane="705491645#5_0" startPos="28.64" endPos="48.64" name="ACRD1 - Antonio Cardoso" lines="201 203 502 503"/>
+    <busStop id="busStop_ACRD2AntonioCardoso224646233#4_0_45" lane="224646233#4_0" startPos="33.58" endPos="53.58" name="ACRD2 - Antonio Cardoso" lines="201 203 502 503"/>
+    <busStop id="busStop_ADA2ArcadeAgua-617765086#1_0_18" lane="-617765086#1_0" startPos="54.17" endPos="74.17" name="ADA2 - Arca de Agua" lines="704"/>
+    <busStop id="busStop_ADA3ArcadeAgua448867798#0_0_4" lane="448867798#0_0" startPos="30.20" endPos="50.20" name="ADA3 - Arca de Agua" lines="304 600"/>
+    <busStop id="busStop_ADA4ArcadeAgua-448867798#0_0_5" lane="-448867798#0_0" startPos="39.29" endPos="59.29" name="ADA4 - Arca de agua" lines="304 600"/>
+    <busStop id="busStop_AGM1Agramonte705491645#1_0_49" lane="705491645#1_0" startPos="99.02" endPos="119.02" name="AGM1 - Agramonte" lines="201 203 502 503 504"/>
+    <busStop id="busStop_AGR2Agramonte250949165#0_0_251" lane="250949165#0_0" startPos="95.37" endPos="115.37" name="AGR2 - Agramonte" lines="201 203 502 503 504"/>
+    <busStop id="busStop_AL1Aliados394990968#0_0_256" lane="434872534#2_0" startPos="12.18" endPos="32.18" name="AL1 - Aliados" lines="201"/>
+    <busStop id="busStop_AL2Aliados216972581#1_0_147" lane="216972581#1_0" startPos="34.43" endPos="54.43" name="AL2 - Aliados" lines="600"/>
+    <busStop id="busStop_AL2Aliados394990968#0_0_255" lane="434872534#2_0" startPos="34.61" endPos="54.61" name="AL2 - Aliados" lines="208 501"/>
+    <busStop id="busStop_AL7Aliados216972581#1_0_148" lane="216972581#1_0" startPos="57.22" endPos="77.22" name="AL7 - Aliados" lines="900 901 906"/>
+    <busStop id="busStop_ANT1AntasLojaCidadao453725103#1_0_305" lane="453725103#1_0" startPos="23.46" endPos="43.46" name="ANT1 - Antas Loja Cidadao" lines="305 492 805"/>
+    <busStop id="busStop_ANT2Antas549444969_0_196" lane="549444969_0" startPos="16.32" endPos="36.32" name="ANT2 - Antas " lines="305 402 805"/>
+    <busStop id="busStop_APT1AntonioPatricio28394276#0_0_51" lane="28394276#0_0" startPos="88.71" endPos="108.71" name="APT1 - Antonio Patricio" lines="504"/>
+    <busStop id="busStop_AQL1AnterodeQuental704509573#0_0_110" lane="704509573#0_0" startPos="15.02" endPos="35.02" name="AQL1 - Antero de Quental" lines="203 303 402"/>
+    <busStop id="busStop_AQL2AnterodeQuental13715562_0_101" lane="13715562_0" startPos="58.47" endPos="78.47" name="AQL2 - Antero de Quental" lines="203 302 402"/>
+    <busStop id="busStop_AUSEscolaAureliaSousa453762039#8_0_232" lane="453762039#8_0" startPos="96.86" endPos="116.86" name="AUS - Escola Aurelia Sousa" lines="206 303"/>
+    <busStop id="busStop_AVF2AvenidaFranca453493826#2_0_115" lane="453493826#2_0" startPos="64.09" endPos="84.09" name="AVF2 - Avenida Franca" lines="203"/>
+    <busStop id="busStop_AlexandreHerculano14327351#0_0_234" lane="14327351#0_0" startPos="50.18" endPos="70.18" name="Alexandre Herculano" lines="30ES 30SES 30PES"/>
+    <busStop id="busStop_ArcadeAgua617765086#1_0_17" lane="617765086#1_0" startPos="199.66" endPos="219.66" name="Arca de Agua" lines="704"/>
+    <busStop id="busStop_BCG704509573#7_0_113" lane="704509573#7_0" startPos="58.21" endPos="78.21" name="BCG - bcg" lines="203 303 402"/>
+    <busStop id="busStop_BCM1BoavistaCasaMusica608418573#0_0_69" lane="608418573#0_0" startPos="24.92" endPos="44.92" name="BCM1 - Boavista Casa Musica" lines="201 203 204 303 402 502 503 504 508"/>
+    <busStop id="busStop_BCM2BoavistaCasadaMusica219527968#2_0_252" lane="219527968#2_0" startPos="34.11" endPos="54.11" name="BCM2 - Boavista Casa da Musica" lines="203 204 209 704 803 104M 119M 104N"/>
+    <busStop id="busStop_BCM3BoavistaCasaMusica219527968#1_0_72" lane="219527968#1_0" startPos="55.99" endPos="75.99" name="BCM3 - Boavista Casa Musica" lines="202 208 501 503 504 507 601"/>
+    <busStop id="busStop_BCM4_BoavistaCasaMusica_232445175#2_0_70" lane="232445175#2_0" startPos="15.22" endPos="35.22" name="BCM4 - Boavista Casa Musica" lines="202 501 601"/>
+    <busStop id="busStop_BCM5BoavistaCasadaMusica608418574#1_0_239" lane="608418574#1_0" startPos="20.55" endPos="40.55" name="BCM5 - Boavista Casa da Musica" lines="208"/>
+    <busStop id="busStop_BCVT1BoavistaCorreios608418576_0_68" lane="608418576_0" startPos="35.32" endPos="55.32" name="BCVT1 - Boavista Correios" lines="302 402 508"/>
+    <busStop id="busStop_BFM2Bonfim391839901#3_0_184" lane="391839901#3_0" startPos="32.49" endPos="52.49" name="BFM2 - Bonfim" lines="206 301 700 801 800"/>
+    <busStop id="busStop_BFM4Bonfim-391839901#3_0_185" lane="-391839901#3_0" startPos="26.02" endPos="46.02" name="BFM4 - Bonfim" lines="206 700 801 800"/>
+    <busStop id="busStop_BFM8Bonfim482318529#3_0_263" lane="482318529#3_0" startPos="14.56" endPos="34.56" name="BFM8 - Bonfim" lines="301"/>
+    <busStop id="busStop_BJ1BentoJunior30912861#1_0_118" lane="30912861#1_0" startPos="124.37" endPos="144.37" name="BJ1 - Bento Junior" lines="603"/>
+    <busStop id="busStop_BL1BarrosLima482318529#7_0_264" lane="482318529#7_0" startPos="136.97" endPos="156.97" name="BL1 - Barros Lima" lines="301"/>
+    <busStop id="busStop_BL2BarrosLima-482324651#0_0_191" lane="-482324651#0_0" startPos="30.61" endPos="50.61" name="BL2 - Barros Lima" lines="300 305 401"/>
+    <busStop id="busStop_BL4BarrosLima549266404#0_0_275" lane="549266404#0_0" startPos="40.67" endPos="60.67" name="BL4 - Barros Lima" lines="401"/>
+    <busStop id="busStop_BLFZ1BolhaoFirmeza434878401#3_0_143" lane="434878401#3_0" startPos="58.78" endPos="78.78" name="BLFZ1 - Bolhao Firmeza" lines="502"/>
+    <busStop id="busStop_BLMBolhaoMetro14328446#10_0_180" lane="14328446#10_0" startPos="28.15" endPos="48.15" name="BLM - Bolhao Metro" lines="300 305 401 700 801 800"/>
+    <busStop id="busStop_BLRB1Bolhão207724051#1_0_142" lane="207724051#1_0" startPos="0" endPos="20.00" name="BLRB1 - Bolhão" lines="200"/>
+    <busStop id="busStop_BLRB2Bolhao207724051#1_0_140" lane="207724051#1_0" startPos="20.90" endPos="40.90" name="BLRB2 - Bolhao" lines="502"/>
+    <busStop id="busStop_BLRB3Bolhao207724051#2_0_285" lane="207724051#2_0" startPos="20.79" endPos="40.79" name="BLRB3 - Bolhao" lines="701 702"/>
+    <busStop id="busStop_BLRB4Bolhao38336643_0_286" lane="38336643_0" startPos="10.46" endPos="30.46" name="BLRB4 - Bolhao" lines="401 700 800"/>
+    <busStop id="busStop_BMS5CasadaMusica176070914#1_0_304" lane="176070914#1_0" startPos="57.53" endPos="77.53" name="BMS5 - Casa da Musica" lines="803"/>
+    <busStop id="busStop_BRCVBairrodoCarvalhido30912902#1_0_23" lane="30912902#1_0" startPos="28.51" endPos="48.51" name="BRCV - Bairro do Carvalhido" lines="704"/>
+    <busStop id="busStop_BS1BoavistaBomSucesso_128245297_0_62" lane="128245297_0" startPos="60.55" endPos="80.55" name="BS1 - Boavista Bom Sucesso" lines="201 204 208 209 302 501 507 601 119M 104N"/>
+    <busStop id="busStop_BS2BoavistaBomSucesso128463450_0_64" lane="128463450_0" startPos="34.74" endPos="54.74" name="BS2 - Boavista Bom Sucesso" lines="303"/>
+    <busStop id="busStop_BS2_BoavistaBomSucesso_-128245297_0_219" lane="-128245297_0" startPos="88.63" endPos="108.63" name="BS2 - Boavista Bom Sucesso" lines="201 204 501 507 601 104M 104N 18ES"/>
+    <busStop id="busStop_BS4oavistaBomSucesso128463451#1_0_303" lane="128463451#1_0" startPos="47.74" endPos="67.74" name="BS4 - Bom Sucesso" lines="704"/>
+    <busStop id="busStop_BS5oavistaBomSucesso128463451#1_0_65" lane="128463451#1_0" startPos="26.39" endPos="46.39" name="BS5 - Boavista Bom Sucesso" lines="208 803"/>
+    <busStop id="busStop_BS6oavistaBomSucesso128463451#1_0_66" lane="128463451#1_0" startPos="5.68" endPos="25.68" name="BS6 - Boavista Bom Sucesso" lines="402"/>
+    <busStop id="busStop_BS7BoavistaBomSucesso128463450_0_63" lane="128463450_0" startPos="14.02" endPos="34.02" name="BS7 - Boavista Bom Sucesso" lines="508"/>
+    <busStop id="busStop_BS8BomSucesso128463450_0_228" lane="128463450_0" startPos="55.22" endPos="75.22" name="BS8 - Bom Sucesso" lines="204 209"/>
+    <busStop id="busStop_BS9BoavistaBomSucesso128463450_0_308" lane="128463450_0" startPos="76.73" endPos="96.73" name="BS9 - Boavista Bom Sucesso" lines="907"/>
+    <busStop id="busStop_BSBSaparadoresBombeiros704509573#4_0_112" lane="704509573#4_0" startPos="25.50" endPos="45.50" name="BSB - Saparadores Bombeiros" lines="203 303 402"/>
+    <busStop id="busStop_BSS1Bessa546881512_0_44" lane="546881512_0" startPos="70.67" endPos="90.67" name="BSS1 - Bessa" lines="201 203 502 503"/>
+    <busStop id="busStop_BSS2Bessa189908445#1_0_43" lane="189908445#1_0" startPos="37.85" endPos="57.85" name="BSS2 - Bessa" lines="201 203 502 503"/>
+    <busStop id="busStop_BTLH1Batalha210851328#2_0_161" lane="210851328#2_0" startPos="19.75" endPos="39.75" name="BTLH1 - Batalha" lines="207 400"/>
+    <busStop id="busStop_BTLH6Batalha-30417987#1_0_160" lane="-30417987#1_0" startPos="13.92" endPos="33.92" name="BTLH6 - Batalha" friendlyPos="1" lines="207 303 400"/>
+    <busStop id="busStop_BVBR1BoavistaBrasilia13854848#2_0_125" lane="13854848#2_0" startPos="11.83" endPos="31.83" name="BVBR1 - Boavista Brasilia" lines="202 502"/>
+    <busStop id="busStop_BVBR2Brasilia13854847#1_0_126" lane="13854847#1_0" startPos="116.71" endPos="136.71" name="BVBR2 - Brasilia" lines="202 502"/>
+    <busStop id="busStop_BVCM3_BoavistaCemiterio608418574#3_0_67" lane="608418574#3_0" startPos="5.62" endPos="25.62" name="BVCM3 - Boavista Cemiterio" lines="201 203 209 303 502 503 504"/>
+    <busStop id="busStop_C24A1Campo24deAgosto36268629#1_0_271" lane="36268629#1_0" startPos="19.30" endPos="39.30" name="C24A1 - Campo 24 de Agosto" lines="305 401"/>
+    <busStop id="busStop_C24A2Campo24deAgosto391839901#1_0_182" lane="391839901#1_0" startPos="35.59" endPos="55.59" name="C24A2 - Campo 24 de Agosto" lines="206 301 700 801 800"/>
+    <busStop id="busStop_C24A3Campo24Agosto463280224#1_0_187" lane="463280224#1_0" startPos="18.18" endPos="38.18" name="C24A3 - Campo 24 Agosto" lines="300 302 305 401"/>
+    <busStop id="busStop_C24A4Campo24deAgosto549253232_0_186" lane="549253232_0" startPos="12.64" endPos="32.64" name="C24A4 - Campo 24 de Agosto" lines="303"/>
+    <busStop id="busStop_C24A5Campo24deAgosto-391839901#1_0_183" lane="-391839901#1_0" startPos="218.99" endPos="238.99" name="C24A5 - Campo 24 de Agosto" lines="206 700 801 800"/>
+    <busStop id="busStop_CAM1CarlosAmarante-256605510_0_1" lane="-256605510_0" startPos="40.25" endPos="60.25" name="CAM1 - Carlos Amarante" lines="304 600 704"/>
+    <busStop id="busStop_CAM3CarlosAmarante256605510_0_1" lane="256605510_0" startPos="20.41" endPos="40.41" name="CAM3 - Carlos Amarante" lines="304 600 704"/>
+    <busStop id="busStop_CART1CasadasArtes224646232#2_0_248" lane="224646232#2_0" startPos="81.58" endPos="101.58" name="CART1 - Casa das Artes" lines="200 204 207"/>
+    <busStop id="busStop_CART2CasadasArtes-224646232#2_0_53" lane="-224646232#2_0" startPos="60.83" endPos="80.83" name="CART2  - Casa das Artes" lines="200 204 207 504"/>
+    <busStop id="busStop_CARTCasadasArtes28394276#5_0_52" lane="28394276#5_0" startPos="19.12" endPos="39.12" name="CART - Casa das Artes" lines="504"/>
+    <busStop id="busStop_CAZCoutinhoAzevedo461937904#0_0_275" lane="461937904#0_0" startPos="101.66" endPos="121.66" name="CAZ - Coutinho Azevedo" lines="402 805 806"/>
+    <busStop id="busStop_CDF1Cedofeita8367069#1_0_129" lane="8367069#1_0" startPos="28.02" endPos="48.02" name="CDF1 - Cedofeita" lines="202 502"/>
+    <busStop id="busStop_CDF2Cedofeita59525260#1_0_130" lane="59525260#1_0" startPos="56.36" endPos="76.36" name="CDF2 - Cedofeita" lines="301"/>
+    <busStop id="busStop_CGRT2GoncaloCristovao434872539#0_0_135" lane="434872539#0_0" startPos="57.52" endPos="77.52" name="CGRT2 - Goncalo Cristovao" lines="703"/>
+    <busStop id="busStop_CI21CinturaInterna-13714843#1_0_24" lane="-13714843#1_0" startPos="127.07" endPos="147.07" name="CI21 - Cintura Interna" lines="300 508 602"/>
+    <busStop id="busStop_CI22CinturaInterna13714843#1_0_25" lane="13714843#1_0" startPos="77.64" endPos="97.64" name="CI22 - Cintura Interna" lines="301 508 602"/>
+    <busStop id="busStop_CI31CinturaInterna-13798697_0_3" lane="-13798697_0" startPos="111.21" endPos="131.21" name="CI31- Cintura Interna" lines="304 600 704"/>
+    <busStop id="busStop_CI32CinturaInterna13798697_0_2" lane="13798697_0" startPos="36.23" endPos="56.23" name="CI32 - Cintura Interna" lines="304 600 704"/>
+    <busStop id="busStop_CMIC2CarolinaMichaelis434882601#2_0_90" lane="434882601#2_0" startPos="28.40" endPos="48.40" name="CMIC2 - Carolina Michaelis" lines="301 602"/>
+    <busStop id="busStop_CMICI1CarolinaMicaelis-434882601#2_0_196" lane="-434882601#2_0" startPos="45.12" endPos="65.12" name="CMICI1- Carolina Micaelis" lines="300 602"/>
+    <busStop id="busStop_CMO4Carmo_0_210" lane="8367089#1_0" startPos="12.77" endPos="32.77" name="CMO4 - Carmo" lines="304"/>
+    <busStop id="busStop_CMOCarmo258853579#0_0_83" lane="258853579#0_0" startPos="15.33" endPos="35.33" name="CMO - Carmo" lines="200 201 207 208 300 302 305 501 507 601 602 703 104M 119M 104N"/>
+    <busStop id="busStop_CMS2CasadaMusicaMetro176070929#0_0_225" lane="176070929#0_0" startPos="55.01" endPos="75.01" name="CMS2 - Casa da Musica Metro" lines="203 503 504"/>
+    <busStop id="busStop_CMS4CasadaMusicaMetro176070912_0_238" lane="176070912_0" startPos="53.39" endPos="73.39" name="CMS4 - Casa da Musica Metro" lines="208 507"/>
+    <busStop id="busStop_CMS5BoavistaCasaMusica199488827#1_0_71" lane="199488827#1_0" startPos="71.74" endPos="91.74" name="CMS5- Boavista Casa Musica" lines="208 209 507 704 803 104M 119M 104N 18ES"/>
+    <busStop id="busStop_CNTT2Constituicao13797599#1_0_10" lane="13797599#1_0" startPos="44.40" endPos="64.40" name="CNTT2 - Constituicao" lines="304 600"/>
+    <busStop id="busStop_COLSColiseudoPorto142214759#1_0_176" lane="142214759#1_0" startPos="39" endPos="59" name="COLS - Coliseu do Porto" lines="302"/>
+    <busStop id="busStop_COMB1Combatentes-482331424#8_0_289" lane="-482331424#8_0" startPos="40.05" endPos="60.05" name="COMB1 - Combatentes" lines="701 702 703"/>
+    <busStop id="busStop_COMB2Combantentes482331424#8_0_296" lane="482331424#8_0" startPos="38.26" endPos="58.26" name="COMB2 - Combantentes" lines="701 702 703"/>
+    <busStop id="busStop_CONS1Constituicao212708374#1_0_283" lane="212708374#1_0" startPos="53.94" endPos="73.94" name="CONS1 - Constituicao" lines="603"/>
+    <busStop id="busStop_CONS2Constituição252525262#1_0_124" lane="252525262#1_0" startPos="6.89" endPos="26.89" name="CONS2 - Constituição" lines="206"/>
+    <busStop id="busStop_CONS3Constituicao-13797599#1_0_11" lane="-13797599#1_0" startPos="97.34" endPos="117.34" name="CONS3 - Constituicao" lines="304 600 206"/>
+    <busStop id="busStop_CORD1Cordoaria14326487#3_0_82" lane="14326487#3_0" startPos="29.00" endPos="49.00" name="CORD1 - Cordoaria" lines="602"/>
+    <busStop id="busStop_CORD2Cordoaria211436103#0_0_78" lane="211436103#0_0" startPos="8.32" endPos="28.32" name="CORD2 - Cordoaria" lines="703 801 104M 119M 104N"/>
+    <busStop id="busStop_CORD3Cordoaria14326487#3_0_81" lane="14326487#3_0" startPos="54.24" endPos="74.24" name="CORD3 - Cordoaria" lines="507 601"/>
+    <busStop id="busStop_CORD4Cordoaria211436103#0_0_79" lane="211436103#0_0" startPos="34.31" endPos="54.31" name="CORD4 - Cordoaria" lines="305"/>
+    <busStop id="busStop_CORD7Cordoaria211436103#0_0_80" lane="211436103#0_0" startPos="61.57" endPos="81.57" name="CORD7 - Cordoaria" lines="200 201 208 301 303 501 ZC"/>
+    <busStop id="busStop_CSBV1CasadeSaudedaBoavista13262695#0_0_34" lane="13262695#0_0" startPos="6.16" endPos="26.16" name="CSBV1 - Casa de Saude da Boavista" lines="204 209 704 803"/>
+    <busStop id="busStop_CSBVCasadeSaudedaBoavista13262770_0_35" lane="13262770_0" startPos="11.54" endPos="31.54" name="CSBV - Casa de Saude da Boavista" lines="202 298 501 507 601 104M 119M 104N"/>
+    <busStop id="busStop_CSM1CasadaMusicaMetro176070913#0_0_297" lane="176070913#0_0" startPos="26.34" endPos="46.34" name="CSM1 - Casa da Musica Metro"/>
+    <busStop id="busStop_CSM6CasadaMusicaMetro176070912_0_237" lane="176070912_0" startPos="23.97" endPos="43.97" name="CSM6 - Casa da Musica Metro" lines="704"/>
+    <busStop id="busStop_CSM9CasadaMusicaMetro176070914#1_0_316" lane="176070914#1_0" startPos="33.31" endPos="53.31" name="CSM9 - Casa da Musica Metro" lines="104M 128M 104N 18ES"/>
+    <busStop id="busStop_CSP1CentroSaudeParanhos-448867798#2_0_7" lane="-448867798#2_0" startPos="36.89" endPos="56.89" name="CSP1 - Centro Saude Paranhos" lines="304 600"/>
+    <busStop id="busStop_CSP2CentroSaudeParanhos448867798#2_0_6" lane="448867798#2_0" startPos="103.01" endPos="123.01" name="CSP2 - Centro Saude Paranhos" lines="304 600"/>
+    <busStop id="busStop_CTPClubeTénisdoPorto453761206#12_0_100" lane="453761206#12_0" startPos="20.82" endPos="40.82" name="CTP - Clube Ténis do Porto" lines="203 302 402"/>
+    <busStop id="busStop_CVA1Carvalhosa8367092#6_0_87" lane="8367092#6_0" startPos="60.15" endPos="80.15" name="CVA1 - Carvalhosa" lines="202 502"/>
+    <busStop id="busStop_CVA2Carvalhosa128246660#1_0_86" lane="128246660#1_0" startPos="19.63" endPos="39.63" name="CVA2 - Carvalhosa" lines="300 602"/>
+    <busStop id="busStop_CVI1Carvalhido-251256098_0_33" lane="-251256098_0" startPos="72.96" endPos="92.96" name="CVI1 - Carvalhido" lines="300 508 602"/>
+    <busStop id="busStop_CVI2Carvalhido251256098_0_32" lane="251256098_0" startPos="25.64" endPos="45.64" name="CVI2 - Carvalhido" lines="301 508 602"/>
+    <busStop id="busStop_CVI4Carvalhido608418840#4_0_31" lane="608418840#4_0" startPos="18.07" endPos="38.07" name="CVI4 - Carvalhido" lines="204 209 704 803"/>
+    <busStop id="busStop_CVI6Carvalhido212710704_0_252" lane="212710704_0" startPos="42.79" endPos="62.79" name="CVI6 - Carvalhido" lines="204 206 209 704 803"/>
+    <busStop id="busStop_CVLO1Covelo212710703#0_0_284" lane="212710703#0_0" startPos="39.47" endPos="59.47" name="CVLO1 - Covelo" lines="603"/>
+    <busStop id="busStop_CVLO2Covelo30912861#0_0_117" lane="30912861#0_0" startPos="14.98" endPos="34.98" name="CVLO2 -  Covelo" lines="603"/>
+    <busStop id="busStop_CVLOCovelo100862795_0_116" lane="100862795_0" startPos="16.81" endPos="36.81" name="CVLO - Covelo" lines="204"/>
+    <busStop id="busStop_CZV1CruzVermelha-453493822#5_0_92" lane="-453493822#5_0" startPos="78.30" endPos="98.30" name="CZV1 - Cruz Vermelha" lines="300 508 602"/>
+    <busStop id="busStop_CZV2CruzVermelha453493822#3_0_93" lane="453493822#3_0" startPos="54.52" endPos="74.52" name="CZV2 - Cruz Vermelha" lines="301 508 602"/>
+    <busStop id="busStop_CZV3CruzVermelha-13715172_0_91" lane="-13715172_0" startPos="213.04" endPos="233.04" name="CZV3 - Cruz Vermelha" lines="302 402"/>
+    <busStop id="busStop_CZV4CruzVermelha13715172_0_270" lane="13715172_0" startPos="90.54" endPos="110.54" name="CZV4 - Cruz Vermelha" lines="303 402"/>
+    <busStop id="busStop_DAMDonaAmelia34935295#5_0_253" lane="34935295#5_0" startPos="13.99" endPos="33.99" name="DAM - Dona Amelia" lines="206"/>
+    <busStop id="busStop_DCAS1DozeCasas_0_287" lane="8367155#0_0" startPos="84.89" endPos="104.89" name="DCAS1 - Doze Casas" lines="701 702"/>
+    <busStop id="busStop_DCAS2DozeCasas_0_297" lane="34597437#0_0" startPos="11.00" endPos="31.00" name="DCAS2 - Doze Casas" lines="701 702"/>
+    <busStop id="busStop_DJOA3DomJoaoIV206720846#3_0_262" lane="206720846#3_0" startPos="25.53" endPos="45.53" name="DJOA3 - Dom Joao IV" lines="301 305 401 700 801 800"/>
+    <busStop id="busStop_DJOA4DomJoaoIV14328446#1_0_252" lane="14328446#1_0" startPos="42.95" endPos="62.95" name="DJOA4 - Dom Joao IV" lines="206 300 303 305 401 700 801 800"/>
+    <busStop id="busStop_DQL1DuqueLoule-14327505#1_0_165" lane="-14327505#1_0" startPos="20.16" endPos="40.16" name="DQL1 - Duque Loule" lines="207 400"/>
+    <busStop id="busStop_DQL3DuqueLoule-261980637#3_0_254" lane="-261980637#3_0" startPos="41.36" endPos="61.36" name="DT3 - Duque Loule" lines="207"/>
+    <busStop id="busStop_DT2DuqueLoule261980637#3_0_253" lane="261980637#3_0" startPos="13.34" endPos="33.34" name="DT2 - Duque Loule" lines="207 400"/>
+    <busStop id="busStop_ELV2ElevadordosGuindais-12544650_0_157" lane="-12544650_0" startPos="9.67" endPos="29.67" name="ELV2 - Elevador dos Guindais" lines="900 901 907 103"/>
+    <busStop id="busStop_ESCN1EscolaNormal_0_267" lane="8367118#1_0" startPos="15.23" endPos="35.23" name="ESCN1 - Escola Normal" lines="302"/>
+    <busStop id="busStop_ESCN2EscolaNormal453762039#1_0_253" lane="453762039#1_0" startPos="8.31" endPos="28.31" name="ESCN2 - Escola Normal" lines="206 303"/>
+    <busStop id="busStop_ESR1EscolaSoaresdosReis549266397#1_0_193" lane="549266397#1_0" startPos="53.02" endPos="73.02" name="ESR1 - Escola Soares dos Reis" lines="301 305 401"/>
+    <busStop id="busStop_ESR2EscolaSoaresdosReis-549266397#1_0_192" lane="-549266397#1_0" startPos="16.11" endPos="36.11" name="ESR2 - Escola Soares dos Reis" lines="300 305 401"/>
+    <busStop id="busStop_EVG1ElevadordosGuindais238872916#0_0_158" lane="238872916#0_0" startPos="15.07" endPos="35.07" name="EVG1 - Elevador dos Guindais" lines="900 901 906 103"/>
+    <busStop id="busStop_FG1FariaGuimaraes453762948#2_0_109" lane="453762948#2_0" startPos="75.38" endPos="95.38" name="FG1 - Faria Guimaraes" lines="203 206 303 402 703"/>
+    <busStop id="busStop_FG2FariaGuimaraes453761209_0_102" lane="453761209_0" startPos="3.93" endPos="23.93" name="FG2 - Faria Guimaraes" lines="203 206 302 402"/>
+    <busStop id="busStop_FIGFigueiroa8367092#1_0_133" lane="8367092#1_0" startPos="202.57" endPos="222.57" name="FIG - Figueiroa" lines="202 502"/>
+    <busStop id="busStop_FOCO1Foco135411081_0_42" lane="135411081_0" startPos="57.90" endPos="77.90" name="FOCO1 - Foco" lines="201 203 502 503"/>
+    <busStop id="busStop_FOCO2Foco135411080#0_0_226" lane="135411080#0_0" startPos="41.62" endPos="61.62" name="FOCO2 - Foco" lines="201"/>
+    <busStop id="busStop_FOCO3Foco135411080#0_0_41" lane="135411080#0_0" startPos="71.34" endPos="91.34" name="203 502 503"/>
+    <busStop id="busStop_FTNH1Fontinha-34597437#3_0_286" lane="-34597437#3_0" startPos="164.57" endPos="184.57" name="FTNH1 - Fontinha" lines="701 702"/>
+    <busStop id="busStop_FTNH2Fotinha34597437#3_0_298" lane="34597437#3_0" startPos="35.15" endPos="55.15" name="FTNH2 - Fotinha" lines="701 702"/>
+    <busStop id="busStop_Fontainhas14327318#1_0_318" lane="14327318#1_0" startPos="48.63" endPos="68.63" name="Fontainhas" lines="12ES 14ES 15ES 17ES 32ES 40ES 60ES 30ES 30SES 20PES"/>
+    <busStop id="busStop_GCRT1GoncaloCristovao220233689#1_0_251" lane="220233689#1_0" startPos="10.73" endPos="30.73" name="GCRT1 - Goncalo Cristovao" lines="202 600 703"/>
+    <busStop id="busStop_GCRTGoncaloCristovao210328137_0_139" lane="210328137_0" startPos="76.27" endPos="96.27" name="GCRT - Goncalo Cristovao" lines="701 702"/>
+    <busStop id="busStop_GGF1GuilhermeGomesFernandes26119844#1_0_209" lane="26119844#1_0" startPos="25.91" endPos="45.91" name="GGF1 - Guilherme Gomes Fernandes" lines="200 304 201 207 208 300 305 501 703"/>
+    <busStop id="busStop_GGT1Golgota128363658#1_0_248" lane="128363658#1_0" startPos="22.49" endPos="42.49" name="GGT1 - Golgota" lines="200 204 207 209"/>
+    <busStop id="busStop_GGT2Golgota-128363658#1_0_249" lane="-128363658#1_0" startPos="21.20" endPos="41.20" name="GGT2 - Golgota" lines="200 204 207 209"/>
+    <busStop id="busStop_GND1Guindais-238872916#6_0_313" lane="-238872916#6_0" startPos="122.97" endPos="142.97" name="GND1 - Guindais" lines="103"/>
+    <busStop id="busStop_GND2Guindais238872916#6_1_312" lane="238872916#6_0" startPos="131.08" endPos="151.08" name="GND2 - Guindais" lines="103"/>
+    <busStop id="busStop_GONS1GoncaloSampaio14326205#4_0_309" lane="14326205#4_0" startPos="35.65" endPos="55.65" name="GONS1 - Goncalo Sampaio" lines="907"/>
+    <busStop id="busStop_GONS2GoncaloSampaio-14326205#4_0_311" lane="-14326205#4_0" startPos="42.62" endPos="62.62" name="GONS2 - Goncalo Sampaio" lines="907"/>
+    <busStop id="busStop_GRC1Graciosa483715766#4_0_223" lane="483715766#4_0" startPos="62.62" endPos="82.62" name="GRC1 - Graciosa" lines="202 203 204 208 209 501 507 601 704 803 104M 119M 104N"/>
+    <busStop id="busStop_GRJGuerraJunqueiro28996911#3_0_282" lane="28996911#3_0" startPos="29.92" endPos="49.92" name="GRJ - Guerra Junqueiro" lines="504"/>
+    <busStop id="busStop_GT3Golgota39911779_0_310" lane="39911779_0" startPos="14.55" endPos="34.55" name="GT3 - Golgota" lines="907"/>
+    <busStop id="busStop_HML1HospitalMilitar128244780#0_0_127" lane="128244780#0_0" startPos="10.66" endPos="30.66" name="HML1 - Hospital Militar" lines="202 502"/>
+    <busStop id="busStop_HML2HospitalMilitar30405564#0_0_251" lane="30405564#0_0" startPos="25.28" endPos="45.28" name="HML2 - Hospital Militar" lines="202 502"/>
+    <busStop id="busStop_HPR3HospitalPrelada-172963174#2_0_233" lane="-172963174#2_0" startPos="25.26" endPos="45.26" name="HPR3 - Hospital Prelada" lines="209"/>
+    <busStop id="busStop_HPR4HospitalPrelada172963174#2_0_257" lane="172963174#2_0" startPos="66.27" endPos="86.27" name="HPR4 - Hospital Prelada" lines="209"/>
+    <busStop id="busStop_HPRL1HospitaldaPrelada-13714843#3_0_27" lane="-13714843#3_0" startPos="53.76" endPos="73.76" name="HPRL1 - Hospital da Prelada" lines="300 508 602"/>
+    <busStop id="busStop_HPRL2HospitaldaPrelada13714843#2_0_26" lane="13714843#2_0" startPos="122.40" endPos="142.40" name="HPRL2 - Hospital da Prelada" lines="301 508 602"/>
+    <busStop id="busStop_HSA3HospitalSantoAntonio608421700#3_0_258" lane="608421700#3_0" startPos="30.19" endPos="50.19" name="HSA3 - Hospital Santo Antonio" lines="300 602"/>
+    <busStop id="busStop_HSA5HospitalSantoAntonio386286210_0_247" lane="434860177#1_0" startPos="2" endPos="20.00" name="HSA5 - Hospital Santo Antonio" lines="200 201 207 208 302 501 507 601"/>
+    <busStop id="busStop_HSAHospitalSantoAntonio386286210_0_315" lane="434860177#1_0" startPos="22.13" endPos="40.24" name="HSA - Hospital Santo Antonio" friendlyPos="1" lines="104M 119M 104N"/>
+    <busStop id="busStop_HSAHospitalSantoAntónio258853581#1_0_300" lane="258853581#1_0" startPos="27.61" endPos="45.61"/>
+    <busStop id="busStop_HSAHospitalSantoAntónio258853581#1_0_301" lane="258853581#1_0" startPos="9.25" endPos="27.25"/>
+    <busStop id="busStop_HSAHospitalSantoAntónio258853581#1_0_77" lane="258853581#1_0" startPos="46.18" endPos="64.18" name="HSA - Hospital Santo António" lines="200 201 207 208 301 303 501 507 601 602 801 104M 119M 104N"/>
+    <busStop id="busStop_HSM3HospitalSantaMarta-13797599#6_0_12" lane="-13797599#6_0" startPos="88.30" endPos="108.30" name="HSM3 - Hospital Santa Marta" lines="304 600"/>
+    <busStop id="busStop_HSM4HospitalSantaMaria13797599#6_0_205" lane="13797599#6_0" startPos="43.64" endPos="63.64" name="HSM4 - Hospital Santa Maria" lines="304 600"/>
+    <busStop id="busStop_HospitalMilitar39632140_0_128" lane="39632140_0" startPos="123.05" endPos="143.05" name="Hospital Militar"/>
+    <busStop id="busStop_ICDF1IgrejadeCedofeita39632852#2_0_88" lane="39632852#2_0" startPos="10.06" endPos="30.06" name="ICDF1 - Igreja de Cedofeita" lines="202 301 502 602"/>
+    <busStop id="busStop_JM1JuntadeMassarelo207634523#0_0_247" lane="207634523#0_0" startPos="92.15" endPos="112.15" name="JM1 - Junta de Massarelos" lines="200 204 207 209 18ES"/>
+    <busStop id="busStop_JM2JuntadeMassarelos-482261339#1_0_59" lane="-482261339#1_0" startPos="29.48" endPos="49.48" name="JM2 - Junta de Massarelos" lines="200 204 207 209"/>
+    <busStop id="busStop_JN3JornaldeNoticias38336634#3_0_138" lane="38336634#3_0" startPos="54.84" endPos="74.84" name="JN3 - Jornal de Noticias" lines="502"/>
+    <busStop id="busStop_JN4JN210673563#1_0_217" lane="210673563#1_0" startPos="35" endPos="55.10" name="JN4 - JN" lines="200 502"/>
+    <busStop id="busStop_LAPA1Lapa39657991#0_0_16" lane="39657991#0_0" startPos="6.82" endPos="26.82" name="LAPA1 - Lapa" lines="304 600"/>
+    <busStop id="busStop_LAPA2Lapa14329124#1_0_206" lane="14329124#1_0" startPos="16.40" endPos="36.40" name="LAPA2 - Lapa" lines="304 600"/>
+    <busStop id="busStop_LOILoios304682487#3_0_314" lane="304682487#3_0" startPos="1.73" endPos="21.73" name="LOI - Loios" lines="104"/>
+    <busStop id="busStop_LPDZLargo1Dezembro-35171965#3_0_159" lane="-35171965#3_0" startPos="2.87" endPos="22.87" name="LPDZ - Largo 1 Dezembro" lines="207 303 400"/>
+    <busStop id="busStop_LW1LuisWoodHouse-434879925#0_0_292" lane="-434879925#0_0" startPos="67.67" endPos="87.67" name="LW1 - LuisWoodHouse" lines="701 702 703"/>
+    <busStop id="busStop_LW2LuisWoodHouse434879925#0_0_293" lane="434879925#0_0" startPos="32.90" endPos="52.90" name="LW2 - LuisWoodHouse" lines="701 702 703"/>
+    <busStop id="busStop_MATR1Maternidade595164143#4_0_85" lane="595164143#4_0" startPos="35.93" endPos="55.88" name="MATR1 - Maternidade" friendlyPos="1" lines="300 602"/>
+    <busStop id="busStop_MATR1Maternidade_0_246" lane="726827145_0" startPos="149.56" endPos="169.56" name="MATR1 - Maternidade" lines="301 602"/>
+    <busStop id="busStop_MATR2Maternidade_0_259" lane="8367058#2_0" startPos="89.68" endPos="109.68" name="MATR2 - Maternidade" lines="301"/>
+    <busStop id="busStop_MAV1MonteAventino549444985_0_195" lane="549444985_0" startPos="31.03" endPos="51.03" name="MAV1 - Monte Aventino" lines="301 305 401 402 805 806"/>
+    <busStop id="busStop_MAV2MonteAvelino159959891#3_1_240" lane="159959891#3_0" startPos="49.48" endPos="69.48" name="MAV2 - Monte Avelino" lines="300 305 401 402 805 806"/>
+    <busStop id="busStop_MCBLMercadodoBolhão-434879926#1_0_175" lane="-434879926#1_0" startPos="58.91" endPos="78.91" name="MCBL - Mercado do Bolhão" lines="200 300 305 801"/>
+    <busStop id="busStop_MGB2MiguelBombarda128823189#0_0_247" lane="128823189#0_0" startPos="10.96" endPos="30.96" name="MGB2 - Miguel Bombarda" lines="301 602"/>
+    <busStop id="busStop_MONS2Monsanto-448568808#4_0_21" lane="-448568808#4_0" startPos="40.87" endPos="60.87" name="MONS2 - Monsanto" lines="704"/>
+    <busStop id="busStop_MOR2Moreira252527740#0_0_252" lane="252527740#0_0" startPos="212.93" endPos="232.93" name="MOR2 - Moreira" lines="206 303"/>
+    <busStop id="busStop_MOR3Moreira350915450#2_0_199" lane="350915450#2_0" startPos="55.36" endPos="75.36" name="MOR3 - Moreira" lines="206"/>
+    <busStop id="busStop_MPL11Marques453761211#1_0_103" lane="453761211#0_0" startPos="33.09" endPos="55.09" name="MPL11" lines="203 206 402 703"/>
+    <busStop id="busStop_MPL1Marques608419462#2_0_104" lane="608419462#2_0" startPos="11.56" endPos="31.56" name="MPL1 - Marques" lines="603"/>
+    <busStop id="busStop_MPL2Marques608419462#2_0_105" lane="608419462#2_0" startPos="34.39" endPos="54.39" name="MPL2 - Marques" lines="701 702 703"/>
+    <busStop id="busStop_MPL3Marques608419462#2_0_106" lane="608419462#2_0" startPos="58.52" endPos="78.52" name="MPL3 - Marques" lines="203"/>
+    <busStop id="busStop_MPL4Marques453761690#0_0_108" lane="453761690#0_0" startPos="20.18" endPos="40.18" name="MPL4 - Marques" lines="603 701 702"/>
+    <busStop id="busStop_MPL7Marques13265074#3_0_232" lane="13265074#3_0" startPos="139.72" endPos="159.72" name="MPL7 - Marques" lines="206 303 402 805 806"/>
+    <busStop id="busStop_MPL9Marques453761690#0_0_107" lane="453761690#0_0" startPos="41.59" endPos="61.59" name="MPL9 - Marques" lines="805 806"/>
+    <busStop id="busStop_MRDMoreda350915450#5_0_253" lane="350915450#5_0" startPos="6.09" endPos="26.09" name="MRD - Moreda" lines="206 302 305 401"/>
+    <busStop id="busStop_MRG1Miragaia-96151239#6_0_155" lane="-96151239#6_0" startPos="19.94" endPos="39.94" name="MRG1 - Miragaia" lines="500 103 104"/>
+    <busStop id="busStop_MRG2Miragaia_0_156" lane="96151239#6_0" startPos="74.91" endPos="94.91" name="MRG2 - Miragaia" lines="500 103"/>
+    <busStop id="busStop_MRL128825641#1_0_212" lane="128825641#1_0" startPos="3.77" endPos="23.77" name="MRL" lines="304"/>
+    <busStop id="busStop_MRR1Marracuene30912941#2_0_266" lane="30912941#2_0" startPos="77.42" endPos="97.42" name="MRR1 - Marracuene" lines="302 402"/>
+    <busStop id="busStop_MRR2Marracuene453762943#5_0_98" lane="453762943#5_0" startPos="31.16" endPos="51.16" name="MRR2 - Marracuene" lines="203"/>
+    <busStop id="busStop_MRS2_MoreiradeSá_454037681_0_73" lane="454037681_0" startPos="9.00" endPos="29.00" name="MRS2 - Moreira de Sá" lines="202 204 208 209 501 507 601 704 803 104M 119M 104N"/>
+    <busStop id="busStop_MS1MouzinhoSilveira-216891254#0_0_279" lane="-216891254#0_0" startPos="16.10" endPos="36.10" name="MS1 - Mourzinho Silveira" lines="500 900 901 906"/>
+    <busStop id="busStop_MS2MouzinhoSilveira216891254#0_0_152" lane="216891254#0_0" startPos="14.98" endPos="34.98" name="MS2 - Mouzinho Silveira" lines="500 900 901 906 104"/>
+    <busStop id="busStop_MSTO1Monsanto448568808#4_0_22" lane="448568808#4_0" startPos="74.50" endPos="94.50" name="MSTO1 - Monsanto" lines="704"/>
+    <busStop id="busStop_MTCVMonteCativo453761206#3_0_99" lane="453761206#3_0" startPos="39.83" endPos="59.83" name="MTCV - Monte Cativo" lines="203 302 402"/>
+    <busStop id="busStop_MTT2MonteTadeu350915450#0_0_201" lane="350915450#0_0" startPos="102.44" endPos="122.44" name="MTT2 - Monte Tadeu" lines="206"/>
+    <busStop id="busStop_NAT1Nataria35475028#0_0_226" lane="35475028#0_0" startPos="74.22" endPos="94.22" name="NAT1 - Nataria" lines="204 206 803"/>
+    <busStop id="busStop_NAT2Natária-35475028#0_0_96" lane="-35475028#0_0" startPos="38.49" endPos="58.49" name="NAT2 - Natária" lines="204 803"/>
+    <busStop id="busStop_NAVE1Nave549266409#2_0_272" lane="549266409#2_0" startPos="31.65" endPos="51.65" name="NAVE1 - Nave" lines="305 401"/>
+    <busStop id="busStop_OLIV31060211#1_0_211" lane="31060211#1_0" startPos="25.92" endPos="45.92" name="OLIV" lines="304"/>
+    <busStop id="busStop_OLMOliveiraMonteiro453762943#0_0_252" lane="453762943#0_0" startPos="3.85" endPos="23.85" name="OLM - Oliveira Monteiro" lines="203"/>
+    <busStop id="busStop_PAL1Palacio#0_0_256" lane="36748084#0_0" startPos="30.27" endPos="50.27" name="PAL1 - Palacio" lines="208"/>
+    <busStop id="busStop_PAL2Palácio36748084#0_0_74" lane="36748084#0_0" startPos="54.67" endPos="74.67" name="PAL2 - Palácio" lines="200 207"/>
+    <busStop id="busStop_PAL3_Palacio_36748084#0_0_73" lane="36748084#0_0" startPos="77.62" endPos="97.62" name="PAL3 - Palácio" lines="201 302 501 507 601 104M 119M 104N"/>
+    <busStop id="busStop_PAL4_Palacio_448860910#1_0_216" lane="448860910#1_0" startPos="24.33" endPos="44.33" name="PAL4 - Palacio" lines="200 201 208 207 303 501 507 601"/>
+    <busStop id="busStop_PALPalacio448860910#1_0_76" lane="448860910#1_0" startPos="3.07" endPos="23.07" name="PAL - Palacio" lines="104M 119M 104N"/>
+    <busStop id="busStop_PC1ParquedasCameliaS460206500#1_0_321" lane="460206500#1_0" startPos="23.58" endPos="43.58" name="PC1 - Parque das Camelias" lines="12ES 14ES 15ES 17ES"/>
+    <busStop id="busStop_PC2ParquedasCamelias460206500#1_0_322" lane="460206500#1_0" startPos="55.17" endPos="75.17" name="PC2 - Parque das Camelias" lines="32ES 40ES 60ES"/>
+    <busStop id="busStop_PDR2PradoRepouso261980637#4_0_170" lane="261980637#4_0" startPos="46.82" endPos="66.82" name="PDR2 - Prado Repouso" friendlyPos="1" lines="207 400"/>
+    <busStop id="busStop_PDR3Padrao34916303#1_0_297" lane="34916303#1_0" startPos="81.92" endPos="96.92" lines="302"/>
+    <busStop id="busStop_PDR414333954#3_0_298" lane="14333954#3_0" startPos="7.64" endPos="22.64" lines="303"/>
+    <busStop id="busStop_PILM2PiresdeLima482331424#2_0_295" lane="482331424#2_0" startPos="109.31" endPos="129.31" name="PILM2 - Pires de Lima" lines="701 702 703"/>
+    <busStop id="busStop_PISCPiscinasConstituicao704509573#2_0_111" lane="704509573#2_0" startPos="8.27" endPos="28.27" name="PISC - Piscinas Constituicao" lines="203 402"/>
+    <busStop id="busStop_PLIM1PiresdeLima-482331424#2_0_290" lane="-482331424#2_0" startPos="107.19" endPos="127.19" name="PLIM1 - Pires de Lima" lines="701 702 703"/>
+    <busStop id="busStop_PLNT1Planetario128363658#5_0_57" lane="128363658#5_0" startPos="10.44" endPos="30.44" name="PLNT1 - Planetario" lines="200 204 207 209"/>
+    <busStop id="busStop_PLNT2Planetario-128363658#3_0_248" lane="-128363658#3_0" startPos="10.57" endPos="30.57" name="PLNT2 - Planetario" lines="200 204 207 209"/>
+    <busStop id="busStop_PR1PracaLiberdade216972581#4_0_299" lane="216972581#4_0" startPos="42.52" endPos="62.52" lines="500"/>
+    <busStop id="busStop_PRDJ1PraçaDomJoaoI-220232893#3_0_174" lane="-220232893#3_0" startPos="12.38" endPos="32.38" name="PRDJ1 - Praça Dom Joao I" lines="200 300 305 801"/>
+    <busStop id="busStop_PRDJ2PraçaDomJoaoI220232893#3_0_173" lane="220232893#3_0" startPos="19.76" endPos="39.76" name="PRDJ2 - Praça Dom Joao I" lines="301 305 801"/>
+    <busStop id="busStop_PRDJPracadeJoaoI190128487#1_0_236" lane="190128487#1_0" startPos="11.11" endPos="31.11" name="PRDJ - Praca de Joao I" lines="200 302 400 900 901 906"/>
+    <busStop id="busStop_PRDR1PradoRepouso-261980637#4_0_171" lane="-261980637#4_0" startPos="17.69" endPos="37.69" name="PRDR1 - Prado Repouso" lines="207 400"/>
+    <busStop id="busStop_PRFLPracaFilipaLencastre215200349#1_0_213" lane="215200349#1_0" startPos="26.44" endPos="46.44" name="PRFL - Praca Filipa Lencastre" lines="200 201 207 208 300 302 305 501"/>
+    <busStop id="busStop_PRG1PracaGaliza_482291294_0_60" lane="482291294_0" startPos="43.57" endPos="63.57" name="PRG1 - Praca Galiza" lines="201 204 208 209 302 501 507 601 104M 119M 104N"/>
+    <busStop id="busStop_PRG2PracadaGaliza-482291294_0_61" lane="-482291294_0" startPos="41.64" endPos="61.64" name="PRG2 - Praca da Galiza" lines="201 208 303 501 601 119M 104N 18ES"/>
+    <busStop id="busStop_PRG4PracadaGaliza200072875_0_214" lane="200072875_0" startPos="9.33" endPos="29.33" name="PRG4 - Praca da Galiza" lines="200 204 207 209"/>
+    <busStop id="busStop_PRL1PracadaLiberade215138083#1_0_283" lane="216972801#0_0" startPos="21.59" endPos="41.59" name="PRL1 - Praca da Liberade" lines="500"/>
+    <busStop id="busStop_PRL8PracadaLiberdade156209010#3_0_261" lane="14326558#3_0" startPos="9.43" endPos="24.43" name="PRL8 - Praca da Liberdade" lines="301 305 801"/>
+    <busStop id="busStop_PRM1Paraiso34653072#2_0_299" lane="34653072#2_0" startPos="26.73" endPos="46.73" name="PRM1 - Paraiso" lines="703"/>
+    <busStop id="busStop_PRR1PracadaRepublica642609452_0_14" lane="642609452_0" startPos="23.08" endPos="43.08" name="PRR1 - Praca da Republica" lines="304 202 502"/>
+    <busStop id="busStop_PRR3PracadaRepublica434872541_0_134" lane="434872541_0" startPos="116.89" endPos="136.89" name="PRR3 - Praca da Republica" lines="600"/>
+    <busStop id="busStop_PRR3PracadaRepublica642609452_0_15" lane="642609452_0" startPos="60.22" endPos="80.22" name="PRR3 - Praca da Republica" lines="600"/>
+    <busStop id="busStop_PRR5PracadaRepublica_0_207" lane="498298757#3_0" startPos="18.67" endPos="38.67" name="PRR5 - Praca da Republica" lines="304 600"/>
+    <busStop id="busStop_PRR7PracadaRepublica8367069#2_0_132" lane="8367069#2_0" startPos="18.74" endPos="38.74" name="PRR7 - Praca da Republica" lines="202 502"/>
+    <busStop id="busStop_PRSM2ParaisoMetro34772371#3_0_302" lane="34772371#3_0" startPos="13.93" endPos="33.93" name="PRSM2 - Paraiso Metro" lines="703"/>
+    <busStop id="busStop_PSOC1PerpetuoSocorro-482331424#12_0_288" lane="-482331424#12_0" startPos="175.59" endPos="195.59" name="PSOC1 - Perpetuo Socorro" lines="701 702 703"/>
+    <busStop id="busStop_PSOC2PerpetuoSocorro482331424#12_0_285" lane="482331424#12_0" startPos="235.45" endPos="255.45" name="PSOC2 - Perpetuo Socorro" lines="603 701 702 703"/>
+    <busStop id="busStop_QTAM1QuintaAmarela-453493822#2_0_94" lane="-453493822#2_0" startPos="44.66" endPos="64.66" name="QTAM1 - Quinta Amarela" lines="300 508 602"/>
+    <busStop id="busStop_QTAM2QuintaAmarela453493822#1_0_95" lane="453493822#1_0" startPos="49.40" endPos="69.40" name="QTAM2 - Quinta Amarela" lines="301 508 602"/>
+    <busStop id="busStop_RA1RamadaAlta706644343#2_0_265" lane="706644343#2_0" startPos="8.05" endPos="28.05" name="RA1- Ramada Alta" lines="302 402"/>
+    <busStop id="busStop_RA2RamadaAlta453762944#3_0_269" lane="453762944#3_0" startPos="16.51" endPos="36.51" name="RA2 -  Ramada Alta" lines="303 402"/>
+    <busStop id="busStop_RALGAlegria453762038_0_204" lane="453762038_0" startPos="21.89" endPos="41.89" name="RALG - Alegria" lines="206 302 402 805 806"/>
+    <busStop id="busStop_RBR1Ribeira226908049_0_306" lane="226908049_0" startPos="22.78" endPos="42.78" name="RBR1 - Ribeira" lines="900 901 906 103"/>
+    <busStop id="busStop_RBR2Ribeira-13278159#0_1_307" lane="-13278159#0_0" startPos="2.42" endPos="22.42" name="RBR2 - Ribeira" lines="900 901 906 103"/>
+    <busStop id="busStop_RBRI1RibeiraInfante-96151239#9_0_154" lane="-96151239#9_0" startPos="43.83" endPos="63.83" name="RBRI1 - Ribeira Infante" lines="500 103 104"/>
+    <busStop id="busStop_RBSS2_RotundaBessa_207883914#2_0_38" lane="207883914#2_0" startPos="16.57" endPos="36.57" name="RBSS2 - Rotunda da Bessa" lines="202 208 501 507"/>
+    <busStop id="busStop_RBTI2RibeiraInfante96151239#9_0_153" lane="96151239#9_0" startPos="62.41" endPos="82.41" name="RBTI2- Ribeira Infante" lines="500 103"/>
+    <busStop id="busStop_RFZ1Firmeza_0_230" lane="8367160_0" startPos="185.24" endPos="205.24" name="RFZ1 - Firmeza" lines="206 303"/>
+    <busStop id="busStop_RPM1RuaParticulardeMonsanto448568808#8_0_20" lane="448568808#8_0" startPos="94.58" endPos="114.58" name="RPM1 - Rua Particular de Monsanto" lines="704"/>
+    <busStop id="busStop_RPM2RuaParticulardoMonsanto-448568808#8_0_19" lane="-448568808#8_0" startPos="48.15" endPos="68.15" name="RPM2 - Rua Particular do Monsanto" lines="704"/>
+    <busStop id="busStop_SBB5SadaBandeira_0_282" lane="715176796#6_0" startPos="9.89" endPos="29.89" name="SBB5 - Sa da Bandeira" lines="500"/>
+    <busStop id="busStop_SBNT2SaoBento715176795#0_0_253" lane="715176795#0_0" startPos="20.26" endPos="35.26" name="SBNT2 - Sao Bento" lines="207 303 400"/>
+    <busStop id="busStop_SBNT3SaoBento-304684297#1_0_280" lane="-304684297#1_0" startPos="15.55" endPos="35.55" name="SBNT3 - Sao Bento" lines="500 900 901 906"/>
+    <busStop id="busStop_SBNTSaoBento_0_284" lane="715176795#0_0" startPos="4.58" endPos="19.58" name="SBNT - Sao Bento" lines="500 900 901 906"/>
+    <busStop id="busStop_SCR1SaoCrispim13263613#2_0_277" lane="13263613#2_0" startPos="15.03" endPos="35.03" name="SCR1 - Sao Crispim" lines="402 805 806"/>
+    <busStop id="busStop_SCR4SaoCrispim-304690306_0_276" lane="-304690306_0" startPos="54.24" endPos="74.24" name="SCR4 - Sao Crispim" lines="402 805 806"/>
+    <busStop id="busStop_SCRP5SãoCrispim549266390_0_194" lane="549266390_0" startPos="28.61" endPos="48.61" name="SCRP5 - São Crispim" lines="301 305 401"/>
+    <busStop id="busStop_SCRP6SaoCrispim-549266390_0_241" lane="-549266390_0" startPos="22.29" endPos="42.29" name="SCRP6 - Sao Crispim" lines="300 305 401"/>
+    <busStop id="busStop_SDP1_SidonioPais_12319876#1_0_36" lane="12319876#1_0" startPos="36.97" endPos="56.97" name="SDP1 - Sidonio Pais" lines="202 208 501 507 601 104M 119M 104N"/>
+    <busStop id="busStop_SDP2_SidonioPais_-12319876#1_0_37" lane="-12319876#1_0" startPos="20.08" endPos="40.08" name="SDP2 - Sidonio Pais" lines="202 208 501 507 601 104M 119M 104N"/>
+    <busStop id="busStop_SI1SantoIdiso-453762039#4_0_203" lane="-453762039#4_0" startPos="17.08" endPos="37.08" name="SI1 - Santo Idiso" lines="302"/>
+    <busStop id="busStop_SI2SantoIdiso453762039#5_0_202" lane="453762039#5_0" startPos="27.57" endPos="47.57" name="SI2 - Santo Idiso" friendlyPos="1" lines="206 303"/>
+    <busStop id="busStop_SLZ1SaoLazaro14327505#2_0_166" lane="14327505#2_0" startPos="29.80" endPos="49.80" name="SLZ1 - Sao Lazaro" lines="207 303 400"/>
+    <busStop id="busStop_SLZ3SaoLazaro-261980637#0_0_252" lane="-261980637#0_0" startPos="62.35" endPos="82.35" name="SLZ3 - Sao Lazaro" lines="207 400"/>
+    <busStop id="busStop_SPSerpaPinto453762947_0_268" lane="453762947_0" startPos="14.78" endPos="34.78" name="SP - Serpa Pinto" lines="303 402"/>
+    <busStop id="busStop_SPTO1SerpaPinto704509573#14_0_114" lane="704509573#14_0" startPos="30.30" endPos="50.30" name="SPTO1 - Serpa Pinto" lines="203"/>
+    <busStop id="busStop_STPSantosPousada_0_282" lane="gneE6_0" startPos="189.24" endPos="209.24" name="STP - Santos Pousada" lines="300 305 401"/>
+    <busStop id="busStop_SVT3SilvaTapada-434879925#2_0_291" lane="-434879925#2_0" startPos="13.26" endPos="33.26" name="SVT3 - Silva Tapada" lines="701 702 703"/>
+    <busStop id="busStop_SVT4SilvaTapada434879925#2_0_294" lane="434879925#2_0" startPos="149.83" endPos="169.83" name="SVT4 - Silva Tapada" lines="701 702 703"/>
+    <busStop id="busStop_SaoLazaro-14327505#1_0_321" lane="-14327505#1_0" startPos="43.82" endPos="63.82" name="Sao Lazaro" friendlyPos="1" lines="12ES 14ES 15ES 17ES 30ES 30SES 30PES 32ES 40ES 60ES"/>
+    <busStop id="busStop_TRD1Trindade38336628#2_0_145" lane="38336628#2_0" startPos="10.68" endPos="30.68" name="TRD1 - Trindade" lines="600 901"/>
+    <busStop id="busStop_TRD1Trindade38336628#5_0_218" lane="38336628#5_0" startPos="3.29" endPos="23.29" name="TRD1 - Trindade" lines="200 202 600 703"/>
+    <busStop id="busStop_TRD3Trindade38336628#2_0_144" lane="38336628#3_0" startPos="7" endPos="22" name="TRD3 - Trindade" lines="900"/>
+    <busStop id="busStop_TRD5Trindade-287648900_0_252" lane="-287648900_0" startPos="63.99" endPos="83.99" name="TRD5 - Trindade" lines="202 304 600"/>
+    <busStop id="busStop_TRD6Trindade14326572#2_0_251" lane="14326572#2_0" startPos="4.88" endPos="24.88" name="TRD6 - Trindade" lines="201 208 501"/>
+    <busStop id="busStop_TRH1Torrinha34683151#0_0_244" lane="34683151#0_0" startPos="24.80" endPos="44.80" name="TRH1 - Torrinha" lines="300 602"/>
+    <busStop id="busStop_TRH2Torrinha-34683151#0_0_245" lane="-34683151#0_0" startPos="212.97" endPos="232.97" name="TRH2 - Torrinha" lines="301 602"/>
+    <busStop id="busStop_TRH3Torrinha59525260#5_0_260" lane="59525260#5_0" startPos="40.18" endPos="60.18" name="TRH3 - Torrinha" lines="301"/>
+    <busStop id="busStop_TXP1TeixeiraPascoal13265074#0_0_278" lane="13265074#0_0" startPos="33.77" endPos="53.77" name="TXP1 - Teixeira Pascoal" lines="402 806"/>
+    <busStop id="busStop_VFM3ValeFormoso212710692_0_234" lane="212710692_0" startPos="32.05" endPos="52.05" name="VFM3 - Vale Formoso" lines="206"/>
+    <busStop id="busStop_VFM6ValeFormoso212710702_0_8" lane="212710702_0" startPos="8.91" endPos="28.91" name="VFM6 - Vale Formoso" lines="304 600"/>
+    <busStop id="busStop_VFM7ValeFormoso-448867798#5_0_9" lane="-448867798#5_0" startPos="10.04" endPos="30.04" name="VFM7 - Vale Formoso" lines="304 600 206"/>
+    <e2Detector id="10_1" lane="220232893#3_0" pos="6.29" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="11" lane="-252526954_0" pos="20.30" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="12" lane="142214759#8_0" pos="8.75" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="13_1" lane="434872540_0" pos="55.00" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="13_2" lane="434872540_1" pos="55.00" length="10.00" freq="3600.00" file="e2detector.xml"/>
+    <e2Detector id="14_1" lane="206720846#3_0" pos="12.78" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="14_2" lane="206720846#3_1" pos="17.50" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="15_1" lane="14328446#6_1" pos="16.07" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="15_2" lane="14328446#6_0" pos="17.99" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="16" lane="252526951#3_0" pos="21.14" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="17_1" lane="14326572#0_1" pos="40.38" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="17_2" lane="14326572#0_0" pos="39.50" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="17_3" lane="14326572#0_2" pos="33.00" length="10.00" freq="3600.00" file="e2Detector.xml" friendlyPos="1"/>
+    <e2Detector id="18_1" lane="34653072#0_1" pos="50.83" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="18_2" lane="34653072#1_0" pos="37.63" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="19" lane="128825641#1_0" pos="54.03" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="1_1" lane="49982592_0" pos="17.28" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="1_2" lane="49982592_1" pos="19.62" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="20_1" lane="434872534#2_0" pos="18.38" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="20_2" lane="434872534#2_1" pos="18.94" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="20_3" lane="434872534#2_2" pos="13.44" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="21_1" lane="-349620090#3_1" pos="57.84" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="21_2" lane="-349620090#3_0" pos="56.40" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="22_1" lane="100862814_0" pos="33.67" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="22_2" lane="100862814_1" pos="35.86" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="23" lane="386286210_0" pos="9.14" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="24_1" lane="156208919#0_0" pos="23.22" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="25_1" lane="211436103#0_2" pos="55.44" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="25_2" lane="211436103#0_1" pos="56.37" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="25_3" lane="211436103#0_0" pos="57.85" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="26_1" lane="60175941#7_0" pos="9.09" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="26_2" lane="60175941#7_1" pos="8.55" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="26_3" lane="60175941#7_2" pos="7.51" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="27_1" lane="13854847#1_0" pos="210.49" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="27_2" lane="13854847#1_1" pos="213.51" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="29" lane="13715172_0" pos="55.23" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="2_1" lane="173072164_1" pos="227.42" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="2_2" lane="173072164_0" pos="234.16" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="30_1" lane="219527968#1_2" pos="43.92" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="30_2" lane="219527968#1_1" pos="45.85" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="30_3" lane="219527968#1_0" pos="46.71" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="31_1" lane="250949165#0_0" pos="70.26" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="31_2" lane="250949165#0_1" pos="71.77" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="32_1" lane="705491647#0_0" pos="63.79" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="32_2" lane="705491647#0_1" pos="69.46" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="33" lane="34683151#0_0" pos="16.86" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="34_1" lane="705491645#1_0" pos="148.73" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="34_2" lane="705491645#1_1" pos="148.99" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="35_1" lane="-207634523#0_0" pos="30.77" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="35_2" lane="-207634523#0_1" pos="37.07" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="36" lane="13800986#1_0" pos="54.23" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="37_1" lane="-36748084#2_1" pos="58.15" length="5.68" freq="3600.00" file="e2Detector.xml" friendlyPos="1"/>
+    <e2Detector id="37_2" lane="-36748084#2_0" pos="57.69" length="6.14" freq="3600.00" file="e2Detector.xml" friendlyPos="1"/>
+    <e2Detector id="38_1" lane="482261339#1_1" pos="26.42" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="38_2" lane="482261339#1_0" pos="26.63" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="39_1" lane="36748085#0_1" pos="53.45" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="39_2" lane="36748085#0_0" pos="54.30" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="3_1" lane="14327260#0_0" pos="123.84" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="3_2" lane="14327260#0_1" pos="127.38" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="4" lane="14327545#0_0" pos="43.62" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="40" lane="27149319#0_0" pos="53.22" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="42_1" lane="13848688#2_1" pos="15.79" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="42_2" lane="13848688#2_0" pos="17.12" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="43_1" lane="-128363658#3_1" pos="208.72" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="43_2" lane="-128363658#3_0" pos="207.77" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="44" lane="595164143#3_0" pos="36.11" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="45_2" lane="252518644#2_0" pos="52.73" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="47_1" lane="549266397#1_1" pos="36.60" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="47_2" lane="549266397#1_0" pos="39.38" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="48" lane="34885153_0" pos="74.27" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="49" lane="173372590_0" pos="43.50" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="5" lane="14327868#2_0" pos="33.27" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="50_1" lane="36928561_0" pos="111.15" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="50_2" lane="36928561_1" pos="110.71" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="51" lane="223288612_0" pos="38.73" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="52" lane="219527972_0" pos="47.17" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="53_1" lane="608419462#2_2" pos="39.92" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="53_2" lane="608419462#2_1" pos="39.34" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="53_3" lane="608419462#2_0" pos="40.46" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="54_1" lane="453762948#0_0" pos="51.60" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="54_2" lane="453762948#0_1" pos="50.12" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="55" lane="453761210#2_0" pos="46.11" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="56_1" lane="453762948#2_0" pos="49.74" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="56_2" lane="453762948#2_1" pos="54.95" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="57_1" lane="31396393_0" pos="48.62" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="57_2" lane="31396393_1" pos="51.74" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="58" lane="-13797599#1_0" pos="47.78" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="59" lane="13797599#1_0" pos="123.55" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="6" lane="-14327505#2_0" pos="36.31" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="60_1" lane="13797599#3_0" pos="20.09" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="60_2" lane="13797599#3_1" pos="19.88" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="61_1" lane="13715562_0" pos="95.78" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="61_2" lane="13715562_1" pos="95.41" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="61_3" lane="13715562_2" pos="95.09" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="62" lane="13797599#5_0" pos="61.00" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="64_1" lane="453761209_0" pos="47.86" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="64_2" lane="453761209_1" pos="49.02" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="64_3" lane="453761209_2" pos="47.27" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="65_1" lane="13715388_0" pos="75.70" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="65_2" lane="13715388_1" pos="75.92" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="66_1" lane="95791537_3" pos="55.30" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="66_2" lane="95791537_2" pos="58.38" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="66_3" lane="95791537_1" pos="60.26" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="66_4" lane="95791537_0" pos="63.24" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="67_1" lane="100_0" pos="64.08" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="67_2" lane="gneE36_0" pos="59.26" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="67_3" lane="479127834_0" pos="56.74" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="68_1" lane="479127855_0" pos="45.51" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="68_2" lane="479127855_1" pos="47.01" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="68_3" lane="479127855_2" pos="47.36" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="69_1" lane="479127845_3" pos="39.37" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="69_2" lane="479127845_2" pos="43.90" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="69_3" lane="479127845_1" pos="44.18" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="69_4" lane="479127845_0" pos="43.89" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="7" lane="261980637#0_0" pos="76.14" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="70_1" lane="460839284_0" pos="23.59" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="70_2" lane="460839284_1" pos="25.60" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="70_3" lane="460839284_2" pos="25.81" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="71_1" lane="447313062_2" pos="522.06" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="71_2" lane="447313062_1" pos="519.75" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="71_3" lane="447313062_0" pos="519.96" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="72_1" lane="34711126_0" pos="23.04" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="72_2" lane="34711126_1" pos="23.61" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="72_3" lane="34711126_2" pos="25.56" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="72_4" lane="34711126_3" pos="27.33" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="73_1" lane="35006698_2" pos="64.33" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="73_2" lane="35006698_1" pos="65.96" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="73_3" lane="35006698_0" pos="69.35" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="74_1" lane="478882419_0" pos="37.10" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="74_2" lane="478882419_1" pos="42.22" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="74_3" lane="478882419_2" pos="43.81" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="75_1" lane="478886775_2" pos="40.64" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="75_2" lane="478886775_1" pos="41.72" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="75_3" lane="478886775_0" pos="43.33" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="76_1" lane="478882417_0" pos="75.74" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="76_2" lane="478882417_1" pos="77.04" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="76_3" lane="478882417_2" pos="78.83" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="76_4" lane="478882417_3" pos="80.39" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="77_1" lane="478882411_3" pos="131.97" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="77_2" lane="478882411_2" pos="134.75" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="77_3" lane="478882411_1" pos="134.57" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="77_4" lane="478882411_0" pos="134.35" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="78_1" lane="479365567_0" pos="129.03" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="78_2" lane="479365567_1" pos="131.90" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="78_3" lane="479365567_2" pos="131.33" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="78_4" lane="479365567_3" pos="132.28" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="79_1" lane="479365561_3" pos="69.36" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="79_2" lane="479365561_2" pos="69.31" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="79_3" lane="479365561_1" pos="69.94" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="79_4" lane="479365561_0" pos="70.56" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="8" lane="-31721081#2_0" pos="36.23" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="80_1" lane="35047581_0" pos="657.15" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="80_2" lane="35047581_1" pos="658.30" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="80_3" lane="35047581_2" pos="661.44" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="81_1" lane="105482346_2" pos="494.09" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="81_2" lane="105482346_1" pos="495.33" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="81_3" lane="105482346_0" pos="494.10" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="82_1" lane="367461723_0" pos="48.90" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="82_2" lane="367461723_1" pos="49.93" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="82_3" lane="367461723_2" pos="49.26" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="82_4" lane="367461723_3" pos="47.92" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="83_1" lane="367461722_3" pos="100.40" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="83_2" lane="367461722_2" pos="105.47" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="83_3" lane="367461722_1" pos="104.85" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="83_4" lane="367461722_0" pos="103.73" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+    <e2Detector id="9" lane="-434879926#1_0" pos="14.40" length="10.00" freq="3600.00" file="e2Detector.xml"/>
+</additional>
