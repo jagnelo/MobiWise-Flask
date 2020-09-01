@@ -5,6 +5,9 @@ import mainaux
 import SUMOinout
 from ecorouting.testcases import testcases
 import pickle
+from flask import Flask, request, jsonify, make_response
+from flask_cors import CORS
+from dotenv import load_dotenv, find_dotenv
 
 
 # configs for running 2 side-by-side sumo-gui windows (resolution: 1920x950, on Ubuntu)
@@ -12,6 +15,13 @@ import pickle
 # --window-pos 0,0 --window-size 923,950
 # right screen half
 # --window-pos 1920,0 --window-size 923,950
+
+
+load_dotenv(find_dotenv())
+
+app = Flask(__name__)
+
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 TTIME = "ttime"
@@ -22,6 +32,7 @@ COST_PMX = "cost_PMx"
 COST_HC = "cost_hc"
 COST_NOX = "cost_nox"
 # COST_FUEL = "cost_fuel"     # esta opção não consta do código original da Andreia
+metrics = [TTIME, LENGTH, COST_CO, COST_CO2, COST_PMX, COST_HC, COST_NOX]   # , COST_FUEL]
 
 ANG_EST = "ang-est"
 PORTO_8AM9_FEWER = "portoSB_8AM9AM_fewerv"
@@ -51,14 +62,13 @@ def setup_records(tc):
 # adjusted duplicate from ecorouting.main-interactive.readArguments
 def read_arguments(default_args=None):
     tcnames = testcases.keys()
-    objs = [TTIME, LENGTH, COST_CO, COST_CO2, COST_PMX, COST_HC, COST_NOX]  # , COST_FUEL]
 
     parser = argparse.ArgumentParser(description='EcoRouting.')
     parser.add_argument('--mode', type=int, choices=[1 ,2 ,3], default=1,
                         help='choose mode: 1) run base case; 2) optimize and simulate solutions - interactive mode; 3) optimize and simulate all solutions')
     parser.add_argument("-t", type=str, choices=tcnames, default="ang-est")
-    parser.add_argument("--obj1", type=str, choices=objs, default="ttime", help="Objective 1")
-    parser.add_argument("--obj2", type=str, choices=objs, default="length", help="Objective 2")
+    parser.add_argument("--obj1", type=str, choices=metrics, default="ttime", help="Objective 1")
+    parser.add_argument("--obj2", type=str, choices=metrics, default="length", help="Objective 2")
     parser.add_argument("--w1", type=int, default=1, help="Weight 1")
     parser.add_argument("--w2", type=int, default=1, help="Weight 2")
     parser.add_argument("--gui", default=False, action="store_true", help="Run the graphical version of SUMO")
@@ -69,6 +79,17 @@ def read_arguments(default_args=None):
     return args
 
 
+@app.route('/api/scenarios', methods=['GET'])
+def scenarios():
+    return {"success": True, "scenarios": [h for h in testcases]}, 200
+
+
+@app.route('/api/objectives', methods=['GET'])
+def objectives():
+    return {"success": True, "objectives": metrics}, 200
+
+
+@app.route('/api/<scenario>/<objective1>/<objective2>/simulate/base', methods=['GET'])
 def simulation_run_base(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
@@ -77,6 +98,12 @@ def simulation_run_base(scenario, objective1, objective2):
 
     args = read_arguments(args)
     tc = testcases[args.t]  # test case
+
+    # if the data created by this step already exists, return immediately rather than re-running
+    if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 1:
+        if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
+            return {"success": True}, 200
+
     setup_records(tc)
 
     # gera os ficheiros -routes.dat, -source-destiny.in, -demand.in, -sdemand.in (trafego estatico e dinamico)
@@ -104,12 +131,32 @@ def simulation_run_base(scenario, objective1, objective2):
     data[key] = {"args": args, "tc": tc, "stage": 1}
     write_pickle(data)
 
+    return {"success": True}, 200
 
+
+@app.route('/api/<scenario>/<objective1>/<objective2>/optimize', methods=['GET'])
 def optimization_calc_solutions(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
     args = data[key]["args"]
     tc = data[key]["tc"]
+
+    # if the data created by this step already exists, return immediately rather than re-running
+    if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 2:
+        if "fcostLabels" in data[key] and "fcostWeights" in data[key] and "commoninfo" in data[key] and "solsinfo" in data[key]:
+            if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
+                if os.path.exists(os.path.join(data[key]["tc"]["ofolder"], format_objective_names(objective1, objective2))):
+                    base_file = os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "base.eval")
+                    pred_file = os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "pred.eval")
+                    if os.path.exists(base_file) and os.path.exists(pred_file):
+                        base = read_eval_file(base_file)
+                        base = {h: base[h] for h in base if h in metrics}
+
+                        pred = read_eval_file(pred_file)
+                        pred = {h: pred[h] for h in pred if h in metrics}
+
+                        return {"success": True, "data": {"base": {"num_sols": len(base[metrics[0]]), **base},
+                                                          "pred": {"num_sols": len(pred[metrics[0]]), **pred}}}, 200
 
     fcostLabels = np.array([args.obj1, args.obj2])
     fcostWeights = np.array([args.w1, args.w2])
@@ -132,7 +179,17 @@ def optimization_calc_solutions(scenario, objective1, objective2):
     data[key]["stage"] = 2
     write_pickle(data)
 
+    base = read_eval_file(os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "base.eval"))
+    base = {h: base[h] for h in base if h in metrics}
 
+    pred = read_eval_file(os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "pred.eval"))
+    pred = {h: pred[h] for h in pred if h in metrics}
+
+    return {"success": True, "data": {"base": {"num_sols": len(base[metrics[0]]), **base},
+                                      "pred": {"num_sols": len(pred[metrics[0]]), **pred}}}, 200
+
+
+@app.route('/api/<scenario>/<objective1>/<objective2>/simulate/optimized/<sol_num>', methods=['GET'])
 def simulation_run_optimized(scenario, objective1, objective2, sol_num):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
@@ -142,17 +199,40 @@ def simulation_run_optimized(scenario, objective1, objective2, sol_num):
     commoninfo = data[key]["commoninfo"]
     solsinfo = data[key]["solsinfo"]
 
+    sol = int(sol_num)
+
+    # if the data created by this step already exists, return immediately rather than re-running
+    if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 3:
+        if "fcostLabels" in data[key] and "fcostWeights" in data[key] and "commoninfo" in data[key] and "solsinfo" in data[key]:
+            if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
+                if os.path.exists(os.path.join(data[key]["tc"]["ofolder"], format_objective_names(objective1, objective2))):
+                    sim_file = os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "sim.eval")
+                    if os.path.exists(sim_file):
+                        if "simulated_sols" in data[key] and sol in data[key]["simulated_sols"]:
+                            sim = read_eval_file(sim_file)
+                            sim = {h: sim[h] for h in sim if h in metrics}
+
+                            return {"success": True, "data": {"sim": {"num_sols": len(sim[metrics[0]]), **sim}}}, 200
+
     ifolder = tc["ifolder"]  # input folder
     netfile = ifolder + "/" + tc["netfile"]  # net file
 
     comments = "objective functions: (" + ", ".join(
         map(lambda a: (str(a[0]) + "*" + str(a[1])), zip(fcostWeights, fcostLabels))) + ")"
 
-    mainaux.runSolution(netfile, commoninfo, solsinfo, sol_num, fcostLabels, guiversion=True, comments=comments)# ,
+    mainaux.runSolution(netfile, commoninfo, solsinfo, sol, fcostLabels, guiversion=True, comments=comments)# ,
                         # extra_args="--window-pos 1920,0 --window-size 923,950")
 
     data[key]["stage"] = 3
+    if "simulated_sols" not in data[key]:
+        data[key]["simulated_sols"] = []
+    data[key]["simulated_sols"].append(sol)
     write_pickle(data)
+
+    sim = read_eval_file(os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "sim.eval"))
+    sim = {h: sim[h] for h in sim if h in metrics}
+
+    return {"success": True, "data": {"sim": {"num_sols": len(sim[metrics[0]]), **sim}}}, 200
 
 
 def read_eval_file(file_name):
@@ -188,22 +268,5 @@ def read_pickle():
     return data
 
 
-test_name = ANG_EST
-obj1 = TTIME
-obj2 = LENGTH
-sol = 0
-
-
-simulation_run_base(test_name, obj1, obj2)
-optimization_calc_solutions(test_name, obj1, obj2)
-simulation_run_optimized(test_name, obj1, obj2, sol)
-
-
-metrics = [TTIME, LENGTH, COST_CO, COST_CO2, COST_PMX, COST_HC, COST_NOX]
-base = read_eval_file(os.path.join(testcases[test_name]["ofolder"], format_objective_names(obj1, obj2), "base.eval"))
-pred = read_eval_file(os.path.join(testcases[test_name]["ofolder"], format_objective_names(obj1, obj2), "pred.eval"))
-sim = read_eval_file(os.path.join(testcases[test_name]["ofolder"], format_objective_names(obj1, obj2), "sim.eval"))
-base = {h:base[h] for h in base if h in metrics}
-pred = {h:pred[h] for h in pred if h in metrics}
-sim = {h:sim[h] for h in sim if h in metrics}
-
+if __name__ == '__main__':
+    app.run(port=8001)
