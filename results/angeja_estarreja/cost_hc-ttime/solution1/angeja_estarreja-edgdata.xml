@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on qua 02 set 2020 23:53:32 by Eclipse SUMO GUI Version 1.6.0
+<!-- generated on qui 03 set 2020 03:09:17 by Eclipse SUMO GUI Version 1.6.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
         <net-file value="../dataSets/Angeja_Estarreja/angeja_estarreja.net.xml"/>
-        <route-files value="../results/angeja_estarreja/cost_co-ttime/solution1/angeja_estarreja.rou.xml"/>
+        <route-files value="../results/angeja_estarreja/cost_hc-ttime/solution1/angeja_estarreja.rou.xml"/>
         <additional-files value="moreOutputInfo.xml"/>
     </input>
 
     <output>
         <emission-output.precision value="6"/>
-        <tripinfo-output value="../results/angeja_estarreja/cost_co-ttime/solution1/angeja_estarreja-tripinfo"/>
+        <tripinfo-output value="../results/angeja_estarreja/cost_hc-ttime/solution1/angeja_estarreja-tripinfo"/>
     </output>
 
     <processing>

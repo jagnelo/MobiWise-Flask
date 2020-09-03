@@ -1,13 +1,16 @@
 import argparse
 import os
 import numpy as np
+import pyscreenshot as ImageGrab
+
 import mainaux
 import SUMOinout
 from ecorouting.testcases import testcases
 import pickle
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, Response
 from flask_cors import CORS
 from dotenv import load_dotenv, find_dotenv
+import cv2
 
 
 # configs for running 2 side-by-side sumo-gui windows (resolution: 1920x950, on Ubuntu)
@@ -40,6 +43,10 @@ PORTO_8AM9 = "portoSB_8AM9AM"
 
 
 PICKLE_NAME = "data.pkl"
+
+
+base_is_simulating = False
+sim_is_simulating = False
 
 
 def format_objective_names(objective1, objective2):
@@ -102,7 +109,14 @@ def simulation_run_base(scenario, objective1, objective2):
     # if the data created by this step already exists, return immediately rather than re-running
     if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 1:
         if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
-            return {"success": True}, 200
+            return {
+                       "success": True,
+                       "data":
+                           {
+                               "objective1": objective1,
+                               "objective2": objective2
+                           }
+                   }, 200
 
     setup_records(tc)
 
@@ -123,7 +137,10 @@ def simulation_run_base(scenario, objective1, objective2):
     SUMOinout.SUMOToCSV_routes(netfile, roufile, obname, oroufile=broufile, dynamicVTypes=dynamicVTypes)
 
     # gera os ficheiros -tripinfo e o -emission (obter custos do SUMO)
-    mainaux.runSUMO(netfile, broufile, obname, guiversion=True) # , extra_args="--window-pos 0,0 --window-size 923,950")
+    params = get_screen_params()["base"]
+    x, y, width, height = params["x"], params["y"], params["width"], params["height"]
+    mainaux.runSUMO(netfile, broufile, obname, guiversion=True,
+                    extra_args="--window-pos %d,%d --window-size %d,%d" % (x, y, width, height))
 
     # gera os ficheiros CSV -tripinfo.csv, .edg.csv, nod.csv, -emission.csv e .edg-costs.csv
     SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
@@ -131,7 +148,14 @@ def simulation_run_base(scenario, objective1, objective2):
     data[key] = {"args": args, "tc": tc, "stage": 1}
     write_pickle(data)
 
-    return {"success": True}, 200
+    return {
+               "success": True,
+               "data":
+                   {
+                       "objective1": objective1,
+                       "objective2": objective2
+                   }
+           }, 200
 
 
 @app.route('/api/<scenario>/<objective1>/<objective2>/optimize', methods=['GET'])
@@ -155,8 +179,16 @@ def optimization_calc_solutions(scenario, objective1, objective2):
                         pred = read_eval_file(pred_file)
                         pred = {h: pred[h] for h in pred if h in metrics}
 
-                        return {"success": True, "data": {"base": {"num_sols": len(base[metrics[0]]), **base},
-                                                          "pred": {"num_sols": len(pred[metrics[0]]), **pred}}}, 200
+                        return {
+                                   "success": True,
+                                   "data":
+                                       {
+                                           "objective1": objective1,
+                                           "objective2": objective2,
+                                           "base": {"num_sols": len(base[metrics[0]]), **base},
+                                           "pred": {"num_sols": len(pred[metrics[0]]), **pred}
+                                       }
+                               }, 200
 
     fcostLabels = np.array([args.obj1, args.obj2])
     fcostWeights = np.array([args.w1, args.w2])
@@ -185,8 +217,16 @@ def optimization_calc_solutions(scenario, objective1, objective2):
     pred = read_eval_file(os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "pred.eval"))
     pred = {h: pred[h] for h in pred if h in metrics}
 
-    return {"success": True, "data": {"base": {"num_sols": len(base[metrics[0]]), **base},
-                                      "pred": {"num_sols": len(pred[metrics[0]]), **pred}}}, 200
+    return {
+               "success": True,
+               "data":
+                   {
+                       "objective1": objective1,
+                       "objective2": objective2,
+                       "base": {"num_sols": len(base[metrics[0]]), **base},
+                       "pred": {"num_sols": len(pred[metrics[0]]), **pred}
+                   }
+           }, 200
 
 
 @app.route('/api/<scenario>/<objective1>/<objective2>/simulate/optimized/<sol_num>', methods=['GET'])
@@ -212,7 +252,15 @@ def simulation_run_optimized(scenario, objective1, objective2, sol_num):
                             sim = read_eval_file(sim_file)
                             sim = {h: sim[h] for h in sim if h in metrics}
 
-                            return {"success": True, "data": {"sim": {"num_sols": len(sim[metrics[0]]), **sim}}}, 200
+                            return {
+                                       "success": True,
+                                       "data":
+                                           {
+                                               "objective1": objective1,
+                                               "objective2": objective2,
+                                               "sim": {"num_sols": len(sim[metrics[0]]), **sim}
+                                           }
+                                   }, 200
 
     ifolder = tc["ifolder"]  # input folder
     netfile = ifolder + "/" + tc["netfile"]  # net file
@@ -220,8 +268,10 @@ def simulation_run_optimized(scenario, objective1, objective2, sol_num):
     comments = "objective functions: (" + ", ".join(
         map(lambda a: (str(a[0]) + "*" + str(a[1])), zip(fcostWeights, fcostLabels))) + ")"
 
-    mainaux.runSolution(netfile, commoninfo, solsinfo, sol, fcostLabels, guiversion=True, comments=comments)# ,
-                        # extra_args="--window-pos 1920,0 --window-size 923,950")
+    params = get_screen_params()["sim"]
+    x, y, width, height = params["x"], params["y"], params["width"], params["height"]
+    mainaux.runSolution(netfile, commoninfo, solsinfo, sol, fcostLabels, guiversion=True, comments=comments,
+                        extra_args="--window-pos %d,%d --window-size %d,%d" % (x, y, width, height))
 
     data[key]["stage"] = 3
     if "simulated_sols" not in data[key]:
@@ -232,7 +282,15 @@ def simulation_run_optimized(scenario, objective1, objective2, sol_num):
     sim = read_eval_file(os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "sim.eval"))
     sim = {h: sim[h] for h in sim if h in metrics}
 
-    return {"success": True, "data": {"sim": {"num_sols": len(sim[metrics[0]]), **sim}}}, 200
+    return {
+               "success": True,
+               "data":
+                   {
+                       "objective1": objective1,
+                       "objective2": objective2,
+                       "sim": {"num_sols": len(sim[metrics[0]]), **sim}
+                   }
+           }, 200
 
 
 def read_eval_file(file_name):
@@ -266,6 +324,61 @@ def read_pickle():
     data = pickle.load(f)
     f.close()
     return data
+
+
+def get_screen_params():
+    import gi
+    gi.require_version('Gtk', '3.0')
+    gi.require_version('Gdk', '3.0')
+    from gi.repository import Gdk, Gtk, GdkX11
+
+    display = Gdk.Display().get_default()
+    screen = display.get_screen(0)
+    w_area = screen.get_monitor_workarea(0)
+    start_x = w_area.x
+    start_y = w_area.y
+    available_width = w_area.width
+    available_height = w_area.height
+
+    base_width = available_width // 2
+    sim_width = available_width - base_width
+
+    base = {"x": start_x, "y": start_y, "width": base_width, "height": available_height}
+    sim = {"x": start_x + base_width, "y": start_y, "width": sim_width, "height": available_height}
+
+    return {"base": base, "sim": sim}
+
+
+def base_simulation_frames():
+    params = get_screen_params()["base"]
+    x, y, width, height = params["x"], params["y"], params["width"], params["height"]
+    while True:
+        image = cv2.cvtColor(np.array(ImageGrab.grab(bbox=(x, y, x + width, y + height))), cv2.COLOR_BGR2RGB)
+        ret, jpeg = cv2.imencode('.jpg', image)
+        frame = jpeg.tobytes()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+
+@app.route('/api/stream/base', methods=['GET'])
+def stream_base_simulation():
+    return Response(base_simulation_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+def optimized_simulation_frames():
+    params = get_screen_params()["sim"]
+    x, y, width, height = params["x"], params["y"], params["width"], params["height"]
+    while True:
+        image = cv2.cvtColor(np.array(ImageGrab.grab(bbox=(x, y, x + width, y + height))), cv2.COLOR_BGR2RGB)
+        ret, jpeg = cv2.imencode('.jpg', image)
+        frame = jpeg.tobytes()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+
+@app.route('/api/stream/optimized', methods=['GET'])
+def stream_optimized_simulation():
+    return Response(optimized_simulation_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 if __name__ == '__main__':

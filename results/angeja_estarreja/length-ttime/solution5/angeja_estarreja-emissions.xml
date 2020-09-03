@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on ter 01 set 2020 18:59:05 by Eclipse SUMO GUI Version 1.6.0
+<!-- generated on qui 03 set 2020 02:41:26 by Eclipse SUMO GUI Version 1.6.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -27,6 +27,8 @@
         <gui-settings-file value="gui-settings.xml"/>
         <quit-on-end value="true"/>
         <start value="true"/>
+        <window-size value="924,923"/>
+        <window-pos value="996,27"/>
     </gui_only>
 
 </configuration>
