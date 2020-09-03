@@ -7,7 +7,7 @@ import mainaux
 import SUMOinout
 from ecorouting.testcases import testcases
 import pickle
-from flask import Flask, Response
+from flask import Flask, Response, send_file
 from flask_cors import CORS
 from dotenv import load_dotenv, find_dotenv
 import cv2
@@ -139,8 +139,14 @@ def simulation_run_base(scenario, objective1, objective2):
     # gera os ficheiros -tripinfo e o -emission (obter custos do SUMO)
     params = get_screen_params()["base"]
     x, y, width, height = params["x"], params["y"], params["width"], params["height"]
-    mainaux.runSUMO(netfile, broufile, obname, guiversion=True,
-                    extra_args="--window-pos %d,%d --window-size %d,%d" % (x, y, width, height))
+    global base_is_simulating
+    try:
+        base_is_simulating = True
+        mainaux.runSUMO(netfile, broufile, obname, guiversion=True,
+                        extra_args="--window-pos %d,%d --window-size %d,%d" % (x, y, width, height))
+    except BaseException as e:
+        print("Error: %s" % e)
+    base_is_simulating = False
 
     # gera os ficheiros CSV -tripinfo.csv, .edg.csv, nod.csv, -emission.csv e .edg-costs.csv
     SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
@@ -270,8 +276,14 @@ def simulation_run_optimized(scenario, objective1, objective2, sol_num):
 
     params = get_screen_params()["sim"]
     x, y, width, height = params["x"], params["y"], params["width"], params["height"]
-    mainaux.runSolution(netfile, commoninfo, solsinfo, sol, fcostLabels, guiversion=True, comments=comments,
-                        extra_args="--window-pos %d,%d --window-size %d,%d" % (x, y, width, height))
+    global sim_is_simulating
+    try:
+        sim_is_simulating = True
+        mainaux.runSolution(netfile, commoninfo, solsinfo, sol, fcostLabels, guiversion=True, comments=comments,
+                            extra_args="--window-pos %d,%d --window-size %d,%d" % (x, y, width, height))
+    except BaseException as e:
+        print("Error: %s" % e)
+    sim_is_simulating = False
 
     data[key]["stage"] = 3
     if "simulated_sols" not in data[key]:
@@ -352,6 +364,7 @@ def get_screen_params():
 def base_simulation_frames():
     params = get_screen_params()["base"]
     x, y, width, height = params["x"], params["y"], params["width"], params["height"]
+    global base_is_simulating
     while True:
         image = cv2.cvtColor(np.array(ImageGrab.grab(bbox=(x, y, x + width, y + height))), cv2.COLOR_BGR2RGB)
         ret, jpeg = cv2.imencode('.jpg', image)
@@ -368,6 +381,7 @@ def stream_base_simulation():
 def optimized_simulation_frames():
     params = get_screen_params()["sim"]
     x, y, width, height = params["x"], params["y"], params["width"], params["height"]
+    global sim_is_simulating
     while True:
         image = cv2.cvtColor(np.array(ImageGrab.grab(bbox=(x, y, x + width, y + height))), cv2.COLOR_BGR2RGB)
         ret, jpeg = cv2.imencode('.jpg', image)
@@ -379,6 +393,29 @@ def optimized_simulation_frames():
 @app.route('/api/stream/optimized', methods=['GET'])
 def stream_optimized_simulation():
     return Response(optimized_simulation_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+@app.route('/api/stream/available', methods=['GET'])
+def is_stream_available():
+    global base_is_simulating, sim_is_simulating
+    return {
+               "success": True,
+               "data":
+                   {
+                       "base": base_is_simulating,
+                       "optimized": sim_is_simulating
+                   }
+           }, 200
+
+
+@app.route('/api/heatmap/base', methods=['GET'])
+def heatmap_base_simulation():
+    return send_file("base_heatmap.jpg", mimetype='image/jpeg')
+
+
+@app.route('/api/heatmap/optimized', methods=['GET'])
+def heatmap_optimized_simulation():
+    return send_file("sim_heatmap.jpg", mimetype='image/jpeg')
 
 
 if __name__ == '__main__':
