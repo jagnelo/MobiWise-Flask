@@ -1,23 +1,14 @@
 import argparse
 import os
 import numpy as np
-import pyscreenshot as ImageGrab
 
 import mainaux
 import SUMOinout
 from ecorouting.testcases import testcases
 import pickle
-from flask import Flask, Response, send_file
+from flask import Flask, send_file
 from flask_cors import CORS
 from dotenv import load_dotenv, find_dotenv
-import cv2
-
-
-# configs for running 2 side-by-side sumo-gui windows (resolution: 1920x950, on Ubuntu)
-# left screen half
-# --window-pos 0,0 --window-size 923,950
-# right screen half
-# --window-pos 1920,0 --window-size 923,950
 
 
 load_dotenv(find_dotenv())
@@ -37,16 +28,18 @@ COST_NOX = "cost_nox"
 # COST_FUEL = "cost_fuel"     # esta opção não consta do código original da Andreia
 metrics = [TTIME, LENGTH, COST_CO, COST_CO2, COST_PMX, COST_HC, COST_NOX]   # , COST_FUEL]
 
-ANG_EST = "ang-est"
-PORTO_8AM9_FEWER = "portoSB_8AM9AM_fewerv"
-PORTO_8AM9 = "portoSB_8AM9AM"
+TTIME_PRTY = "Time"
+LENGTH_PRTY = "Length"
+COST_CO_PRTY = "Cost CO"
+COST_CO2_PRTY = "Cost CO2"
+COST_PMX_PRTY = "Cost PMx"
+COST_HC_PRTY = "Cost HC"
+COST_NOX_PRTY = "Cost NOx"
+# COST_FUEL_PRTY = "Cost fuel"
+metrics_pretty = [TTIME_PRTY, LENGTH_PRTY, COST_CO_PRTY, COST_CO2_PRTY, COST_PMX_PRTY, COST_HC_PRTY, COST_NOX_PRTY]   # , COST_FUEL_PRTY]
 
 
 PICKLE_NAME = "data.pkl"
-
-
-base_is_simulating = False
-sim_is_simulating = False
 
 
 def format_objective_names(objective1, objective2):
@@ -93,7 +86,23 @@ def scenarios():
 
 @app.route('/api/objectives', methods=['GET'])
 def objectives():
-    return {"success": True, "objectives": metrics}, 200
+    return {"success": True, "objectives": metrics, "pretty_names": metrics_pretty}, 200
+
+
+@app.route('/api/preload', methods=['GET'])
+def run_all():
+    print("Pre-calculating all simulations")
+    for scenario in testcases:
+        print("Scenario: %s" % scenario)
+        for m1 in metrics:
+            for m2 in metrics:
+                if m1 != m2:
+                    print("Objectives: %s - %s" % (m1, m2))
+                    simulation_run_base(scenario, m1, m2)
+                    optimization_calc_solutions(scenario, m1, m2)
+                    simulation_run_optimized(scenario, m1, m2)
+
+    return {"success": True}, 200
 
 
 @app.route('/api/<scenario>/<objective1>/<objective2>/simulate/base', methods=['GET'])
@@ -101,7 +110,7 @@ def simulation_run_base(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
 
-    args = ["-t", scenario, "--obj1", objective1, "--obj2", objective2, "--gui"]
+    args = ["-t", scenario, "--obj1", objective1, "--obj2", objective2]
 
     args = read_arguments(args)
     tc = testcases[args.t]  # test case
@@ -137,16 +146,7 @@ def simulation_run_base(scenario, objective1, objective2):
     SUMOinout.SUMOToCSV_routes(netfile, roufile, obname, oroufile=broufile, dynamicVTypes=dynamicVTypes)
 
     # gera os ficheiros -tripinfo e o -emission (obter custos do SUMO)
-    params = get_screen_params()["base"]
-    x, y, width, height = params["x"], params["y"], params["width"], params["height"]
-    global base_is_simulating
-    try:
-        base_is_simulating = True
-        mainaux.runSUMO(netfile, broufile, obname, guiversion=True,
-                        extra_args="--window-pos %d,%d --window-size %d,%d" % (x, y, width, height))
-    except BaseException as e:
-        print("Error: %s" % e)
-    base_is_simulating = False
+    mainaux.runSUMO(netfile, broufile, obname, guiversion=False)
 
     # gera os ficheiros CSV -tripinfo.csv, .edg.csv, nod.csv, -emission.csv e .edg-costs.csv
     SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
@@ -235,8 +235,8 @@ def optimization_calc_solutions(scenario, objective1, objective2):
            }, 200
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/simulate/optimized/<sol_num>', methods=['GET'])
-def simulation_run_optimized(scenario, objective1, objective2, sol_num):
+@app.route('/api/<scenario>/<objective1>/<objective2>/simulate/optimized', methods=['GET'])
+def simulation_run_optimized(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
     tc = data[key]["tc"]
@@ -245,8 +245,6 @@ def simulation_run_optimized(scenario, objective1, objective2, sol_num):
     commoninfo = data[key]["commoninfo"]
     solsinfo = data[key]["solsinfo"]
 
-    sol = int(sol_num)
-
     # if the data created by this step already exists, return immediately rather than re-running
     if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 3:
         if "fcostLabels" in data[key] and "fcostWeights" in data[key] and "commoninfo" in data[key] and "solsinfo" in data[key]:
@@ -254,19 +252,18 @@ def simulation_run_optimized(scenario, objective1, objective2, sol_num):
                 if os.path.exists(os.path.join(data[key]["tc"]["ofolder"], format_objective_names(objective1, objective2))):
                     sim_file = os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "sim.eval")
                     if os.path.exists(sim_file):
-                        if "simulated_sols" in data[key] and sol in data[key]["simulated_sols"]:
-                            sim = read_eval_file(sim_file)
-                            sim = {h: sim[h] for h in sim if h in metrics}
+                        sim = read_eval_file(sim_file)
+                        sim = {h: sim[h] for h in sim if h in metrics}
 
-                            return {
-                                       "success": True,
-                                       "data":
-                                           {
-                                               "objective1": objective1,
-                                               "objective2": objective2,
-                                               "sim": {"num_sols": len(sim[metrics[0]]), **sim}
-                                           }
-                                   }, 200
+                        return {
+                                   "success": True,
+                                   "data":
+                                       {
+                                           "objective1": objective1,
+                                           "objective2": objective2,
+                                           "sim": {"num_sols": len(sim[metrics[0]]), **sim}
+                                       }
+                               }, 200
 
     ifolder = tc["ifolder"]  # input folder
     netfile = ifolder + "/" + tc["netfile"]  # net file
@@ -274,21 +271,12 @@ def simulation_run_optimized(scenario, objective1, objective2, sol_num):
     comments = "objective functions: (" + ", ".join(
         map(lambda a: (str(a[0]) + "*" + str(a[1])), zip(fcostWeights, fcostLabels))) + ")"
 
-    params = get_screen_params()["sim"]
-    x, y, width, height = params["x"], params["y"], params["width"], params["height"]
-    global sim_is_simulating
-    try:
-        sim_is_simulating = True
-        mainaux.runSolution(netfile, commoninfo, solsinfo, sol, fcostLabels, guiversion=True, comments=comments,
-                            extra_args="--window-pos %d,%d --window-size %d,%d" % (x, y, width, height))
-    except BaseException as e:
-        print("Error: %s" % e)
-    sim_is_simulating = False
+    sols = solsinfo[0]
+
+    for i in range(len(sols)):
+        mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=False, comments=comments)
 
     data[key]["stage"] = 3
-    if "simulated_sols" not in data[key]:
-        data[key]["simulated_sols"] = []
-    data[key]["simulated_sols"].append(sol)
     write_pickle(data)
 
     sim = read_eval_file(os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "sim.eval"))
@@ -336,76 +324,6 @@ def read_pickle():
     data = pickle.load(f)
     f.close()
     return data
-
-
-def get_screen_params():
-    import gi
-    gi.require_version('Gtk', '3.0')
-    gi.require_version('Gdk', '3.0')
-    from gi.repository import Gdk, Gtk, GdkX11
-
-    display = Gdk.Display().get_default()
-    screen = display.get_screen(0)
-    w_area = screen.get_monitor_workarea(0)
-    start_x = w_area.x
-    start_y = w_area.y
-    available_width = w_area.width
-    available_height = w_area.height
-
-    base_width = available_width // 2
-    sim_width = available_width - base_width
-
-    base = {"x": start_x, "y": start_y, "width": base_width, "height": available_height}
-    sim = {"x": start_x + base_width, "y": start_y, "width": sim_width, "height": available_height}
-
-    return {"base": base, "sim": sim}
-
-
-def base_simulation_frames():
-    params = get_screen_params()["base"]
-    x, y, width, height = params["x"], params["y"], params["width"], params["height"]
-    global base_is_simulating
-    while True:
-        image = cv2.cvtColor(np.array(ImageGrab.grab(bbox=(x, y, x + width, y + height))), cv2.COLOR_BGR2RGB)
-        ret, jpeg = cv2.imencode('.jpg', image)
-        frame = jpeg.tobytes()
-        yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-
-
-@app.route('/api/stream/base', methods=['GET'])
-def stream_base_simulation():
-    return Response(base_simulation_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
-
-def optimized_simulation_frames():
-    params = get_screen_params()["sim"]
-    x, y, width, height = params["x"], params["y"], params["width"], params["height"]
-    global sim_is_simulating
-    while True:
-        image = cv2.cvtColor(np.array(ImageGrab.grab(bbox=(x, y, x + width, y + height))), cv2.COLOR_BGR2RGB)
-        ret, jpeg = cv2.imencode('.jpg', image)
-        frame = jpeg.tobytes()
-        yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-
-
-@app.route('/api/stream/optimized', methods=['GET'])
-def stream_optimized_simulation():
-    return Response(optimized_simulation_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
-
-@app.route('/api/stream/available', methods=['GET'])
-def is_stream_available():
-    global base_is_simulating, sim_is_simulating
-    return {
-               "success": True,
-               "data":
-                   {
-                       "base": base_is_simulating,
-                       "optimized": sim_is_simulating
-                   }
-           }, 200
 
 
 @app.route('/api/heatmap/base', methods=['GET'])
