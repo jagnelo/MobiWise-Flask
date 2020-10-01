@@ -26,12 +26,10 @@ import time
                     SUMO, dois ficheiros com o testcase com mesmo nome que o
                     ficheiro do trafego e com sufixo "-emission" e "-tripinfo"
 """
-def runSUMO(netfile, roufile, obname, guiversion=True, extra_args=""):
+def runSUMO(netfile, roufile, obname, guiversion=True):
     sumocmd = "sumo-gui --gui-settings-file gui-settings.xml" if guiversion else "sumo"
     
     cmd = sumocmd+" --net-file "+netfile+" --route-files "+roufile+" --tripinfo-output "+obname+"-tripinfo --device.emissions.probability 1.0 --emission-output.precision 6 --additional-files moreOutputInfo.xml --collision.action warn -S --quit-on-end --time-to-teleport -1"
-    if extra_args:
-        cmd = cmd + " " + extra_args
 
     startt = time.time()
     os.system(cmd)

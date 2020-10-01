@@ -293,6 +293,30 @@ def simulation_run_optimized(scenario, objective1, objective2):
            }, 200
 
 
+@app.route('/api/<scenario>/<objective1>/<objective2>/view/base', methods=['GET'])
+def simulation_view_base(scenario, objective1, objective2):
+    data = read_pickle()
+    key = format_db_entry_key(scenario, objective1, objective2)
+    tc = data[key]["tc"]
+
+    ifolder = tc["ifolder"]  # input folder
+    ofolder = tc["ofolder"] + "/inputdata"  # output folder
+    netfile = ifolder + "/" + tc["netfile"]  # net file
+    roufile = ifolder + "/" + tc["roufile"]  # inital route file
+    obname = ofolder + "/" + tc["bname"]  # output base name
+
+    sumocmd = "sumo-gui --gui-settings-file gui-settings.xml"
+
+    cmd = "DISPLAY=:1 " + sumocmd + " --net-file " + netfile + " --route-files " + roufile + " --tripinfo-output " + \
+          obname + "-tripinfo --device.emissions.probability 1.0 --emission-output.precision 6 " \
+                   "--additional-files moreOutputInfo.xml --collision.action warn -S " \
+                   "--quit-on-end --time-to-teleport -1"
+
+    os.system(cmd)
+
+    return {"success": True}, 200
+
+
 def read_eval_file(file_name):
     f = open(file_name, "r")
     line = f.readline()
