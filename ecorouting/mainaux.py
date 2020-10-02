@@ -273,7 +273,7 @@ def saveResultsMOP(evalsd, fcostLabels, fname):
     
     
     
-def runSolution(netfile, commoninfo, solsinfo, sel, fcostLabels, guiversion=True, comments="", extra_args=""):
+def runSolution(netfile, commoninfo, solsinfo, sel, fcostLabels, guiversion=True, comments=""):
     
     (mwgraph, demand, sourcedest, sroutes, svehicles, dynamicTypes, outFolder, base_eval) = commoninfo
     (sols, sim_eval, simevalsd, pred_eval, solsBName) = solsinfo
@@ -296,7 +296,7 @@ def runSolution(netfile, commoninfo, solsinfo, sel, fcostLabels, guiversion=True
     printSUMORoutes(routes, vehicles, obname+".rou.xml", sroutes=sroutes, svehicles=svehicles, comments=comments)
     saveEvaluation(ev, obname+"-pred.ev")
     
-    runSUMO(netfile, roufile, obname, guiversion=guiversion, extra_args=extra_args)
+    runSUMO(netfile, roufile, obname, guiversion=guiversion)
     
     SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=False)
     

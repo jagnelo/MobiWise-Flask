@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Wed Sep 30 00:14:03 2020 by Eclipse SUMO Version 1.1.0
+<!-- generated on sex 02 out 2020 02:47:23 WEST by Eclipse SUMO GUI Version 1.1.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -24,6 +24,7 @@
     </emissions>
 
     <gui_only>
+        <gui-settings-file value="gui-settings.xml"/>
         <quit-on-end value="true"/>
         <start value="true"/>
     </gui_only>

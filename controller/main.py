@@ -293,8 +293,8 @@ def simulation_run_optimized(scenario, objective1, objective2):
            }, 200
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/view/base', methods=['GET'])
-def simulation_view_base(scenario, objective1, objective2):
+@app.route('/api/<scenario>/<objective1>/<objective2>/view/<solution>', methods=['GET'])
+def simulation_view_base(scenario, objective1, objective2, solution):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
     tc = data[key]["tc"]
@@ -307,12 +307,49 @@ def simulation_view_base(scenario, objective1, objective2):
 
     sumocmd = "sumo-gui --gui-settings-file gui-settings.xml"
 
-    cmd = "DISPLAY=:1 " + sumocmd + " --net-file " + netfile + " --route-files " + roufile + " --tripinfo-output " + \
-          obname + "-tripinfo --device.emissions.probability 1.0 --emission-output.precision 6 " \
-                   "--additional-files moreOutputInfo.xml --collision.action warn -S " \
-                   "--quit-on-end --time-to-teleport -1"
+    cmd_base = "DISPLAY=:1 " + sumocmd + " --net-file " + netfile + " --route-files " + roufile +\
+               " --tripinfo-output " + obname + "-tripinfo --device.emissions.probability 1.0 " \
+                                                "--emission-output.precision 6 " \
+                                                "--additional-files moreOutputInfo.xml " \
+                                                "--collision.action warn " \
+                                                "-S " \
+                                                "--quit-on-end " \
+                                                "--time-to-teleport -1 " \
+                                                "-G"
 
-    os.system(cmd)
+    fcostWeights = data[key]["fcostWeights"]
+    fcostLabels = data[key]["fcostLabels"]
+    commoninfo = data[key]["commoninfo"]
+    solsinfo = data[key]["solsinfo"]
+
+    (mwgraph, demand, sourcedest, sroutes, svehicles, dynamicTypes, outFolder, base_eval) = commoninfo
+    (sols, sim_eval, simevalsd, pred_eval, solsBName) = solsinfo
+
+    sol = int(solution)
+
+    flowc, flowd, ev, predev = sols[sol]
+    obname = solsBName[sol]
+
+    roufile = obname + ".rou.xml"
+    routes, vehicles = mwgraph.getFlowDescription(flowd, demand, sourcedest, mode=2)
+
+    comments = "objective functions: (" + ", ".join(
+        map(lambda a: (str(a[0]) + "*" + str(a[1])), zip(fcostWeights, fcostLabels))) + ")"
+    comments += "\n" + "\n".join(map(str, ev.items()))
+
+    SUMOinout.printSUMORoutes(routes, vehicles, roufile, sroutes=sroutes, svehicles=svehicles, comments=comments)
+
+    cmd_optimized = "DISPLAY=:2 " + sumocmd + " --net-file " + netfile + " --route-files " + roufile +\
+                    " --tripinfo-output " + obname + "-tripinfo --device.emissions.probability 1.0 " \
+                                                     "--emission-output.precision 6 " \
+                                                     "--additional-files moreOutputInfo.xml " \
+                                                     "--collision.action warn " \
+                                                     "-S " \
+                                                     "--quit-on-end " \
+                                                     "--time-to-teleport -1 " \
+                                                     "-G"
+
+    os.system(cmd_base + " & " + cmd_optimized + " & wait")
 
     return {"success": True}, 200
 

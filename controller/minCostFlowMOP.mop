@@ -2,8 +2,8 @@ NAME MOBITEST
 OBJSENSE
  MIN
 ROWS
- N cost_PMx
- N ttime
+ N cost_co2
+ N cost_nox
  E NNone
  E NJ-26-1T
  E NJ-25-1F
@@ -504,3336 +504,3336 @@ ROWS
  E NJ-36-1T
  E NJ-39-2F
 COLUMNS
-	L:10_0	cost_PMx	0
-	L:10_0	ttime	2
+	L:10_0	cost_co2	10616
+	L:10_0	cost_nox	5
 	L:10_0	NNone	-1
 	L:10_0	NNone	1
-	L:10_1	cost_PMx	0
-	L:10_1	ttime	0
+	L:10_1	cost_co2	0
+	L:10_1	cost_nox	0
 	L:10_1	NNone	-1
 	L:10_1	NNone	1
-	L:100_0	cost_PMx	0
-	L:100_0	ttime	2
+	L:100_0	cost_co2	514
+	L:100_0	cost_nox	0
 	L:100_0	NNone	-1
 	L:100_0	NNone	1
-	L:100_1	cost_PMx	0
-	L:100_1	ttime	1
+	L:100_1	cost_co2	4256
+	L:100_1	cost_nox	2
 	L:100_1	NNone	-1
 	L:100_1	NNone	1
-	L:101_0	cost_PMx	0
-	L:101_0	ttime	0
+	L:101_0	cost_co2	1160
+	L:101_0	cost_nox	0
 	L:101_0	NNone	-1
 	L:101_0	NNone	1
-	L:102_0	cost_PMx	0
-	L:102_0	ttime	0
+	L:102_0	cost_co2	1174
+	L:102_0	cost_nox	0
 	L:102_0	NNone	-1
 	L:102_0	NNone	1
-	L:103_0	cost_PMx	0
-	L:103_0	ttime	0
+	L:103_0	cost_co2	1177
+	L:103_0	cost_nox	0
 	L:103_0	NNone	-1
 	L:103_0	NNone	1
-	L:104_0	cost_PMx	0
-	L:104_0	ttime	0
+	L:104_0	cost_co2	1158
+	L:104_0	cost_nox	0
 	L:104_0	NNone	-1
 	L:104_0	NNone	1
-	L:105_0	cost_PMx	0
-	L:105_0	ttime	0
+	L:105_0	cost_co2	30
+	L:105_0	cost_nox	0
 	L:105_0	NNone	-1
 	L:105_0	NNone	1
-	L:106_0	cost_PMx	0
-	L:106_0	ttime	0
+	L:106_0	cost_co2	45
+	L:106_0	cost_nox	0
 	L:106_0	NNone	-1
 	L:106_0	NNone	1
-	L:107_0	cost_PMx	0
-	L:107_0	ttime	0
+	L:107_0	cost_co2	1146
+	L:107_0	cost_nox	0
 	L:107_0	NNone	-1
 	L:107_0	NNone	1
-	L:108_0	cost_PMx	0
-	L:108_0	ttime	1
+	L:108_0	cost_co2	5201
+	L:108_0	cost_nox	2
 	L:108_0	NNone	-1
 	L:108_0	NNone	1
-	L:108_1	cost_PMx	0
-	L:108_1	ttime	1
+	L:108_1	cost_co2	1930
+	L:108_1	cost_nox	1
 	L:108_1	NNone	-1
 	L:108_1	NNone	1
-	L:109_0	cost_PMx	0
-	L:109_0	ttime	1
+	L:109_0	cost_co2	92
+	L:109_0	cost_nox	0
 	L:109_0	NNone	-1
 	L:109_0	NNone	1
-	L:109_1	cost_PMx	0
-	L:109_1	ttime	1
+	L:109_1	cost_co2	2717
+	L:109_1	cost_nox	1
 	L:109_1	NNone	-1
 	L:109_1	NNone	1
-	L:11_0	cost_PMx	0
-	L:11_0	ttime	2
+	L:11_0	cost_co2	6794
+	L:11_0	cost_nox	3
 	L:11_0	NNone	-1
 	L:11_0	NNone	1
-	L:11_1	cost_PMx	0
-	L:11_1	ttime	2
+	L:11_1	cost_co2	2968
+	L:11_1	cost_nox	1
 	L:11_1	NNone	-1
 	L:11_1	NNone	1
-	L:110_0	cost_PMx	0
-	L:110_0	ttime	1
+	L:110_0	cost_co2	19
+	L:110_0	cost_nox	0
 	L:110_0	NNone	-1
 	L:110_0	NNone	1
-	L:110_1	cost_PMx	0
-	L:110_1	ttime	1
+	L:110_1	cost_co2	2095
+	L:110_1	cost_nox	1
 	L:110_1	NNone	-1
 	L:110_1	NNone	1
-	L:111_0	cost_PMx	0
-	L:111_0	ttime	0
+	L:111_0	cost_co2	1149
+	L:111_0	cost_nox	0
 	L:111_0	NNone	-1
 	L:111_0	NNone	1
-	L:114_0	cost_PMx	0
-	L:114_0	ttime	1
+	L:114_0	cost_co2	7027
+	L:114_0	cost_nox	3
 	L:114_0	NNone	-1
 	L:114_0	NNone	1
-	L:114_1	cost_PMx	0
-	L:114_1	ttime	1
+	L:114_1	cost_co2	2055
+	L:114_1	cost_nox	1
 	L:114_1	NNone	-1
 	L:114_1	NNone	1
-	L:115_0	cost_PMx	0
-	L:115_0	ttime	1
+	L:115_0	cost_co2	141
+	L:115_0	cost_nox	0
 	L:115_0	NNone	-1
 	L:115_0	NNone	1
-	L:115_1	cost_PMx	0
-	L:115_1	ttime	1
+	L:115_1	cost_co2	1179
+	L:115_1	cost_nox	0
 	L:115_1	NNone	-1
 	L:115_1	NNone	1
-	L:116_0	cost_PMx	0
-	L:116_0	ttime	1
+	L:116_0	cost_co2	97
+	L:116_0	cost_nox	0
 	L:116_0	NNone	-1
 	L:116_0	NNone	1
-	L:117_0	cost_PMx	0
-	L:117_0	ttime	1
+	L:117_0	cost_co2	2776
+	L:117_0	cost_nox	1
 	L:117_0	NNone	-1
 	L:117_0	NNone	1
-	L:117_1	cost_PMx	0
-	L:117_1	ttime	1
+	L:117_1	cost_co2	3077
+	L:117_1	cost_nox	1
 	L:117_1	NNone	-1
 	L:117_1	NNone	1
-	L:118_0	cost_PMx	0
-	L:118_0	ttime	4
+	L:118_0	cost_co2	8626
+	L:118_0	cost_nox	3
 	L:118_0	NNone	-1
 	L:118_0	NNone	1
-	L:118_4	cost_PMx	0
-	L:118_4	ttime	4
+	L:118_4	cost_co2	8390
+	L:118_4	cost_nox	3
 	L:118_4	NNone	-1
 	L:118_4	NNone	1
-	L:118_5	cost_PMx	0
-	L:118_5	ttime	4
+	L:118_5	cost_co2	9768
+	L:118_5	cost_nox	4
 	L:118_5	NNone	-1
 	L:118_5	NNone	1
-	L:119_0	cost_PMx	0
-	L:119_0	ttime	1
+	L:119_0	cost_co2	1284
+	L:119_0	cost_nox	0
 	L:119_0	NNone	-1
 	L:119_0	NNone	1
-	L:12_0	cost_PMx	0
-	L:12_0	ttime	2
+	L:12_0	cost_co2	10815
+	L:12_0	cost_nox	5
 	L:12_0	NNone	-1
 	L:12_0	NNone	1
-	L:12_1	cost_PMx	0
-	L:12_1	ttime	2
+	L:12_1	cost_co2	3245
+	L:12_1	cost_nox	1
 	L:12_1	NNone	-1
 	L:12_1	NNone	1
-	L:120_0	cost_PMx	0
-	L:120_0	ttime	0
+	L:120_0	cost_co2	36
+	L:120_0	cost_nox	0
 	L:120_0	NNone	-1
 	L:120_0	NNone	1
-	L:121_0	cost_PMx	0
-	L:121_0	ttime	0
+	L:121_0	cost_co2	438
+	L:121_0	cost_nox	0
 	L:121_0	NNone	-1
 	L:121_0	NNone	1
-	L:122_0	cost_PMx	0
-	L:122_0	ttime	1
+	L:122_0	cost_co2	423
+	L:122_0	cost_nox	0
 	L:122_0	NNone	-1
 	L:122_0	NNone	1
-	L:123_0	cost_PMx	1
-	L:123_0	ttime	4
+	L:123_0	cost_co2	33691
+	L:123_0	cost_nox	14
 	L:123_0	NNone	-1
 	L:123_0	NNone	1
-	L:123_1	cost_PMx	0
-	L:123_1	ttime	0
+	L:123_1	cost_co2	0
+	L:123_1	cost_nox	0
 	L:123_1	NNone	-1
 	L:123_1	NNone	1
-	L:123_2	cost_PMx	1
-	L:123_2	ttime	4
+	L:123_2	cost_co2	33679
+	L:123_2	cost_nox	14
 	L:123_2	NNone	-1
 	L:123_2	NNone	1
-	L:123_3	cost_PMx	0
-	L:123_3	ttime	3
+	L:123_3	cost_co2	13193
+	L:123_3	cost_nox	5
 	L:123_3	NNone	-1
 	L:123_3	NNone	1
-	L:123_5	cost_PMx	0
-	L:123_5	ttime	0
+	L:123_5	cost_co2	0
+	L:123_5	cost_nox	0
 	L:123_5	NNone	-1
 	L:123_5	NNone	1
-	L:123_6	cost_PMx	0
-	L:123_6	ttime	3
+	L:123_6	cost_co2	13432
+	L:123_6	cost_nox	5
 	L:123_6	NNone	-1
 	L:123_6	NNone	1
-	L:124_0	cost_PMx	0
-	L:124_0	ttime	0
+	L:124_0	cost_co2	1510
+	L:124_0	cost_nox	1
 	L:124_0	NNone	-1
 	L:124_0	NNone	1
-	L:125_0	cost_PMx	0
-	L:125_0	ttime	0
+	L:125_0	cost_co2	634
+	L:125_0	cost_nox	0
 	L:125_0	NNone	-1
 	L:125_0	NNone	1
-	L:125_3	cost_PMx	0
-	L:125_3	ttime	0
+	L:125_3	cost_co2	0
+	L:125_3	cost_nox	0
 	L:125_3	NNone	-1
 	L:125_3	NNone	1
-	L:126_0	cost_PMx	0
-	L:126_0	ttime	1
+	L:126_0	cost_co2	322
+	L:126_0	cost_nox	0
 	L:126_0	NNone	-1
 	L:126_0	NNone	1
-	L:126_1	cost_PMx	0
-	L:126_1	ttime	0
+	L:126_1	cost_co2	854
+	L:126_1	cost_nox	0
 	L:126_1	NNone	-1
 	L:126_1	NNone	1
-	L:127_0	cost_PMx	0
-	L:127_0	ttime	0
+	L:127_0	cost_co2	1176
+	L:127_0	cost_nox	0
 	L:127_0	NNone	-1
 	L:127_0	NNone	1
-	L:128_0	cost_PMx	0
-	L:128_0	ttime	1
+	L:128_0	cost_co2	123
+	L:128_0	cost_nox	0
 	L:128_0	NNone	-1
 	L:128_0	NNone	1
-	L:128_1	cost_PMx	0
-	L:128_1	ttime	1
+	L:128_1	cost_co2	205
+	L:128_1	cost_nox	0
 	L:128_1	NNone	-1
 	L:128_1	NNone	1
-	L:129_0	cost_PMx	0
-	L:129_0	ttime	0
+	L:129_0	cost_co2	2576
+	L:129_0	cost_nox	1
 	L:129_0	NNone	-1
 	L:129_0	NNone	1
-	L:13_0	cost_PMx	0
-	L:13_0	ttime	2
+	L:13_0	cost_co2	12941
+	L:13_0	cost_nox	5
 	L:13_0	NNone	-1
 	L:13_0	NNone	1
-	L:13_1	cost_PMx	0
-	L:13_1	ttime	2
+	L:13_1	cost_co2	3280
+	L:13_1	cost_nox	1
 	L:13_1	NNone	-1
 	L:13_1	NNone	1
-	L:132_0	cost_PMx	0
-	L:132_0	ttime	0
+	L:132_0	cost_co2	14
+	L:132_0	cost_nox	0
 	L:132_0	NNone	-1
 	L:132_0	NNone	1
-	L:133_0	cost_PMx	0
-	L:133_0	ttime	0
+	L:133_0	cost_co2	30
+	L:133_0	cost_nox	0
 	L:133_0	NNone	-1
 	L:133_0	NNone	1
-	L:134_0	cost_PMx	0
-	L:134_0	ttime	0
+	L:134_0	cost_co2	58
+	L:134_0	cost_nox	0
 	L:134_0	NNone	-1
 	L:134_0	NNone	1
-	L:135_0	cost_PMx	0
-	L:135_0	ttime	0
+	L:135_0	cost_co2	48
+	L:135_0	cost_nox	0
 	L:135_0	NNone	-1
 	L:135_0	NNone	1
-	L:137_0	cost_PMx	0
-	L:137_0	ttime	1
+	L:137_0	cost_co2	43
+	L:137_0	cost_nox	0
 	L:137_0	NNone	-1
 	L:137_0	NNone	1
-	L:137_1	cost_PMx	0
-	L:137_1	ttime	0
+	L:137_1	cost_co2	1100
+	L:137_1	cost_nox	0
 	L:137_1	NNone	-1
 	L:137_1	NNone	1
-	L:138_0	cost_PMx	0
-	L:138_0	ttime	1
+	L:138_0	cost_co2	325
+	L:138_0	cost_nox	0
 	L:138_0	NNone	-1
 	L:138_0	NNone	1
-	L:138_1	cost_PMx	0
-	L:138_1	ttime	0
+	L:138_1	cost_co2	892
+	L:138_1	cost_nox	0
 	L:138_1	NNone	-1
 	L:138_1	NNone	1
-	L:139_0	cost_PMx	0
-	L:139_0	ttime	0
+	L:139_0	cost_co2	1073
+	L:139_0	cost_nox	0
 	L:139_0	NNone	-1
 	L:139_0	NNone	1
-	L:14_0	cost_PMx	0
-	L:14_0	ttime	1
+	L:14_0	cost_co2	3303
+	L:14_0	cost_nox	1
 	L:14_0	NNone	-1
 	L:14_0	NNone	1
-	L:14_1	cost_PMx	0
-	L:14_1	ttime	1
+	L:14_1	cost_co2	1037
+	L:14_1	cost_nox	0
 	L:14_1	NNone	-1
 	L:14_1	NNone	1
-	L:140_0	cost_PMx	0
-	L:140_0	ttime	0
+	L:140_0	cost_co2	1137
+	L:140_0	cost_nox	0
 	L:140_0	NNone	-1
 	L:140_0	NNone	1
-	L:141_0	cost_PMx	0
-	L:141_0	ttime	0
+	L:141_0	cost_co2	1132
+	L:141_0	cost_nox	0
 	L:141_0	NNone	-1
 	L:141_0	NNone	1
-	L:142_0	cost_PMx	0
-	L:142_0	ttime	0
+	L:142_0	cost_co2	38
+	L:142_0	cost_nox	0
 	L:142_0	NNone	-1
 	L:142_0	NNone	1
-	L:143_0	cost_PMx	0
-	L:143_0	ttime	1
+	L:143_0	cost_co2	6452
+	L:143_0	cost_nox	3
 	L:143_0	NNone	-1
 	L:143_0	NNone	1
-	L:143_1	cost_PMx	0
-	L:143_1	ttime	1
+	L:143_1	cost_co2	3853
+	L:143_1	cost_nox	1
 	L:143_1	NNone	-1
 	L:143_1	NNone	1
-	L:144_0	cost_PMx	0
-	L:144_0	ttime	0
+	L:144_0	cost_co2	1098
+	L:144_0	cost_nox	0
 	L:144_0	NNone	-1
 	L:144_0	NNone	1
-	L:145_0	cost_PMx	0
-	L:145_0	ttime	1
+	L:145_0	cost_co2	1475
+	L:145_0	cost_nox	1
 	L:145_0	NNone	-1
 	L:145_0	NNone	1
-	L:145_1	cost_PMx	0
-	L:145_1	ttime	1
+	L:145_1	cost_co2	2035
+	L:145_1	cost_nox	1
 	L:145_1	NNone	-1
 	L:145_1	NNone	1
-	L:146_0	cost_PMx	0
-	L:146_0	ttime	0
+	L:146_0	cost_co2	2464
+	L:146_0	cost_nox	1
 	L:146_0	NNone	-1
 	L:146_0	NNone	1
-	L:147_0	cost_PMx	0
-	L:147_0	ttime	1
+	L:147_0	cost_co2	818
+	L:147_0	cost_nox	0
 	L:147_0	NNone	-1
 	L:147_0	NNone	1
-	L:147_1	cost_PMx	0
-	L:147_1	ttime	1
+	L:147_1	cost_co2	2953
+	L:147_1	cost_nox	1
 	L:147_1	NNone	-1
 	L:147_1	NNone	1
-	L:147_2	cost_PMx	0
-	L:147_2	ttime	1
+	L:147_2	cost_co2	3495
+	L:147_2	cost_nox	1
 	L:147_2	NNone	-1
 	L:147_2	NNone	1
-	L:148_0	cost_PMx	0
-	L:148_0	ttime	0
+	L:148_0	cost_co2	1102
+	L:148_0	cost_nox	0
 	L:148_0	NNone	-1
 	L:148_0	NNone	1
-	L:149_0	cost_PMx	0
-	L:149_0	ttime	1
+	L:149_0	cost_co2	3178
+	L:149_0	cost_nox	1
 	L:149_0	NNone	-1
 	L:149_0	NNone	1
-	L:149_2	cost_PMx	0
-	L:149_2	ttime	1
+	L:149_2	cost_co2	2138
+	L:149_2	cost_nox	1
 	L:149_2	NNone	-1
 	L:149_2	NNone	1
-	L:15_0	cost_PMx	0
-	L:15_0	ttime	0
+	L:15_0	cost_co2	17
+	L:15_0	cost_nox	0
 	L:15_0	NNone	-1
 	L:15_0	NNone	1
-	L:15_1	cost_PMx	0
-	L:15_1	ttime	0
+	L:15_1	cost_co2	52
+	L:15_1	cost_nox	0
 	L:15_1	NNone	-1
 	L:15_1	NNone	1
-	L:150_0	cost_PMx	0
-	L:150_0	ttime	0
+	L:150_0	cost_co2	1147
+	L:150_0	cost_nox	0
 	L:150_0	NNone	-1
 	L:150_0	NNone	1
-	L:151_0	cost_PMx	0
-	L:151_0	ttime	0
+	L:151_0	cost_co2	983
+	L:151_0	cost_nox	0
 	L:151_0	NNone	-1
 	L:151_0	NNone	1
-	L:152_0	cost_PMx	0
-	L:152_0	ttime	1
+	L:152_0	cost_co2	8169
+	L:152_0	cost_nox	3
 	L:152_0	NNone	-1
 	L:152_0	NNone	1
-	L:152_1	cost_PMx	0
-	L:152_1	ttime	1
+	L:152_1	cost_co2	2316
+	L:152_1	cost_nox	1
 	L:152_1	NNone	-1
 	L:152_1	NNone	1
-	L:153_0	cost_PMx	0
-	L:153_0	ttime	0
+	L:153_0	cost_co2	1106
+	L:153_0	cost_nox	0
 	L:153_0	NNone	-1
 	L:153_0	NNone	1
-	L:154_0	cost_PMx	0
-	L:154_0	ttime	0
+	L:154_0	cost_co2	43
+	L:154_0	cost_nox	0
 	L:154_0	NNone	-1
 	L:154_0	NNone	1
-	L:155_0	cost_PMx	0
-	L:155_0	ttime	1
+	L:155_0	cost_co2	30
+	L:155_0	cost_nox	0
 	L:155_0	NNone	-1
 	L:155_0	NNone	1
-	L:155_1	cost_PMx	0
-	L:155_1	ttime	0
+	L:155_1	cost_co2	1000
+	L:155_1	cost_nox	0
 	L:155_1	NNone	-1
 	L:155_1	NNone	1
-	L:156_0	cost_PMx	0
-	L:156_0	ttime	0
+	L:156_0	cost_co2	0
+	L:156_0	cost_nox	0
 	L:156_0	NNone	-1
 	L:156_0	NNone	1
-	L:156_1	cost_PMx	0
-	L:156_1	ttime	1
+	L:156_1	cost_co2	2546
+	L:156_1	cost_nox	1
 	L:156_1	NNone	-1
 	L:156_1	NNone	1
-	L:157_0	cost_PMx	0
-	L:157_0	ttime	0
+	L:157_0	cost_co2	0
+	L:157_0	cost_nox	0
 	L:157_0	NNone	-1
 	L:157_0	NNone	1
-	L:157_1	cost_PMx	0
-	L:157_1	ttime	1
+	L:157_1	cost_co2	1800
+	L:157_1	cost_nox	1
 	L:157_1	NNone	-1
 	L:157_1	NNone	1
-	L:158_0	cost_PMx	0
-	L:158_0	ttime	1
+	L:158_0	cost_co2	12435
+	L:158_0	cost_nox	5
 	L:158_0	NNone	-1
 	L:158_0	NNone	1
-	L:158_1	cost_PMx	0
-	L:158_1	ttime	1
+	L:158_1	cost_co2	3366
+	L:158_1	cost_nox	1
 	L:158_1	NNone	-1
 	L:158_1	NNone	1
-	L:159_0	cost_PMx	0
-	L:159_0	ttime	1
+	L:159_0	cost_co2	3
+	L:159_0	cost_nox	0
 	L:159_0	NNone	-1
 	L:159_0	NNone	1
-	L:159_1	cost_PMx	0
-	L:159_1	ttime	1
+	L:159_1	cost_co2	2095
+	L:159_1	cost_nox	1
 	L:159_1	NNone	-1
 	L:159_1	NNone	1
-	L:16_0	cost_PMx	0
-	L:16_0	ttime	0
+	L:16_0	cost_co2	121
+	L:16_0	cost_nox	0
 	L:16_0	NNone	-1
 	L:16_0	NNone	1
-	L:16_1	cost_PMx	0
-	L:16_1	ttime	0
+	L:16_1	cost_co2	360
+	L:16_1	cost_nox	0
 	L:16_1	NNone	-1
 	L:16_1	NNone	1
-	L:162_0	cost_PMx	0
-	L:162_0	ttime	0
+	L:162_0	cost_co2	203
+	L:162_0	cost_nox	0
 	L:162_0	NNone	-1
 	L:162_0	NNone	1
-	L:163_0	cost_PMx	0
-	L:163_0	ttime	0
+	L:163_0	cost_co2	10
+	L:163_0	cost_nox	0
 	L:163_0	NNone	-1
 	L:163_0	NNone	1
-	L:164_0	cost_PMx	0
-	L:164_0	ttime	0
+	L:164_0	cost_co2	971
+	L:164_0	cost_nox	0
 	L:164_0	NNone	-1
 	L:164_0	NNone	1
-	L:165_0	cost_PMx	0
-	L:165_0	ttime	1
+	L:165_0	cost_co2	4877
+	L:165_0	cost_nox	2
 	L:165_0	NNone	-1
 	L:165_0	NNone	1
-	L:165_1	cost_PMx	0
-	L:165_1	ttime	1
+	L:165_1	cost_co2	2800
+	L:165_1	cost_nox	1
 	L:165_1	NNone	-1
 	L:165_1	NNone	1
-	L:166_0	cost_PMx	0
-	L:166_0	ttime	1
+	L:166_0	cost_co2	1757
+	L:166_0	cost_nox	1
 	L:166_0	NNone	-1
 	L:166_0	NNone	1
-	L:166_1	cost_PMx	0
-	L:166_1	ttime	1
+	L:166_1	cost_co2	1200
+	L:166_1	cost_nox	0
 	L:166_1	NNone	-1
 	L:166_1	NNone	1
-	L:166_2	cost_PMx	0
-	L:166_2	ttime	1
+	L:166_2	cost_co2	2564
+	L:166_2	cost_nox	1
 	L:166_2	NNone	-1
 	L:166_2	NNone	1
-	L:167_0	cost_PMx	0
-	L:167_0	ttime	0
+	L:167_0	cost_co2	10
+	L:167_0	cost_nox	0
 	L:167_0	NNone	-1
 	L:167_0	NNone	1
-	L:168_0	cost_PMx	0
-	L:168_0	ttime	0
+	L:168_0	cost_co2	56
+	L:168_0	cost_nox	0
 	L:168_0	NNone	-1
 	L:168_0	NNone	1
-	L:169_0	cost_PMx	0
-	L:169_0	ttime	0
+	L:169_0	cost_co2	1130
+	L:169_0	cost_nox	0
 	L:169_0	NNone	-1
 	L:169_0	NNone	1
-	L:17_0	cost_PMx	0
-	L:17_0	ttime	0
+	L:17_0	cost_co2	65
+	L:17_0	cost_nox	0
 	L:17_0	NNone	-1
 	L:17_0	NNone	1
-	L:17_1	cost_PMx	0
-	L:17_1	ttime	0
+	L:17_1	cost_co2	23
+	L:17_1	cost_nox	0
 	L:17_1	NNone	-1
 	L:17_1	NNone	1
-	L:170_0	cost_PMx	0
-	L:170_0	ttime	0
+	L:170_0	cost_co2	1122
+	L:170_0	cost_nox	0
 	L:170_0	NNone	-1
 	L:170_0	NNone	1
-	L:171_0	cost_PMx	0
-	L:171_0	ttime	0
+	L:171_0	cost_co2	35
+	L:171_0	cost_nox	0
 	L:171_0	NNone	-1
 	L:171_0	NNone	1
-	L:172_0	cost_PMx	0
-	L:172_0	ttime	0
+	L:172_0	cost_co2	27
+	L:172_0	cost_nox	0
 	L:172_0	NNone	-1
 	L:172_0	NNone	1
-	L:173_0	cost_PMx	0
-	L:173_0	ttime	0
+	L:173_0	cost_co2	40
+	L:173_0	cost_nox	0
 	L:173_0	NNone	-1
 	L:173_0	NNone	1
-	L:174_0	cost_PMx	0
-	L:174_0	ttime	0
+	L:174_0	cost_co2	1146
+	L:174_0	cost_nox	0
 	L:174_0	NNone	-1
 	L:174_0	NNone	1
-	L:175_0	cost_PMx	0
-	L:175_0	ttime	0
+	L:175_0	cost_co2	13
+	L:175_0	cost_nox	0
 	L:175_0	NNone	-1
 	L:175_0	NNone	1
-	L:176_0	cost_PMx	0
-	L:176_0	ttime	0
+	L:176_0	cost_co2	1099
+	L:176_0	cost_nox	0
 	L:176_0	NNone	-1
 	L:176_0	NNone	1
-	L:177_0	cost_PMx	0
-	L:177_0	ttime	0
+	L:177_0	cost_co2	992
+	L:177_0	cost_nox	0
 	L:177_0	NNone	-1
 	L:177_0	NNone	1
-	L:178_0	cost_PMx	0
-	L:178_0	ttime	0
+	L:178_0	cost_co2	1138
+	L:178_0	cost_nox	0
 	L:178_0	NNone	-1
 	L:178_0	NNone	1
-	L:179_0	cost_PMx	0
-	L:179_0	ttime	0
+	L:179_0	cost_co2	38
+	L:179_0	cost_nox	0
 	L:179_0	NNone	-1
 	L:179_0	NNone	1
-	L:18_0	cost_PMx	0
-	L:18_0	ttime	0
+	L:18_0	cost_co2	82
+	L:18_0	cost_nox	0
 	L:18_0	NNone	-1
 	L:18_0	NNone	1
-	L:18_1	cost_PMx	0
-	L:18_1	ttime	0
+	L:18_1	cost_co2	21
+	L:18_1	cost_nox	0
 	L:18_1	NNone	-1
 	L:18_1	NNone	1
-	L:180_0	cost_PMx	0
-	L:180_0	ttime	0
+	L:180_0	cost_co2	32
+	L:180_0	cost_nox	0
 	L:180_0	NNone	-1
 	L:180_0	NNone	1
-	L:181_0	cost_PMx	0
-	L:181_0	ttime	0
+	L:181_0	cost_co2	41
+	L:181_0	cost_nox	0
 	L:181_0	NNone	-1
 	L:181_0	NNone	1
-	L:182_0	cost_PMx	0
-	L:182_0	ttime	0
+	L:182_0	cost_co2	43
+	L:182_0	cost_nox	0
 	L:182_0	NNone	-1
 	L:182_0	NNone	1
-	L:183_0	cost_PMx	0
-	L:183_0	ttime	0
+	L:183_0	cost_co2	1185
+	L:183_0	cost_nox	0
 	L:183_0	NNone	-1
 	L:183_0	NNone	1
-	L:184_0	cost_PMx	0
-	L:184_0	ttime	0
+	L:184_0	cost_co2	38
+	L:184_0	cost_nox	0
 	L:184_0	NNone	-1
 	L:184_0	NNone	1
-	L:185_0	cost_PMx	0
-	L:185_0	ttime	1
+	L:185_0	cost_co2	6255
+	L:185_0	cost_nox	3
 	L:185_0	NNone	-1
 	L:185_0	NNone	1
-	L:185_1	cost_PMx	0
-	L:185_1	ttime	1
+	L:185_1	cost_co2	2081
+	L:185_1	cost_nox	1
 	L:185_1	NNone	-1
 	L:185_1	NNone	1
-	L:186_0	cost_PMx	0
-	L:186_0	ttime	1
+	L:186_0	cost_co2	240
+	L:186_0	cost_nox	0
 	L:186_0	NNone	-1
 	L:186_0	NNone	1
-	L:186_1	cost_PMx	0
-	L:186_1	ttime	1
+	L:186_1	cost_co2	2839
+	L:186_1	cost_nox	1
 	L:186_1	NNone	-1
 	L:186_1	NNone	1
-	L:187_0	cost_PMx	0
-	L:187_0	ttime	1
+	L:187_0	cost_co2	1063
+	L:187_0	cost_nox	0
 	L:187_0	NNone	-1
 	L:187_0	NNone	1
-	L:187_1	cost_PMx	0
-	L:187_1	ttime	1
+	L:187_1	cost_co2	3063
+	L:187_1	cost_nox	1
 	L:187_1	NNone	-1
 	L:187_1	NNone	1
-	L:187_2	cost_PMx	0
-	L:187_2	ttime	1
+	L:187_2	cost_co2	3818
+	L:187_2	cost_nox	1
 	L:187_2	NNone	-1
 	L:187_2	NNone	1
-	L:188_0	cost_PMx	0
-	L:188_0	ttime	0
+	L:188_0	cost_co2	1017
+	L:188_0	cost_nox	0
 	L:188_0	NNone	-1
 	L:188_0	NNone	1
-	L:189_0	cost_PMx	0
-	L:189_0	ttime	3
+	L:189_0	cost_co2	22231
+	L:189_0	cost_nox	10
 	L:189_0	NNone	-1
 	L:189_0	NNone	1
-	L:189_1	cost_PMx	0
-	L:189_1	ttime	1
+	L:189_1	cost_co2	4647
+	L:189_1	cost_nox	2
 	L:189_1	NNone	-1
 	L:189_1	NNone	1
-	L:19_0	cost_PMx	0
-	L:19_0	ttime	0
+	L:19_0	cost_co2	117
+	L:19_0	cost_nox	0
 	L:19_0	NNone	-1
 	L:19_0	NNone	1
-	L:19_1	cost_PMx	0
-	L:19_1	ttime	0
+	L:19_1	cost_co2	87
+	L:19_1	cost_nox	0
 	L:19_1	NNone	-1
 	L:19_1	NNone	1
-	L:192_0	cost_PMx	0
-	L:192_0	ttime	0
+	L:192_0	cost_co2	52
+	L:192_0	cost_nox	0
 	L:192_0	NNone	-1
 	L:192_0	NNone	1
-	L:192_1	cost_PMx	0
-	L:192_1	ttime	0
+	L:192_1	cost_co2	81
+	L:192_1	cost_nox	0
 	L:192_1	NNone	-1
 	L:192_1	NNone	1
-	L:193_0	cost_PMx	0
-	L:193_0	ttime	0
+	L:193_0	cost_co2	50
+	L:193_0	cost_nox	0
 	L:193_0	NNone	-1
 	L:193_0	NNone	1
-	L:194_0	cost_PMx	0
-	L:194_0	ttime	0
+	L:194_0	cost_co2	14
+	L:194_0	cost_nox	0
 	L:194_0	NNone	-1
 	L:194_0	NNone	1
-	L:196_0	cost_PMx	0
-	L:196_0	ttime	1
+	L:196_0	cost_co2	0
+	L:196_0	cost_nox	0
 	L:196_0	NNone	-1
 	L:196_0	NNone	1
-	L:196_1	cost_PMx	0
-	L:196_1	ttime	1
+	L:196_1	cost_co2	1121
+	L:196_1	cost_nox	0
 	L:196_1	NNone	-1
 	L:196_1	NNone	1
-	L:198_0	cost_PMx	0
-	L:198_0	ttime	0
+	L:198_0	cost_co2	108
+	L:198_0	cost_nox	0
 	L:198_0	NNone	-1
 	L:198_0	NNone	1
-	L:199_0	cost_PMx	0
-	L:199_0	ttime	0
+	L:199_0	cost_co2	183
+	L:199_0	cost_nox	0
 	L:199_0	NNone	-1
 	L:199_0	NNone	1
-	L:2_0	cost_PMx	0
-	L:2_0	ttime	1
+	L:2_0	cost_co2	5073
+	L:2_0	cost_nox	2
 	L:2_0	NNone	-1
 	L:2_0	NNone	1
-	L:2_1	cost_PMx	0
-	L:2_1	ttime	1
+	L:2_1	cost_co2	9170
+	L:2_1	cost_nox	4
 	L:2_1	NNone	-1
 	L:2_1	NNone	1
-	L:2_2	cost_PMx	0
-	L:2_2	ttime	1
+	L:2_2	cost_co2	117
+	L:2_2	cost_nox	0
 	L:2_2	NNone	-1
 	L:2_2	NNone	1
-	L:20_0	cost_PMx	0
-	L:20_0	ttime	0
+	L:20_0	cost_co2	12
+	L:20_0	cost_nox	0
 	L:20_0	NNone	-1
 	L:20_0	NNone	1
-	L:20_1	cost_PMx	0
-	L:20_1	ttime	0
+	L:20_1	cost_co2	52
+	L:20_1	cost_nox	0
 	L:20_1	NNone	-1
 	L:20_1	NNone	1
-	L:200_0	cost_PMx	0
-	L:200_0	ttime	0
+	L:200_0	cost_co2	1124
+	L:200_0	cost_nox	0
 	L:200_0	NNone	-1
 	L:200_0	NNone	1
-	L:201_0	cost_PMx	0
-	L:201_0	ttime	1
+	L:201_0	cost_co2	6589
+	L:201_0	cost_nox	3
 	L:201_0	NNone	-1
 	L:201_0	NNone	1
-	L:201_1	cost_PMx	0
-	L:201_1	ttime	1
+	L:201_1	cost_co2	2402
+	L:201_1	cost_nox	1
 	L:201_1	NNone	-1
 	L:201_1	NNone	1
-	L:202_0	cost_PMx	0
-	L:202_0	ttime	0
+	L:202_0	cost_co2	42
+	L:202_0	cost_nox	0
 	L:202_0	NNone	-1
 	L:202_0	NNone	1
-	L:203_0	cost_PMx	0
-	L:203_0	ttime	0
+	L:203_0	cost_co2	40
+	L:203_0	cost_nox	0
 	L:203_0	NNone	-1
 	L:203_0	NNone	1
-	L:21_0	cost_PMx	0
-	L:21_0	ttime	0
+	L:21_0	cost_co2	15
+	L:21_0	cost_nox	0
 	L:21_0	NNone	-1
 	L:21_0	NNone	1
-	L:21_1	cost_PMx	0
-	L:21_1	ttime	0
+	L:21_1	cost_co2	48
+	L:21_1	cost_nox	0
 	L:21_1	NNone	-1
 	L:21_1	NNone	1
-	L:22_0	cost_PMx	0
-	L:22_0	ttime	0
+	L:22_0	cost_co2	279
+	L:22_0	cost_nox	0
 	L:22_0	NNone	-1
 	L:22_0	NNone	1
-	L:22_1	cost_PMx	0
-	L:22_1	ttime	0
+	L:22_1	cost_co2	2388
+	L:22_1	cost_nox	1
 	L:22_1	NNone	-1
 	L:22_1	NNone	1
-	L:23_0	cost_PMx	0
-	L:23_0	ttime	1
+	L:23_0	cost_co2	6280
+	L:23_0	cost_nox	3
 	L:23_0	NNone	-1
 	L:23_0	NNone	1
-	L:23_1	cost_PMx	0
-	L:23_1	ttime	1
+	L:23_1	cost_co2	2732
+	L:23_1	cost_nox	1
 	L:23_1	NNone	-1
 	L:23_1	NNone	1
-	L:24_0	cost_PMx	0
-	L:24_0	ttime	1
+	L:24_0	cost_co2	3497
+	L:24_0	cost_nox	1
 	L:24_0	NNone	-1
 	L:24_0	NNone	1
-	L:24_1	cost_PMx	0
-	L:24_1	ttime	1
+	L:24_1	cost_co2	2271
+	L:24_1	cost_nox	1
 	L:24_1	NNone	-1
 	L:24_1	NNone	1
-	L:26_0	cost_PMx	0
-	L:26_0	ttime	1
+	L:26_0	cost_co2	705
+	L:26_0	cost_nox	0
 	L:26_0	NNone	-1
 	L:26_0	NNone	1
-	L:26_1	cost_PMx	0
-	L:26_1	ttime	1
+	L:26_1	cost_co2	746
+	L:26_1	cost_nox	0
 	L:26_1	NNone	-1
 	L:26_1	NNone	1
-	L:27_0	cost_PMx	0
-	L:27_0	ttime	1
+	L:27_0	cost_co2	4067
+	L:27_0	cost_nox	2
 	L:27_0	NNone	-1
 	L:27_0	NNone	1
-	L:27_1	cost_PMx	0
-	L:27_1	ttime	1
+	L:27_1	cost_co2	1393
+	L:27_1	cost_nox	1
 	L:27_1	NNone	-1
 	L:27_1	NNone	1
-	L:28_0	cost_PMx	0
-	L:28_0	ttime	1
+	L:28_0	cost_co2	2039
+	L:28_0	cost_nox	1
 	L:28_0	NNone	-1
 	L:28_0	NNone	1
-	L:28_1	cost_PMx	0
-	L:28_1	ttime	1
+	L:28_1	cost_co2	1019
+	L:28_1	cost_nox	0
 	L:28_1	NNone	-1
 	L:28_1	NNone	1
-	L:29_0	cost_PMx	0
-	L:29_0	ttime	1
+	L:29_0	cost_co2	4023
+	L:29_0	cost_nox	2
 	L:29_0	NNone	-1
 	L:29_0	NNone	1
-	L:29_1	cost_PMx	0
-	L:29_1	ttime	1
+	L:29_1	cost_co2	2018
+	L:29_1	cost_nox	1
 	L:29_1	NNone	-1
 	L:29_1	NNone	1
-	L:3_0	cost_PMx	0
-	L:3_0	ttime	1
+	L:3_0	cost_co2	1639
+	L:3_0	cost_nox	1
 	L:3_0	NNone	-1
 	L:3_0	NNone	1
-	L:3_1	cost_PMx	0
-	L:3_1	ttime	1
+	L:3_1	cost_co2	189
+	L:3_1	cost_nox	0
 	L:3_1	NNone	-1
 	L:3_1	NNone	1
-	L:3_2	cost_PMx	0
-	L:3_2	ttime	1
+	L:3_2	cost_co2	1574
+	L:3_2	cost_nox	1
 	L:3_2	NNone	-1
 	L:3_2	NNone	1
-	L:30_0	cost_PMx	0
-	L:30_0	ttime	0
+	L:30_0	cost_co2	185
+	L:30_0	cost_nox	0
 	L:30_0	NNone	-1
 	L:30_0	NNone	1
-	L:31_0	cost_PMx	0
-	L:31_0	ttime	1
+	L:31_0	cost_co2	1677
+	L:31_0	cost_nox	1
 	L:31_0	NNone	-1
 	L:31_0	NNone	1
-	L:31_1	cost_PMx	0
-	L:31_1	ttime	1
+	L:31_1	cost_co2	1810
+	L:31_1	cost_nox	1
 	L:31_1	NNone	-1
 	L:31_1	NNone	1
-	L:32_0	cost_PMx	0
-	L:32_0	ttime	1
+	L:32_0	cost_co2	2378
+	L:32_0	cost_nox	1
 	L:32_0	NNone	-1
 	L:32_0	NNone	1
-	L:32_1	cost_PMx	0
-	L:32_1	ttime	0
+	L:32_1	cost_co2	0
+	L:32_1	cost_nox	0
 	L:32_1	NNone	-1
 	L:32_1	NNone	1
-	L:32_3	cost_PMx	0
-	L:32_3	ttime	0
+	L:32_3	cost_co2	0
+	L:32_3	cost_nox	0
 	L:32_3	NNone	-1
 	L:32_3	NNone	1
-	L:32_2	cost_PMx	0
-	L:32_2	ttime	1
+	L:32_2	cost_co2	825
+	L:32_2	cost_nox	0
 	L:32_2	NNone	-1
 	L:32_2	NNone	1
-	L:33_0	cost_PMx	0
-	L:33_0	ttime	1
+	L:33_0	cost_co2	1682
+	L:33_0	cost_nox	1
 	L:33_0	NNone	-1
 	L:33_0	NNone	1
-	L:33_1	cost_PMx	0
-	L:33_1	ttime	0
+	L:33_1	cost_co2	591
+	L:33_1	cost_nox	0
 	L:33_1	NNone	-1
 	L:33_1	NNone	1
-	L:34_0	cost_PMx	0
-	L:34_0	ttime	2
+	L:34_0	cost_co2	13570
+	L:34_0	cost_nox	6
 	L:34_0	NNone	-1
 	L:34_0	NNone	1
-	L:34_1	cost_PMx	0
-	L:34_1	ttime	0
+	L:34_1	cost_co2	0
+	L:34_1	cost_nox	0
 	L:34_1	NNone	-1
 	L:34_1	NNone	1
-	L:35_0	cost_PMx	0
-	L:35_0	ttime	0
+	L:35_0	cost_co2	248
+	L:35_0	cost_nox	0
 	L:35_0	NNone	-1
 	L:35_0	NNone	1
-	L:36_0	cost_PMx	0
-	L:36_0	ttime	1
+	L:36_0	cost_co2	8606
+	L:36_0	cost_nox	4
 	L:36_0	NNone	-1
 	L:36_0	NNone	1
-	L:36_1	cost_PMx	0
-	L:36_1	ttime	0
+	L:36_1	cost_co2	0
+	L:36_1	cost_nox	0
 	L:36_1	NNone	-1
 	L:36_1	NNone	1
-	L:37_0	cost_PMx	0
-	L:37_0	ttime	0
+	L:37_0	cost_co2	0
+	L:37_0	cost_nox	0
 	L:37_0	NNone	-1
 	L:37_0	NNone	1
-	L:37_2	cost_PMx	0
-	L:37_2	ttime	1
+	L:37_2	cost_co2	5413
+	L:37_2	cost_nox	2
 	L:37_2	NNone	-1
 	L:37_2	NNone	1
-	L:38_0	cost_PMx	0
-	L:38_0	ttime	1
+	L:38_0	cost_co2	1794
+	L:38_0	cost_nox	1
 	L:38_0	NNone	-1
 	L:38_0	NNone	1
-	L:38_1	cost_PMx	0
-	L:38_1	ttime	0
+	L:38_1	cost_co2	0
+	L:38_1	cost_nox	0
 	L:38_1	NNone	-1
 	L:38_1	NNone	1
-	L:39_0	cost_PMx	0
-	L:39_0	ttime	0
+	L:39_0	cost_co2	812
+	L:39_0	cost_nox	0
 	L:39_0	NNone	-1
 	L:39_0	NNone	1
-	L:39_1	cost_PMx	0
-	L:39_1	ttime	0
+	L:39_1	cost_co2	0
+	L:39_1	cost_nox	0
 	L:39_1	NNone	-1
 	L:39_1	NNone	1
-	L:39_3	cost_PMx	0
-	L:39_3	ttime	0
+	L:39_3	cost_co2	0
+	L:39_3	cost_nox	0
 	L:39_3	NNone	-1
 	L:39_3	NNone	1
-	L:39_2	cost_PMx	0
-	L:39_2	ttime	0
+	L:39_2	cost_co2	395
+	L:39_2	cost_nox	0
 	L:39_2	NNone	-1
 	L:39_2	NNone	1
-	L:4_0	cost_PMx	0
-	L:4_0	ttime	0
+	L:4_0	cost_co2	916
+	L:4_0	cost_nox	0
 	L:4_0	NNone	-1
 	L:4_0	NNone	1
-	L:4_1	cost_PMx	0
-	L:4_1	ttime	0
+	L:4_1	cost_co2	1010
+	L:4_1	cost_nox	0
 	L:4_1	NNone	-1
 	L:4_1	NNone	1
-	L:40_0	cost_PMx	0
-	L:40_0	ttime	0
+	L:40_0	cost_co2	9
+	L:40_0	cost_nox	0
 	L:40_0	NNone	-1
 	L:40_0	NNone	1
-	L:40_1	cost_PMx	0
-	L:40_1	ttime	0
+	L:40_1	cost_co2	139
+	L:40_1	cost_nox	0
 	L:40_1	NNone	-1
 	L:40_1	NNone	1
-	L:41_0	cost_PMx	0
-	L:41_0	ttime	1
+	L:41_0	cost_co2	2345
+	L:41_0	cost_nox	1
 	L:41_0	NNone	-1
 	L:41_0	NNone	1
-	L:41_1	cost_PMx	0
-	L:41_1	ttime	1
+	L:41_1	cost_co2	1198
+	L:41_1	cost_nox	1
 	L:41_1	NNone	-1
 	L:41_1	NNone	1
-	L:43_0	cost_PMx	0
-	L:43_0	ttime	0
+	L:43_0	cost_co2	228
+	L:43_0	cost_nox	0
 	L:43_0	NNone	-1
 	L:43_0	NNone	1
-	L:43_1	cost_PMx	0
-	L:43_1	ttime	0
+	L:43_1	cost_co2	26
+	L:43_1	cost_nox	0
 	L:43_1	NNone	-1
 	L:43_1	NNone	1
-	L:45_0	cost_PMx	0
-	L:45_0	ttime	0
+	L:45_0	cost_co2	33
+	L:45_0	cost_nox	0
 	L:45_0	NNone	-1
 	L:45_0	NNone	1
-	L:45_1	cost_PMx	0
-	L:45_1	ttime	0
+	L:45_1	cost_co2	17
+	L:45_1	cost_nox	0
 	L:45_1	NNone	-1
 	L:45_1	NNone	1
-	L:48_0	cost_PMx	0
-	L:48_0	ttime	0
+	L:48_0	cost_co2	104
+	L:48_0	cost_nox	0
 	L:48_0	NNone	-1
 	L:48_0	NNone	1
-	L:48_1	cost_PMx	0
-	L:48_1	ttime	0
+	L:48_1	cost_co2	72
+	L:48_1	cost_nox	0
 	L:48_1	NNone	-1
 	L:48_1	NNone	1
-	L:5_0	cost_PMx	0
-	L:5_0	ttime	0
+	L:5_0	cost_co2	0
+	L:5_0	cost_nox	0
 	L:5_0	NNone	-1
 	L:5_0	NNone	1
-	L:5_1	cost_PMx	0
-	L:5_1	ttime	1
+	L:5_1	cost_co2	4398
+	L:5_1	cost_nox	2
 	L:5_1	NNone	-1
 	L:5_1	NNone	1
-	L:51_0	cost_PMx	0
-	L:51_0	ttime	0
+	L:51_0	cost_co2	71
+	L:51_0	cost_nox	0
 	L:51_0	NNone	-1
 	L:51_0	NNone	1
-	L:51_1	cost_PMx	0
-	L:51_1	ttime	0
+	L:51_1	cost_co2	111
+	L:51_1	cost_nox	0
 	L:51_1	NNone	-1
 	L:51_1	NNone	1
-	L:53_0	cost_PMx	0
-	L:53_0	ttime	1
+	L:53_0	cost_co2	6864
+	L:53_0	cost_nox	3
 	L:53_0	NNone	-1
 	L:53_0	NNone	1
-	L:53_1	cost_PMx	0
-	L:53_1	ttime	0
+	L:53_1	cost_co2	0
+	L:53_1	cost_nox	0
 	L:53_1	NNone	-1
 	L:53_1	NNone	1
-	L:53_3	cost_PMx	0
-	L:53_3	ttime	0
+	L:53_3	cost_co2	0
+	L:53_3	cost_nox	0
 	L:53_3	NNone	-1
 	L:53_3	NNone	1
-	L:53_2	cost_PMx	0
-	L:53_2	ttime	1
+	L:53_2	cost_co2	66
+	L:53_2	cost_nox	0
 	L:53_2	NNone	-1
 	L:53_2	NNone	1
-	L:54_0	cost_PMx	0
-	L:54_0	ttime	1
+	L:54_0	cost_co2	5027
+	L:54_0	cost_nox	2
 	L:54_0	NNone	-1
 	L:54_0	NNone	1
-	L:54_1	cost_PMx	0
-	L:54_1	ttime	0
+	L:54_1	cost_co2	0
+	L:54_1	cost_nox	0
 	L:54_1	NNone	-1
 	L:54_1	NNone	1
-	L:55_0	cost_PMx	0
-	L:55_0	ttime	0
+	L:55_0	cost_co2	71
+	L:55_0	cost_nox	0
 	L:55_0	NNone	-1
 	L:55_0	NNone	1
-	L:56_0	cost_PMx	0
-	L:56_0	ttime	1
+	L:56_0	cost_co2	1427
+	L:56_0	cost_nox	1
 	L:56_0	NNone	-1
 	L:56_0	NNone	1
-	L:56_1	cost_PMx	0
-	L:56_1	ttime	0
+	L:56_1	cost_co2	0
+	L:56_1	cost_nox	0
 	L:56_1	NNone	-1
 	L:56_1	NNone	1
-	L:57_0	cost_PMx	0
-	L:57_0	ttime	1
+	L:57_0	cost_co2	2731
+	L:57_0	cost_nox	1
 	L:57_0	NNone	-1
 	L:57_0	NNone	1
-	L:57_1	cost_PMx	0
-	L:57_1	ttime	0
+	L:57_1	cost_co2	0
+	L:57_1	cost_nox	0
 	L:57_1	NNone	-1
 	L:57_1	NNone	1
-	L:58_0	cost_PMx	0
-	L:58_0	ttime	1
+	L:58_0	cost_co2	1307
+	L:58_0	cost_nox	1
 	L:58_0	NNone	-1
 	L:58_0	NNone	1
-	L:58_1	cost_PMx	0
-	L:58_1	ttime	0
+	L:58_1	cost_co2	0
+	L:58_1	cost_nox	0
 	L:58_1	NNone	-1
 	L:58_1	NNone	1
-	L:59_0	cost_PMx	0
-	L:59_0	ttime	0
+	L:59_0	cost_co2	97
+	L:59_0	cost_nox	0
 	L:59_0	NNone	-1
 	L:59_0	NNone	1
-	L:59_1	cost_PMx	0
-	L:59_1	ttime	0
+	L:59_1	cost_co2	2344
+	L:59_1	cost_nox	1
 	L:59_1	NNone	-1
 	L:59_1	NNone	1
-	L:59_2	cost_PMx	0
-	L:59_2	ttime	0
+	L:59_2	cost_co2	0
+	L:59_2	cost_nox	0
 	L:59_2	NNone	-1
 	L:59_2	NNone	1
-	L:6_0	cost_PMx	0
-	L:6_0	ttime	0
+	L:6_0	cost_co2	0
+	L:6_0	cost_nox	0
 	L:6_0	NNone	-1
 	L:6_0	NNone	1
-	L:6_1	cost_PMx	0
-	L:6_1	ttime	1
+	L:6_1	cost_co2	8687
+	L:6_1	cost_nox	4
 	L:6_1	NNone	-1
 	L:6_1	NNone	1
-	L:60_0	cost_PMx	0
-	L:60_0	ttime	0
+	L:60_0	cost_co2	1820
+	L:60_0	cost_nox	1
 	L:60_0	NNone	-1
 	L:60_0	NNone	1
-	L:60_1	cost_PMx	0
-	L:60_1	ttime	0
+	L:60_1	cost_co2	0
+	L:60_1	cost_nox	0
 	L:60_1	NNone	-1
 	L:60_1	NNone	1
-	L:60_2	cost_PMx	0
-	L:60_2	ttime	0
+	L:60_2	cost_co2	19
+	L:60_2	cost_nox	0
 	L:60_2	NNone	-1
 	L:60_2	NNone	1
-	L:61_0	cost_PMx	0
-	L:61_0	ttime	1
+	L:61_0	cost_co2	2975
+	L:61_0	cost_nox	1
 	L:61_0	NNone	-1
 	L:61_0	NNone	1
-	L:61_1	cost_PMx	0
-	L:61_1	ttime	0
+	L:61_1	cost_co2	0
+	L:61_1	cost_nox	0
 	L:61_1	NNone	-1
 	L:61_1	NNone	1
-	L:62_0	cost_PMx	0
-	L:62_0	ttime	0
+	L:62_0	cost_co2	117
+	L:62_0	cost_nox	0
 	L:62_0	NNone	-1
 	L:62_0	NNone	1
-	L:63_0	cost_PMx	0
-	L:63_0	ttime	1
+	L:63_0	cost_co2	1786
+	L:63_0	cost_nox	1
 	L:63_0	NNone	-1
 	L:63_0	NNone	1
-	L:63_1	cost_PMx	0
-	L:63_1	ttime	0
+	L:63_1	cost_co2	0
+	L:63_1	cost_nox	0
 	L:63_1	NNone	-1
 	L:63_1	NNone	1
-	L:64_0	cost_PMx	0
-	L:64_0	ttime	1
+	L:64_0	cost_co2	3161
+	L:64_0	cost_nox	1
 	L:64_0	NNone	-1
 	L:64_0	NNone	1
-	L:64_1	cost_PMx	0
-	L:64_1	ttime	0
+	L:64_1	cost_co2	0
+	L:64_1	cost_nox	0
 	L:64_1	NNone	-1
 	L:64_1	NNone	1
-	L:65_0	cost_PMx	0
-	L:65_0	ttime	1
+	L:65_0	cost_co2	2432
+	L:65_0	cost_nox	1
 	L:65_0	NNone	-1
 	L:65_0	NNone	1
-	L:65_1	cost_PMx	0
-	L:65_1	ttime	0
+	L:65_1	cost_co2	0
+	L:65_1	cost_nox	0
 	L:65_1	NNone	-1
 	L:65_1	NNone	1
-	L:66_0	cost_PMx	0
-	L:66_0	ttime	0
+	L:66_0	cost_co2	53
+	L:66_0	cost_nox	0
 	L:66_0	NNone	-1
 	L:66_0	NNone	1
-	L:66_1	cost_PMx	0
-	L:66_1	ttime	0
+	L:66_1	cost_co2	2363
+	L:66_1	cost_nox	1
 	L:66_1	NNone	-1
 	L:66_1	NNone	1
-	L:66_2	cost_PMx	0
-	L:66_2	ttime	0
+	L:66_2	cost_co2	0
+	L:66_2	cost_nox	0
 	L:66_2	NNone	-1
 	L:66_2	NNone	1
-	L:66_3	cost_PMx	0
-	L:66_3	ttime	0
+	L:66_3	cost_co2	0
+	L:66_3	cost_nox	0
 	L:66_3	NNone	-1
 	L:66_3	NNone	1
-	L:67_0	cost_PMx	0
-	L:67_0	ttime	1
+	L:67_0	cost_co2	2769
+	L:67_0	cost_nox	1
 	L:67_0	NNone	-1
 	L:67_0	NNone	1
-	L:67_1	cost_PMx	0
-	L:67_1	ttime	1
+	L:67_1	cost_co2	419
+	L:67_1	cost_nox	0
 	L:67_1	NNone	-1
 	L:67_1	NNone	1
-	L:68_0	cost_PMx	0
-	L:68_0	ttime	1
+	L:68_0	cost_co2	9024
+	L:68_0	cost_nox	4
 	L:68_0	NNone	-1
 	L:68_0	NNone	1
-	L:68_2	cost_PMx	0
-	L:68_2	ttime	1
+	L:68_2	cost_co2	1792
+	L:68_2	cost_nox	1
 	L:68_2	NNone	-1
 	L:68_2	NNone	1
-	L:69_0	cost_PMx	0
-	L:69_0	ttime	1
+	L:69_0	cost_co2	5854
+	L:69_0	cost_nox	2
 	L:69_0	NNone	-1
 	L:69_0	NNone	1
-	L:69_1	cost_PMx	0
-	L:69_1	ttime	0
+	L:69_1	cost_co2	0
+	L:69_1	cost_nox	0
 	L:69_1	NNone	-1
 	L:69_1	NNone	1
-	L:69_2	cost_PMx	0
-	L:69_2	ttime	1
+	L:69_2	cost_co2	4495
+	L:69_2	cost_nox	2
 	L:69_2	NNone	-1
 	L:69_2	NNone	1
-	L:7_0	cost_PMx	0
-	L:7_0	ttime	1
+	L:7_0	cost_co2	3083
+	L:7_0	cost_nox	1
 	L:7_0	NNone	-1
 	L:7_0	NNone	1
-	L:70_0	cost_PMx	0
-	L:70_0	ttime	1
+	L:70_0	cost_co2	8991
+	L:70_0	cost_nox	4
 	L:70_0	NNone	-1
 	L:70_0	NNone	1
-	L:70_2	cost_PMx	0
-	L:70_2	ttime	1
+	L:70_2	cost_co2	2268
+	L:70_2	cost_nox	1
 	L:70_2	NNone	-1
 	L:70_2	NNone	1
-	L:71_0	cost_PMx	0
-	L:71_0	ttime	1
+	L:71_0	cost_co2	3450
+	L:71_0	cost_nox	1
 	L:71_0	NNone	-1
 	L:71_0	NNone	1
-	L:71_1	cost_PMx	0
-	L:71_1	ttime	1
+	L:71_1	cost_co2	5393
+	L:71_1	cost_nox	2
 	L:71_1	NNone	-1
 	L:71_1	NNone	1
-	L:72_0	cost_PMx	0
-	L:72_0	ttime	1
+	L:72_0	cost_co2	8865
+	L:72_0	cost_nox	4
 	L:72_0	NNone	-1
 	L:72_0	NNone	1
-	L:72_2	cost_PMx	0
-	L:72_2	ttime	1
+	L:72_2	cost_co2	1507
+	L:72_2	cost_nox	1
 	L:72_2	NNone	-1
 	L:72_2	NNone	1
-	L:73_0	cost_PMx	0
-	L:73_0	ttime	1
+	L:73_0	cost_co2	838
+	L:73_0	cost_nox	0
 	L:73_0	NNone	-1
 	L:73_0	NNone	1
-	L:73_1	cost_PMx	0
-	L:73_1	ttime	0
+	L:73_1	cost_co2	2042
+	L:73_1	cost_nox	1
 	L:73_1	NNone	-1
 	L:73_1	NNone	1
-	L:74_0	cost_PMx	0
-	L:74_0	ttime	1
+	L:74_0	cost_co2	8317
+	L:74_0	cost_nox	4
 	L:74_0	NNone	-1
 	L:74_0	NNone	1
-	L:74_2	cost_PMx	0
-	L:74_2	ttime	1
+	L:74_2	cost_co2	2129
+	L:74_2	cost_nox	1
 	L:74_2	NNone	-1
 	L:74_2	NNone	1
-	L:75_0	cost_PMx	0
-	L:75_0	ttime	1
+	L:75_0	cost_co2	3673
+	L:75_0	cost_nox	1
 	L:75_0	NNone	-1
 	L:75_0	NNone	1
-	L:75_1	cost_PMx	0
-	L:75_1	ttime	1
+	L:75_1	cost_co2	4945
+	L:75_1	cost_nox	2
 	L:75_1	NNone	-1
 	L:75_1	NNone	1
-	L:76_0	cost_PMx	0
-	L:76_0	ttime	1
+	L:76_0	cost_co2	4789
+	L:76_0	cost_nox	2
 	L:76_0	NNone	-1
 	L:76_0	NNone	1
-	L:76_1	cost_PMx	0
-	L:76_1	ttime	1
+	L:76_1	cost_co2	251
+	L:76_1	cost_nox	0
 	L:76_1	NNone	-1
 	L:76_1	NNone	1
-	L:79_0	cost_PMx	0
-	L:79_0	ttime	1
+	L:79_0	cost_co2	2813
+	L:79_0	cost_nox	1
 	L:79_0	NNone	-1
 	L:79_0	NNone	1
-	L:79_1	cost_PMx	0
-	L:79_1	ttime	1
+	L:79_1	cost_co2	1955
+	L:79_1	cost_nox	1
 	L:79_1	NNone	-1
 	L:79_1	NNone	1
-	L:8_0	cost_PMx	0
-	L:8_0	ttime	1
+	L:8_0	cost_co2	5225
+	L:8_0	cost_nox	2
 	L:8_0	NNone	-1
 	L:8_0	NNone	1
-	L:8_1	cost_PMx	0
-	L:8_1	ttime	0
+	L:8_1	cost_co2	0
+	L:8_1	cost_nox	0
 	L:8_1	NNone	-1
 	L:8_1	NNone	1
-	L:80_0	cost_PMx	0
-	L:80_0	ttime	0
+	L:80_0	cost_co2	30
+	L:80_0	cost_nox	0
 	L:80_0	NNone	-1
 	L:80_0	NNone	1
-	L:81_0	cost_PMx	0
-	L:81_0	ttime	0
+	L:81_0	cost_co2	30
+	L:81_0	cost_nox	0
 	L:81_0	NNone	-1
 	L:81_0	NNone	1
-	L:82_0	cost_PMx	0
-	L:82_0	ttime	1
+	L:82_0	cost_co2	10071
+	L:82_0	cost_nox	4
 	L:82_0	NNone	-1
 	L:82_0	NNone	1
-	L:82_2	cost_PMx	0
-	L:82_2	ttime	0
+	L:82_2	cost_co2	0
+	L:82_2	cost_nox	0
 	L:82_2	NNone	-1
 	L:82_2	NNone	1
-	L:83_0	cost_PMx	0
-	L:83_0	ttime	1
+	L:83_0	cost_co2	5847
+	L:83_0	cost_nox	2
 	L:83_0	NNone	-1
 	L:83_0	NNone	1
-	L:83_1	cost_PMx	0
-	L:83_1	ttime	0
+	L:83_1	cost_co2	0
+	L:83_1	cost_nox	0
 	L:83_1	NNone	-1
 	L:83_1	NNone	1
-	L:83_2	cost_PMx	0
-	L:83_2	ttime	1
+	L:83_2	cost_co2	1197
+	L:83_2	cost_nox	0
 	L:83_2	NNone	-1
 	L:83_2	NNone	1
-	L:84_0	cost_PMx	0
-	L:84_0	ttime	1
+	L:84_0	cost_co2	8320
+	L:84_0	cost_nox	4
 	L:84_0	NNone	-1
 	L:84_0	NNone	1
-	L:84_2	cost_PMx	0
-	L:84_2	ttime	1
+	L:84_2	cost_co2	2611
+	L:84_2	cost_nox	1
 	L:84_2	NNone	-1
 	L:84_2	NNone	1
-	L:85_0	cost_PMx	0
-	L:85_0	ttime	1
+	L:85_0	cost_co2	2831
+	L:85_0	cost_nox	1
 	L:85_0	NNone	-1
 	L:85_0	NNone	1
-	L:85_2	cost_PMx	0
-	L:85_2	ttime	1
+	L:85_2	cost_co2	8381
+	L:85_2	cost_nox	4
 	L:85_2	NNone	-1
 	L:85_2	NNone	1
-	L:86_0	cost_PMx	0
-	L:86_0	ttime	1
+	L:86_0	cost_co2	3665
+	L:86_0	cost_nox	2
 	L:86_0	NNone	-1
 	L:86_0	NNone	1
-	L:86_2	cost_PMx	0
-	L:86_2	ttime	1
+	L:86_2	cost_co2	6950
+	L:86_2	cost_nox	3
 	L:86_2	NNone	-1
 	L:86_2	NNone	1
-	L:87_0	cost_PMx	0
-	L:87_0	ttime	1
+	L:87_0	cost_co2	11053
+	L:87_0	cost_nox	5
 	L:87_0	NNone	-1
 	L:87_0	NNone	1
-	L:87_2	cost_PMx	0
-	L:87_2	ttime	0
+	L:87_2	cost_co2	0
+	L:87_2	cost_nox	0
 	L:87_2	NNone	-1
 	L:87_2	NNone	1
-	L:88_0	cost_PMx	0
-	L:88_0	ttime	0
+	L:88_0	cost_co2	0
+	L:88_0	cost_nox	0
 	L:88_0	NNone	-1
 	L:88_0	NNone	1
-	L:88_2	cost_PMx	0
-	L:88_2	ttime	1
+	L:88_2	cost_co2	6720
+	L:88_2	cost_nox	3
 	L:88_2	NNone	-1
 	L:88_2	NNone	1
-	L:88_3	cost_PMx	0
-	L:88_3	ttime	0
+	L:88_3	cost_co2	0
+	L:88_3	cost_nox	0
 	L:88_3	NNone	-1
 	L:88_3	NNone	1
-	L:89_0	cost_PMx	0
-	L:89_0	ttime	1
+	L:89_0	cost_co2	6787
+	L:89_0	cost_nox	3
 	L:89_0	NNone	-1
 	L:89_0	NNone	1
-	L:89_2	cost_PMx	0
-	L:89_2	ttime	0
+	L:89_2	cost_co2	0
+	L:89_2	cost_nox	0
 	L:89_2	NNone	-1
 	L:89_2	NNone	1
-	L:9_0	cost_PMx	0
-	L:9_0	ttime	0
+	L:9_0	cost_co2	0
+	L:9_0	cost_nox	0
 	L:9_0	NNone	-1
 	L:9_0	NNone	1
-	L:90_0	cost_PMx	0
-	L:90_0	ttime	2
+	L:90_0	cost_co2	9633
+	L:90_0	cost_nox	4
 	L:90_0	NNone	-1
 	L:90_0	NNone	1
-	L:90_2	cost_PMx	0
-	L:90_2	ttime	0
+	L:90_2	cost_co2	0
+	L:90_2	cost_nox	0
 	L:90_2	NNone	-1
 	L:90_2	NNone	1
-	L:91_0	cost_PMx	0
-	L:91_0	ttime	1
+	L:91_0	cost_co2	5252
+	L:91_0	cost_nox	2
 	L:91_0	NNone	-1
 	L:91_0	NNone	1
-	L:91_1	cost_PMx	0
-	L:91_1	ttime	0
+	L:91_1	cost_co2	0
+	L:91_1	cost_nox	0
 	L:91_1	NNone	-1
 	L:91_1	NNone	1
-	L:91_2	cost_PMx	0
-	L:91_2	ttime	0
+	L:91_2	cost_co2	0
+	L:91_2	cost_nox	0
 	L:91_2	NNone	-1
 	L:91_2	NNone	1
-	L:92_0	cost_PMx	0
-	L:92_0	ttime	0
+	L:92_0	cost_co2	12
+	L:92_0	cost_nox	0
 	L:92_0	NNone	-1
 	L:92_0	NNone	1
-	L:93_0	cost_PMx	0
-	L:93_0	ttime	1
+	L:93_0	cost_co2	1895
+	L:93_0	cost_nox	1
 	L:93_0	NNone	-1
 	L:93_0	NNone	1
-	L:93_1	cost_PMx	0
-	L:93_1	ttime	1
+	L:93_1	cost_co2	110
+	L:93_1	cost_nox	0
 	L:93_1	NNone	-1
 	L:93_1	NNone	1
-	L:94_0	cost_PMx	0
-	L:94_0	ttime	0
+	L:94_0	cost_co2	0
+	L:94_0	cost_nox	0
 	L:94_0	NNone	-1
 	L:94_0	NNone	1
-	L:94_1	cost_PMx	0
-	L:94_1	ttime	1
+	L:94_1	cost_co2	4538
+	L:94_1	cost_nox	2
 	L:94_1	NNone	-1
 	L:94_1	NNone	1
-	L:95_0	cost_PMx	0
-	L:95_0	ttime	1
+	L:95_0	cost_co2	892
+	L:95_0	cost_nox	0
 	L:95_0	NNone	-1
 	L:95_0	NNone	1
-	L:95_1	cost_PMx	0
-	L:95_1	ttime	0
+	L:95_1	cost_co2	907
+	L:95_1	cost_nox	0
 	L:95_1	NNone	-1
 	L:95_1	NNone	1
-	L:96_0	cost_PMx	0
-	L:96_0	ttime	0
+	L:96_0	cost_co2	0
+	L:96_0	cost_nox	0
 	L:96_0	NNone	-1
 	L:96_0	NNone	1
-	L:96_1	cost_PMx	0
-	L:96_1	ttime	1
+	L:96_1	cost_co2	3156
+	L:96_1	cost_nox	1
 	L:96_1	NNone	-1
 	L:96_1	NNone	1
-	L:99_0	cost_PMx	0
-	L:99_0	ttime	1
+	L:99_0	cost_co2	2755
+	L:99_0	cost_nox	1
 	L:99_0	NNone	-1
 	L:99_0	NNone	1
-	L:99_1	cost_PMx	0
-	L:99_1	ttime	0
+	L:99_1	cost_co2	1368
+	L:99_1	cost_nox	1
 	L:99_1	NNone	-1
 	L:99_1	NNone	1
-	L:gneJ4_0	cost_PMx	0
-	L:gneJ4_0	ttime	0
+	L:gneJ4_0	cost_co2	165
+	L:gneJ4_0	cost_nox	0
 	L:gneJ4_0	NNone	-1
 	L:gneJ4_0	NNone	1
-	L:gneJ7_0	cost_PMx	0
-	L:gneJ7_0	ttime	0
+	L:gneJ7_0	cost_co2	121
+	L:gneJ7_0	cost_nox	0
 	L:gneJ7_0	NNone	-1
 	L:gneJ7_0	NNone	1
-	L:gneJ7_1	cost_PMx	0
-	L:gneJ7_1	ttime	0
+	L:gneJ7_1	cost_co2	131
+	L:gneJ7_1	cost_nox	0
 	L:gneJ7_1	NNone	-1
 	L:gneJ7_1	NNone	1
-	L:gneJ8_0	cost_PMx	0
-	L:gneJ8_0	ttime	0
+	L:gneJ8_0	cost_co2	57
+	L:gneJ8_0	cost_nox	0
 	L:gneJ8_0	NNone	-1
 	L:gneJ8_0	NNone	1
-	L-248846659#1	cost_PMx	0
-	L-248846659#1	ttime	14
+	L-248846659#1	cost_co2	23282
+	L-248846659#1	cost_nox	9
 	L-248846659#1	NJ-26-1T	-1
 	L-248846659#1	NJ-25-1F	1
-	L1	cost_PMx	0
-	L1	ttime	11
+	L1	cost_co2	19139
+	L1	cost_nox	7
 	L1	NJ-78-1T	-1
 	L1	NJ-79-1F	1
-	L100	cost_PMx	0
-	L100	ttime	14
+	L100	cost_co2	27825
+	L100	cost_nox	10
 	L100	NJ-77-1T	-1
 	L100	NJ-76-1F	1
-	L11	cost_PMx	1
-	L11	ttime	14
+	L11	cost_co2	40022
+	L11	cost_nox	16
 	L11	NJ-45-1T	-1
 	L11	NJ-gneJ7-1F	1
-	L12	cost_PMx	1
-	L12	ttime	31
+	L12	cost_co2	76045
+	L12	cost_nox	29
 	L12	NJ-gneJ7-1T	-1
 	L12	NJ-48-1F	1
-	L13	cost_PMx	1
-	L13	ttime	15
+	L13	cost_co2	39514
+	L13	cost_nox	16
 	L13	NJ-48-1T	-1
 	L13	NJ-51-1F	1
-	L132017141#1	cost_PMx	0
-	L132017141#1	ttime	2
+	L132017141#1	cost_co2	4907
+	L132017141#1	cost_nox	2
 	L132017141#1	NJ-10-1T	-1
 	L132017141#1	NJ-11-1F	1
-	L132017141#2	cost_PMx	0
-	L132017141#2	ttime	1
+	L132017141#2	cost_co2	2221
+	L132017141#2	cost_nox	1
 	L132017141#2	NJ-11-1T	-1
 	L132017141#2	NJ-12-1F	1
-	L132017141#3	cost_PMx	0
-	L132017141#3	ttime	1
+	L132017141#3	cost_co2	1564
+	L132017141#3	cost_nox	1
 	L132017141#3	NJ-12-1T	-1
 	L132017141#3	NJ-13-1F	1
-	L132017141#4	cost_PMx	0
-	L132017141#4	ttime	1
+	L132017141#4	cost_co2	2437
+	L132017141#4	cost_nox	1
 	L132017141#4	NJ-13-1T	-1
 	L132017141#4	NJ-14-1F	1
-	L132017141#5	cost_PMx	0
-	L132017141#5	ttime	1
+	L132017141#5	cost_co2	2268
+	L132017141#5	cost_nox	1
 	L132017141#5	NJ-14-1T	-1
 	L132017141#5	NJ-8-1F	1
-	L132017142	cost_PMx	1
-	L132017142	ttime	21
+	L132017142	cost_co2	60353
+	L132017142	cost_nox	23
 	L132017142	NJ-13-2T	-1
 	L132017142	NJ-158-1F	1
-	L132017149	cost_PMx	0
-	L132017149	ttime	12
+	L132017149	cost_co2	30649
+	L132017149	cost_nox	12
 	L132017149	NJ-8-1T	-1
 	L132017149	NJ-7-1F	1
-	L132017151	cost_PMx	1
-	L132017151	ttime	23
+	L132017151	cost_co2	43833
+	L132017151	cost_nox	16
 	L132017151	NJ-159-1T	-1
 	L132017151	NJ-2-1F	1
-	L135657120	cost_PMx	1
-	L135657120	ttime	15
+	L135657120	cost_co2	51166
+	L135657120	cost_nox	20
 	L135657120	NJ-162-1T	-1
 	L135657120	NJ-165-1F	1
-	L135657123	cost_PMx	1
-	L135657123	ttime	3
+	L135657123	cost_co2	28509
+	L135657123	cost_nox	12
 	L135657123	NJ-199-1T	-1
 	L135657123	NJ-162-1F	1
-	L14	cost_PMx	2
-	L14	ttime	46
+	L14	cost_co2	102967
+	L14	cost_nox	39
 	L14	NJ-51-1T	-1
 	L14	NJ-53-1F	1
-	L142362576	cost_PMx	6
-	L142362576	ttime	109
+	L142362576	cost_co2	326705
+	L142362576	cost_nox	122
 	L142362576	NJ-183-1T	-1
 	L142362576	NJ-181-1F	1
-	L142362585	cost_PMx	1
-	L142362585	ttime	16
+	L142362585	cost_co2	48425
+	L142362585	cost_nox	18
 	L142362585	NJ-186-1T	-1
 	L142362585	NJ-189-1F	1
-	L142362611	cost_PMx	1
-	L142362611	ttime	14
+	L142362611	cost_co2	33124
+	L142362611	cost_nox	13
 	L142362611	NJ-80-1T	-1
 	L142362611	NJ-82-1F	1
-	L142362617	cost_PMx	0
-	L142362617	ttime	13
+	L142362617	cost_co2	28876
+	L142362617	cost_nox	11
 	L142362617	NJ-81-1T	-1
 	L142362617	NJ-70-1F	1
-	L142362623	cost_PMx	0
-	L142362623	ttime	3
+	L142362623	cost_co2	16804
+	L142362623	cost_nox	7
 	L142362623	NJ-73-1T	-1
 	L142362623	NJ-79-2F	1
-	L142362634	cost_PMx	0
-	L142362634	ttime	16
+	L142362634	cost_co2	32025
+	L142362634	cost_nox	12
 	L142362634	NJ-187-1T	-1
 	L142362634	NJ-194-1F	1
-	L142362639	cost_PMx	1
-	L142362639	ttime	21
+	L142362639	cost_co2	51270
+	L142362639	cost_nox	20
 	L142362639	NJ-193-1T	-1
 	L142362639	NJ-185-1F	1
-	L142362642	cost_PMx	1
-	L142362642	ttime	22
+	L142362642	cost_co2	39637
+	L142362642	cost_nox	15
 	L142362642	NJ-194-1T	-1
 	L142362642	NJ-196-1F	1
-	L148050996	cost_PMx	0
-	L148050996	ttime	0
+	L148050996	cost_co2	201
+	L148050996	cost_nox	0
 	L148050996	NJ-166-1T	-1
 	L148050996	NJ-167-1F	1
-	L148051000	cost_PMx	0
-	L148051000	ttime	3
+	L148051000	cost_co2	6242
+	L148051000	cost_nox	2
 	L148051000	NJ-163-1T	-1
 	L148051000	NJ-198-1F	1
-	L148051003	cost_PMx	1
-	L148051003	ttime	21
+	L148051003	cost_co2	47558
+	L148051003	cost_nox	18
 	L148051003	NJ-198-1T	-1
 	L148051003	NJ-146-1F	1
-	L15	cost_PMx	0
-	L15	ttime	2
+	L15	cost_co2	4306
+	L15	cost_nox	2
 	L15	NJ-53-1T	-1
 	L15	NJ-54-1F	1
-	L152051288	cost_PMx	6
-	L152051288	ttime	109
+	L152051288	cost_co2	326902
+	L152051288	cost_nox	122
 	L152051288	NJ-182-1T	-1
 	L152051288	NJ-184-1F	1
-	L152051296	cost_PMx	3
-	L152051296	ttime	57
+	L152051296	cost_co2	171374
+	L152051296	cost_nox	64
 	L152051296	NJ-181-1T	-1
 	L152051296	NJ-180-1F	1
-	L158879913	cost_PMx	1
-	L158879913	ttime	48
+	L158879913	cost_co2	85156
+	L158879913	cost_nox	31
 	L158879913	NJ-93-1T	-1
 	L158879913	NJ-95-1F	1
-	L158879917	cost_PMx	1
-	L158879917	ttime	22
+	L158879917	cost_co2	48447
+	L158879917	cost_nox	18
 	L158879917	NJ-93-2T	-1
 	L158879917	NJ-99-1F	1
-	L158888001	cost_PMx	3
-	L158888001	ttime	54
+	L158888001	cost_co2	160322
+	L158888001	cost_nox	60
 	L158888001	NJ-172-1T	-1
 	L158888001	NJ-173-1F	1
-	L158888002	cost_PMx	12
-	L158888002	ttime	228
+	L158888002	cost_co2	682828
+	L158888002	cost_nox	255
 	L158888002	NJ-171-1T	-1
 	L158888002	NJ-169-1F	1
-	L158888013	cost_PMx	1
-	L158888013	ttime	28
+	L158888013	cost_co2	56759
+	L158888013	cost_nox	21
 	L158888013	NJ-128-1T	-1
 	L158888013	NJ-138-1F	1
-	L158888040	cost_PMx	0
-	L158888040	ttime	5
+	L158888040	cost_co2	21329
+	L158888040	cost_nox	9
 	L158888040	NJ-117-1T	-1
 	L158888040	NJ-118-1F	1
-	L158888049	cost_PMx	1
-	L158888049	ttime	20
+	L158888049	cost_co2	37491
+	L158888049	cost_nox	14
 	L158888049	NJ-109-1T	-1
 	L158888049	NJ-117-1F	1
-	L16	cost_PMx	2
-	L16	ttime	37
+	L16	cost_co2	96023
+	L16	cost_nox	37
 	L16	NJ-59-1T	-1
 	L16	NJ-60-1F	1
-	L160289846#0	cost_PMx	2
-	L160289846#0	ttime	68
+	L160289846#0	cost_co2	116100
+	L160289846#0	cost_nox	44
 	L160289846#0	NJ-43-1T	-1
 	L160289846#0	NJ-41-1F	1
-	L17	cost_PMx	2
-	L17	ttime	42
+	L17	cost_co2	107140
+	L17	cost_nox	41
 	L17	NJ-66-1T	-1
 	L17	NJ-67-1F	1
-	L18	cost_PMx	1
-	L18	ttime	51
+	L18	cost_co2	97941
+	L18	cost_nox	36
 	L18	NJ-15-1T	-1
 	L18	NJ-203-1F	1
-	L185675533	cost_PMx	21
-	L185675533	ttime	388
+	L185675533	cost_co2	1166161
+	L185675533	cost_nox	436
 	L185675533	NJ-105-1T	-1
 	L185675533	NJ-107-1F	1
-	L185675534	cost_PMx	3
-	L185675534	ttime	49
+	L185675534	cost_co2	146059
+	L185675534	cost_nox	55
 	L185675534	NJ-106-1T	-1
 	L185675534	NJ-104-1F	1
-	L188949094#0	cost_PMx	0
-	L188949094#0	ttime	4
+	L188949094#0	cost_co2	7108
+	L188949094#0	cost_nox	3
 	L188949094#0	NJ-3-1T	-1
 	L188949094#0	NJ-2-2F	1
-	L188949094#1	cost_PMx	1
-	L188949094#1	ttime	3
+	L188949094#1	cost_co2	25021
+	L188949094#1	cost_nox	11
 	L188949094#1	NJ-2-1T	-1
 	L188949094#1	NJ-1-1F	1
-	L19	cost_PMx	1
-	L19	ttime	21
+	L19	cost_co2	41309
+	L19	cost_nox	16
 	L19	NJ-203-1T	-1
 	L19	NJ-16-1F	1
-	L19a	cost_PMx	1
-	L19a	ttime	18
+	L19a	cost_co2	56043
+	L19a	cost_nox	22
 	L19a	NJ-16-1T	-1
 	L19a	NJ-17-1F	1
-	L2	cost_PMx	0
-	L2	ttime	11
+	L2	cost_co2	20887
+	L2	cost_nox	8
 	L2	NJ-79-1T	-1
 	L2	NJ-78-1F	1
-	L20	cost_PMx	1
-	L20	ttime	24
+	L20	cost_co2	53268
+	L20	cost_nox	20
 	L20	NJ-17-1T	-1
 	L20	NJ-192-1F	1
-	L21	cost_PMx	1
-	L21	ttime	12
+	L21	cost_co2	42154
+	L21	cost_nox	17
 	L21	NJ-192-1T	-1
 	L21	NJ-18-1F	1
-	L22	cost_PMx	2
-	L22	ttime	86
+	L22	cost_co2	163475
+	L22	cost_nox	62
 	L22	NJ-18-1T	-1
 	L22	NJ-19-1F	1
-	L23	cost_PMx	2
-	L23	ttime	65
+	L23	cost_co2	134049
+	L23	cost_nox	51
 	L23	NJ-19-1T	-1
 	L23	NJ-20-1F	1
-	L24	cost_PMx	1
-	L24	ttime	23
+	L24	cost_co2	79704
+	L24	cost_nox	31
 	L24	NJ-20-1T	-1
 	L24	NJ-21-1F	1
-	L24328854#1	cost_PMx	0
-	L24328854#1	ttime	4
+	L24328854#1	cost_co2	17897
+	L24328854#1	cost_nox	7
 	L24328854#1	NJ-82-1T	-1
 	L24328854#1	NJ-83-1F	1
-	L24328854#2	cost_PMx	0
-	L24328854#2	ttime	1
+	L24328854#2	cost_co2	2199
+	L24328854#2	cost_nox	1
 	L24328854#2	NJ-83-1T	-1
 	L24328854#2	NJ-84-1F	1
-	L24328854#3	cost_PMx	0
-	L24328854#3	ttime	1
+	L24328854#3	cost_co2	4209
+	L24328854#3	cost_nox	2
 	L24328854#3	NJ-84-1T	-1
 	L24328854#3	NJ-85-1F	1
-	L24328854#4	cost_PMx	0
-	L24328854#4	ttime	1
+	L24328854#4	cost_co2	5026
+	L24328854#4	cost_nox	2
 	L24328854#4	NJ-85-1T	-1
 	L24328854#4	NJ-86-1F	1
-	L24328854#5	cost_PMx	0
-	L24328854#5	ttime	0
+	L24328854#5	cost_co2	2154
+	L24328854#5	cost_nox	1
 	L24328854#5	NJ-86-1T	-1
 	L24328854#5	NJ-87-1F	1
-	L24330636	cost_PMx	1
-	L24330636	ttime	29
+	L24330636	cost_co2	61381
+	L24330636	cost_nox	23
 	L24330636	NJ-147-1T	-1
 	L24330636	NJ-199-1F	1
-	L24347613	cost_PMx	1
-	L24347613	ttime	13
+	L24347613	cost_co2	60028
+	L24347613	cost_nox	24
 	L24347613	NJ-87-1T	-1
 	L24347613	NJ-81-1F	1
-	L24443869	cost_PMx	1
-	L24443869	ttime	30
+	L24443869	cost_co2	55992
+	L24443869	cost_nox	21
 	L24443869	NJ-137-1T	-1
 	L24443869	NJ-134-1F	1
-	L24443872	cost_PMx	0
-	L24443872	ttime	9
+	L24443872	cost_co2	16474
+	L24443872	cost_nox	6
 	L24443872	NJ-128-2T	-1
 	L24443872	NJ-133-1F	1
-	L24443879.82	cost_PMx	0
-	L24443879.82	ttime	14
+	L24443879.82	cost_co2	25289
+	L24443879.82	cost_nox	9
 	L24443879.82	NJ-130-1T	-1
 	L24443879.82	NJ-126-1F	1
-	L24443883	cost_PMx	1
-	L24443883	ttime	26
+	L24443883	cost_co2	47088
+	L24443883	cost_nox	17
 	L24443883	NJ-115-1T	-1
 	L24443883	NJ-114-1F	1
-	L24443886	cost_PMx	1
-	L24443886	ttime	39
+	L24443886	cost_co2	73086
+	L24443886	cost_nox	27
 	L24443886	NJ-110-1T	-1
 	L24443886	NJ-117-2F	1
-	L245327987	cost_PMx	0
-	L245327987	ttime	8
+	L245327987	cost_co2	24535
+	L245327987	cost_nox	9
 	L245327987	NJ-187-2T	-1
 	L245327987	NJ-185-2F	1
-	L245327988#1	cost_PMx	1
-	L245327988#1	ttime	8
+	L245327988#1	cost_co2	27476
+	L245327988#1	cost_nox	10
 	L245327988#1	NJ-189-1T	-1
 	L245327988#1	NJ-190-1F	1
-	L245328442	cost_PMx	3
-	L245328442	ttime	61
+	L245328442	cost_co2	182633
+	L245328442	cost_nox	68
 	L245328442	NJ-179-1T	-1
 	L245328442	NJ-182-1F	1
-	L248722719	cost_PMx	0
-	L248722719	ttime	1
+	L248722719	cost_co2	9026
+	L248722719	cost_nox	4
 	L248722719	NJ-31-1T	-1
 	L248722719	NJ-22-1F	1
-	L248722721#0	cost_PMx	0
-	L248722721#0	ttime	2
+	L248722721#0	cost_co2	3674
+	L248722721#0	cost_nox	1
 	L248722721#0	NJ-30-1T	-1
 	L248722721#0	NJ-31-1F	1
-	L248722721#1	cost_PMx	0
-	L248722721#1	ttime	1
+	L248722721#1	cost_co2	1549
+	L248722721#1	cost_nox	1
 	L248722721#1	NJ-31-2T	-1
 	L248722721#1	NJ-23-1F	1
-	L248722721#2	cost_PMx	0
-	L248722721#2	ttime	0
+	L248722721#2	cost_co2	624
+	L248722721#2	cost_nox	0
 	L248722721#2	NJ-23-1T	-1
 	L248722721#2	NJ-24-1F	1
-	L248722721#3	cost_PMx	0
-	L248722721#3	ttime	1
+	L248722721#3	cost_co2	1763
+	L248722721#3	cost_nox	1
 	L248722721#3	NJ-24-1T	-1
 	L248722721#3	NJ-27-1F	1
-	L248722721#4	cost_PMx	0
-	L248722721#4	ttime	1
+	L248722721#4	cost_co2	1146
+	L248722721#4	cost_nox	0
 	L248722721#4	NJ-27-1T	-1
 	L248722721#4	NJ-28-1F	1
-	L248722721#5	cost_PMx	0
-	L248722721#5	ttime	1
+	L248722721#5	cost_co2	4691
+	L248722721#5	cost_nox	2
 	L248722721#5	NJ-28-1T	-1
 	L248722721#5	NJ-29-1F	1
-	L248722721#6	cost_PMx	0
-	L248722721#6	ttime	0
+	L248722721#6	cost_co2	1179
+	L248722721#6	cost_nox	0
 	L248722721#6	NJ-29-1T	-1
 	L248722721#6	NJ-30-1F	1
-	L248722722#0	cost_PMx	2
-	L248722722#0	ttime	69
+	L248722722#0	cost_co2	131964
+	L248722722#0	cost_nox	50
 	L248722722#0	NJ-20-2T	-1
 	L248722722#0	NJ-19-2F	1
-	L248722722#1	cost_PMx	2
-	L248722722#1	ttime	85
+	L248722722#1	cost_co2	173034
+	L248722722#1	cost_nox	66
 	L248722722#1	NJ-19-2T	-1
 	L248722722#1	NJ-18-2F	1
-	L248722725	cost_PMx	0
-	L248722725	ttime	2
+	L248722725	cost_co2	4301
+	L248722725	cost_nox	2
 	L248722725	NJ-32-1T	-1
 	L248722725	NJ-29-2F	1
-	L248722726	cost_PMx	0
-	L248722726	ttime	2
+	L248722726	cost_co2	4483
+	L248722726	cost_nox	2
 	L248722726	NJ-26-2T	-1
 	L248722726	NJ-27-2F	1
-	L248846659#1.206	cost_PMx	0
-	L248846659#1.206	ttime	14
+	L248846659#1.206	cost_co2	20777
+	L248846659#1.206	cost_nox	8
 	L248846659#1.206	NJ-25-1T	-1
 	L248846659#1.206	NJ-26-1F	1
-	L248927010	cost_PMx	0
-	L248927010	ttime	0
+	L248927010	cost_co2	1884
+	L248927010	cost_nox	1
 	L248927010	NJ-33-1T	-1
 	L248927010	NJ-34-1F	1
-	L248927011	cost_PMx	0
-	L248927011	ttime	2
+	L248927011	cost_co2	4973
+	L248927011	cost_nox	2
 	L248927011	NJ-39-1T	-1
 	L248927011	NJ-37-1F	1
-	L249236831	cost_PMx	1
-	L249236831	ttime	15
+	L249236831	cost_co2	38384
+	L249236831	cost_nox	15
 	L249236831	NJ-41-1T	-1
 	L249236831	NJ-40-1F	1
-	L249236832	cost_PMx	1
-	L249236832	ttime	13
+	L249236832	cost_co2	33690
+	L249236832	cost_nox	13
 	L249236832	NJ-40-1T	-1
 	L249236832	NJ-39-1F	1
-	L249270205#0	cost_PMx	0
-	L249270205#0	ttime	15
+	L249270205#0	cost_co2	26347
+	L249270205#0	cost_nox	10
 	L249270205#0	NJ-45-2T	-1
 	L249270205#0	NJ-gneJ8-1F	1
-	L249270205#0.177	cost_PMx	0
-	L249270205#0.177	ttime	1
+	L249270205#0.177	cost_co2	2341
+	L249270205#0.177	cost_nox	1
 	L249270205#0.177	NJ-gneJ8-1T	-1
 	L249270205#0.177	NJ-43-1F	1
-	L249443656#0	cost_PMx	1
-	L249443656#0	ttime	15
+	L249443656#0	cost_co2	38964
+	L249443656#0	cost_nox	15
 	L249443656#0	NJ-51-2T	-1
 	L249443656#0	NJ-48-2F	1
-	L249443656#3	cost_PMx	1
-	L249443656#3	ttime	32
+	L249443656#3	cost_co2	71889
+	L249443656#3	cost_nox	28
 	L249443656#3	NJ-48-2T	-1
 	L249443656#3	NJ-gneJ7-2F	1
-	L249443656#3.432	cost_PMx	1
-	L249443656#3.432	ttime	12
+	L249443656#3.432	cost_co2	35127
+	L249443656#3.432	cost_nox	14
 	L249443656#3.432	NJ-gneJ7-2T	-1
 	L249443656#3.432	NJ-45-1F	1
-	L25	cost_PMx	2
-	L25	ttime	74
+	L25	cost_co2	140241
+	L25	cost_nox	52
 	L25	NJ-21-1T	-1
 	L25	NJ-22-2F	1
-	L251259917	cost_PMx	0
-	L251259917	ttime	14
+	L251259917	cost_co2	25976
+	L251259917	cost_nox	10
 	L251259917	NJ-76-1T	-1
 	L251259917	NJ-72-1F	1
-	L251259918	cost_PMx	0
-	L251259918	ttime	3
+	L251259918	cost_co2	6684
+	L251259918	cost_nox	3
 	L251259918	NJ-79-2T	-1
 	L251259918	NJ-74-1F	1
-	L251259919	cost_PMx	0
-	L251259919	ttime	10
+	L251259919	cost_co2	19446
+	L251259919	cost_nox	8
 	L251259919	NJ-67-1T	-1
 	L251259919	NJ-68-1F	1
-	L26	cost_PMx	0
-	L26	ttime	2
+	L26	cost_co2	4268
+	L26	cost_nox	2
 	L26	NJ-22-1T	-1
 	L26	NJ-23-2F	1
-	L27	cost_PMx	0
-	L27	ttime	2
+	L27	cost_co2	243
+	L27	cost_nox	0
 	L27	NJ-1-1T	-1
 	L27	NJ-2-3F	1
-	L28	cost_PMx	0
-	L28	ttime	3
+	L28	cost_co2	3863
+	L28	cost_nox	1
 	L28	NJ-2-2T	-1
 	L28	NJ-3-1F	1
-	L29	cost_PMx	0
-	L29	ttime	4
+	L29	cost_co2	8279
+	L29	cost_nox	3
 	L29	NJ-3-2T	-1
 	L29	NJ-4-1F	1
-	L294492782	cost_PMx	1
-	L294492782	ttime	18
+	L294492782	cost_co2	53054
+	L294492782	cost_nox	20
 	L294492782	NJ-96-1T	-1
 	L294492782	NJ-99-2F	1
-	L30	cost_PMx	1
-	L30	ttime	35
+	L30	cost_co2	65307
+	L30	cost_nox	24
 	L30	NJ-3-3T	-1
 	L30	NJ-152-1F	1
-	L311202397	cost_PMx	0
-	L311202397	ttime	4
+	L311202397	cost_co2	8459
+	L311202397	cost_nox	3
 	L311202397	NJ-4-1T	-1
 	L311202397	NJ-3-2F	1
-	L311202398#0	cost_PMx	0
-	L311202398#0	ttime	5
+	L311202398#0	cost_co2	8598
+	L311202398#0	cost_nox	3
 	L311202398#0	NJ-4-2T	-1
 	L311202398#0	NJ-6-1F	1
-	L311202398#1	cost_PMx	1
-	L311202398#1	ttime	14
+	L311202398#1	cost_co2	38699
+	L311202398#1	cost_nox	16
 	L311202398#1	NJ-6-1T	-1
 	L311202398#1	NJ-10-1F	1
-	L319611361#1	cost_PMx	0
-	L319611361#1	ttime	6
+	L319611361#1	cost_co2	19390
+	L319611361#1	cost_nox	8
 	L319611361#1	NJ-94-1T	-1
 	L319611361#1	NJ-92-1F	1
-	L319611361#1.82	cost_PMx	0
-	L319611361#1.82	ttime	8
+	L319611361#1.82	cost_co2	14685
+	L319611361#1.82	cost_nox	6
 	L319611361#1.82	NJ-92-1T	-1
 	L319611361#1.82	NJ-90-1F	1
-	L319611362	cost_PMx	0
-	L319611362	ttime	9
+	L319611362	cost_co2	26175
+	L319611362	cost_nox	10
 	L319611362	NJ-98-1T	-1
 	L319611362	NJ-96-1F	1
-	L319611363	cost_PMx	0
-	L319611363	ttime	3
+	L319611363	cost_co2	8115
+	L319611363	cost_nox	3
 	L319611363	NJ-104-1T	-1
 	L319611363	NJ-102-1F	1
-	L319611365	cost_PMx	0
-	L319611365	ttime	6
+	L319611365	cost_co2	17848
+	L319611365	cost_nox	7
 	L319611365	NJ-99-1T	-1
 	L319611365	NJ-101-1F	1
-	L319611367	cost_PMx	0
-	L319611367	ttime	8
+	L319611367	cost_co2	24565
+	L319611367	cost_nox	9
 	L319611367	NJ-102-1T	-1
 	L319611367	NJ-100-1F	1
-	L319611368	cost_PMx	0
-	L319611368	ttime	9
+	L319611368	cost_co2	27268
+	L319611368	cost_nox	10
 	L319611368	NJ-101-1T	-1
 	L319611368	NJ-103-1F	1
-	L319611370	cost_PMx	1
-	L319611370	ttime	18
+	L319611370	cost_co2	53807
+	L319611370	cost_nox	20
 	L319611370	NJ-95-1T	-1
 	L319611370	NJ-97-1F	1
-	L319611372	cost_PMx	1
-	L319611372	ttime	14
+	L319611372	cost_co2	41688
+	L319611372	cost_nox	16
 	L319611372	NJ-100-1T	-1
 	L319611372	NJ-95-2F	1
-	L319611376	cost_PMx	3
-	L319611376	ttime	49
+	L319611376	cost_co2	147298
+	L319611376	cost_nox	55
 	L319611376	NJ-103-1T	-1
 	L319611376	NJ-105-1F	1
-	L319615436	cost_PMx	0
-	L319615436	ttime	6
+	L319615436	cost_co2	23091
+	L319615436	cost_nox	9
 	L319615436	NJ-114-1T	-1
 	L319615436	NJ-113-1F	1
-	L319615438	cost_PMx	0
-	L319615438	ttime	7
+	L319615438	cost_co2	20162
+	L319615438	cost_nox	8
 	L319615438	NJ-107-1T	-1
 	L319615438	NJ-109-1F	1
-	L319615439	cost_PMx	1
-	L319615439	ttime	22
+	L319615439	cost_co2	65584
+	L319615439	cost_nox	24
 	L319615439	NJ-109-2T	-1
 	L319615439	NJ-114-2F	1
-	L319615440	cost_PMx	1
-	L319615440	ttime	11
+	L319615440	cost_co2	39519
+	L319615440	cost_nox	15
 	L319615440	NJ-108-1T	-1
 	L319615440	NJ-200-1F	1
-	L319615442	cost_PMx	0
-	L319615442	ttime	8
+	L319615442	cost_co2	25024
+	L319615442	cost_nox	9
 	L319615442	NJ-111-1T	-1
 	L319615442	NJ-110-1F	1
-	L319615443	cost_PMx	0
-	L319615443	ttime	9
+	L319615443	cost_co2	23281
+	L319615443	cost_nox	9
 	L319615443	NJ-112-1T	-1
 	L319615443	NJ-111-1F	1
-	L319615444	cost_PMx	20
-	L319615444	ttime	377
+	L319615444	cost_co2	1131003
+	L319615444	cost_nox	422
 	L319615444	NJ-200-1T	-1
 	L319615444	NJ-106-1F	1
-	L319615445	cost_PMx	0
-	L319615445	ttime	3
+	L319615445	cost_co2	5415
+	L319615445	cost_nox	2
 	L319615445	NJ-115-2T	-1
 	L319615445	NJ-116-1F	1
-	L34634650	cost_PMx	1
-	L34634650	ttime	57
+	L34634650	cost_co2	107122
+	L34634650	cost_nox	40
 	L34634650	NJ-100-2T	-1
 	L34634650	NJ-94-1F	1
-	L354388194	cost_PMx	2
-	L354388194	ttime	40
+	L354388194	cost_co2	121350
+	L354388194	cost_nox	45
 	L354388194	NJ-140-1T	-1
 	L354388194	NJ-142-1F	1
-	L354388196	cost_PMx	0
-	L354388196	ttime	9
+	L354388196	cost_co2	27148
+	L354388196	cost_nox	10
 	L354388196	NJ-143-1T	-1
 	L354388196	NJ-141-1F	1
-	L354388197	cost_PMx	1
-	L354388197	ttime	10
+	L354388197	cost_co2	29729
+	L354388197	cost_nox	11
 	L354388197	NJ-144-1T	-1
 	L354388197	NJ-145-1F	1
-	L354388200	cost_PMx	1
-	L354388200	ttime	10
+	L354388200	cost_co2	28639
+	L354388200	cost_nox	11
 	L354388200	NJ-148-1T	-1
 	L354388200	NJ-147-1F	1
-	L354388205	cost_PMx	1
-	L354388205	ttime	7
+	L354388205	cost_co2	42353
+	L354388205	cost_nox	18
 	L354388205	NJ-138-1T	-1
 	L354388205	NJ-140-1F	1
-	L354388209	cost_PMx	1
-	L354388209	ttime	20
+	L354388209	cost_co2	59893
+	L354388209	cost_nox	22
 	L354388209	NJ-147-2T	-1
 	L354388209	NJ-143-1F	1
-	L354388212	cost_PMx	2
-	L354388212	ttime	28
+	L354388212	cost_co2	82939
+	L354388212	cost_nox	31
 	L354388212	NJ-145-1T	-1
 	L354388212	NJ-149-1F	1
-	L354388214	cost_PMx	1
-	L354388214	ttime	22
+	L354388214	cost_co2	76969
+	L354388214	cost_nox	30
 	L354388214	NJ-152-1T	-1
 	L354388214	NJ-148-1F	1
-	L354388217	cost_PMx	1
-	L354388217	ttime	13
+	L354388217	cost_co2	39804
+	L354388217	cost_nox	15
 	L354388217	NJ-153-1T	-1
 	L354388217	NJ-154-1F	1
-	L354388220	cost_PMx	0
-	L354388220	ttime	5
+	L354388220	cost_co2	14959
+	L354388220	cost_nox	6
 	L354388220	NJ-169-1T	-1
 	L354388220	NJ-168-1F	1
-	L354388221	cost_PMx	12
-	L354388221	ttime	227
+	L354388221	cost_co2	681185
+	L354388221	cost_nox	254
 	L354388221	NJ-170-1T	-1
 	L354388221	NJ-172-1F	1
-	L354388223	cost_PMx	1
-	L354388223	ttime	11
+	L354388223	cost_co2	52938
+	L354388223	cost_nox	21
 	L354388223	NJ-146-1T	-1
 	L354388223	NJ-143-2F	1
-	L354388224	cost_PMx	1
-	L354388224	ttime	28
+	L354388224	cost_co2	81174
+	L354388224	cost_nox	30
 	L354388224	NJ-166-2T	-1
 	L354388224	NJ-149-2F	1
-	L354388229	cost_PMx	0
-	L354388229	ttime	13
+	L354388229	cost_co2	25547
+	L354388229	cost_nox	10
 	L354388229	NJ-15-2T	-1
 	L354388229	NJ-12-2F	1
-	L354388232	cost_PMx	0
-	L354388232	ttime	11
+	L354388232	cost_co2	26680
+	L354388232	cost_nox	10
 	L354388232	NJ-11-2T	-1
 	L354388232	NJ-15-1F	1
-	L354388234	cost_PMx	0
-	L354388234	ttime	11
+	L354388234	cost_co2	22490
+	L354388234	cost_nox	9
 	L354388234	NJ-120-1T	-1
 	L354388234	NJ-123-1F	1
-	L354388235	cost_PMx	0
-	L354388235	ttime	11
+	L354388235	cost_co2	23181
+	L354388235	cost_nox	9
 	L354388235	NJ-122-1T	-1
 	L354388235	NJ-119-1F	1
-	L354388253	cost_PMx	0
-	L354388253	ttime	3
+	L354388253	cost_co2	4873
+	L354388253	cost_nox	2
 	L354388253	NJ-127-1T	-1
 	L354388253	NJ-128-1F	1
-	L354388254	cost_PMx	0
-	L354388254	ttime	2
+	L354388254	cost_co2	7399
+	L354388254	cost_nox	3
 	L354388254	NJ-126-1T	-1
 	L354388254	NJ-124-1F	1
-	L354388265	cost_PMx	0
-	L354388265	ttime	3
+	L354388265	cost_co2	20196
+	L354388265	cost_nox	8
 	L354388265	NJ-129-1T	-1
 	L354388265	NJ-126-2F	1
-	L354388269	cost_PMx	0
-	L354388269	ttime	8
+	L354388269	cost_co2	9300
+	L354388269	cost_nox	4
 	L354388269	NJ-118-1T	-1
 	L354388269	NJ-121-1F	1
-	L354388273#0	cost_PMx	0
-	L354388273#0	ttime	7
+	L354388273#0	cost_co2	14001
+	L354388273#0	cost_nox	5
 	L354388273#0	NJ-119-1T	-1
 	L354388273#0	NJ-115-1F	1
-	L354388274#0	cost_PMx	0
-	L354388274#0	ttime	2
+	L354388274#0	cost_co2	14868
+	L354388274#0	cost_nox	6
 	L354388274#0	NJ-123-1T	-1
 	L354388274#0	NJ-125-1F	1
-	L354388274#1	cost_PMx	0
-	L354388274#1	ttime	1
+	L354388274#1	cost_co2	3306
+	L354388274#1	cost_nox	1
 	L354388274#1	NJ-125-1T	-1
 	L354388274#1	NJ-127-1F	1
-	L354388275	cost_PMx	0
-	L354388275	ttime	3
+	L354388275	cost_co2	6320
+	L354388275	cost_nox	2
 	L354388275	NJ-118-2T	-1
 	L354388275	NJ-120-1F	1
-	L354388279	cost_PMx	1
-	L354388279	ttime	50
+	L354388279	cost_co2	93975
+	L354388279	cost_nox	35
 	L354388279	NJ-116-1T	-1
 	L354388279	NJ-108-1F	1
-	L354388286	cost_PMx	1
-	L354388286	ttime	13
+	L354388286	cost_co2	66207
+	L354388286	cost_nox	28
 	L354388286	NJ-121-1T	-1
 	L354388286	NJ-123-2F	1
-	L389783905	cost_PMx	0
-	L389783905	ttime	5
+	L389783905	cost_co2	14111
+	L389783905	cost_nox	5
 	L389783905	NJ-139-1T	-1
 	L389783905	NJ-137-1F	1
-	L389783908	cost_PMx	1
-	L389783908	ttime	13
+	L389783908	cost_co2	37690
+	L389783908	cost_nox	14
 	L389783908	NJ-137-2T	-1
 	L389783908	NJ-136-1F	1
-	L389783911.154	cost_PMx	1
-	L389783911.154	ttime	22
+	L389783911.154	cost_co2	64126
+	L389783911.154	cost_nox	24
 	L389783911.154	NJ-131-1T	-1
 	L389783911.154	NJ-138-2F	1
-	L389783912	cost_PMx	2
-	L389783912	ttime	43
+	L389783912	cost_co2	128858
+	L389783912	cost_nox	48
 	L389783912	NJ-141-1T	-1
 	L389783912	NJ-139-1F	1
-	L404935451	cost_PMx	0
-	L404935451	ttime	9
+	L404935451	cost_co2	17224
+	L404935451	cost_nox	7
 	L404935451	NJ-196-1T	-1
 	L404935451	NJ-86-2F	1
-	L404935462	cost_PMx	0
-	L404935462	ttime	11
+	L404935462	cost_co2	21095
+	L404935462	cost_nox	8
 	L404935462	NJ-85-2T	-1
 	L404935462	NJ-201-1F	1
-	L462392853	cost_PMx	0
-	L462392853	ttime	1
+	L462392853	cost_co2	976
+	L462392853	cost_nox	0
 	L462392853	NJ-124-1T	-1
 	L462392853	NJ-122-1F	1
-	L462392854	cost_PMx	0
-	L462392854	ttime	9
+	L462392854	cost_co2	25511
+	L462392854	cost_nox	10
 	L462392854	NJ-142-1T	-1
 	L462392854	NJ-144-1F	1
-	L462392856	cost_PMx	1
-	L462392856	ttime	13
+	L462392856	cost_co2	39238
+	L462392856	cost_nox	15
 	L462392856	NJ-168-1T	-1
 	L462392856	NJ-166-1F	1
-	L462392857	cost_PMx	0
-	L462392857	ttime	3
+	L462392857	cost_co2	8244
+	L462392857	cost_nox	3
 	L462392857	NJ-167-1T	-1
 	L462392857	NJ-164-1F	1
-	L462392859	cost_PMx	1
-	L462392859	ttime	15
+	L462392859	cost_co2	40424
+	L462392859	cost_nox	15
 	L462392859	NJ-164-1T	-1
 	L462392859	NJ-163-1F	1
-	L462392864	cost_PMx	0
-	L462392864	ttime	4
+	L462392864	cost_co2	11381
+	L462392864	cost_nox	4
 	L462392864	NJ-150-1T	-1
 	L462392864	NJ-151-1F	1
-	L462392865	cost_PMx	0
-	L462392865	ttime	7
+	L462392865	cost_co2	21052
+	L462392865	cost_nox	8
 	L462392865	NJ-151-1T	-1
 	L462392865	NJ-153-1F	1
-	L462392866	cost_PMx	0
-	L462392866	ttime	1
+	L462392866	cost_co2	10260
+	L462392866	cost_nox	4
 	L462392866	NJ-7-1T	-1
 	L462392866	NJ-5-1F	1
-	L462392867	cost_PMx	0
-	L462392867	ttime	2
+	L462392867	cost_co2	4829
+	L462392867	cost_nox	2
 	L462392867	NJ-5-1T	-1
 	L462392867	NJ-4-2F	1
-	L462392868	cost_PMx	1
-	L462392868	ttime	11
+	L462392868	cost_co2	31878
+	L462392868	cost_nox	12
 	L462392868	NJ-159-2T	-1
 	L462392868	NJ-157-1F	1
-	L462392869	cost_PMx	0
-	L462392869	ttime	6
+	L462392869	cost_co2	18248
+	L462392869	cost_nox	7
 	L462392869	NJ-158-1T	-1
 	L462392869	NJ-160-1F	1
-	L462392870	cost_PMx	1
-	L462392870	ttime	12
+	L462392870	cost_co2	35519
+	L462392870	cost_nox	13
 	L462392870	NJ-155-1T	-1
 	L462392870	NJ-158-2F	1
-	L462392872	cost_PMx	0
-	L462392872	ttime	7
+	L462392872	cost_co2	18552
+	L462392872	cost_nox	7
 	L462392872	NJ-161-1T	-1
 	L462392872	NJ-159-1F	1
-	L5	cost_PMx	3
-	L5	ttime	118
+	L5	cost_co2	236176
+	L5	cost_nox	89
 	L5	NJ-32-2T	-1
 	L5	NJ-33-1F	1
-	L516175821	cost_PMx	1
-	L516175821	ttime	15
+	L516175821	cost_co2	43463
+	L516175821	cost_nox	16
 	L516175821	NJ-191-1T	-1
 	L516175821	NJ-188-1F	1
-	L527319195	cost_PMx	1
-	L527319195	ttime	15
+	L527319195	cost_co2	45235
+	L527319195	cost_nox	17
 	L527319195	NJ-184-1T	-1
 	L527319195	NJ-186-1F	1
-	L527319202	cost_PMx	0
-	L527319202	ttime	6
+	L527319202	cost_co2	16952
+	L527319202	cost_nox	6
 	L527319202	NJ-188-1T	-1
 	L527319202	NJ-187-1F	1
-	L527319204	cost_PMx	1
-	L527319204	ttime	11
+	L527319204	cost_co2	33086
+	L527319204	cost_nox	12
 	L527319204	NJ-173-1T	-1
 	L527319204	NJ-175-1F	1
-	L527319205	cost_PMx	1
-	L527319205	ttime	15
+	L527319205	cost_co2	42726
+	L527319205	cost_nox	16
 	L527319205	NJ-177-1T	-1
 	L527319205	NJ-176-1F	1
-	L527319206	cost_PMx	2
-	L527319206	ttime	36
+	L527319206	cost_co2	106353
+	L527319206	cost_nox	40
 	L527319206	NJ-175-1T	-1
 	L527319206	NJ-179-1F	1
-	L549319302	cost_PMx	0
-	L549319302	ttime	1
+	L549319302	cost_co2	1827
+	L549319302	cost_nox	1
 	L549319302	NJ-59-2T	-1
 	L549319302	NJ-57-1F	1
-	L549319303	cost_PMx	0
-	L549319303	ttime	2
+	L549319303	cost_co2	2531
+	L549319303	cost_nox	1
 	L549319303	NJ-60-1T	-1
 	L549319303	NJ-61-1F	1
-	L549319305	cost_PMx	0
-	L549319305	ttime	1
+	L549319305	cost_co2	2518
+	L549319305	cost_nox	1
 	L549319305	NJ-66-2T	-1
 	L549319305	NJ-64-1F	1
-	L549517179#0	cost_PMx	2
-	L549517179#0	ttime	75
+	L549517179#0	cost_co2	155713
+	L549517179#0	cost_nox	59
 	L549517179#0	NJ-22-2T	-1
 	L549517179#0	NJ-21-2F	1
-	L549802402	cost_PMx	0
-	L549802402	ttime	2
+	L549802402	cost_co2	5631
+	L549802402	cost_nox	2
 	L549802402	NJ-24-2T	-1
 	L549802402	NJ-26-2F	1
-	L561990751#1	cost_PMx	1
-	L561990751#1	ttime	22
+	L561990751#1	cost_co2	46793
+	L561990751#1	cost_nox	18
 	L561990751#1	NJ-17-2T	-1
 	L561990751#1	NJ-16-2F	1
-	L561990751#2	cost_PMx	3
-	L561990751#2	ttime	51
+	L561990751#2	cost_co2	150982
+	L561990751#2	cost_nox	58
 	L561990751#2	NJ-16-2T	-1
 	L561990751#2	NJ-15-2F	1
-	L598399304	cost_PMx	1
-	L598399304	ttime	9
+	L598399304	cost_co2	28050
+	L598399304	cost_nox	11
 	L598399304	NJ-149-1T	-1
 	L598399304	NJ-150-1F	1
-	L598399305	cost_PMx	3
-	L598399305	ttime	57
+	L598399305	cost_co2	170531
+	L598399305	cost_nox	64
 	L598399305	NJ-174-1T	-1
 	L598399305	NJ-171-1F	1
-	L598399306	cost_PMx	1
-	L598399306	ttime	9
+	L598399306	cost_co2	28611
+	L598399306	cost_nox	11
 	L598399306	NJ-176-1T	-1
 	L598399306	NJ-174-1F	1
-	L598399307	cost_PMx	0
-	L598399307	ttime	6
+	L598399307	cost_co2	16505
+	L598399307	cost_nox	6
 	L598399307	NJ-178-1T	-1
 	L598399307	NJ-177-1F	1
-	L598399308	cost_PMx	1
-	L598399308	ttime	16
+	L598399308	cost_co2	47023
+	L598399308	cost_nox	18
 	L598399308	NJ-180-1T	-1
 	L598399308	NJ-178-1F	1
-	L598399309	cost_PMx	1
-	L598399309	ttime	11
+	L598399309	cost_co2	33632
+	L598399309	cost_nox	13
 	L598399309	NJ-185-1T	-1
 	L598399309	NJ-183-1F	1
-	L6	cost_PMx	0
-	L6	ttime	13
+	L6	cost_co2	23688
+	L6	cost_nox	9
 	L6	NJ-39-2T	-1
 	L6	NJ-40-2F	1
-	L621945350	cost_PMx	1
-	L621945350	ttime	23
+	L621945350	cost_co2	78774
+	L621945350	cost_nox	31
 	L621945350	NJ-21-2T	-1
 	L621945350	NJ-20-2F	1
-	L621945352	cost_PMx	1
-	L621945352	ttime	13
+	L621945352	cost_co2	53034
+	L621945352	cost_nox	21
 	L621945352	NJ-18-2T	-1
 	L621945352	NJ-192-2F	1
-	L621945353	cost_PMx	1
-	L621945353	ttime	25
+	L621945353	cost_co2	56121
+	L621945353	cost_nox	21
 	L621945353	NJ-192-2T	-1
 	L621945353	NJ-17-2F	1
-	L67446110	cost_PMx	1
-	L67446110	ttime	19
+	L67446110	cost_co2	36284
+	L67446110	cost_nox	13
 	L67446110	NJ-186-2T	-1
 	L67446110	NJ-196-2F	1
-	L67446155	cost_PMx	1
-	L67446155	ttime	22
+	L67446155	cost_co2	67497
+	L67446155	cost_nox	25
 	L67446155	NJ-165-1T	-1
 	L67446155	NJ-170-1F	1
-	L67446165	cost_PMx	1
-	L67446165	ttime	21
+	L67446165	cost_co2	60512
+	L67446165	cost_nox	23
 	L67446165	NJ-145-2T	-1
 	L67446165	NJ-165-2F	1
-	L67446167	cost_PMx	2
-	L67446167	ttime	19
+	L67446167	cost_co2	77000
+	L67446167	cost_nox	31
 	L67446167	NJ-201-1T	-1
 	L67446167	NJ-189-2F	1
-	L67446185	cost_PMx	0
-	L67446185	ttime	20
+	L67446185	cost_co2	32392
+	L67446185	cost_nox	12
 	L67446185	NJ-201-2T	-1
 	L67446185	NJ-193-1F	1
-	L6a	cost_PMx	0
-	L6a	ttime	16
+	L6a	cost_co2	23233
+	L6a	cost_nox	9
 	L6a	NJ-40-2T	-1
 	L6a	NJ-41-2F	1
-	L7	cost_PMx	2
-	L7	ttime	71
+	L7	cost_co2	137483
+	L7	cost_nox	54
 	L7	NJ-41-2T	-1
 	L7	NJ-gneJ4-1F	1
-	L77477309	cost_PMx	1
-	L77477309	ttime	14
+	L77477309	cost_co2	42041
+	L77477309	cost_nox	16
 	L77477309	NJ-76-2T	-1
 	L77477309	NJ-77-1F	1
-	L77477317	cost_PMx	2
-	L77477317	ttime	41
+	L77477317	cost_co2	98363
+	L77477317	cost_nox	37
 	L77477317	NJ-67-2T	-1
 	L77477317	NJ-66-1F	1
-	L77477323	cost_PMx	0
-	L77477323	ttime	9
+	L77477323	cost_co2	21480
+	L77477323	cost_nox	8
 	L77477323	NJ-75-1T	-1
 	L77477323	NJ-67-2F	1
-	L77477324#0	cost_PMx	2
-	L77477324#0	ttime	47
+	L77477324#0	cost_co2	122365
+	L77477324#0	cost_nox	47
 	L77477324#0	NJ-53-2T	-1
 	L77477324#0	NJ-51-2F	1
-	L77477329#0	cost_PMx	0
-	L77477329#0	ttime	2
+	L77477329#0	cost_co2	3605
+	L77477329#0	cost_nox	1
 	L77477329#0	NJ-69-1T	-1
 	L77477329#0	NJ-70-2F	1
-	L77477329#1	cost_PMx	0
-	L77477329#1	ttime	0
+	L77477329#1	cost_co2	1458
+	L77477329#1	cost_nox	1
 	L77477329#1	NJ-70-1T	-1
 	L77477329#1	NJ-71-1F	1
-	L77477329#2	cost_PMx	0
-	L77477329#2	ttime	2
+	L77477329#2	cost_co2	4143
+	L77477329#2	cost_nox	2
 	L77477329#2	NJ-71-1T	-1
 	L77477329#2	NJ-72-2F	1
-	L77477329#3	cost_PMx	0
-	L77477329#3	ttime	1
+	L77477329#3	cost_co2	3765
+	L77477329#3	cost_nox	2
 	L77477329#3	NJ-72-1T	-1
 	L77477329#3	NJ-73-1F	1
-	L77477329#4	cost_PMx	0
-	L77477329#4	ttime	1
+	L77477329#4	cost_co2	4617
+	L77477329#4	cost_nox	2
 	L77477329#4	NJ-73-2T	-1
 	L77477329#4	NJ-74-2F	1
-	L77477329#5	cost_PMx	0
-	L77477329#5	ttime	0
+	L77477329#5	cost_co2	1404
+	L77477329#5	cost_nox	1
 	L77477329#5	NJ-74-1T	-1
 	L77477329#5	NJ-75-1F	1
-	L77477329#6	cost_PMx	0
-	L77477329#6	ttime	2
+	L77477329#6	cost_co2	4492
+	L77477329#6	cost_nox	2
 	L77477329#6	NJ-75-2T	-1
 	L77477329#6	NJ-68-2F	1
-	L77477329#7	cost_PMx	0
-	L77477329#7	ttime	1
+	L77477329#7	cost_co2	3138
+	L77477329#7	cost_nox	1
 	L77477329#7	NJ-68-1T	-1
 	L77477329#7	NJ-69-1F	1
-	L77477331	cost_PMx	0
-	L77477331	ttime	13
+	L77477331	cost_co2	29372
+	L77477331	cost_nox	11
 	L77477331	NJ-71-2T	-1
 	L77477331	NJ-76-2F	1
-	L77477334#0	cost_PMx	0
-	L77477334#0	ttime	0
+	L77477334#0	cost_co2	829
+	L77477334#0	cost_nox	0
 	L77477334#0	NJ-62-1T	-1
 	L77477334#0	NJ-63-1F	1
-	L77477334#2	cost_PMx	0
-	L77477334#2	ttime	4
+	L77477334#2	cost_co2	14472
+	L77477334#2	cost_nox	6
 	L77477334#2	NJ-64-1T	-1
 	L77477334#2	NJ-65-1F	1
-	L77477334#4	cost_PMx	0
-	L77477334#4	ttime	3
+	L77477334#4	cost_co2	13312
+	L77477334#4	cost_nox	6
 	L77477334#4	NJ-61-1T	-1
 	L77477334#4	NJ-62-1F	1
-	L77477351	cost_PMx	1
-	L77477351	ttime	12
+	L77477351	cost_co2	57211
+	L77477351	cost_nox	23
 	L77477351	NJ-69-2T	-1
 	L77477351	NJ-80-1F	1
-	L77477353	cost_PMx	0
-	L77477353	ttime	1
+	L77477353	cost_co2	8453
+	L77477353	cost_nox	4
 	L77477353	NJ-65-1T	-1
 	L77477353	NJ-60-2F	1
-	L77477359	cost_PMx	0
-	L77477359	ttime	1
+	L77477359	cost_co2	5742
+	L77477359	cost_nox	2
 	L77477359	NJ-56-1T	-1
 	L77477359	NJ-59-1F	1
-	L77477369#1	cost_PMx	0
-	L77477369#1	ttime	5
+	L77477369#1	cost_co2	14613
+	L77477369#1	cost_nox	6
 	L77477369#1	NJ-34-1T	-1
 	L77477369#1	NJ-35-1F	1
-	L77477369#2	cost_PMx	0
-	L77477369#2	ttime	1
+	L77477369#2	cost_co2	1977
+	L77477369#2	cost_nox	1
 	L77477369#2	NJ-35-1T	-1
 	L77477369#2	NJ-36-1F	1
-	L77477369#4	cost_PMx	0
-	L77477369#4	ttime	5
+	L77477369#4	cost_co2	23618
+	L77477369#4	cost_nox	10
 	L77477369#4	NJ-37-1T	-1
 	L77477369#4	NJ-38-1F	1
-	L77477376	cost_PMx	0
-	L77477376	ttime	1
+	L77477376	cost_co2	5933
+	L77477376	cost_nox	3
 	L77477376	NJ-58-1T	-1
 	L77477376	NJ-53-2F	1
-	L77477384	cost_PMx	0
-	L77477384	ttime	1
+	L77477384	cost_co2	6286
+	L77477384	cost_nox	3
 	L77477384	NJ-63-1T	-1
 	L77477384	NJ-66-2F	1
-	L77477389#0	cost_PMx	0
-	L77477389#0	ttime	0
+	L77477389#0	cost_co2	417
+	L77477389#0	cost_nox	0
 	L77477389#0	NJ-55-1T	-1
 	L77477389#0	NJ-56-1F	1
-	L77477389#2	cost_PMx	0
-	L77477389#2	ttime	4
+	L77477389#2	cost_co2	13713
+	L77477389#2	cost_nox	6
 	L77477389#2	NJ-57-1T	-1
 	L77477389#2	NJ-58-1F	1
-	L77477389#4	cost_PMx	0
-	L77477389#4	ttime	3
+	L77477389#4	cost_co2	8008
+	L77477389#4	cost_nox	3
 	L77477389#4	NJ-54-1T	-1
 	L77477389#4	NJ-55-1F	1
-	L77477395	cost_PMx	1
-	L77477395	ttime	36
+	L77477395	cost_co2	90933
+	L77477395	cost_nox	35
 	L77477395	NJ-60-2T	-1
 	L77477395	NJ-59-2F	1
-	L77477398	cost_PMx	0
-	L77477398	ttime	1
+	L77477398	cost_co2	420
+	L77477398	cost_nox	0
 	L77477398	NJ-38-1T	-1
 	L77477398	NJ-33-2F	1
-	L77477402	cost_PMx	3
-	L77477402	ttime	120
+	L77477402	cost_co2	240620
+	L77477402	cost_nox	91
 	L77477402	NJ-33-2T	-1
 	L77477402	NJ-32-1F	1
-	L8	cost_PMx	0
-	L8	ttime	2
+	L8	cost_co2	13218
+	L8	cost_nox	6
 	L8	NJ-gneJ4-1T	-1
 	L8	NJ-43-2F	1
-	L9	cost_PMx	1
-	L9	ttime	15
+	L9	cost_co2	34374
+	L9	cost_nox	13
 	L9	NJ-43-2T	-1
 	L9	NJ-45-2F	1
-	L95223234	cost_PMx	1
-	L95223234	ttime	20
+	L95223234	cost_co2	38512
+	L95223234	cost_nox	14
 	L95223234	NJ-135-1T	-1
 	L95223234	NJ-136-2F	1
-	L95223237	cost_PMx	1
-	L95223237	ttime	13
+	L95223237	cost_co2	38029
+	L95223237	cost_nox	14
 	L95223237	NJ-110-2T	-1
 	L95223237	NJ-108-2F	1
-	L95223238	cost_PMx	0
-	L95223238	ttime	5
+	L95223238	cost_co2	10212
+	L95223238	cost_nox	4
 	L95223238	NJ-133-1T	-1
 	L95223238	NJ-135-1F	1
-	L95223244	cost_PMx	0
-	L95223244	ttime	4
+	L95223244	cost_co2	20666
+	L95223244	cost_nox	8
 	L95223244	NJ-134-1T	-1
 	L95223244	NJ-132-1F	1
-	L95223248	cost_PMx	0
-	L95223248	ttime	8
+	L95223248	cost_co2	18629
+	L95223248	cost_nox	7
 	L95223248	NJ-132-1T	-1
 	L95223248	NJ-129-1F	1
-	L95710171#1	cost_PMx	0
-	L95710171#1	ttime	3
+	L95710171#1	cost_co2	19436
+	L95710171#1	cost_nox	8
 	L95710171#1	NJ-90-1T	-1
 	L95710171#1	NJ-91-1F	1
-	L95710171#3	cost_PMx	0
-	L95710171#3	ttime	3
+	L95710171#3	cost_co2	20962
+	L95710171#3	cost_nox	9
 	L95710171#3	NJ-88-1T	-1
 	L95710171#3	NJ-89-1F	1
-	L95710174	cost_PMx	0
-	L95710174	ttime	6
+	L95710174	cost_co2	21125
+	L95710174	cost_nox	8
 	L95710174	NJ-89-1T	-1
 	L95710174	NJ-202-1F	1
-	L95710174.113	cost_PMx	0
-	L95710174.113	ttime	10
+	L95710174.113	cost_co2	23077
+	L95710174.113	cost_nox	9
 	L95710174.113	NJ-202-1T	-1
 	L95710174.113	NJ-93-1F	1
-	L96039763	cost_PMx	0
-	L96039763	ttime	4
+	L96039763	cost_co2	12831
+	L96039763	cost_nox	5
 	L96039763	NJ-157-1T	-1
 	L96039763	NJ-156-1F	1
-	L96039766	cost_PMx	1
-	L96039766	ttime	15
+	L96039766	cost_co2	45643
+	L96039766	cost_nox	17
 	L96039766	NJ-156-1T	-1
 	L96039766	NJ-152-2F	1
-	L96065606	cost_PMx	0
-	L96065606	ttime	16
+	L96065606	cost_co2	26506
+	L96065606	cost_nox	10
 	L96065606	NJ-155-2T	-1
 	L96065606	NJ-14-2F	1
-	L96065608	cost_PMx	0
-	L96065608	ttime	4
+	L96065608	cost_co2	11514
+	L96065608	cost_nox	4
 	L96065608	NJ-154-1T	-1
 	L96065608	NJ-155-1F	1
-	L96183767	cost_PMx	3
-	L96183767	ttime	42
+	L96183767	cost_co2	142601
+	L96183767	cost_nox	56
 	L96183767	NJ-83-2T	-1
 	L96183767	NJ-88-1F	1
-	L96183778	cost_PMx	3
-	L96183778	ttime	42
+	L96183778	cost_co2	151127
+	L96183778	cost_nox	59
 	L96183778	NJ-91-1T	-1
 	L96183778	NJ-84-2F	1
-	LgneE1	cost_PMx	0
-	LgneE1	ttime	2
+	LgneE1	cost_co2	7932
+	LgneE1	cost_nox	3
 	LgneE1	NJ-28-2T	-1
 	LgneE1	NJ-32-2F	1
-	LgneE2	cost_PMx	0
-	LgneE2	ttime	2
+	LgneE2	cost_co2	11013
+	LgneE2	cost_nox	5
 	LgneE2	NJ-36-1T	-1
 	LgneE2	NJ-39-2F	1
-	LJ-76-1	cost_PMx	0
-	LJ-76-1	ttime	1
+	LJ-76-1	cost_co2	1687
+	LJ-76-1	cost_nox	1
 	LJ-76-1	NJ-76-1F	-1
 	LJ-76-1	NJ-76-1T	1
-	LJ-72-1	cost_PMx	0
-	LJ-72-1	ttime	1
+	LJ-72-1	cost_co2	7558
+	LJ-72-1	cost_nox	3
 	LJ-72-1	NJ-72-1F	-1
 	LJ-72-1	NJ-72-1T	1
-	LJ-73-1	cost_PMx	0
-	LJ-73-1	ttime	0
+	LJ-73-1	cost_co2	1857
+	LJ-73-1	cost_nox	1
 	LJ-73-1	NJ-73-1F	-1
 	LJ-73-1	NJ-73-2T	1
-	LJ-73-2	cost_PMx	0
-	LJ-73-2	ttime	0
+	LJ-73-2	cost_co2	1857
+	LJ-73-2	cost_nox	1
 	LJ-73-2	NJ-73-1F	-1
 	LJ-73-2	NJ-73-1T	1
-	LJ-74-1	cost_PMx	0
-	LJ-74-1	ttime	1
+	LJ-74-1	cost_co2	4018
+	LJ-74-1	cost_nox	2
 	LJ-74-1	NJ-74-2F	-1
 	LJ-74-1	NJ-74-1T	1
-	LJ-75-1	cost_PMx	0
-	LJ-75-1	ttime	1
+	LJ-75-1	cost_co2	4096
+	LJ-75-1	cost_nox	2
 	LJ-75-1	NJ-75-1F	-1
 	LJ-75-1	NJ-75-1T	1
-	LJ-75-2	cost_PMx	0
-	LJ-75-2	ttime	1
+	LJ-75-2	cost_co2	4096
+	LJ-75-2	cost_nox	2
 	LJ-75-2	NJ-75-1F	-1
 	LJ-75-2	NJ-75-2T	1
-	LJ-67-1	cost_PMx	0
-	LJ-67-1	ttime	1
+	LJ-67-1	cost_co2	1346
+	LJ-67-1	cost_nox	1
 	LJ-67-1	NJ-67-2F	-1
 	LJ-67-1	NJ-67-2T	1
-	LJ-66-1	cost_PMx	0
-	LJ-66-1	ttime	0
+	LJ-66-1	cost_co2	1056
+	LJ-66-1	cost_nox	0
 	LJ-66-1	NJ-66-1F	-1
 	LJ-66-1	NJ-66-2T	1
-	LJ-64-1	cost_PMx	0
-	LJ-64-1	ttime	1
+	LJ-64-1	cost_co2	3161
+	LJ-64-1	cost_nox	1
 	LJ-64-1	NJ-64-1F	-1
 	LJ-64-1	NJ-64-1T	1
-	LJ-65-1	cost_PMx	0
-	LJ-65-1	ttime	1
+	LJ-65-1	cost_co2	2432
+	LJ-65-1	cost_nox	1
 	LJ-65-1	NJ-65-1F	-1
 	LJ-65-1	NJ-65-1T	1
-	LJ-60-1	cost_PMx	0
-	LJ-60-1	ttime	0
+	LJ-60-1	cost_co2	1037
+	LJ-60-1	cost_nox	0
 	LJ-60-1	NJ-60-2F	-1
 	LJ-60-1	NJ-60-2T	1
-	LJ-59-1	cost_PMx	0
-	LJ-59-1	ttime	0
+	LJ-59-1	cost_co2	1073
+	LJ-59-1	cost_nox	0
 	LJ-59-1	NJ-59-2F	-1
 	LJ-59-1	NJ-59-2T	1
-	LJ-57-1	cost_PMx	0
-	LJ-57-1	ttime	1
+	LJ-57-1	cost_co2	2731
+	LJ-57-1	cost_nox	1
 	LJ-57-1	NJ-57-1F	-1
 	LJ-57-1	NJ-57-1T	1
-	LJ-58-1	cost_PMx	0
-	LJ-58-1	ttime	1
+	LJ-58-1	cost_co2	1307
+	LJ-58-1	cost_nox	1
 	LJ-58-1	NJ-58-1F	-1
 	LJ-58-1	NJ-58-1T	1
-	LJ-53-1	cost_PMx	0
-	LJ-53-1	ttime	1
+	LJ-53-1	cost_co2	3911
+	LJ-53-1	cost_nox	2
 	LJ-53-1	NJ-53-2F	-1
 	LJ-53-1	NJ-53-2T	1
-	LJ-51-1	cost_PMx	0
-	LJ-51-1	ttime	0
+	LJ-51-1	cost_co2	93
+	LJ-51-1	cost_nox	0
 	LJ-51-1	NJ-51-2F	-1
 	LJ-51-1	NJ-51-2T	1
-	LJ-48-1	cost_PMx	0
-	LJ-48-1	ttime	0
+	LJ-48-1	cost_co2	86
+	LJ-48-1	cost_nox	0
 	LJ-48-1	NJ-48-2F	-1
 	LJ-48-1	NJ-48-2T	1
-	LJ-gneJ7-1	cost_PMx	0
-	LJ-gneJ7-1	ttime	0
+	LJ-gneJ7-1	cost_co2	127
+	LJ-gneJ7-1	cost_nox	0
 	LJ-gneJ7-1	NJ-gneJ7-2F	-1
 	LJ-gneJ7-1	NJ-gneJ7-2T	1
-	LJ-45-1	cost_PMx	0
-	LJ-45-1	ttime	0
+	LJ-45-1	cost_co2	24
+	LJ-45-1	cost_nox	0
 	LJ-45-1	NJ-45-1F	-1
 	LJ-45-1	NJ-45-2T	1
-	LJ-gneJ8-1	cost_PMx	0
-	LJ-gneJ8-1	ttime	0
+	LJ-gneJ8-1	cost_co2	57
+	LJ-gneJ8-1	cost_nox	0
 	LJ-gneJ8-1	NJ-gneJ8-1F	-1
 	LJ-gneJ8-1	NJ-gneJ8-1T	1
-	LJ-43-1	cost_PMx	0
-	LJ-43-1	ttime	0
+	LJ-43-1	cost_co2	114
+	LJ-43-1	cost_nox	0
 	LJ-43-1	NJ-43-1F	-1
 	LJ-43-1	NJ-43-1T	1
-	LJ-41-1	cost_PMx	0
-	LJ-41-1	ttime	1
+	LJ-41-1	cost_co2	1847
+	LJ-41-1	cost_nox	1
 	LJ-41-1	NJ-41-1F	-1
 	LJ-41-1	NJ-41-1T	1
-	LJ-40-1	cost_PMx	0
-	LJ-40-1	ttime	0
+	LJ-40-1	cost_co2	83
+	LJ-40-1	cost_nox	0
 	LJ-40-1	NJ-40-1F	-1
 	LJ-40-1	NJ-40-1T	1
-	LJ-39-1	cost_PMx	0
-	LJ-39-1	ttime	0
+	LJ-39-1	cost_co2	576
+	LJ-39-1	cost_nox	0
 	LJ-39-1	NJ-39-1F	-1
 	LJ-39-1	NJ-39-1T	1
-	LJ-37-1	cost_PMx	0
-	LJ-37-1	ttime	1
+	LJ-37-1	cost_co2	5413
+	LJ-37-1	cost_nox	2
 	LJ-37-1	NJ-37-1F	-1
 	LJ-37-1	NJ-37-1T	1
-	LJ-38-1	cost_PMx	0
-	LJ-38-1	ttime	1
+	LJ-38-1	cost_co2	1794
+	LJ-38-1	cost_nox	1
 	LJ-38-1	NJ-38-1F	-1
 	LJ-38-1	NJ-38-1T	1
-	LJ-33-1	cost_PMx	0
-	LJ-33-1	ttime	1
+	LJ-33-1	cost_co2	1065
+	LJ-33-1	cost_nox	0
 	LJ-33-1	NJ-33-2F	-1
 	LJ-33-1	NJ-33-2T	1
-	LJ-32-1	cost_PMx	0
-	LJ-32-1	ttime	1
+	LJ-32-1	cost_co2	1500
+	LJ-32-1	cost_nox	1
 	LJ-32-1	NJ-32-1F	-1
 	LJ-32-1	NJ-32-1T	1
-	LJ-29-1	cost_PMx	0
-	LJ-29-1	ttime	1
+	LJ-29-1	cost_co2	3569
+	LJ-29-1	cost_nox	2
 	LJ-29-1	NJ-29-2F	-1
 	LJ-29-1	NJ-29-1T	1
-	LJ-30-1	cost_PMx	0
-	LJ-30-1	ttime	0
+	LJ-30-1	cost_co2	185
+	LJ-30-1	cost_nox	0
 	LJ-30-1	NJ-30-1F	-1
 	LJ-30-1	NJ-30-1T	1
-	LJ-31-1	cost_PMx	0
-	LJ-31-1	ttime	1
+	LJ-31-1	cost_co2	1679
+	LJ-31-1	cost_nox	1
 	LJ-31-1	NJ-31-1F	-1
 	LJ-31-1	NJ-31-1T	1
-	LJ-31-2	cost_PMx	0
-	LJ-31-2	ttime	1
+	LJ-31-2	cost_co2	1679
+	LJ-31-2	cost_nox	1
 	LJ-31-2	NJ-31-1F	-1
 	LJ-31-2	NJ-31-2T	1
-	LJ-22-1	cost_PMx	0
-	LJ-22-1	ttime	0
+	LJ-22-1	cost_co2	1581
+	LJ-22-1	cost_nox	1
 	LJ-22-1	NJ-22-1F	-1
 	LJ-22-1	NJ-22-2T	1
-	LJ-21-1	cost_PMx	0
-	LJ-21-1	ttime	0
+	LJ-21-1	cost_co2	35
+	LJ-21-1	cost_nox	0
 	LJ-21-1	NJ-21-2F	-1
 	LJ-21-1	NJ-21-2T	1
-	LJ-20-1	cost_PMx	0
-	LJ-20-1	ttime	0
+	LJ-20-1	cost_co2	27
+	LJ-20-1	cost_nox	0
 	LJ-20-1	NJ-20-2F	-1
 	LJ-20-1	NJ-20-2T	1
-	LJ-19-1	cost_PMx	0
-	LJ-19-1	ttime	0
+	LJ-19-1	cost_co2	98
+	LJ-19-1	cost_nox	0
 	LJ-19-1	NJ-19-2F	-1
 	LJ-19-1	NJ-19-2T	1
-	LJ-18-1	cost_PMx	0
-	LJ-18-1	ttime	0
+	LJ-18-1	cost_co2	58
+	LJ-18-1	cost_nox	0
 	LJ-18-1	NJ-18-2F	-1
 	LJ-18-1	NJ-18-2T	1
-	LJ-192-1	cost_PMx	0
-	LJ-192-1	ttime	0
+	LJ-192-1	cost_co2	63
+	LJ-192-1	cost_nox	0
 	LJ-192-1	NJ-192-2F	-1
 	LJ-192-1	NJ-192-2T	1
-	LJ-17-1	cost_PMx	0
-	LJ-17-1	ttime	0
+	LJ-17-1	cost_co2	39
+	LJ-17-1	cost_nox	0
 	LJ-17-1	NJ-17-2F	-1
 	LJ-17-1	NJ-17-2T	1
-	LJ-16-1	cost_PMx	0
-	LJ-16-1	ttime	0
+	LJ-16-1	cost_co2	268
+	LJ-16-1	cost_nox	0
 	LJ-16-1	NJ-16-2F	-1
 	LJ-16-1	NJ-16-2T	1
-	LJ-15-1	cost_PMx	0
-	LJ-15-1	ttime	0
+	LJ-15-1	cost_co2	30
+	LJ-15-1	cost_nox	0
 	LJ-15-1	NJ-15-2F	-1
 	LJ-15-1	NJ-15-2T	1
-	LJ-12-1	cost_PMx	0
-	LJ-12-1	ttime	2
+	LJ-12-1	cost_co2	9503
+	LJ-12-1	cost_nox	4
 	LJ-12-1	NJ-12-2F	-1
 	LJ-12-1	NJ-12-1T	1
-	LJ-13-1	cost_PMx	0
-	LJ-13-1	ttime	2
+	LJ-13-1	cost_co2	3761
+	LJ-13-1	cost_nox	1
 	LJ-13-1	NJ-13-1F	-1
 	LJ-13-1	NJ-13-1T	1
-	LJ-13-2	cost_PMx	0
-	LJ-13-2	ttime	2
+	LJ-13-2	cost_co2	3761
+	LJ-13-2	cost_nox	1
 	LJ-13-2	NJ-13-1F	-1
 	LJ-13-2	NJ-13-2T	1
-	LJ-14-1	cost_PMx	0
-	LJ-14-1	ttime	1
+	LJ-14-1	cost_co2	1296
+	LJ-14-1	cost_nox	1
 	LJ-14-1	NJ-14-1F	-1
 	LJ-14-1	NJ-14-1T	1
-	LJ-8-1	cost_PMx	0
-	LJ-8-1	ttime	1
+	LJ-8-1	cost_co2	5225
+	LJ-8-1	cost_nox	2
 	LJ-8-1	NJ-8-1F	-1
 	LJ-8-1	NJ-8-1T	1
-	LJ-7-1	cost_PMx	0
-	LJ-7-1	ttime	1
+	LJ-7-1	cost_co2	3083
+	LJ-7-1	cost_nox	1
 	LJ-7-1	NJ-7-1F	-1
 	LJ-7-1	NJ-7-1T	1
-	LJ-5-1	cost_PMx	0
-	LJ-5-1	ttime	1
+	LJ-5-1	cost_co2	4398
+	LJ-5-1	cost_nox	2
 	LJ-5-1	NJ-5-1F	-1
 	LJ-5-1	NJ-5-1T	1
-	LJ-4-1	cost_PMx	0
-	LJ-4-1	ttime	0
+	LJ-4-1	cost_co2	950
+	LJ-4-1	cost_nox	0
 	LJ-4-1	NJ-4-2F	-1
 	LJ-4-1	NJ-4-1T	1
-	LJ-3-1	cost_PMx	0
-	LJ-3-1	ttime	1
+	LJ-3-1	cost_co2	1223
+	LJ-3-1	cost_nox	0
 	LJ-3-1	NJ-3-2F	-1
 	LJ-3-1	NJ-3-1T	1
-	LJ-2-1	cost_PMx	0
-	LJ-2-1	ttime	1
+	LJ-2-1	cost_co2	3990
+	LJ-2-1	cost_nox	2
 	LJ-2-1	NJ-2-2F	-1
 	LJ-2-1	NJ-2-1T	1
-	LJ-2-2	cost_PMx	0
-	LJ-2-2	ttime	1
+	LJ-2-2	cost_co2	3990
+	LJ-2-2	cost_nox	2
 	LJ-2-2	NJ-2-3F	-1
 	LJ-2-2	NJ-2-2T	1
-	LJ-3-2	cost_PMx	0
-	LJ-3-2	ttime	1
+	LJ-3-2	cost_co2	1223
+	LJ-3-2	cost_nox	0
 	LJ-3-2	NJ-3-1F	-1
 	LJ-3-2	NJ-3-2T	1
-	LJ-3-3	cost_PMx	0
-	LJ-3-3	ttime	1
+	LJ-3-3	cost_co2	1223
+	LJ-3-3	cost_nox	0
 	LJ-3-3	NJ-3-1F	-1
 	LJ-3-3	NJ-3-3T	1
-	LJ-4-2	cost_PMx	0
-	LJ-4-2	ttime	0
+	LJ-4-2	cost_co2	950
+	LJ-4-2	cost_nox	0
 	LJ-4-2	NJ-4-1F	-1
 	LJ-4-2	NJ-4-2T	1
-	LJ-6-1	cost_PMx	0
-	LJ-6-1	ttime	1
+	LJ-6-1	cost_co2	8687
+	LJ-6-1	cost_nox	4
 	LJ-6-1	NJ-6-1F	-1
 	LJ-6-1	NJ-6-1T	1
-	LJ-10-1	cost_PMx	0
-	LJ-10-1	ttime	2
+	LJ-10-1	cost_co2	10616
+	LJ-10-1	cost_nox	5
 	LJ-10-1	NJ-10-1F	-1
 	LJ-10-1	NJ-10-1T	1
-	LJ-11-1	cost_PMx	0
-	LJ-11-1	ttime	2
+	LJ-11-1	cost_co2	5827
+	LJ-11-1	cost_nox	2
 	LJ-11-1	NJ-11-1F	-1
 	LJ-11-1	NJ-11-2T	1
-	LJ-11-2	cost_PMx	0
-	LJ-11-2	ttime	2
+	LJ-11-2	cost_co2	5827
+	LJ-11-2	cost_nox	2
 	LJ-11-2	NJ-11-1F	-1
 	LJ-11-2	NJ-11-1T	1
-	LJ-15-2	cost_PMx	0
-	LJ-15-2	ttime	0
+	LJ-15-2	cost_co2	30
+	LJ-15-2	cost_nox	0
 	LJ-15-2	NJ-15-1F	-1
 	LJ-15-2	NJ-15-1T	1
-	LJ-203-1	cost_PMx	0
-	LJ-203-1	ttime	0
+	LJ-203-1	cost_co2	40
+	LJ-203-1	cost_nox	0
 	LJ-203-1	NJ-203-1F	-1
 	LJ-203-1	NJ-203-1T	1
-	LJ-16-2	cost_PMx	0
-	LJ-16-2	ttime	0
+	LJ-16-2	cost_co2	268
+	LJ-16-2	cost_nox	0
 	LJ-16-2	NJ-16-1F	-1
 	LJ-16-2	NJ-16-1T	1
-	LJ-17-2	cost_PMx	0
-	LJ-17-2	ttime	0
+	LJ-17-2	cost_co2	39
+	LJ-17-2	cost_nox	0
 	LJ-17-2	NJ-17-1F	-1
 	LJ-17-2	NJ-17-1T	1
-	LJ-192-2	cost_PMx	0
-	LJ-192-2	ttime	0
+	LJ-192-2	cost_co2	63
+	LJ-192-2	cost_nox	0
 	LJ-192-2	NJ-192-1F	-1
 	LJ-192-2	NJ-192-1T	1
-	LJ-18-2	cost_PMx	0
-	LJ-18-2	ttime	0
+	LJ-18-2	cost_co2	58
+	LJ-18-2	cost_nox	0
 	LJ-18-2	NJ-18-1F	-1
 	LJ-18-2	NJ-18-1T	1
-	LJ-19-2	cost_PMx	0
-	LJ-19-2	ttime	0
+	LJ-19-2	cost_co2	98
+	LJ-19-2	cost_nox	0
 	LJ-19-2	NJ-19-1F	-1
 	LJ-19-2	NJ-19-1T	1
-	LJ-20-2	cost_PMx	0
-	LJ-20-2	ttime	0
+	LJ-20-2	cost_co2	27
+	LJ-20-2	cost_nox	0
 	LJ-20-2	NJ-20-1F	-1
 	LJ-20-2	NJ-20-1T	1
-	LJ-21-2	cost_PMx	0
-	LJ-21-2	ttime	0
+	LJ-21-2	cost_co2	35
+	LJ-21-2	cost_nox	0
 	LJ-21-2	NJ-21-1F	-1
 	LJ-21-2	NJ-21-1T	1
-	LJ-22-2	cost_PMx	0
-	LJ-22-2	ttime	0
+	LJ-22-2	cost_co2	1581
+	LJ-22-2	cost_nox	1
 	LJ-22-2	NJ-22-2F	-1
 	LJ-22-2	NJ-22-1T	1
-	LJ-23-1	cost_PMx	0
-	LJ-23-1	ttime	1
+	LJ-23-1	cost_co2	6159
+	LJ-23-1	cost_nox	3
 	LJ-23-1	NJ-23-2F	-1
 	LJ-23-1	NJ-23-1T	1
-	LJ-24-1	cost_PMx	0
-	LJ-24-1	ttime	1
+	LJ-24-1	cost_co2	2646
+	LJ-24-1	cost_nox	1
 	LJ-24-1	NJ-24-1F	-1
 	LJ-24-1	NJ-24-1T	1
-	LJ-24-2	cost_PMx	0
-	LJ-24-2	ttime	1
+	LJ-24-2	cost_co2	2646
+	LJ-24-2	cost_nox	1
 	LJ-24-2	NJ-24-1F	-1
 	LJ-24-2	NJ-24-2T	1
-	LJ-27-1	cost_PMx	0
-	LJ-27-1	ttime	1
+	LJ-27-1	cost_co2	2646
+	LJ-27-1	cost_nox	1
 	LJ-27-1	NJ-27-1F	-1
 	LJ-27-1	NJ-27-1T	1
-	LJ-28-1	cost_PMx	0
-	LJ-28-1	ttime	1
+	LJ-28-1	cost_co2	1757
+	LJ-28-1	cost_nox	1
 	LJ-28-1	NJ-28-1F	-1
 	LJ-28-1	NJ-28-2T	1
-	LJ-28-2	cost_PMx	0
-	LJ-28-2	ttime	1
+	LJ-28-2	cost_co2	1757
+	LJ-28-2	cost_nox	1
 	LJ-28-2	NJ-28-1F	-1
 	LJ-28-2	NJ-28-1T	1
-	LJ-32-2	cost_PMx	0
-	LJ-32-2	ttime	1
+	LJ-32-2	cost_co2	1500
+	LJ-32-2	cost_nox	1
 	LJ-32-2	NJ-32-2F	-1
 	LJ-32-2	NJ-32-2T	1
-	LJ-33-2	cost_PMx	0
-	LJ-33-2	ttime	1
+	LJ-33-2	cost_co2	1065
+	LJ-33-2	cost_nox	0
 	LJ-33-2	NJ-33-1F	-1
 	LJ-33-2	NJ-33-1T	1
-	LJ-34-1	cost_PMx	0
-	LJ-34-1	ttime	2
+	LJ-34-1	cost_co2	13570
+	LJ-34-1	cost_nox	6
 	LJ-34-1	NJ-34-1F	-1
 	LJ-34-1	NJ-34-1T	1
-	LJ-35-1	cost_PMx	0
-	LJ-35-1	ttime	0
+	LJ-35-1	cost_co2	248
+	LJ-35-1	cost_nox	0
 	LJ-35-1	NJ-35-1F	-1
 	LJ-35-1	NJ-35-1T	1
-	LJ-36-1	cost_PMx	0
-	LJ-36-1	ttime	1
+	LJ-36-1	cost_co2	8606
+	LJ-36-1	cost_nox	4
 	LJ-36-1	NJ-36-1F	-1
 	LJ-36-1	NJ-36-1T	1
-	LJ-39-2	cost_PMx	0
-	LJ-39-2	ttime	0
+	LJ-39-2	cost_co2	576
+	LJ-39-2	cost_nox	0
 	LJ-39-2	NJ-39-2F	-1
 	LJ-39-2	NJ-39-2T	1
-	LJ-40-2	cost_PMx	0
-	LJ-40-2	ttime	0
+	LJ-40-2	cost_co2	83
+	LJ-40-2	cost_nox	0
 	LJ-40-2	NJ-40-2F	-1
 	LJ-40-2	NJ-40-2T	1
-	LJ-41-2	cost_PMx	0
-	LJ-41-2	ttime	1
+	LJ-41-2	cost_co2	1847
+	LJ-41-2	cost_nox	1
 	LJ-41-2	NJ-41-2F	-1
 	LJ-41-2	NJ-41-2T	1
-	LJ-gneJ4-1	cost_PMx	0
-	LJ-gneJ4-1	ttime	0
+	LJ-gneJ4-1	cost_co2	165
+	LJ-gneJ4-1	cost_nox	0
 	LJ-gneJ4-1	NJ-gneJ4-1F	-1
 	LJ-gneJ4-1	NJ-gneJ4-1T	1
-	LJ-43-2	cost_PMx	0
-	LJ-43-2	ttime	0
+	LJ-43-2	cost_co2	114
+	LJ-43-2	cost_nox	0
 	LJ-43-2	NJ-43-2F	-1
 	LJ-43-2	NJ-43-2T	1
-	LJ-45-2	cost_PMx	0
-	LJ-45-2	ttime	0
+	LJ-45-2	cost_co2	24
+	LJ-45-2	cost_nox	0
 	LJ-45-2	NJ-45-2F	-1
 	LJ-45-2	NJ-45-1T	1
-	LJ-gneJ7-2	cost_PMx	0
-	LJ-gneJ7-2	ttime	0
+	LJ-gneJ7-2	cost_co2	127
+	LJ-gneJ7-2	cost_nox	0
 	LJ-gneJ7-2	NJ-gneJ7-1F	-1
 	LJ-gneJ7-2	NJ-gneJ7-1T	1
-	LJ-48-2	cost_PMx	0
-	LJ-48-2	ttime	0
+	LJ-48-2	cost_co2	86
+	LJ-48-2	cost_nox	0
 	LJ-48-2	NJ-48-1F	-1
 	LJ-48-2	NJ-48-1T	1
-	LJ-51-2	cost_PMx	0
-	LJ-51-2	ttime	0
+	LJ-51-2	cost_co2	93
+	LJ-51-2	cost_nox	0
 	LJ-51-2	NJ-51-1F	-1
 	LJ-51-2	NJ-51-1T	1
-	LJ-53-2	cost_PMx	0
-	LJ-53-2	ttime	1
+	LJ-53-2	cost_co2	3911
+	LJ-53-2	cost_nox	2
 	LJ-53-2	NJ-53-1F	-1
 	LJ-53-2	NJ-53-1T	1
-	LJ-54-1	cost_PMx	0
-	LJ-54-1	ttime	1
+	LJ-54-1	cost_co2	5027
+	LJ-54-1	cost_nox	2
 	LJ-54-1	NJ-54-1F	-1
 	LJ-54-1	NJ-54-1T	1
-	LJ-55-1	cost_PMx	0
-	LJ-55-1	ttime	0
+	LJ-55-1	cost_co2	71
+	LJ-55-1	cost_nox	0
 	LJ-55-1	NJ-55-1F	-1
 	LJ-55-1	NJ-55-1T	1
-	LJ-56-1	cost_PMx	0
-	LJ-56-1	ttime	1
+	LJ-56-1	cost_co2	1427
+	LJ-56-1	cost_nox	1
 	LJ-56-1	NJ-56-1F	-1
 	LJ-56-1	NJ-56-1T	1
-	LJ-59-2	cost_PMx	0
-	LJ-59-2	ttime	0
+	LJ-59-2	cost_co2	1073
+	LJ-59-2	cost_nox	0
 	LJ-59-2	NJ-59-1F	-1
 	LJ-59-2	NJ-59-1T	1
-	LJ-60-2	cost_PMx	0
-	LJ-60-2	ttime	0
+	LJ-60-2	cost_co2	1037
+	LJ-60-2	cost_nox	0
 	LJ-60-2	NJ-60-1F	-1
 	LJ-60-2	NJ-60-1T	1
-	LJ-61-1	cost_PMx	0
-	LJ-61-1	ttime	1
+	LJ-61-1	cost_co2	2975
+	LJ-61-1	cost_nox	1
 	LJ-61-1	NJ-61-1F	-1
 	LJ-61-1	NJ-61-1T	1
-	LJ-62-1	cost_PMx	0
-	LJ-62-1	ttime	0
+	LJ-62-1	cost_co2	117
+	LJ-62-1	cost_nox	0
 	LJ-62-1	NJ-62-1F	-1
 	LJ-62-1	NJ-62-1T	1
-	LJ-63-1	cost_PMx	0
-	LJ-63-1	ttime	1
+	LJ-63-1	cost_co2	1786
+	LJ-63-1	cost_nox	1
 	LJ-63-1	NJ-63-1F	-1
 	LJ-63-1	NJ-63-1T	1
-	LJ-66-2	cost_PMx	0
-	LJ-66-2	ttime	0
+	LJ-66-2	cost_co2	1056
+	LJ-66-2	cost_nox	0
 	LJ-66-2	NJ-66-2F	-1
 	LJ-66-2	NJ-66-1T	1
-	LJ-67-2	cost_PMx	0
-	LJ-67-2	ttime	1
+	LJ-67-2	cost_co2	1346
+	LJ-67-2	cost_nox	1
 	LJ-67-2	NJ-67-1F	-1
 	LJ-67-2	NJ-67-1T	1
-	LJ-68-1	cost_PMx	0
-	LJ-68-1	ttime	1
+	LJ-68-1	cost_co2	7255
+	LJ-68-1	cost_nox	3
 	LJ-68-1	NJ-68-1F	-1
 	LJ-68-1	NJ-68-1T	1
-	LJ-69-1	cost_PMx	0
-	LJ-69-1	ttime	1
+	LJ-69-1	cost_co2	4612
+	LJ-69-1	cost_nox	2
 	LJ-69-1	NJ-69-1F	-1
 	LJ-69-1	NJ-69-1T	1
-	LJ-69-2	cost_PMx	0
-	LJ-69-2	ttime	1
+	LJ-69-2	cost_co2	4612
+	LJ-69-2	cost_nox	2
 	LJ-69-2	NJ-69-1F	-1
 	LJ-69-2	NJ-69-2T	1
-	LJ-70-1	cost_PMx	0
-	LJ-70-1	ttime	1
+	LJ-70-1	cost_co2	3807
+	LJ-70-1	cost_nox	2
 	LJ-70-1	NJ-70-2F	-1
 	LJ-70-1	NJ-70-1T	1
-	LJ-71-1	cost_PMx	0
-	LJ-71-1	ttime	1
+	LJ-71-1	cost_co2	4068
+	LJ-71-1	cost_nox	2
 	LJ-71-1	NJ-71-1F	-1
 	LJ-71-1	NJ-71-2T	1
-	LJ-71-2	cost_PMx	0
-	LJ-71-2	ttime	1
+	LJ-71-2	cost_co2	4068
+	LJ-71-2	cost_nox	2
 	LJ-71-2	NJ-71-1F	-1
 	LJ-71-2	NJ-71-1T	1
-	LJ-76-2	cost_PMx	0
-	LJ-76-2	ttime	1
+	LJ-76-2	cost_co2	1687
+	LJ-76-2	cost_nox	1
 	LJ-76-2	NJ-76-2F	-1
 	LJ-76-2	NJ-76-2T	1
-	LJ-68-2	cost_PMx	0
-	LJ-68-2	ttime	1
+	LJ-68-2	cost_co2	7255
+	LJ-68-2	cost_nox	3
 	LJ-68-2	NJ-68-2F	-1
 	LJ-68-2	NJ-68-1T	1
-	LJ-80-1	cost_PMx	0
-	LJ-80-1	ttime	0
+	LJ-80-1	cost_co2	30
+	LJ-80-1	cost_nox	0
 	LJ-80-1	NJ-80-1F	-1
 	LJ-80-1	NJ-80-1T	1
-	LJ-82-1	cost_PMx	0
-	LJ-82-1	ttime	1
+	LJ-82-1	cost_co2	10071
+	LJ-82-1	cost_nox	4
 	LJ-82-1	NJ-82-1F	-1
 	LJ-82-1	NJ-82-1T	1
-	LJ-83-1	cost_PMx	0
-	LJ-83-1	ttime	1
+	LJ-83-1	cost_co2	2676
+	LJ-83-1	cost_nox	1
 	LJ-83-1	NJ-83-1F	-1
 	LJ-83-1	NJ-83-2T	1
-	LJ-83-2	cost_PMx	0
-	LJ-83-2	ttime	1
+	LJ-83-2	cost_co2	2676
+	LJ-83-2	cost_nox	1
 	LJ-83-2	NJ-83-1F	-1
 	LJ-83-2	NJ-83-1T	1
-	LJ-88-1	cost_PMx	0
-	LJ-88-1	ttime	1
+	LJ-88-1	cost_co2	6720
+	LJ-88-1	cost_nox	3
 	LJ-88-1	NJ-88-1F	-1
 	LJ-88-1	NJ-88-1T	1
-	LJ-89-1	cost_PMx	0
-	LJ-89-1	ttime	1
+	LJ-89-1	cost_co2	6787
+	LJ-89-1	cost_nox	3
 	LJ-89-1	NJ-89-1F	-1
 	LJ-89-1	NJ-89-1T	1
-	LJ-202-1	cost_PMx	0
-	LJ-202-1	ttime	0
+	LJ-202-1	cost_co2	42
+	LJ-202-1	cost_nox	0
 	LJ-202-1	NJ-202-1F	-1
 	LJ-202-1	NJ-202-1T	1
-	LJ-93-1	cost_PMx	0
-	LJ-93-1	ttime	1
+	LJ-93-1	cost_co2	1130
+	LJ-93-1	cost_nox	0
 	LJ-93-1	NJ-93-1F	-1
 	LJ-93-1	NJ-93-2T	1
-	LJ-93-2	cost_PMx	0
-	LJ-93-2	ttime	1
+	LJ-93-2	cost_co2	1130
+	LJ-93-2	cost_nox	0
 	LJ-93-2	NJ-93-1F	-1
 	LJ-93-2	NJ-93-1T	1
-	LJ-99-1	cost_PMx	0
-	LJ-99-1	ttime	0
+	LJ-99-1	cost_co2	1374
+	LJ-99-1	cost_nox	1
 	LJ-99-1	NJ-99-1F	-1
 	LJ-99-1	NJ-99-1T	1
-	LJ-101-1	cost_PMx	0
-	LJ-101-1	ttime	0
+	LJ-101-1	cost_co2	1160
+	LJ-101-1	cost_nox	0
 	LJ-101-1	NJ-101-1F	-1
 	LJ-101-1	NJ-101-1T	1
-	LJ-103-1	cost_PMx	0
-	LJ-103-1	ttime	0
+	LJ-103-1	cost_co2	1177
+	LJ-103-1	cost_nox	0
 	LJ-103-1	NJ-103-1F	-1
 	LJ-103-1	NJ-103-1T	1
-	LJ-105-1	cost_PMx	0
-	LJ-105-1	ttime	0
+	LJ-105-1	cost_co2	30
+	LJ-105-1	cost_nox	0
 	LJ-105-1	NJ-105-1F	-1
 	LJ-105-1	NJ-105-1T	1
-	LJ-107-1	cost_PMx	0
-	LJ-107-1	ttime	0
+	LJ-107-1	cost_co2	1146
+	LJ-107-1	cost_nox	0
 	LJ-107-1	NJ-107-1F	-1
 	LJ-107-1	NJ-107-1T	1
-	LJ-109-1	cost_PMx	0
-	LJ-109-1	ttime	1
+	LJ-109-1	cost_co2	2148
+	LJ-109-1	cost_nox	1
 	LJ-109-1	NJ-109-1F	-1
 	LJ-109-1	NJ-109-1T	1
-	LJ-109-2	cost_PMx	0
-	LJ-109-2	ttime	1
+	LJ-109-2	cost_co2	2148
+	LJ-109-2	cost_nox	1
 	LJ-109-2	NJ-109-1F	-1
 	LJ-109-2	NJ-109-2T	1
-	LJ-117-1	cost_PMx	0
-	LJ-117-1	ttime	1
+	LJ-117-1	cost_co2	2845
+	LJ-117-1	cost_nox	1
 	LJ-117-1	NJ-117-1F	-1
 	LJ-117-1	NJ-117-1T	1
-	LJ-118-1	cost_PMx	0
-	LJ-118-1	ttime	4
+	LJ-118-1	cost_co2	8677
+	LJ-118-1	cost_nox	3
 	LJ-118-1	NJ-118-1F	-1
 	LJ-118-1	NJ-118-1T	1
-	LJ-118-2	cost_PMx	0
-	LJ-118-2	ttime	4
+	LJ-118-2	cost_co2	8677
+	LJ-118-2	cost_nox	3
 	LJ-118-2	NJ-118-1F	-1
 	LJ-118-2	NJ-118-2T	1
-	LJ-121-1	cost_PMx	0
-	LJ-121-1	ttime	0
+	LJ-121-1	cost_co2	438
+	LJ-121-1	cost_nox	0
 	LJ-121-1	NJ-121-1F	-1
 	LJ-121-1	NJ-121-1T	1
-	LJ-123-1	cost_PMx	0
-	LJ-123-1	ttime	3
+	LJ-123-1	cost_co2	18450
+	LJ-123-1	cost_nox	8
 	LJ-123-1	NJ-123-2F	-1
 	LJ-123-1	NJ-123-1T	1
-	LJ-125-1	cost_PMx	0
-	LJ-125-1	ttime	0
+	LJ-125-1	cost_co2	634
+	LJ-125-1	cost_nox	0
 	LJ-125-1	NJ-125-1F	-1
 	LJ-125-1	NJ-125-1T	1
-	LJ-127-1	cost_PMx	0
-	LJ-127-1	ttime	0
+	LJ-127-1	cost_co2	1176
+	LJ-127-1	cost_nox	0
 	LJ-127-1	NJ-127-1F	-1
 	LJ-127-1	NJ-127-1T	1
-	LJ-128-1	cost_PMx	0
-	LJ-128-1	ttime	1
+	LJ-128-1	cost_co2	152
+	LJ-128-1	cost_nox	0
 	LJ-128-1	NJ-128-1F	-1
 	LJ-128-1	NJ-128-1T	1
-	LJ-128-2	cost_PMx	0
-	LJ-128-2	ttime	1
+	LJ-128-2	cost_co2	152
+	LJ-128-2	cost_nox	0
 	LJ-128-2	NJ-128-1F	-1
 	LJ-128-2	NJ-128-2T	1
-	LJ-138-1	cost_PMx	0
-	LJ-138-1	ttime	0
+	LJ-138-1	cost_co2	713
+	LJ-138-1	cost_nox	0
 	LJ-138-1	NJ-138-1F	-1
 	LJ-138-1	NJ-138-1T	1
-	LJ-140-1	cost_PMx	0
-	LJ-140-1	ttime	0
+	LJ-140-1	cost_co2	1137
+	LJ-140-1	cost_nox	0
 	LJ-140-1	NJ-140-1F	-1
 	LJ-140-1	NJ-140-1T	1
-	LJ-142-1	cost_PMx	0
-	LJ-142-1	ttime	0
+	LJ-142-1	cost_co2	38
+	LJ-142-1	cost_nox	0
 	LJ-142-1	NJ-142-1F	-1
 	LJ-142-1	NJ-142-1T	1
-	LJ-144-1	cost_PMx	0
-	LJ-144-1	ttime	0
+	LJ-144-1	cost_co2	1098
+	LJ-144-1	cost_nox	0
 	LJ-144-1	NJ-144-1F	-1
 	LJ-144-1	NJ-144-1T	1
-	LJ-145-1	cost_PMx	0
-	LJ-145-1	ttime	1
+	LJ-145-1	cost_co2	2006
+	LJ-145-1	cost_nox	1
 	LJ-145-1	NJ-145-1F	-1
 	LJ-145-1	NJ-145-1T	1
-	LJ-145-2	cost_PMx	0
-	LJ-145-2	ttime	1
+	LJ-145-2	cost_co2	2006
+	LJ-145-2	cost_nox	1
 	LJ-145-2	NJ-145-1F	-1
 	LJ-145-2	NJ-145-2T	1
-	LJ-149-1	cost_PMx	0
-	LJ-149-1	ttime	1
+	LJ-149-1	cost_co2	2468
+	LJ-149-1	cost_nox	1
 	LJ-149-1	NJ-149-1F	-1
 	LJ-149-1	NJ-149-1T	1
-	LJ-150-1	cost_PMx	0
-	LJ-150-1	ttime	0
+	LJ-150-1	cost_co2	1147
+	LJ-150-1	cost_nox	0
 	LJ-150-1	NJ-150-1F	-1
 	LJ-150-1	NJ-150-1T	1
-	LJ-151-1	cost_PMx	0
-	LJ-151-1	ttime	0
+	LJ-151-1	cost_co2	983
+	LJ-151-1	cost_nox	0
 	LJ-151-1	NJ-151-1F	-1
 	LJ-151-1	NJ-151-1T	1
-	LJ-153-1	cost_PMx	0
-	LJ-153-1	ttime	0
+	LJ-153-1	cost_co2	1106
+	LJ-153-1	cost_nox	0
 	LJ-153-1	NJ-153-1F	-1
 	LJ-153-1	NJ-153-1T	1
-	LJ-154-1	cost_PMx	0
-	LJ-154-1	ttime	0
+	LJ-154-1	cost_co2	43
+	LJ-154-1	cost_nox	0
 	LJ-154-1	NJ-154-1F	-1
 	LJ-154-1	NJ-154-1T	1
-	LJ-155-1	cost_PMx	0
-	LJ-155-1	ttime	0
+	LJ-155-1	cost_co2	950
+	LJ-155-1	cost_nox	0
 	LJ-155-1	NJ-155-1F	-1
 	LJ-155-1	NJ-155-2T	1
-	LJ-155-2	cost_PMx	0
-	LJ-155-2	ttime	0
+	LJ-155-2	cost_co2	950
+	LJ-155-2	cost_nox	0
 	LJ-155-2	NJ-155-1F	-1
 	LJ-155-2	NJ-155-1T	1
-	LJ-14-2	cost_PMx	0
-	LJ-14-2	ttime	1
+	LJ-14-2	cost_co2	1296
+	LJ-14-2	cost_nox	1
 	LJ-14-2	NJ-14-2F	-1
 	LJ-14-2	NJ-14-1T	1
-	LJ-152-1	cost_PMx	0
-	LJ-152-1	ttime	1
+	LJ-152-1	cost_co2	3455
+	LJ-152-1	cost_nox	1
 	LJ-152-1	NJ-152-1F	-1
 	LJ-152-1	NJ-152-1T	1
-	LJ-148-1	cost_PMx	0
-	LJ-148-1	ttime	0
+	LJ-148-1	cost_co2	1102
+	LJ-148-1	cost_nox	0
 	LJ-148-1	NJ-148-1F	-1
 	LJ-148-1	NJ-148-1T	1
-	LJ-147-1	cost_PMx	0
-	LJ-147-1	ttime	1
+	LJ-147-1	cost_co2	2853
+	LJ-147-1	cost_nox	1
 	LJ-147-1	NJ-147-1F	-1
 	LJ-147-1	NJ-147-2T	1
-	LJ-147-2	cost_PMx	0
-	LJ-147-2	ttime	1
+	LJ-147-2	cost_co2	2853
+	LJ-147-2	cost_nox	1
 	LJ-147-2	NJ-147-1F	-1
 	LJ-147-2	NJ-147-1T	1
-	LJ-143-1	cost_PMx	0
-	LJ-143-1	ttime	1
+	LJ-143-1	cost_co2	4043
+	LJ-143-1	cost_nox	2
 	LJ-143-1	NJ-143-1F	-1
 	LJ-143-1	NJ-143-1T	1
-	LJ-141-1	cost_PMx	0
-	LJ-141-1	ttime	0
+	LJ-141-1	cost_co2	1132
+	LJ-141-1	cost_nox	0
 	LJ-141-1	NJ-141-1F	-1
 	LJ-141-1	NJ-141-1T	1
-	LJ-139-1	cost_PMx	0
-	LJ-139-1	ttime	0
+	LJ-139-1	cost_co2	1073
+	LJ-139-1	cost_nox	0
 	LJ-139-1	NJ-139-1F	-1
 	LJ-139-1	NJ-139-1T	1
-	LJ-137-1	cost_PMx	0
-	LJ-137-1	ttime	0
+	LJ-137-1	cost_co2	859
+	LJ-137-1	cost_nox	0
 	LJ-137-1	NJ-137-1F	-1
 	LJ-137-1	NJ-137-1T	1
-	LJ-137-2	cost_PMx	0
-	LJ-137-2	ttime	0
+	LJ-137-2	cost_co2	859
+	LJ-137-2	cost_nox	0
 	LJ-137-2	NJ-137-1F	-1
 	LJ-137-2	NJ-137-2T	1
-	LJ-134-1	cost_PMx	0
-	LJ-134-1	ttime	0
+	LJ-134-1	cost_co2	58
+	LJ-134-1	cost_nox	0
 	LJ-134-1	NJ-134-1F	-1
 	LJ-134-1	NJ-134-1T	1
-	LJ-132-1	cost_PMx	0
-	LJ-132-1	ttime	0
+	LJ-132-1	cost_co2	14
+	LJ-132-1	cost_nox	0
 	LJ-132-1	NJ-132-1F	-1
 	LJ-132-1	NJ-132-1T	1
-	LJ-129-1	cost_PMx	0
-	LJ-129-1	ttime	0
+	LJ-129-1	cost_co2	2576
+	LJ-129-1	cost_nox	1
 	LJ-129-1	NJ-129-1F	-1
 	LJ-129-1	NJ-129-1T	1
-	LJ-126-1	cost_PMx	0
-	LJ-126-1	ttime	0
+	LJ-126-1	cost_co2	804
+	LJ-126-1	cost_nox	0
 	LJ-126-1	NJ-126-2F	-1
 	LJ-126-1	NJ-126-1T	1
-	LJ-124-1	cost_PMx	0
-	LJ-124-1	ttime	0
+	LJ-124-1	cost_co2	1510
+	LJ-124-1	cost_nox	1
 	LJ-124-1	NJ-124-1F	-1
 	LJ-124-1	NJ-124-1T	1
-	LJ-122-1	cost_PMx	0
-	LJ-122-1	ttime	1
+	LJ-122-1	cost_co2	423
+	LJ-122-1	cost_nox	0
 	LJ-122-1	NJ-122-1F	-1
 	LJ-122-1	NJ-122-1T	1
-	LJ-119-1	cost_PMx	0
-	LJ-119-1	ttime	1
+	LJ-119-1	cost_co2	1284
+	LJ-119-1	cost_nox	0
 	LJ-119-1	NJ-119-1F	-1
 	LJ-119-1	NJ-119-1T	1
-	LJ-115-1	cost_PMx	0
-	LJ-115-1	ttime	1
+	LJ-115-1	cost_co2	850
+	LJ-115-1	cost_nox	0
 	LJ-115-1	NJ-115-1F	-1
 	LJ-115-1	NJ-115-2T	1
-	LJ-115-2	cost_PMx	0
-	LJ-115-2	ttime	1
+	LJ-115-2	cost_co2	850
+	LJ-115-2	cost_nox	0
 	LJ-115-2	NJ-115-1F	-1
 	LJ-115-2	NJ-115-1T	1
-	LJ-116-1	cost_PMx	0
-	LJ-116-1	ttime	1
+	LJ-116-1	cost_co2	97
+	LJ-116-1	cost_nox	0
 	LJ-116-1	NJ-116-1F	-1
 	LJ-116-1	NJ-116-1T	1
-	LJ-108-1	cost_PMx	0
-	LJ-108-1	ttime	1
+	LJ-108-1	cost_co2	2196
+	LJ-108-1	cost_nox	1
 	LJ-108-1	NJ-108-1F	-1
 	LJ-108-1	NJ-108-1T	1
-	LJ-200-1	cost_PMx	0
-	LJ-200-1	ttime	0
+	LJ-200-1	cost_co2	1124
+	LJ-200-1	cost_nox	0
 	LJ-200-1	NJ-200-1F	-1
 	LJ-200-1	NJ-200-1T	1
-	LJ-106-1	cost_PMx	0
-	LJ-106-1	ttime	0
+	LJ-106-1	cost_co2	45
+	LJ-106-1	cost_nox	0
 	LJ-106-1	NJ-106-1F	-1
 	LJ-106-1	NJ-106-1T	1
-	LJ-104-1	cost_PMx	0
-	LJ-104-1	ttime	0
+	LJ-104-1	cost_co2	1158
+	LJ-104-1	cost_nox	0
 	LJ-104-1	NJ-104-1F	-1
 	LJ-104-1	NJ-104-1T	1
-	LJ-102-1	cost_PMx	0
-	LJ-102-1	ttime	0
+	LJ-102-1	cost_co2	1174
+	LJ-102-1	cost_nox	0
 	LJ-102-1	NJ-102-1F	-1
 	LJ-102-1	NJ-102-1T	1
-	LJ-100-1	cost_PMx	0
-	LJ-100-1	ttime	1
+	LJ-100-1	cost_co2	4243
+	LJ-100-1	cost_nox	2
 	LJ-100-1	NJ-100-1F	-1
 	LJ-100-1	NJ-100-2T	1
-	LJ-100-2	cost_PMx	0
-	LJ-100-2	ttime	1
+	LJ-100-2	cost_co2	4243
+	LJ-100-2	cost_nox	2
 	LJ-100-2	NJ-100-1F	-1
 	LJ-100-2	NJ-100-1T	1
-	LJ-94-1	cost_PMx	0
-	LJ-94-1	ttime	1
+	LJ-94-1	cost_co2	4538
+	LJ-94-1	cost_nox	2
 	LJ-94-1	NJ-94-1F	-1
 	LJ-94-1	NJ-94-1T	1
-	LJ-92-1	cost_PMx	0
-	LJ-92-1	ttime	0
+	LJ-92-1	cost_co2	12
+	LJ-92-1	cost_nox	0
 	LJ-92-1	NJ-92-1F	-1
 	LJ-92-1	NJ-92-1T	1
-	LJ-90-1	cost_PMx	0
-	LJ-90-1	ttime	2
+	LJ-90-1	cost_co2	9633
+	LJ-90-1	cost_nox	4
 	LJ-90-1	NJ-90-1F	-1
 	LJ-90-1	NJ-90-1T	1
-	LJ-91-1	cost_PMx	0
-	LJ-91-1	ttime	1
+	LJ-91-1	cost_co2	5252
+	LJ-91-1	cost_nox	2
 	LJ-91-1	NJ-91-1F	-1
 	LJ-91-1	NJ-91-1T	1
-	LJ-84-1	cost_PMx	0
-	LJ-84-1	ttime	1
+	LJ-84-1	cost_co2	4242
+	LJ-84-1	cost_nox	2
 	LJ-84-1	NJ-84-2F	-1
 	LJ-84-1	NJ-84-1T	1
-	LJ-85-1	cost_PMx	0
-	LJ-85-1	ttime	1
+	LJ-85-1	cost_co2	4417
+	LJ-85-1	cost_nox	2
 	LJ-85-1	NJ-85-1F	-1
 	LJ-85-1	NJ-85-1T	1
-	LJ-85-2	cost_PMx	0
-	LJ-85-2	ttime	1
+	LJ-85-2	cost_co2	4417
+	LJ-85-2	cost_nox	2
 	LJ-85-2	NJ-85-1F	-1
 	LJ-85-2	NJ-85-2T	1
-	LJ-86-1	cost_PMx	0
-	LJ-86-1	ttime	1
+	LJ-86-1	cost_co2	6522
+	LJ-86-1	cost_nox	3
 	LJ-86-1	NJ-86-1F	-1
 	LJ-86-1	NJ-86-1T	1
-	LJ-87-1	cost_PMx	0
-	LJ-87-1	ttime	1
+	LJ-87-1	cost_co2	11053
+	LJ-87-1	cost_nox	5
 	LJ-87-1	NJ-87-1F	-1
 	LJ-87-1	NJ-87-1T	1
-	LJ-81-1	cost_PMx	0
-	LJ-81-1	ttime	0
+	LJ-81-1	cost_co2	30
+	LJ-81-1	cost_nox	0
 	LJ-81-1	NJ-81-1F	-1
 	LJ-81-1	NJ-81-1T	1
-	LJ-70-2	cost_PMx	0
-	LJ-70-2	ttime	1
+	LJ-70-2	cost_co2	3807
+	LJ-70-2	cost_nox	2
 	LJ-70-2	NJ-70-1F	-1
 	LJ-70-2	NJ-70-1T	1
-	LJ-199-1	cost_PMx	0
-	LJ-199-1	ttime	0
+	LJ-199-1	cost_co2	183
+	LJ-199-1	cost_nox	0
 	LJ-199-1	NJ-199-1F	-1
 	LJ-199-1	NJ-199-1T	1
-	LJ-162-1	cost_PMx	0
-	LJ-162-1	ttime	0
+	LJ-162-1	cost_co2	203
+	LJ-162-1	cost_nox	0
 	LJ-162-1	NJ-162-1F	-1
 	LJ-162-1	NJ-162-1T	1
-	LJ-165-1	cost_PMx	0
-	LJ-165-1	ttime	1
+	LJ-165-1	cost_co2	3005
+	LJ-165-1	cost_nox	1
 	LJ-165-1	NJ-165-1F	-1
 	LJ-165-1	NJ-165-1T	1
-	LJ-170-1	cost_PMx	0
-	LJ-170-1	ttime	0
+	LJ-170-1	cost_co2	1122
+	LJ-170-1	cost_nox	0
 	LJ-170-1	NJ-170-1F	-1
 	LJ-170-1	NJ-170-1T	1
-	LJ-172-1	cost_PMx	0
-	LJ-172-1	ttime	0
+	LJ-172-1	cost_co2	27
+	LJ-172-1	cost_nox	0
 	LJ-172-1	NJ-172-1F	-1
 	LJ-172-1	NJ-172-1T	1
-	LJ-173-1	cost_PMx	0
-	LJ-173-1	ttime	0
+	LJ-173-1	cost_co2	40
+	LJ-173-1	cost_nox	0
 	LJ-173-1	NJ-173-1F	-1
 	LJ-173-1	NJ-173-1T	1
-	LJ-175-1	cost_PMx	0
-	LJ-175-1	ttime	0
+	LJ-175-1	cost_co2	13
+	LJ-175-1	cost_nox	0
 	LJ-175-1	NJ-175-1F	-1
 	LJ-175-1	NJ-175-1T	1
-	LJ-179-1	cost_PMx	0
-	LJ-179-1	ttime	0
+	LJ-179-1	cost_co2	38
+	LJ-179-1	cost_nox	0
 	LJ-179-1	NJ-179-1F	-1
 	LJ-179-1	NJ-179-1T	1
-	LJ-182-1	cost_PMx	0
-	LJ-182-1	ttime	0
+	LJ-182-1	cost_co2	43
+	LJ-182-1	cost_nox	0
 	LJ-182-1	NJ-182-1F	-1
 	LJ-182-1	NJ-182-1T	1
-	LJ-184-1	cost_PMx	0
-	LJ-184-1	ttime	0
+	LJ-184-1	cost_co2	38
+	LJ-184-1	cost_nox	0
 	LJ-184-1	NJ-184-1F	-1
 	LJ-184-1	NJ-184-1T	1
-	LJ-186-1	cost_PMx	0
-	LJ-186-1	ttime	1
+	LJ-186-1	cost_co2	2828
+	LJ-186-1	cost_nox	1
 	LJ-186-1	NJ-186-1F	-1
 	LJ-186-1	NJ-186-2T	1
-	LJ-186-2	cost_PMx	0
-	LJ-186-2	ttime	1
+	LJ-186-2	cost_co2	2828
+	LJ-186-2	cost_nox	1
 	LJ-186-2	NJ-186-1F	-1
 	LJ-186-2	NJ-186-1T	1
-	LJ-196-1	cost_PMx	0
-	LJ-196-1	ttime	1
+	LJ-196-1	cost_co2	1065
+	LJ-196-1	cost_nox	0
 	LJ-196-1	NJ-196-2F	-1
 	LJ-196-1	NJ-196-1T	1
-	LJ-86-2	cost_PMx	0
-	LJ-86-2	ttime	1
+	LJ-86-2	cost_co2	6522
+	LJ-86-2	cost_nox	3
 	LJ-86-2	NJ-86-2F	-1
 	LJ-86-2	NJ-86-1T	1
-	LJ-84-2	cost_PMx	0
-	LJ-84-2	ttime	1
+	LJ-84-2	cost_co2	4242
+	LJ-84-2	cost_nox	2
 	LJ-84-2	NJ-84-1F	-1
 	LJ-84-2	NJ-84-1T	1
-	LJ-201-1	cost_PMx	0
-	LJ-201-1	ttime	1
+	LJ-201-1	cost_co2	6310
+	LJ-201-1	cost_nox	3
 	LJ-201-1	NJ-201-1F	-1
 	LJ-201-1	NJ-201-2T	1
-	LJ-201-2	cost_PMx	0
-	LJ-201-2	ttime	1
+	LJ-201-2	cost_co2	6310
+	LJ-201-2	cost_nox	3
 	LJ-201-2	NJ-201-1F	-1
 	LJ-201-2	NJ-201-1T	1
-	LJ-193-1	cost_PMx	0
-	LJ-193-1	ttime	0
+	LJ-193-1	cost_co2	50
+	LJ-193-1	cost_nox	0
 	LJ-193-1	NJ-193-1F	-1
 	LJ-193-1	NJ-193-1T	1
-	LJ-185-1	cost_PMx	0
-	LJ-185-1	ttime	1
+	LJ-185-1	cost_co2	2090
+	LJ-185-1	cost_nox	1
 	LJ-185-1	NJ-185-1F	-1
 	LJ-185-1	NJ-185-1T	1
-	LJ-183-1	cost_PMx	0
-	LJ-183-1	ttime	0
+	LJ-183-1	cost_co2	1185
+	LJ-183-1	cost_nox	0
 	LJ-183-1	NJ-183-1F	-1
 	LJ-183-1	NJ-183-1T	1
-	LJ-181-1	cost_PMx	0
-	LJ-181-1	ttime	0
+	LJ-181-1	cost_co2	41
+	LJ-181-1	cost_nox	0
 	LJ-181-1	NJ-181-1F	-1
 	LJ-181-1	NJ-181-1T	1
-	LJ-180-1	cost_PMx	0
-	LJ-180-1	ttime	0
+	LJ-180-1	cost_co2	32
+	LJ-180-1	cost_nox	0
 	LJ-180-1	NJ-180-1F	-1
 	LJ-180-1	NJ-180-1T	1
-	LJ-178-1	cost_PMx	0
-	LJ-178-1	ttime	0
+	LJ-178-1	cost_co2	1138
+	LJ-178-1	cost_nox	0
 	LJ-178-1	NJ-178-1F	-1
 	LJ-178-1	NJ-178-1T	1
-	LJ-177-1	cost_PMx	0
-	LJ-177-1	ttime	0
+	LJ-177-1	cost_co2	992
+	LJ-177-1	cost_nox	0
 	LJ-177-1	NJ-177-1F	-1
 	LJ-177-1	NJ-177-1T	1
-	LJ-176-1	cost_PMx	0
-	LJ-176-1	ttime	0
+	LJ-176-1	cost_co2	1099
+	LJ-176-1	cost_nox	0
 	LJ-176-1	NJ-176-1F	-1
 	LJ-176-1	NJ-176-1T	1
-	LJ-174-1	cost_PMx	0
-	LJ-174-1	ttime	0
+	LJ-174-1	cost_co2	1146
+	LJ-174-1	cost_nox	0
 	LJ-174-1	NJ-174-1F	-1
 	LJ-174-1	NJ-174-1T	1
-	LJ-171-1	cost_PMx	0
-	LJ-171-1	ttime	0
+	LJ-171-1	cost_co2	35
+	LJ-171-1	cost_nox	0
 	LJ-171-1	NJ-171-1F	-1
 	LJ-171-1	NJ-171-1T	1
-	LJ-169-1	cost_PMx	0
-	LJ-169-1	ttime	0
+	LJ-169-1	cost_co2	1130
+	LJ-169-1	cost_nox	0
 	LJ-169-1	NJ-169-1F	-1
 	LJ-169-1	NJ-169-1T	1
-	LJ-168-1	cost_PMx	0
-	LJ-168-1	ttime	0
+	LJ-168-1	cost_co2	56
+	LJ-168-1	cost_nox	0
 	LJ-168-1	NJ-168-1F	-1
 	LJ-168-1	NJ-168-1T	1
-	LJ-166-1	cost_PMx	0
-	LJ-166-1	ttime	1
+	LJ-166-1	cost_co2	1913
+	LJ-166-1	cost_nox	1
 	LJ-166-1	NJ-166-1F	-1
 	LJ-166-1	NJ-166-2T	1
-	LJ-166-2	cost_PMx	0
-	LJ-166-2	ttime	1
+	LJ-166-2	cost_co2	1913
+	LJ-166-2	cost_nox	1
 	LJ-166-2	NJ-166-1F	-1
 	LJ-166-2	NJ-166-1T	1
-	LJ-149-2	cost_PMx	0
-	LJ-149-2	ttime	1
+	LJ-149-2	cost_co2	2468
+	LJ-149-2	cost_nox	1
 	LJ-149-2	NJ-149-2F	-1
 	LJ-149-2	NJ-149-1T	1
-	LJ-111-1	cost_PMx	0
-	LJ-111-1	ttime	0
+	LJ-111-1	cost_co2	1149
+	LJ-111-1	cost_nox	0
 	LJ-111-1	NJ-111-1F	-1
 	LJ-111-1	NJ-111-1T	1
-	LJ-110-1	cost_PMx	0
-	LJ-110-1	ttime	1
+	LJ-110-1	cost_co2	1944
+	LJ-110-1	cost_nox	1
 	LJ-110-1	NJ-110-1F	-1
 	LJ-110-1	NJ-110-2T	1
-	LJ-110-2	cost_PMx	0
-	LJ-110-2	ttime	1
+	LJ-110-2	cost_co2	1944
+	LJ-110-2	cost_nox	1
 	LJ-110-2	NJ-110-1F	-1
 	LJ-110-2	NJ-110-1T	1
-	LJ-108-2	cost_PMx	0
-	LJ-108-2	ttime	1
+	LJ-108-2	cost_co2	2196
+	LJ-108-2	cost_nox	1
 	LJ-108-2	NJ-108-2F	-1
 	LJ-108-2	NJ-108-1T	1
-	LJ-95-1	cost_PMx	0
-	LJ-95-1	ttime	0
+	LJ-95-1	cost_co2	907
+	LJ-95-1	cost_nox	0
 	LJ-95-1	NJ-95-2F	-1
 	LJ-95-1	NJ-95-1T	1
-	LJ-96-1	cost_PMx	0
-	LJ-96-1	ttime	1
+	LJ-96-1	cost_co2	3156
+	LJ-96-1	cost_nox	1
 	LJ-96-1	NJ-96-1F	-1
 	LJ-96-1	NJ-96-1T	1
-	LJ-99-2	cost_PMx	0
-	LJ-99-2	ttime	0
+	LJ-99-2	cost_co2	1374
+	LJ-99-2	cost_nox	1
 	LJ-99-2	NJ-99-2F	-1
 	LJ-99-2	NJ-99-1T	1
-	LJ-114-1	cost_PMx	0
-	LJ-114-1	ttime	1
+	LJ-114-1	cost_co2	2448
+	LJ-114-1	cost_nox	1
 	LJ-114-1	NJ-114-2F	-1
 	LJ-114-1	NJ-114-1T	1
-	LJ-159-1	cost_PMx	0
-	LJ-159-1	ttime	1
+	LJ-159-1	cost_co2	2043
+	LJ-159-1	cost_nox	1
 	LJ-159-1	NJ-159-1F	-1
 	LJ-159-1	NJ-159-2T	1
-	LJ-159-2	cost_PMx	0
-	LJ-159-2	ttime	1
+	LJ-159-2	cost_co2	2043
+	LJ-159-2	cost_nox	1
 	LJ-159-2	NJ-159-1F	-1
 	LJ-159-2	NJ-159-1T	1
-	LJ-157-1	cost_PMx	0
-	LJ-157-1	ttime	1
+	LJ-157-1	cost_co2	1800
+	LJ-157-1	cost_nox	1
 	LJ-157-1	NJ-157-1F	-1
 	LJ-157-1	NJ-157-1T	1
-	LJ-156-1	cost_PMx	0
-	LJ-156-1	ttime	1
+	LJ-156-1	cost_co2	2546
+	LJ-156-1	cost_nox	1
 	LJ-156-1	NJ-156-1F	-1
 	LJ-156-1	NJ-156-1T	1
-	LJ-152-2	cost_PMx	0
-	LJ-152-2	ttime	1
+	LJ-152-2	cost_co2	3455
+	LJ-152-2	cost_nox	1
 	LJ-152-2	NJ-152-2F	-1
 	LJ-152-2	NJ-152-1T	1
-	LJ-138-2	cost_PMx	0
-	LJ-138-2	ttime	0
+	LJ-138-2	cost_co2	713
+	LJ-138-2	cost_nox	0
 	LJ-138-2	NJ-138-2F	-1
 	LJ-138-2	NJ-138-1T	1
-	LJ-158-1	cost_PMx	0
-	LJ-158-1	ttime	1
+	LJ-158-1	cost_co2	3562
+	LJ-158-1	cost_nox	1
 	LJ-158-1	NJ-158-2F	-1
 	LJ-158-1	NJ-158-1T	1
-	LJ-79-1	cost_PMx	0
-	LJ-79-1	ttime	1
+	LJ-79-1	cost_co2	2206
+	LJ-79-1	cost_nox	1
 	LJ-79-1	NJ-79-1F	-1
 	LJ-79-1	NJ-79-2T	1
-	LJ-74-2	cost_PMx	0
-	LJ-74-2	ttime	1
+	LJ-74-2	cost_co2	4018
+	LJ-74-2	cost_nox	2
 	LJ-74-2	NJ-74-1F	-1
 	LJ-74-2	NJ-74-1T	1
-	LJ-95-2	cost_PMx	0
-	LJ-95-2	ttime	0
+	LJ-95-2	cost_co2	907
+	LJ-95-2	cost_nox	0
 	LJ-95-2	NJ-95-1F	-1
 	LJ-95-2	NJ-95-1T	1
-	LJ-189-1	cost_PMx	0
-	LJ-189-1	ttime	1
+	LJ-189-1	cost_co2	5129
+	LJ-189-1	cost_nox	2
 	LJ-189-1	NJ-189-2F	-1
 	LJ-189-1	NJ-189-1T	1
-	LJ-23-2	cost_PMx	0
-	LJ-23-2	ttime	1
+	LJ-23-2	cost_co2	6159
+	LJ-23-2	cost_nox	3
 	LJ-23-2	NJ-23-1F	-1
 	LJ-23-2	NJ-23-1T	1
-	LJ-26-1	cost_PMx	0
-	LJ-26-1	ttime	1
+	LJ-26-1	cost_co2	719
+	LJ-26-1	cost_nox	0
 	LJ-26-1	NJ-26-2F	-1
 	LJ-26-1	NJ-26-1T	1
-	LJ-79-2	cost_PMx	0
-	LJ-79-2	ttime	1
+	LJ-79-2	cost_co2	2206
+	LJ-79-2	cost_nox	1
 	LJ-79-2	NJ-79-2F	-1
 	LJ-79-2	NJ-79-1T	1
-	LJ-188-1	cost_PMx	0
-	LJ-188-1	ttime	0
+	LJ-188-1	cost_co2	1017
+	LJ-188-1	cost_nox	0
 	LJ-188-1	NJ-188-1F	-1
 	LJ-188-1	NJ-188-1T	1
-	LJ-187-1	cost_PMx	0
-	LJ-187-1	ttime	1
+	LJ-187-1	cost_co2	2816
+	LJ-187-1	cost_nox	1
 	LJ-187-1	NJ-187-1F	-1
 	LJ-187-1	NJ-187-1T	1
-	LJ-187-2	cost_PMx	0
-	LJ-187-2	ttime	1
+	LJ-187-2	cost_co2	2816
+	LJ-187-2	cost_nox	1
 	LJ-187-2	NJ-187-1F	-1
 	LJ-187-2	NJ-187-2T	1
-	LJ-194-1	cost_PMx	0
-	LJ-194-1	ttime	0
+	LJ-194-1	cost_co2	14
+	LJ-194-1	cost_nox	0
 	LJ-194-1	NJ-194-1F	-1
 	LJ-194-1	NJ-194-1T	1
-	LJ-196-2	cost_PMx	0
-	LJ-196-2	ttime	1
+	LJ-196-2	cost_co2	1065
+	LJ-196-2	cost_nox	0
 	LJ-196-2	NJ-196-1F	-1
 	LJ-196-2	NJ-196-1T	1
-	LJ-72-2	cost_PMx	0
-	LJ-72-2	ttime	1
+	LJ-72-2	cost_co2	7558
+	LJ-72-2	cost_nox	3
 	LJ-72-2	NJ-72-2F	-1
 	LJ-72-2	NJ-72-1T	1
-	LJ-185-2	cost_PMx	0
-	LJ-185-2	ttime	1
+	LJ-185-2	cost_co2	2090
+	LJ-185-2	cost_nox	1
 	LJ-185-2	NJ-185-2F	-1
 	LJ-185-2	NJ-185-1T	1
-	LJ-167-1	cost_PMx	0
-	LJ-167-1	ttime	0
+	LJ-167-1	cost_co2	10
+	LJ-167-1	cost_nox	0
 	LJ-167-1	NJ-167-1F	-1
 	LJ-167-1	NJ-167-1T	1
-	LJ-164-1	cost_PMx	0
-	LJ-164-1	ttime	0
+	LJ-164-1	cost_co2	971
+	LJ-164-1	cost_nox	0
 	LJ-164-1	NJ-164-1F	-1
 	LJ-164-1	NJ-164-1T	1
-	LJ-163-1	cost_PMx	0
-	LJ-163-1	ttime	0
+	LJ-163-1	cost_co2	10
+	LJ-163-1	cost_nox	0
 	LJ-163-1	NJ-163-1F	-1
 	LJ-163-1	NJ-163-1T	1
-	LJ-198-1	cost_PMx	0
-	LJ-198-1	ttime	0
+	LJ-198-1	cost_co2	108
+	LJ-198-1	cost_nox	0
 	LJ-198-1	NJ-198-1F	-1
 	LJ-198-1	NJ-198-1T	1
-	LJ-146-1	cost_PMx	0
-	LJ-146-1	ttime	0
+	LJ-146-1	cost_co2	2464
+	LJ-146-1	cost_nox	1
 	LJ-146-1	NJ-146-1F	-1
 	LJ-146-1	NJ-146-1T	1
-	LJ-143-2	cost_PMx	0
-	LJ-143-2	ttime	1
+	LJ-143-2	cost_co2	4043
+	LJ-143-2	cost_nox	2
 	LJ-143-2	NJ-143-2F	-1
 	LJ-143-2	NJ-143-1T	1
-	LJ-12-2	cost_PMx	0
-	LJ-12-2	ttime	2
+	LJ-12-2	cost_co2	9503
+	LJ-12-2	cost_nox	4
 	LJ-12-2	NJ-12-1F	-1
 	LJ-12-2	NJ-12-1T	1
-	LJ-158-2	cost_PMx	0
-	LJ-158-2	ttime	1
+	LJ-158-2	cost_co2	3562
+	LJ-158-2	cost_nox	1
 	LJ-158-2	NJ-158-1F	-1
 	LJ-158-2	NJ-158-1T	1
-	LJ-189-2	cost_PMx	0
-	LJ-189-2	ttime	1
+	LJ-189-2	cost_co2	5129
+	LJ-189-2	cost_nox	2
 	LJ-189-2	NJ-189-1F	-1
 	LJ-189-2	NJ-189-1T	1
-	LJ-114-2	cost_PMx	0
-	LJ-114-2	ttime	1
+	LJ-114-2	cost_co2	2448
+	LJ-114-2	cost_nox	1
 	LJ-114-2	NJ-114-1F	-1
 	LJ-114-2	NJ-114-1T	1
-	LJ-133-1	cost_PMx	0
-	LJ-133-1	ttime	0
+	LJ-133-1	cost_co2	30
+	LJ-133-1	cost_nox	0
 	LJ-133-1	NJ-133-1F	-1
 	LJ-133-1	NJ-133-1T	1
-	LJ-135-1	cost_PMx	0
-	LJ-135-1	ttime	0
+	LJ-135-1	cost_co2	48
+	LJ-135-1	cost_nox	0
 	LJ-135-1	NJ-135-1F	-1
 	LJ-135-1	NJ-135-1T	1
-	LJ-120-1	cost_PMx	0
-	LJ-120-1	ttime	0
+	LJ-120-1	cost_co2	36
+	LJ-120-1	cost_nox	0
 	LJ-120-1	NJ-120-1F	-1
 	LJ-120-1	NJ-120-1T	1
-	LJ-123-2	cost_PMx	0
-	LJ-123-2	ttime	3
+	LJ-123-2	cost_co2	18450
+	LJ-123-2	cost_nox	8
 	LJ-123-2	NJ-123-1F	-1
 	LJ-123-2	NJ-123-1T	1
-	LJ-117-2	cost_PMx	0
-	LJ-117-2	ttime	1
+	LJ-117-2	cost_co2	2845
+	LJ-117-2	cost_nox	1
 	LJ-117-2	NJ-117-2F	-1
 	LJ-117-2	NJ-117-1T	1
-	LJ-26-2	cost_PMx	0
-	LJ-26-2	ttime	1
+	LJ-26-2	cost_co2	719
+	LJ-26-2	cost_nox	0
 	LJ-26-2	NJ-26-1F	-1
 	LJ-26-2	NJ-26-2T	1
-	LJ-27-2	cost_PMx	0
-	LJ-27-2	ttime	1
+	LJ-27-2	cost_co2	2646
+	LJ-27-2	cost_nox	1
 	LJ-27-2	NJ-27-2F	-1
 	LJ-27-2	NJ-27-1T	1
-	LJ-29-2	cost_PMx	0
-	LJ-29-2	ttime	1
+	LJ-29-2	cost_co2	3569
+	LJ-29-2	cost_nox	2
 	LJ-29-2	NJ-29-1F	-1
 	LJ-29-2	NJ-29-1T	1
-	LJ-2-3	cost_PMx	0
-	LJ-2-3	ttime	1
+	LJ-2-3	cost_co2	3990
+	LJ-2-3	cost_nox	2
 	LJ-2-3	NJ-2-1F	-1
 	LJ-2-3	NJ-2-1T	1
-	LJ-126-2	cost_PMx	0
-	LJ-126-2	ttime	0
+	LJ-126-2	cost_co2	804
+	LJ-126-2	cost_nox	0
 	LJ-126-2	NJ-126-1F	-1
 	LJ-126-2	NJ-126-1T	1
-	LJ-165-2	cost_PMx	0
-	LJ-165-2	ttime	1
+	LJ-165-2	cost_co2	3005
+	LJ-165-2	cost_nox	1
 	LJ-165-2	NJ-165-2F	-1
 	LJ-165-2	NJ-165-1T	1
 RHS
