@@ -81,7 +81,7 @@ def read_arguments(default_args=None):
 
 @app.route('/api/scenarios', methods=['GET'])
 def scenarios():
-    return {"success": True, "scenarios": [h for h in testcases]}, 200
+    return {"success": True, "scenarios": [h for h in testcases], "pretty_names": []}, 200
 
 
 @app.route('/api/objectives', methods=['GET'])
@@ -91,7 +91,7 @@ def objectives():
 
 @app.route('/api/preload', methods=['GET'])
 def run_all():
-    print("Pre-calculating all simulations")
+    print("Pre-calculating all simula7tions")
     for scenario in testcases:
         print("Scenario: %s" % scenario)
         for m1 in metrics:
