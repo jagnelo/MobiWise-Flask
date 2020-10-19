@@ -146,7 +146,7 @@ def simulation_run_base(scenario, objective1, objective2):
     SUMOinout.SUMOToCSV_routes(netfile, roufile, obname, oroufile=broufile, dynamicVTypes=dynamicVTypes)
 
     # gera os ficheiros -tripinfo e o -emission (obter custos do SUMO)
-    mainaux.runSUMO(netfile, broufile, obname, guiversion=False)
+    mainaux.runSUMO(netfile, broufile, obname, guiversion=True)
 
     # gera os ficheiros CSV -tripinfo.csv, .edg.csv, nod.csv, -emission.csv e .edg-costs.csv
     SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
@@ -274,7 +274,7 @@ def simulation_run_optimized(scenario, objective1, objective2):
     sols = solsinfo[0]
 
     for i in range(len(sols)):
-        mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=False, comments=comments)
+        mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=True, comments=comments)
 
     data[key]["stage"] = 3
     write_pickle(data)
@@ -294,7 +294,7 @@ def simulation_run_optimized(scenario, objective1, objective2):
 
 
 @app.route('/api/<scenario>/<objective1>/<objective2>/view/<solution>', methods=['GET'])
-def simulation_view_base(scenario, objective1, objective2, solution):
+def simulation_view(scenario, objective1, objective2, solution):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
     tc = data[key]["tc"]

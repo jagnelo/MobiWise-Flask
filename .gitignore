@@ -1,6 +1,10 @@
 # PyCharm project
 src/.idea/
 
+snapshots/
+*.mp4
+results/
+
 # SUMO simulation stream
 src/output/
 

@@ -27,7 +27,7 @@ import time
                     ficheiro do trafego e com sufixo "-emission" e "-tripinfo"
 """
 def runSUMO(netfile, roufile, obname, guiversion=True):
-    sumocmd = "sumo-gui --gui-settings-file gui-settings.xml" if guiversion else "sumo"
+    sumocmd = "sumo-gui --gui-settings-file gui-settings-snapshot.xml" if guiversion else "sumo"
     
     cmd = sumocmd+" --net-file "+netfile+" --route-files "+roufile+" --tripinfo-output "+obname+"-tripinfo --device.emissions.probability 1.0 --emission-output.precision 6 --additional-files moreOutputInfo.xml --collision.action warn -S --quit-on-end --time-to-teleport -1"
 
