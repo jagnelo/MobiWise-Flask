@@ -25,21 +25,25 @@ COST_CO2 = "cost_co2"
 COST_PMX = "cost_PMx"
 COST_HC = "cost_hc"
 COST_NOX = "cost_nox"
-# COST_FUEL = "cost_fuel"     # esta opção não consta do código original da Andreia
-metrics = [TTIME, LENGTH, COST_CO, COST_CO2, COST_PMX, COST_HC, COST_NOX]   # , COST_FUEL]
+metrics = [TTIME, LENGTH, COST_CO, COST_CO2, COST_PMX, COST_HC, COST_NOX]
 
 TTIME_PRTY = "Time"
 LENGTH_PRTY = "Length"
-COST_CO_PRTY = "Cost CO"
-COST_CO2_PRTY = "Cost CO2"
-COST_PMX_PRTY = "Cost PMx"
-COST_HC_PRTY = "Cost HC"
-COST_NOX_PRTY = "Cost NOx"
-# COST_FUEL_PRTY = "Cost fuel"
-metrics_pretty = [TTIME_PRTY, LENGTH_PRTY, COST_CO_PRTY, COST_CO2_PRTY, COST_PMX_PRTY, COST_HC_PRTY, COST_NOX_PRTY]   # , COST_FUEL_PRTY]
+COST_CO_PRTY = "CO"
+COST_CO2_PRTY = "CO2"
+COST_PMX_PRTY = "PMx"
+COST_HC_PRTY = "HC"
+COST_NOX_PRTY = "NOx"
+metrics_pretty = [TTIME_PRTY, LENGTH_PRTY, COST_CO_PRTY, COST_CO2_PRTY, COST_PMX_PRTY, COST_HC_PRTY, COST_NOX_PRTY]
 
 
 PICKLE_NAME = "data.pkl"
+
+SNAPSHOTS_DIR = os.path.join("..", "snapshots")
+VIDEOS_DIR = os.path.join("..", "videos")
+
+
+FFMPEG_CMD = 'ffmpeg -framerate 30 -i "%s" -filter:v "crop=in_w/2:in_h:in_w/4:in_h " "%s.mp4"'
 
 
 def format_objective_names(objective1, objective2):
@@ -48,7 +52,27 @@ def format_objective_names(objective1, objective2):
 
 
 def format_db_entry_key(scenario, objective1, objective2):
-    return "%s:%s" % (scenario, format_objective_names(objective1, objective2))
+    return "%s.%s" % (scenario, format_objective_names(objective1, objective2))
+
+
+def format_video_name_base(scenario, objective1, objective2):
+    return "%s.base" % (format_db_entry_key(scenario, objective1, objective2))
+
+
+def format_video_name_sim(scenario, objective1, objective2, solution):
+    return "%s.sim%d" % (format_db_entry_key(scenario, objective1, objective2), solution)
+
+
+def get_video_cmd(video_name, video_type):
+    video_name_final = "%s.%s" % (video_name, video_type)
+    return FFMPEG_CMD % (os.path.join(SNAPSHOTS_DIR, "snapshot%d.png"), os.path.join(VIDEOS_DIR, video_name_final))
+
+
+def setup_directories():
+    if not os.path.exists(SNAPSHOTS_DIR):
+        os.mkdir(SNAPSHOTS_DIR)
+    if not os.path.exists(VIDEOS_DIR):
+        os.mkdir(VIDEOS_DIR)
 
 
 # duplicate from ecorouting.main-interactive.setupRecords
@@ -91,7 +115,7 @@ def objectives():
 
 @app.route('/api/preload', methods=['GET'])
 def run_all():
-    print("Pre-calculating all simula7tions")
+    print("Pre-calculating all simulations")
     for scenario in testcases:
         print("Scenario: %s" % scenario)
         for m1 in metrics:
@@ -101,6 +125,7 @@ def run_all():
                     simulation_run_base(scenario, m1, m2)
                     optimization_calc_solutions(scenario, m1, m2)
                     simulation_run_optimized(scenario, m1, m2)
+                    return {"success": True}, 200
 
     return {"success": True}, 200
 
@@ -145,6 +170,8 @@ def simulation_run_base(scenario, objective1, objective2):
     broufile = obname + "-base" + ".rou.xml"
     SUMOinout.SUMOToCSV_routes(netfile, roufile, obname, oroufile=broufile, dynamicVTypes=dynamicVTypes)
 
+    setup_directories()
+
     # gera os ficheiros -tripinfo e o -emission (obter custos do SUMO)
     mainaux.runSUMO(netfile, broufile, obname, guiversion=True)
 
@@ -153,6 +180,10 @@ def simulation_run_base(scenario, objective1, objective2):
 
     data[key] = {"args": args, "tc": tc, "stage": 1}
     write_pickle(data)
+
+    video_name = format_video_name_base(scenario, objective1, objective2)
+    os.system(get_video_cmd(video_name, "base"))
+    clear_snapshots()
 
     return {
                "success": True,
@@ -273,8 +304,13 @@ def simulation_run_optimized(scenario, objective1, objective2):
 
     sols = solsinfo[0]
 
+    setup_directories()
+
     for i in range(len(sols)):
         mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=True, comments=comments)
+        video_name = format_video_name_sim(scenario, objective1, objective2, i)
+        os.system(get_video_cmd(video_name, "sim"))
+        clear_snapshots()
 
     data[key]["stage"] = 3
     write_pickle(data)
@@ -387,6 +423,11 @@ def read_pickle():
     return data
 
 
+def clear_snapshots():
+    for file in os.listdir(SNAPSHOTS_DIR):
+        os.remove(os.path.join(SNAPSHOTS_DIR, file))
+
+
 @app.route('/api/heatmap/base', methods=['GET'])
 def heatmap_base_simulation():
     return send_file("base_heatmap.jpg", mimetype='image/jpeg')
@@ -395,6 +436,18 @@ def heatmap_base_simulation():
 @app.route('/api/heatmap/optimized', methods=['GET'])
 def heatmap_optimized_simulation():
     return send_file("sim_heatmap.jpg", mimetype='image/jpeg')
+
+
+@app.route('/api/<scenario>/<objective1>/<objective2>/base/view/', methods=['GET'])
+def video_base_simulation(scenario, objective1, objective2):
+    video_name = format_video_name_base(scenario, objective1, objective2)
+    return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype='video/mp4')
+
+
+@app.route('/api/<scenario>/<objective1>/<objective2>/optimized/view/<solution>', methods=['GET'])
+def video_optimized_simulation(scenario, objective1, objective2, solution):
+    video_name = format_video_name_sim(scenario, objective1, objective2, int(solution))
+    return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype='video/mp4')
 
 
 if __name__ == '__main__':
