@@ -43,7 +43,7 @@ SNAPSHOTS_DIR = os.path.join("..", "snapshots")
 VIDEOS_DIR = os.path.join("..", "videos")
 
 
-FFMPEG_CMD = 'ffmpeg -framerate 30 -i "%s" -filter:v "crop=in_w/2:in_h:in_w/4:in_h " "%s.mp4"'
+FFMPEG_CMD = 'ffmpeg -framerate 30 -i "%s" -filter:v "crop=in_w/2:in_h:in_w/4:in_h" -pix_fmt yuv420p "%s.mp4"'
 
 
 def format_objective_names(objective1, objective2):
@@ -63,9 +63,8 @@ def format_video_name_sim(scenario, objective1, objective2, solution):
     return "%s.sim%d" % (format_db_entry_key(scenario, objective1, objective2), solution)
 
 
-def get_video_cmd(video_name, video_type):
-    video_name_final = "%s.%s" % (video_name, video_type)
-    return FFMPEG_CMD % (os.path.join(SNAPSHOTS_DIR, "snapshot%d.png"), os.path.join(VIDEOS_DIR, video_name_final))
+def get_video_cmd(video_name):
+    return FFMPEG_CMD % (os.path.join(SNAPSHOTS_DIR, "snapshot%d.png"), os.path.join(VIDEOS_DIR, video_name))
 
 
 def setup_directories():
@@ -125,7 +124,6 @@ def run_all():
                     simulation_run_base(scenario, m1, m2)
                     optimization_calc_solutions(scenario, m1, m2)
                     simulation_run_optimized(scenario, m1, m2)
-                    return {"success": True}, 200
 
     return {"success": True}, 200
 
@@ -173,7 +171,7 @@ def simulation_run_base(scenario, objective1, objective2):
     setup_directories()
 
     # gera os ficheiros -tripinfo e o -emission (obter custos do SUMO)
-    mainaux.runSUMO(netfile, broufile, obname, guiversion=True)
+    mainaux.runSUMO(netfile, broufile, obname, guiversion=False)    # True)
 
     # gera os ficheiros CSV -tripinfo.csv, .edg.csv, nod.csv, -emission.csv e .edg-costs.csv
     SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
@@ -181,9 +179,9 @@ def simulation_run_base(scenario, objective1, objective2):
     data[key] = {"args": args, "tc": tc, "stage": 1}
     write_pickle(data)
 
-    video_name = format_video_name_base(scenario, objective1, objective2)
-    os.system(get_video_cmd(video_name, "base"))
-    clear_snapshots()
+    # video_name = format_video_name_base(scenario, objective1, objective2)
+    # os.system(get_video_cmd(video_name))
+    # clear_snapshots()
 
     return {
                "success": True,
@@ -307,10 +305,10 @@ def simulation_run_optimized(scenario, objective1, objective2):
     setup_directories()
 
     for i in range(len(sols)):
-        mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=True, comments=comments)
-        video_name = format_video_name_sim(scenario, objective1, objective2, i)
-        os.system(get_video_cmd(video_name, "sim"))
-        clear_snapshots()
+        mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=False, comments=comments) # True)
+        # video_name = format_video_name_sim(scenario, objective1, objective2, i)
+        # os.system(get_video_cmd(video_name))
+        # clear_snapshots()
 
     data[key]["stage"] = 3
     write_pickle(data)
