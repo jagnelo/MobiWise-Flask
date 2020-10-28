@@ -128,7 +128,7 @@ def run_all():
     return {"success": True}, 200
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/simulate/base', methods=['GET'])
+@app.route('/api/<scenario>/<objective1>/<objective2>/base/simulate', methods=['GET'])
 def simulation_run_base(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
@@ -193,7 +193,7 @@ def simulation_run_base(scenario, objective1, objective2):
            }, 200
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/optimize', methods=['GET'])
+@app.route('/api/<scenario>/<objective1>/<objective2>/base/optimize', methods=['GET'])
 def optimization_calc_solutions(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
@@ -264,7 +264,7 @@ def optimization_calc_solutions(scenario, objective1, objective2):
            }, 200
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/simulate/optimized', methods=['GET'])
+@app.route('/api/<scenario>/<objective1>/<objective2>/optimized/simulate', methods=['GET'])
 def simulation_run_optimized(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
@@ -346,10 +346,10 @@ def simulation_view(scenario, objective1, objective2, solution):
                                                 "--emission-output.precision 6 " \
                                                 "--additional-files moreOutputInfo.xml " \
                                                 "--collision.action warn " \
-                                                "-S " \
-                                                "--quit-on-end " \
-                                                "--time-to-teleport -1 " \
-                                                "-G"
+                                                "--time-to-teleport -1 "    # \
+                                                # "--quit-on-end " \
+                                                # "-S " \
+                                                # "-G"
 
     fcostWeights = data[key]["fcostWeights"]
     fcostLabels = data[key]["fcostLabels"]
@@ -378,10 +378,10 @@ def simulation_view(scenario, objective1, objective2, solution):
                                                      "--emission-output.precision 6 " \
                                                      "--additional-files moreOutputInfo.xml " \
                                                      "--collision.action warn " \
-                                                     "-S " \
-                                                     "--quit-on-end " \
-                                                     "--time-to-teleport -1 " \
-                                                     "-G"
+                                                     "--time-to-teleport -1 "   # \
+                                                     # "--quit-on-end " \
+                                                     # "-S " \
+                                                     # "-G"
 
     os.system(cmd_base + " & " + cmd_optimized + " & wait")
 
@@ -426,23 +426,23 @@ def clear_snapshots():
         os.remove(os.path.join(SNAPSHOTS_DIR, file))
 
 
-@app.route('/api/heatmap/base', methods=['GET'])
-def heatmap_base_simulation():
+@app.route('/api/<scenario>/<objective1>/<objective2>/base/heatmap/', methods=['GET'])
+def heatmap_base_simulation(scenario, objective1, objective2):
     return send_file("base_heatmap.jpg", mimetype='image/jpeg')
 
 
-@app.route('/api/heatmap/optimized', methods=['GET'])
-def heatmap_optimized_simulation():
+@app.route('/api/<scenario>/<objective1>/<objective2>/optimized/heatmap/<solution>', methods=['GET'])
+def heatmap_optimized_simulation(scenario, objective1, objective2, solution):
     return send_file("sim_heatmap.jpg", mimetype='image/jpeg')
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/base/view/', methods=['GET'])
+@app.route('/api/<scenario>/<objective1>/<objective2>/base/video/', methods=['GET'])
 def video_base_simulation(scenario, objective1, objective2):
     video_name = format_video_name_base(scenario, objective1, objective2)
     return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype='video/mp4')
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/optimized/view/<solution>', methods=['GET'])
+@app.route('/api/<scenario>/<objective1>/<objective2>/optimized/video/<solution>', methods=['GET'])
 def video_optimized_simulation(scenario, objective1, objective2, solution):
     video_name = format_video_name_sim(scenario, objective1, objective2, int(solution))
     return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype='video/mp4')
