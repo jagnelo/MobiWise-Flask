@@ -171,7 +171,7 @@ def simulation_run_base(scenario, objective1, objective2):
     setup_directories()
 
     # gera os ficheiros -tripinfo e o -emission (obter custos do SUMO)
-    mainaux.runSUMO(netfile, broufile, obname, guiversion=False)    # True)
+    mainaux.runSUMO(netfile, broufile, obname, guiversion=False)
 
     # gera os ficheiros CSV -tripinfo.csv, .edg.csv, nod.csv, -emission.csv e .edg-costs.csv
     SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
@@ -305,7 +305,7 @@ def simulation_run_optimized(scenario, objective1, objective2):
     setup_directories()
 
     for i in range(len(sols)):
-        mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=False, comments=comments) # True)
+        mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=False, comments=comments)
         # video_name = format_video_name_sim(scenario, objective1, objective2, i)
         # os.system(get_video_cmd(video_name))
         # clear_snapshots()
