@@ -41,6 +41,7 @@ PICKLE_NAME = "data.pkl"
 
 SNAPSHOTS_DIR = os.path.join("..", "snapshots")
 VIDEOS_DIR = os.path.join("..", "videos")
+HEATMAPS_DIR = os.path.join("..", "heatmaps")
 
 
 FFMPEG_CMD = 'ffmpeg -framerate 30 -i "%s" -filter:v "crop=in_w/2:in_h:in_w/4:in_h" -pix_fmt yuv420p "%s.mp4"'
