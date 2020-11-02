@@ -10,39 +10,33 @@ from flask import Flask, send_file
 from flask_cors import CORS
 from dotenv import load_dotenv, find_dotenv
 
-
 load_dotenv(find_dotenv())
 
 app = Flask(__name__)
 
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
+METRICS = {
+    "ttime": {"unit": "s", "pretty": "Time"},
+    "length": {"unit": "km", "pretty": "Length"},
+    "cost_co": {"unit": "g", "pretty": "CO"},
+    "cost_co2": {"unit": "g", "pretty": "CO2"},
+    "cost_PMx": {"unit": "g", "pretty": "PMx"},
+    "cost_hc": {"unit": "g", "pretty": "HC"},
+    "cost_nox": {"unit": "g", "pretty": "NOx"}
+}
 
-TTIME = "ttime"
-LENGTH = "length"
-COST_CO = "cost_co"
-COST_CO2 = "cost_co2"
-COST_PMX = "cost_PMx"
-COST_HC = "cost_hc"
-COST_NOX = "cost_nox"
-metrics = [TTIME, LENGTH, COST_CO, COST_CO2, COST_PMX, COST_HC, COST_NOX]
-
-TTIME_PRTY = "Time"
-LENGTH_PRTY = "Length"
-COST_CO_PRTY = "CO"
-COST_CO2_PRTY = "CO2"
-COST_PMX_PRTY = "PMx"
-COST_HC_PRTY = "HC"
-COST_NOX_PRTY = "NOx"
-metrics_pretty = [TTIME_PRTY, LENGTH_PRTY, COST_CO_PRTY, COST_CO2_PRTY, COST_PMX_PRTY, COST_HC_PRTY, COST_NOX_PRTY]
-
+SCENARIOS = {
+    "ang-est": {"pretty": "Angeja - Estarreja"},
+    "portoSB_8AM9AM_fewerv": {"pretty": "Porto 8AM-9AM São Bento (fewer dynamic vehicles)"},
+    "portoSB_8AM9AM": {"pretty": "Porto 8AM-9AM São Bento"}
+}
 
 PICKLE_NAME = "data.pkl"
 
 SNAPSHOTS_DIR = os.path.join("..", "snapshots")
 VIDEOS_DIR = os.path.join("..", "videos")
 HEATMAPS_DIR = os.path.join("..", "heatmaps")
-
 
 FFMPEG_CMD = 'ffmpeg -framerate 30 -i "%s" -filter:v "crop=in_w/2:in_h:in_w/4:in_h" -pix_fmt yuv420p "%s.mp4"'
 
@@ -88,15 +82,16 @@ def read_arguments(default_args=None):
     tcnames = testcases.keys()
 
     parser = argparse.ArgumentParser(description='EcoRouting.')
-    parser.add_argument('--mode', type=int, choices=[1 ,2 ,3], default=1,
+    parser.add_argument('--mode', type=int, choices=[1, 2, 3], default=1,
                         help='choose mode: 1) run base case; 2) optimize and simulate solutions - interactive mode; 3) optimize and simulate all solutions')
     parser.add_argument("-t", type=str, choices=tcnames, default="ang-est")
-    parser.add_argument("--obj1", type=str, choices=metrics, default="ttime", help="Objective 1")
-    parser.add_argument("--obj2", type=str, choices=metrics, default="length", help="Objective 2")
+    parser.add_argument("--obj1", type=str, choices=[h for h in METRICS], default="ttime", help="Objective 1")
+    parser.add_argument("--obj2", type=str, choices=[h for h in METRICS], default="length", help="Objective 2")
     parser.add_argument("--w1", type=int, default=1, help="Weight 1")
     parser.add_argument("--w2", type=int, default=1, help="Weight 2")
     parser.add_argument("--gui", default=False, action="store_true", help="Run the graphical version of SUMO")
-    parser.add_argument("--plot", default=False, action="store_true", help="Plot the (Pareto-)optimal solutions. Available only for mode 3")
+    parser.add_argument("--plot", default=False, action="store_true",
+                        help="Plot the (Pareto-)optimal solutions. Available only for mode 3")
 
     args = parser.parse_args(default_args) if default_args is not None else parser.parse_args()
 
@@ -105,12 +100,21 @@ def read_arguments(default_args=None):
 
 @app.route('/api/scenarios', methods=['GET'])
 def scenarios():
-    return {"success": True, "scenarios": [h for h in testcases], "pretty_names": []}, 200
+    return {
+               "success": True,
+               "scenarios": [h for h in testcases],
+               "pretty_names": [SCENARIOS[h]["pretty"] for h in testcases]
+           }, 200
 
 
 @app.route('/api/objectives', methods=['GET'])
 def objectives():
-    return {"success": True, "objectives": metrics, "pretty_names": metrics_pretty}, 200
+    return {
+               "success": True,
+               "objectives": [h for h in METRICS],
+               "pretty_names": [METRICS[h]["pretty"] for h in METRICS],
+               "units": [METRICS[h]["unit"] for h in METRICS]
+           }, 200
 
 
 @app.route('/api/preload', methods=['GET'])
@@ -118,8 +122,8 @@ def run_all():
     print("Pre-calculating all simulations")
     for scenario in testcases:
         print("Scenario: %s" % scenario)
-        for m1 in metrics:
-            for m2 in metrics:
+        for m1 in [h for h in METRICS]:
+            for m2 in [h for h in METRICS]:
                 if m1 != m2:
                     print("Objectives: %s - %s" % (m1, m2))
                     simulation_run_base(scenario, m1, m2)
@@ -141,7 +145,8 @@ def simulation_run_base(scenario, objective1, objective2):
 
     # if the data created by this step already exists, return immediately rather than re-running
     if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 1:
-        if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
+        if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(
+                os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
             return {
                        "success": True,
                        "data":
@@ -203,17 +208,20 @@ def optimization_calc_solutions(scenario, objective1, objective2):
 
     # if the data created by this step already exists, return immediately rather than re-running
     if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 2:
-        if "fcostLabels" in data[key] and "fcostWeights" in data[key] and "commoninfo" in data[key] and "solsinfo" in data[key]:
-            if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
-                if os.path.exists(os.path.join(data[key]["tc"]["ofolder"], format_objective_names(objective1, objective2))):
+        if "fcostLabels" in data[key] and "fcostWeights" in data[key] and "commoninfo" in data[key] and "solsinfo" in \
+                data[key]:
+            if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(
+                    os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
+                if os.path.exists(
+                        os.path.join(data[key]["tc"]["ofolder"], format_objective_names(objective1, objective2))):
                     base_file = os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "base.eval")
                     pred_file = os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "pred.eval")
                     if os.path.exists(base_file) and os.path.exists(pred_file):
                         base = read_eval_file(base_file)
-                        base = {h: base[h] for h in base if h in metrics}
+                        base = {h: base[h] for h in base if h in [h for h in METRICS]}
 
                         pred = read_eval_file(pred_file)
-                        pred = {h: pred[h] for h in pred if h in metrics}
+                        pred = {h: pred[h] for h in pred if h in [h for h in METRICS]}
 
                         return {
                                    "success": True,
@@ -221,8 +229,8 @@ def optimization_calc_solutions(scenario, objective1, objective2):
                                        {
                                            "objective1": objective1,
                                            "objective2": objective2,
-                                           "base": {"num_sols": len(base[metrics[0]]), **base},
-                                           "pred": {"num_sols": len(pred[metrics[0]]), **pred}
+                                           "base": {"num_sols": len(base["ttime"]), **base},
+                                           "pred": {"num_sols": len(pred["ttime"]), **pred}
                                        }
                                }, 200
 
@@ -248,10 +256,10 @@ def optimization_calc_solutions(scenario, objective1, objective2):
     write_pickle(data)
 
     base = read_eval_file(os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "base.eval"))
-    base = {h: base[h] for h in base if h in metrics}
+    base = {h: base[h] for h in base if h in [h for h in METRICS]}
 
     pred = read_eval_file(os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "pred.eval"))
-    pred = {h: pred[h] for h in pred if h in metrics}
+    pred = {h: pred[h] for h in pred if h in [h for h in METRICS]}
 
     return {
                "success": True,
@@ -259,8 +267,8 @@ def optimization_calc_solutions(scenario, objective1, objective2):
                    {
                        "objective1": objective1,
                        "objective2": objective2,
-                       "base": {"num_sols": len(base[metrics[0]]), **base},
-                       "pred": {"num_sols": len(pred[metrics[0]]), **pred}
+                       "base": {"num_sols": len(base["ttime"]), **base},
+                       "pred": {"num_sols": len(pred["ttime"]), **pred}
                    }
            }, 200
 
@@ -277,13 +285,16 @@ def simulation_run_optimized(scenario, objective1, objective2):
 
     # if the data created by this step already exists, return immediately rather than re-running
     if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 3:
-        if "fcostLabels" in data[key] and "fcostWeights" in data[key] and "commoninfo" in data[key] and "solsinfo" in data[key]:
-            if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
-                if os.path.exists(os.path.join(data[key]["tc"]["ofolder"], format_objective_names(objective1, objective2))):
+        if "fcostLabels" in data[key] and "fcostWeights" in data[key] and "commoninfo" in data[key] and "solsinfo" in \
+                data[key]:
+            if os.path.exists(data[key]["tc"]["ofolder"]) and os.path.exists(
+                    os.path.join(data[key]["tc"]["ofolder"], "inputdata")):
+                if os.path.exists(
+                        os.path.join(data[key]["tc"]["ofolder"], format_objective_names(objective1, objective2))):
                     sim_file = os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "sim.eval")
                     if os.path.exists(sim_file):
                         sim = read_eval_file(sim_file)
-                        sim = {h: sim[h] for h in sim if h in metrics}
+                        sim = {h: sim[h] for h in sim if h in [h for h in METRICS]}
 
                         return {
                                    "success": True,
@@ -291,7 +302,7 @@ def simulation_run_optimized(scenario, objective1, objective2):
                                        {
                                            "objective1": objective1,
                                            "objective2": objective2,
-                                           "sim": {"num_sols": len(sim[metrics[0]]), **sim}
+                                           "sim": {"num_sols": len(sim["ttime"]), **sim}
                                        }
                                }, 200
 
@@ -315,7 +326,7 @@ def simulation_run_optimized(scenario, objective1, objective2):
     write_pickle(data)
 
     sim = read_eval_file(os.path.join(tc["ofolder"], format_objective_names(objective1, objective2), "sim.eval"))
-    sim = {h: sim[h] for h in sim if h in metrics}
+    sim = {h: sim[h] for h in sim if h in [h for h in METRICS]}
 
     return {
                "success": True,
@@ -323,7 +334,7 @@ def simulation_run_optimized(scenario, objective1, objective2):
                    {
                        "objective1": objective1,
                        "objective2": objective2,
-                       "sim": {"num_sols": len(sim[metrics[0]]), **sim}
+                       "sim": {"num_sols": len(sim["ttime"]), **sim}
                    }
            }, 200
 
@@ -342,15 +353,17 @@ def simulation_view(scenario, objective1, objective2, solution):
 
     sumocmd = "sumo-gui --gui-settings-file gui-settings.xml"
 
-    cmd_base = "DISPLAY=:1 " + sumocmd + " --net-file " + netfile + " --route-files " + roufile +\
+    cmd_base = "DISPLAY=:1 " + sumocmd + " --net-file " + netfile + " --route-files " + roufile + \
                " --tripinfo-output " + obname + "-tripinfo --device.emissions.probability 1.0 " \
                                                 "--emission-output.precision 6 " \
                                                 "--additional-files moreOutputInfo.xml " \
                                                 "--collision.action warn " \
-                                                "--time-to-teleport -1 "    # \
-                                                # "--quit-on-end " \
-                                                # "-S " \
-                                                # "-G"
+                                                "--time-to-teleport -1 " \
+                                                "--window-size 800,600 " \
+                                                "--window-pos 0,0"  # \
+# "--quit-on-end " \
+    # "-S " \
+    # "-G"
 
     fcostWeights = data[key]["fcostWeights"]
     fcostLabels = data[key]["fcostLabels"]
@@ -374,15 +387,17 @@ def simulation_view(scenario, objective1, objective2, solution):
 
     SUMOinout.printSUMORoutes(routes, vehicles, roufile, sroutes=sroutes, svehicles=svehicles, comments=comments)
 
-    cmd_optimized = "DISPLAY=:2 " + sumocmd + " --net-file " + netfile + " --route-files " + roufile +\
+    cmd_optimized = "DISPLAY=:2 " + sumocmd + " --net-file " + netfile + " --route-files " + roufile + \
                     " --tripinfo-output " + obname + "-tripinfo --device.emissions.probability 1.0 " \
                                                      "--emission-output.precision 6 " \
                                                      "--additional-files moreOutputInfo.xml " \
                                                      "--collision.action warn " \
-                                                     "--time-to-teleport -1 "   # \
-                                                     # "--quit-on-end " \
-                                                     # "-S " \
-                                                     # "-G"
+                                                     "--time-to-teleport -1 " \
+                                                     "--window-size 800,600 " \
+                                                     "--window-pos 0,0"  # \
+    # "--quit-on-end " \
+    # "-S " \
+    # "-G"
 
     os.system(cmd_base + " & " + cmd_optimized + " & wait")
 
