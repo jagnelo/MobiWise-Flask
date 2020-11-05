@@ -50,11 +50,11 @@ def format_db_entry_key(scenario, objective1, objective2):
     return "%s.%s" % (scenario, format_objective_names(objective1, objective2))
 
 
-def format_video_name_base(scenario, objective1, objective2):
+def format_file_name_base(scenario, objective1, objective2):
     return "%s.base" % (format_db_entry_key(scenario, objective1, objective2))
 
 
-def format_video_name_sim(scenario, objective1, objective2, solution):
+def format_file_name_sim(scenario, objective1, objective2, solution):
     return "%s.sim%d" % (format_db_entry_key(scenario, objective1, objective2), solution)
 
 
@@ -81,9 +81,9 @@ def setup_records(tc):
 def read_arguments(default_args=None):
     tcnames = testcases.keys()
 
-    parser = argparse.ArgumentParser(description='EcoRouting.')
-    parser.add_argument('--mode', type=int, choices=[1, 2, 3], default=1,
-                        help='choose mode: 1) run base case; 2) optimize and simulate solutions - interactive mode; 3) optimize and simulate all solutions')
+    parser = argparse.ArgumentParser(description="EcoRouting.")
+    parser.add_argument("--mode", type=int, choices=[1, 2, 3], default=1,
+                        help="choose mode: 1) run base case; 2) optimize and simulate solutions - interactive mode; 3) optimize and simulate all solutions")
     parser.add_argument("-t", type=str, choices=tcnames, default="ang-est")
     parser.add_argument("--obj1", type=str, choices=[h for h in METRICS], default="ttime", help="Objective 1")
     parser.add_argument("--obj2", type=str, choices=[h for h in METRICS], default="length", help="Objective 2")
@@ -98,7 +98,7 @@ def read_arguments(default_args=None):
     return args
 
 
-@app.route('/api/scenarios', methods=['GET'])
+@app.route("/api/scenarios", methods=["GET"])
 def scenarios():
     return {
                "success": True,
@@ -107,7 +107,7 @@ def scenarios():
            }, 200
 
 
-@app.route('/api/objectives', methods=['GET'])
+@app.route("/api/objectives", methods=["GET"])
 def objectives():
     return {
                "success": True,
@@ -117,7 +117,7 @@ def objectives():
            }, 200
 
 
-@app.route('/api/preload', methods=['GET'])
+@app.route("/api/preload", methods=["GET"])
 def run_all():
     print("Pre-calculating all simulations")
     for scenario in testcases:
@@ -133,7 +133,7 @@ def run_all():
     return {"success": True}, 200
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/base/simulate', methods=['GET'])
+@app.route("/api/<scenario>/<objective1>/<objective2>/base/simulate", methods=["GET"])
 def simulation_run_base(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
@@ -161,7 +161,7 @@ def simulation_run_base(scenario, objective1, objective2):
     # gera os ficheiros -routes.dat, -source-destiny.in, -demand.in, -sdemand.in (trafego estatico e dinamico)
     # e o -base.rou.xml (versao base usada que garante que os veiculos
     # sao do mesmo tipo que os usados na experiencia)
-    # Nota: E' nesta funcao que se define que veiculos devem ser considerados estaticos (ou dinamicos)
+    # Nota: E" nesta funcao que se define que veiculos devem ser considerados estaticos (ou dinamicos)
 
     ifolder = tc["ifolder"]  # input folder
     ofolder = tc["ofolder"] + "/inputdata"  # output folder
@@ -199,7 +199,7 @@ def simulation_run_base(scenario, objective1, objective2):
            }, 200
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/base/optimize', methods=['GET'])
+@app.route("/api/<scenario>/<objective1>/<objective2>/base/optimize", methods=["GET"])
 def optimization_calc_solutions(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
@@ -273,7 +273,7 @@ def optimization_calc_solutions(scenario, objective1, objective2):
            }, 200
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/optimized/simulate', methods=['GET'])
+@app.route("/api/<scenario>/<objective1>/<objective2>/optimized/simulate", methods=["GET"])
 def simulation_run_optimized(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
@@ -339,7 +339,7 @@ def simulation_run_optimized(scenario, objective1, objective2):
            }, 200
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/view/<solution>', methods=['GET'])
+@app.route("/api/<scenario>/<objective1>/<objective2>/view/<solution>", methods=["GET"])
 def simulation_view(scenario, objective1, objective2, solution):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
@@ -442,27 +442,31 @@ def clear_snapshots():
         os.remove(os.path.join(SNAPSHOTS_DIR, file))
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/base/heatmap/', methods=['GET'])
+@app.route("/api/<scenario>/<objective1>/<objective2>/base/heatmap/", methods=["GET"])
 def heatmap_base_simulation(scenario, objective1, objective2):
-    return send_file("base_heatmap.jpg", mimetype='image/jpeg')
+    # image_name = format_file_name_base(scenario, objective1, objective2)
+    image_name = "base_heatmap"
+    return send_file(os.path.join(HEATMAPS_DIR, "%s.jpg" % image_name), mimetype="image/jpeg")
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/optimized/heatmap/<solution>', methods=['GET'])
+@app.route("/api/<scenario>/<objective1>/<objective2>/optimized/heatmap/<solution>", methods=["GET"])
 def heatmap_optimized_simulation(scenario, objective1, objective2, solution):
-    return send_file("sim_heatmap.jpg", mimetype='image/jpeg')
+    # image_name = format_file_name_sim(scenario, objective1, objective2, int(solution))
+    image_name = "sim_heatmap"
+    return send_file(os.path.join(HEATMAPS_DIR, "%s.jpg" % image_name), mimetype="image/jpeg")
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/base/video/', methods=['GET'])
+@app.route("/api/<scenario>/<objective1>/<objective2>/base/video/", methods=["GET"])
 def video_base_simulation(scenario, objective1, objective2):
-    video_name = format_video_name_base(scenario, objective1, objective2)
-    return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype='video/mp4')
+    video_name = format_file_name_base(scenario, objective1, objective2)
+    return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype="video/mp4")
 
 
-@app.route('/api/<scenario>/<objective1>/<objective2>/optimized/video/<solution>', methods=['GET'])
+@app.route("/api/<scenario>/<objective1>/<objective2>/optimized/video/<solution>", methods=["GET"])
 def video_optimized_simulation(scenario, objective1, objective2, solution):
-    video_name = format_video_name_sim(scenario, objective1, objective2, int(solution))
-    return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype='video/mp4')
+    video_name = format_file_name_sim(scenario, objective1, objective2, int(solution))
+    return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype="video/mp4")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(port=8001)
