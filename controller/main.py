@@ -5,7 +5,6 @@ import numpy as np
 import mainaux
 import SUMOinout
 from ecorouting.testcases import testcases
-import pickle
 from flask import Flask, send_file
 from flask_cors import CORS
 from dotenv import load_dotenv, find_dotenv
@@ -25,14 +24,6 @@ METRICS = {
     "cost_hc": {"unit": "g", "pretty": "HC"},
     "cost_nox": {"unit": "g", "pretty": "NOx"}
 }
-
-SCENARIOS = {
-    "ang-est": {"pretty": "Angeja - Estarreja"},
-    "portoSB_8AM9AM_fewerv": {"pretty": "Porto 8AM-9AM São Bento (fewer dynamic vehicles)"},
-    "portoSB_8AM9AM": {"pretty": "Porto 8AM-9AM São Bento"}
-}
-
-PICKLE_NAME = "data.pkl"
 
 SNAPSHOTS_DIR = os.path.join("..", "snapshots")
 VIDEOS_DIR = os.path.join("..", "videos")
@@ -62,11 +53,9 @@ def get_video_cmd(video_name):
     return FFMPEG_CMD % (os.path.join(SNAPSHOTS_DIR, "snapshot%d.png"), os.path.join(VIDEOS_DIR, video_name))
 
 
-def setup_directories():
+def setup_snapshots_dir():
     if not os.path.exists(SNAPSHOTS_DIR):
         os.mkdir(SNAPSHOTS_DIR)
-    if not os.path.exists(VIDEOS_DIR):
-        os.mkdir(VIDEOS_DIR)
 
 
 # duplicate from ecorouting.main-interactive.setupRecords
@@ -103,7 +92,7 @@ def scenarios():
     return {
                "success": True,
                "scenarios": [h for h in testcases],
-               "pretty_names": [SCENARIOS[h]["pretty"] for h in testcases]
+               "pretty_names": [testcases[h]["prettyName"] for h in testcases]
            }, 200
 
 
@@ -126,9 +115,52 @@ def run_all():
             for m2 in [h for h in METRICS]:
                 if m1 != m2:
                     print("Objectives: %s - %s" % (m1, m2))
-                    simulation_run_base(scenario, m1, m2)
-                    optimization_calc_solutions(scenario, m1, m2)
-                    simulation_run_optimized(scenario, m1, m2)
+
+                    args = ["-t", scenario, "--obj1", m1, "--obj2", m2]
+
+                    args = read_arguments(args)
+                    tc = testcases[args.t]
+
+                    setup_records(tc)
+
+                    ifolder = tc["ifolder"]
+                    ofolder = tc["ofolder"] + "/inputdata"
+                    netfile = ifolder + "/" + tc["netfile"]
+                    roufile = ifolder + "/" + tc["roufile"]
+                    obname = ofolder + "/" + tc["bname"]
+                    dynamicVTypes = tc["dynamicTypes"]
+
+                    if os.path.exists(tc["ofolder"] + "/" + format_objective_names(m1, m2)):
+                        continue
+
+                    broufile = obname + "-base" + ".rou.xml"
+                    SUMOinout.SUMOToCSV_routes(netfile, roufile, obname, oroufile=broufile, dynamicVTypes=dynamicVTypes)
+
+                    mainaux.runSUMO(netfile, broufile, obname, guiversion=False)
+
+                    SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
+
+                    fcostLabels = np.array([args.obj1, args.obj2])
+                    fcostWeights = np.array([args.w1, args.w2])
+
+                    ix = np.argsort(fcostLabels)
+                    fcostLabels, fcostWeights = fcostLabels[ix], fcostWeights[ix]
+
+                    ibname = tc["ofolder"] + "/inputdata/" + tc["bname"]
+                    ofolder = tc["ofolder"]
+                    onlyExtremalSols = tc["onlyExtremalSols"]
+
+                    commoninfo, solsinfo = mainaux.getSolutions(ibname, ofolder, fcostWeights, fcostLabels,
+                                                                dynamicVTypes, onlyExtremalSols)
+
+                    comments = "objective functions: (" + ", ".join(
+                        map(lambda a: (str(a[0]) + "*" + str(a[1])), zip(fcostWeights, fcostLabels))) + ")"
+
+                    sols = solsinfo[0]
+
+                    for i in range(len(sols)):
+                        mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=False,
+                                            comments=comments)
 
     return {"success": True}, 200
 
@@ -174,7 +206,7 @@ def simulation_run_base(scenario, objective1, objective2):
     broufile = obname + "-base" + ".rou.xml"
     SUMOinout.SUMOToCSV_routes(netfile, roufile, obname, oroufile=broufile, dynamicVTypes=dynamicVTypes)
 
-    setup_directories()
+    # setup_snapshots_dir()
 
     # gera os ficheiros -tripinfo e o -emission (obter custos do SUMO)
     mainaux.runSUMO(netfile, broufile, obname, guiversion=False)
@@ -182,7 +214,11 @@ def simulation_run_base(scenario, objective1, objective2):
     # gera os ficheiros CSV -tripinfo.csv, .edg.csv, nod.csv, -emission.csv e .edg-costs.csv
     SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
 
-    data[key] = {"args": args, "tc": tc, "stage": 1}
+    data[key] = {
+        # "args": args,
+        # "tc": tc,
+        "stage": 1
+    }
     write_pickle(data)
 
     # video_name = format_video_name_base(scenario, objective1, objective2)
@@ -203,8 +239,8 @@ def simulation_run_base(scenario, objective1, objective2):
 def optimization_calc_solutions(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
-    args = data[key]["args"]
-    tc = data[key]["tc"]
+    # args = data[key]["args"]
+    # tc = data[key]["tc"]
 
     # if the data created by this step already exists, return immediately rather than re-running
     if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 2:
@@ -248,10 +284,10 @@ def optimization_calc_solutions(scenario, objective1, objective2):
     commoninfo, solsinfo = mainaux.getSolutions(ibname, ofolder, fcostWeights, fcostLabels, dynamicTypes,
                                                 onlyExtremalSols)
 
-    data[key]["fcostLabels"] = fcostLabels
-    data[key]["fcostWeights"] = fcostWeights
-    data[key]["commoninfo"] = commoninfo
-    data[key]["solsinfo"] = solsinfo
+    # data[key]["fcostLabels"] = fcostLabels
+    # data[key]["fcostWeights"] = fcostWeights
+    # data[key]["commoninfo"] = commoninfo
+    # data[key]["solsinfo"] = solsinfo
     data[key]["stage"] = 2
     write_pickle(data)
 
@@ -277,11 +313,11 @@ def optimization_calc_solutions(scenario, objective1, objective2):
 def simulation_run_optimized(scenario, objective1, objective2):
     data = read_pickle()
     key = format_db_entry_key(scenario, objective1, objective2)
-    tc = data[key]["tc"]
-    fcostWeights = data[key]["fcostWeights"]
-    fcostLabels = data[key]["fcostLabels"]
-    commoninfo = data[key]["commoninfo"]
-    solsinfo = data[key]["solsinfo"]
+    # tc = data[key]["tc"]
+    # fcostWeights = data[key]["fcostWeights"]
+    # fcostLabels = data[key]["fcostLabels"]
+    # commoninfo = data[key]["commoninfo"]
+    # solsinfo = data[key]["solsinfo"]
 
     # if the data created by this step already exists, return immediately rather than re-running
     if key in data and "args" in data[key] and "tc" in data[key] and "stage" in data[key] and data[key]["stage"] >= 3:
@@ -314,7 +350,7 @@ def simulation_run_optimized(scenario, objective1, objective2):
 
     sols = solsinfo[0]
 
-    setup_directories()
+    # setup_snapshots_dir()
 
     for i in range(len(sols)):
         mainaux.runSolution(netfile, commoninfo, solsinfo, i, fcostLabels, guiversion=False, comments=comments)
@@ -420,21 +456,6 @@ def read_eval_file(file_name):
             ev[headers[j]].append(values[j])
 
     return ev
-
-
-def write_pickle(data):
-    f = open(PICKLE_NAME, "wb")
-    pickle.dump(data, f)
-    f.close()
-
-
-def read_pickle():
-    if not os.path.exists(PICKLE_NAME):
-        return {}
-    f = open(PICKLE_NAME, "rb")
-    data = pickle.load(f)
-    f.close()
-    return data
 
 
 def clear_snapshots():

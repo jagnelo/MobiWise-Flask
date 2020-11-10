@@ -1,0 +1,30 @@
+<configuration>
+
+<input>
+<net-file value="Porto.net.xml"/>
+<route-files value="Trips6AM7AM.rou.xml"/>
+<additional-files value="Additional_Files.add.xml"/>
+
+</input>
+
+<time>
+<begin value="0"/>
+<end value="3600"/>
+</time>
+
+<output>
+<write-license value="true"/>
+<fcd-output.geo value="true"/>
+<edgeData id="1" file="edges_traffic_data_6AM7AM_Routing_Boavista.xml"/>
+<edgeData id="2" type="harmonoise" freq="3600" file="edge_noise_data_6AM7AM_Routing_Boavista.xml"/>
+<summary value="porto_summary_data.xml"/>
+<vehroute-output value="porto_route_data.xml"/>
+
+</output>
+
+<processing>
+<time-to-teleport value="-1"/>
+</processing>
+
+</configuration>
+
