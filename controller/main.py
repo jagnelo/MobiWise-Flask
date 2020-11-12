@@ -391,11 +391,13 @@ def base_view(scenario, objective1, objective2):
     # "--time-to-teleport -1"
     # "--window-size 800,600"
     # "--window-pos 0,0"
+
+    tc = testcases[scenario]
     files = {
         "gui-settings": open("gui-settings.xml", "rb"),
         "additional-files": open("moreOutputInfo.xml", "rb"),
-        "net-file": open(netfile, "rb"),
-        "route-files": open(roufile, "rb")
+        "net-file": open(os.path.join(tc["ifolder"], tc["netfile"]), "rb"),
+        "route-files": open(os.path.join(tc["ofolder"], "inputdata", tc["bname"]) + "-base.rou.xml", "rb")
     }
 
     r = requests.post("http://localhost:8002/api/", files=files)
