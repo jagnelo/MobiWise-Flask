@@ -2,6 +2,7 @@ import argparse
 import os
 import numpy as np
 
+import requests
 import mainaux
 import SUMOinout
 from ecorouting.testcases import testcases
@@ -111,6 +112,27 @@ def run_all():
     print("Pre-calculating all simulations")
     for scenario in testcases:
         print("Scenario: %s" % scenario)
+
+        tc = testcases[scenario]
+
+        setup_records(tc)
+
+        ifolder = tc["ifolder"]
+        ofolder = tc["ofolder"] + "/inputdata"
+        netfile = ifolder + "/" + tc["netfile"]
+        roufile = ifolder + "/" + tc["roufile"]
+        obname = ofolder + "/" + tc["bname"]
+        dynamicVTypes = tc["dynamicTypes"]
+
+        broufile = obname + "-base" + ".rou.xml"
+
+        if not os.listdir(ofolder):
+            SUMOinout.SUMOToCSV_routes(netfile, roufile, obname, oroufile=broufile, dynamicVTypes=dynamicVTypes)
+
+            mainaux.runSUMO(netfile, broufile, obname, guiversion=False)
+
+            SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
+
         for m1 in [h for h in METRICS]:
             for m2 in [h for h in METRICS]:
                 if m1 != m2:
@@ -119,26 +141,6 @@ def run_all():
                     args = ["-t", scenario, "--obj1", m1, "--obj2", m2]
 
                     args = read_arguments(args)
-                    tc = testcases[args.t]
-
-                    setup_records(tc)
-
-                    ifolder = tc["ifolder"]
-                    ofolder = tc["ofolder"] + "/inputdata"
-                    netfile = ifolder + "/" + tc["netfile"]
-                    roufile = ifolder + "/" + tc["roufile"]
-                    obname = ofolder + "/" + tc["bname"]
-                    dynamicVTypes = tc["dynamicTypes"]
-
-                    if os.path.exists(tc["ofolder"] + "/" + format_objective_names(m1, m2)):
-                        continue
-
-                    broufile = obname + "-base" + ".rou.xml"
-                    SUMOinout.SUMOToCSV_routes(netfile, roufile, obname, oroufile=broufile, dynamicVTypes=dynamicVTypes)
-
-                    mainaux.runSUMO(netfile, broufile, obname, guiversion=False)
-
-                    SUMOinout.SUMOSummaries_ToCSV_OptInput(netfile, roufile, obname, getNetworkData=True)
 
                     fcostLabels = np.array([args.obj1, args.obj2])
                     fcostWeights = np.array([args.w1, args.w2])
@@ -375,6 +377,36 @@ def simulation_run_optimized(scenario, objective1, objective2):
            }, 200
 
 
+
+
+@app.route("/api/<scenario>/<objective1>/<objective2>/base/view", methods=["GET"])
+def base_view(scenario, objective1, objective2):
+    # "--gui-settings-file gui-settings.xml"
+    # "--additional-files moreOutputInfo.xml"
+    # "--net-file " + netfile
+    # " --route-files " + roufile
+    # "--device.emissions.probability 1.0"
+    # "--emission-output.precision 6"
+    # "--collision.action warn"
+    # "--time-to-teleport -1"
+    # "--window-size 800,600"
+    # "--window-pos 0,0"
+    files = {
+        "gui-settings": open("gui-settings.xml", "rb"),
+        "additional-files": open("moreOutputInfo.xml", "rb"),
+        "net-file": open(netfile, "rb"),
+        "route-files": open(roufile, "rb")
+    }
+
+    r = requests.post("http://localhost:8002/api/", files=files)
+    return {"success": True}, 200
+
+
+@app.route("/api/<scenario>/<objective1>/<objective2>/optimized/view/<solution>", methods=["GET"])
+def optimized_view(scenario, objective1, objective2, solution):
+    pass
+
+
 @app.route("/api/<scenario>/<objective1>/<objective2>/view/<solution>", methods=["GET"])
 def simulation_view(scenario, objective1, objective2, solution):
     data = read_pickle()
@@ -463,28 +495,28 @@ def clear_snapshots():
         os.remove(os.path.join(SNAPSHOTS_DIR, file))
 
 
-@app.route("/api/<scenario>/<objective1>/<objective2>/base/heatmap/", methods=["GET"])
-def heatmap_base_simulation(scenario, objective1, objective2):
+@app.route("/api/<scenario>/<objective1>/<objective2>/base/heatmap", methods=["GET"])
+def base_heatmap(scenario, objective1, objective2):
     # image_name = format_file_name_base(scenario, objective1, objective2)
     image_name = "base_heatmap"
     return send_file(os.path.join(HEATMAPS_DIR, "%s.jpg" % image_name), mimetype="image/jpeg")
 
 
 @app.route("/api/<scenario>/<objective1>/<objective2>/optimized/heatmap/<solution>", methods=["GET"])
-def heatmap_optimized_simulation(scenario, objective1, objective2, solution):
+def optimized_heatmap(scenario, objective1, objective2, solution):
     # image_name = format_file_name_sim(scenario, objective1, objective2, int(solution))
     image_name = "sim_heatmap"
     return send_file(os.path.join(HEATMAPS_DIR, "%s.jpg" % image_name), mimetype="image/jpeg")
 
 
-@app.route("/api/<scenario>/<objective1>/<objective2>/base/video/", methods=["GET"])
-def video_base_simulation(scenario, objective1, objective2):
+@app.route("/api/<scenario>/<objective1>/<objective2>/base/video", methods=["GET"])
+def base_video(scenario, objective1, objective2):
     video_name = format_file_name_base(scenario, objective1, objective2)
     return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype="video/mp4")
 
 
 @app.route("/api/<scenario>/<objective1>/<objective2>/optimized/video/<solution>", methods=["GET"])
-def video_optimized_simulation(scenario, objective1, objective2, solution):
+def optimized_video(scenario, objective1, objective2, solution):
     video_name = format_file_name_sim(scenario, objective1, objective2, int(solution))
     return send_file(os.path.join(VIDEOS_DIR, "%s.mp4" % video_name), mimetype="video/mp4")
 
