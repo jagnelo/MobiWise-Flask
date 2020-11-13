@@ -27,7 +27,7 @@ def setupRecords(tc):
 
 def readArguments():
 
-    global _version
+    global _guiversion
     tcnames = testcases.keys()
     objs = ["ttime", "length", "cost_co", "cost_co2", "cost_PMx", "cost_hc", "cost_nox"]
 

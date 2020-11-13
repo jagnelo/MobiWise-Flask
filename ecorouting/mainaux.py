@@ -30,7 +30,7 @@ def runSUMO(netfile, roufile, obname, guiversion=True):
     sumocmd = "sumo-gui --gui-settings-file gui-settings.xml" if guiversion else "sumo"
     
     cmd = sumocmd+" --net-file "+netfile+" --route-files "+roufile+" --tripinfo-output "+obname+"-tripinfo --device.emissions.probability 1.0 --emission-output.precision 6 --additional-files moreOutputInfo.xml --collision.action warn -S --quit-on-end --time-to-teleport -1"
-
+    
     startt = time.time()
     os.system(cmd)
     endt = time.time()
@@ -50,7 +50,7 @@ def readAllRoutes(fname):
 
 
 """ Get traffic info of sdemand for a given set of routes
-    sdemand - list of pairs (deptime, routeid, arcid)
+    sdemand - list of pairs (deptime, routeid, arcid, vtypeid)
     routes -  available routes
 """
 def sdemandToSmartTraffic(sdemand, routes):
@@ -67,11 +67,11 @@ def sdemandToSmartTraffic(sdemand, routes):
         sroutes = routes
 
         nr = len(zeroRoot)
-        for (dt, r, a) in sdemand:
+        for (dt, r, a, vt) in sdemand:
             rid = zeroRoot[int(r) % nr] #id in routes
     
             nv += 1
-            vehicles.append((dt, nv, rid))
+            vehicles.append((dt, nv, rid, int(vt)))
     else:
         np.random.seed(1)
         sroutes = []
@@ -95,7 +95,7 @@ def sdemandToSmartTraffic(sdemand, routes):
         
         nv = 0
         count = np.zeros(nr) #statistics
-        for (dt, r, a) in sdemand:
+        for (dt, r, a, vt) in sdemand:
             rid = ixr[nv]
             count[rid] += 1
             na = len(routes[rid]) - 2 #para nao ser nem o primeiro nem o ultimo
@@ -113,7 +113,7 @@ def sdemandToSmartTraffic(sdemand, routes):
                 sroutes.append(route)
                 nsr += 1
             nv += 1
-            vehicles.append((dt, nv, srid))
+            vehicles.append((dt, nv, srid, int(vt)))
     return sroutes, vehicles
         
     
@@ -122,6 +122,9 @@ def getSolutions(ibname, ofolder, fcostWeights, fcostLabels, dynamicTypes=["Car"
     
     testcase = ibname.split("/")[-1]
     outFolder = ofolder + "/" + "-".join(fcostLabels)
+    
+    #get vtypes attributes
+    vtypesf = ibname+"-vtypes.in"
     
     #get demands
     sourcedestf = ibname+"-source-destiny.in"
@@ -150,7 +153,7 @@ def getSolutions(ibname, ofolder, fcostWeights, fcostLabels, dynamicTypes=["Car"
     sroutes, svehicles, sflowd = mwgraph.trafficFlow(sroutes, svehicles, mode=2)
     
     demandstr = ntpath.basename(demandf)[7:-3]
-    demand = [(1, d) for d in np.loadtxt(demandf).ravel()]
+    demand = [(1, d, int(vt)) for d,vt in np.loadtxt(demandf)]
     sourcedest = np.genfromtxt(sourcedestf, dtype=str, comments=None) #assume, for now, that there is a single source and destiny
     
     if len(sourcedest.shape) == 1:
@@ -158,6 +161,15 @@ def getSolutions(ibname, ofolder, fcostWeights, fcostLabels, dynamicTypes=["Car"
         sourcedest = sourcedest[np.newaxis,:]
     else:
         nodes, nodet = sourcedest[:,0], sourcedest[:,1]
+    
+    #vehicle types
+    vtypes = []
+
+    with open(vtypesf) as vtfile:
+        for vtypestr in vtfile:
+            vtype = ET.fromstring(vtypestr)
+
+            vtypes.append((vtype.attrib.get("id"), "\t{}".format(vtypestr)))
     
     
     #--------- OPTIMIZE ON THE ORIGINAL GRAPH ---------------#
@@ -216,7 +228,7 @@ def getSolutions(ibname, ofolder, fcostWeights, fcostLabels, dynamicTypes=["Car"
     saveResultsMOP([evbase], fcostLabels, outFolder+"/base.eval")
     
     
-    commoninfo = (mwgraph, demand, sourcedest, sroutes, svehicles, dynamicTypes, outFolder, base_eval)
+    commoninfo = (mwgraph, demand, sourcedest, sroutes, svehicles, vtypes, dynamicTypes, outFolder, base_eval)
     solsinfo = (sols, sim_eval, simevals, pred_eval, solsBName)
     return commoninfo, solsinfo
 
@@ -275,7 +287,7 @@ def saveResultsMOP(evalsd, fcostLabels, fname):
     
 def runSolution(netfile, commoninfo, solsinfo, sel, fcostLabels, guiversion=True, comments=""):
     
-    (mwgraph, demand, sourcedest, sroutes, svehicles, dynamicTypes, outFolder, base_eval) = commoninfo
+    (mwgraph, demand, sourcedest, sroutes, svehicles, vtypes, dynamicTypes, outFolder, base_eval) = commoninfo
     (sols, sim_eval, simevalsd, pred_eval, solsBName) = solsinfo
     
     flowc, flowd, ev, predev = sols[sel]
@@ -289,11 +301,11 @@ def runSolution(netfile, commoninfo, solsinfo, sel, fcostLabels, guiversion=True
     printTrafficSummary(routes, vehicles)
     
     fname = obname +".simev.perVeh.csv"
-    printPredictedEvPerVehicle([mwgraph.evaluateRoute(routes[r]) for (_,_,r) in vehicles], vehicles, fname)
+    printPredictedEvPerVehicle([mwgraph.evaluateRoute(routes[r]) for (_,_,r,_) in vehicles], vehicles, fname)
 
     comments +="\n" + "\n".join(map(str, ev.items()))
 
-    printSUMORoutes(routes, vehicles, obname+".rou.xml", sroutes=sroutes, svehicles=svehicles, comments=comments)
+    printSUMORoutes(vtypes, routes, vehicles, obname+".rou.xml", sroutes=sroutes, svehicles=svehicles, comments=comments)
     saveEvaluation(ev, obname+"-pred.ev")
     
     runSUMO(netfile, roufile, obname, guiversion=guiversion)
@@ -325,7 +337,7 @@ def runSolution(netfile, commoninfo, solsinfo, sel, fcostLabels, guiversion=True
 
 def printTrafficSummary(routes, vehicles):
     countPerRoute = {r: 0 for r in routes.keys()}
-    for _, _, rid in vehicles:
+    for _, _, rid, _ in vehicles:
         countPerRoute[rid] += 1
     print("\nTraffic summary:")
     for r, c in countPerRoute.items():

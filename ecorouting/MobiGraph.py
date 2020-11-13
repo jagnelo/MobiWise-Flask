@@ -55,7 +55,7 @@ class MWGraph(object):
         routes = list(map(self.sumoRoute, routes))
         
         counts = np.zeros(nrs)
-        for _, _, rid in vehicles:
+        for _, _, rid, _ in vehicles:
             counts[rid] += 1
                 
         sflowd = {node: {} for node in self.arcs.keys()}
@@ -155,13 +155,13 @@ class MWGraph(object):
             supplies[nodesToix[nodes]] = demand
             supplies[nodesToix[nodet]] = -demand
         
-        else: #demand is a list of pairs (demand, timeunit)
+        else: #demand is a list of trios (demand, timeunit, vtype)
             tdemand = 0
             if isinstance(nodes, str) or len(nodes) == 1:
                 nodes = [nodes] * len(demand)
                 nodet = [nodet] * len(demand)
                 
-            for (dem, depTime), source, target in zip(demand, nodes, nodet):
+            for (dem, depTime, _), source, target in zip(demand, nodes, nodet):
                 supplies[nodesToix[str(source)]] += dem
                 supplies[nodesToix[str(target)]] -= dem
         
@@ -232,20 +232,24 @@ class MWGraph(object):
         
         if not isinstance(demand, int):
             dmnd = []
+            vtps = []
             sdest = []
             
-            for (dem, depTime), sd in zip(demand, sourcedest):
+            for (dem, depTime, vtype), sd in zip(demand, sourcedest):
                 dmnd.extend([depTime]*dem)
+                vtps.extend([vtype])
                 sdest.extend([sd]*dem)
             dmnd = np.asarray(dmnd)
+            vtps = np.asarray(vtps)
             sdest = np.asarray(sdest)
             ix = np.argsort(dmnd)
             demand = dmnd[ix]
+            vtypes = vtps[ix]
             sourcedest = sdest[ix]
             
             
         ivehToRoute = np.arange(len(sourcedest))
-        vehicles = [(dep, -1, -1) for dep in demand]
+        vehicles = [(dep, -1, -1, vtype) for dep, vtype in zip(demand, vtypes)]
         
         startnodes = np.unique(sourcedest[:,0])
         
@@ -262,7 +266,7 @@ class MWGraph(object):
             ix = np.where((sourcedest[ivehToRoute] == (path[0], path[-1])).all(axis=1))[0]
             v = ivehToRoute[ix[0]]
             ivehToRoute = np.delete(ivehToRoute, ix[0])
-            vehicles[v] = (vehicles[v][0], v, rid)
+            vehicles[v] = (vehicles[v][0], v, rid, vehicles[v][3])
             t += 1
             
         #convert routes to sequence of arcs

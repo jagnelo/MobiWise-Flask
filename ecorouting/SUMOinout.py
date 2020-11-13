@@ -196,7 +196,7 @@ def SUMOToCSV_networkNnodes(netfile, roufile, obname):
 #routes: dict (routeID, list_of_arc_ids)
 #vehicles: list of (dep_time, vehicle_id, routeID)
 #maxspeed (m/s) - default: 100km/h ~ 27.7 m/s
-def printSUMORoutes(routes, vehicles, fname, sroutes=None, svehicles=[], comments="", maxspeed=27.7, depTimeFactor=1):
+def printSUMORoutes(vtypes, routes, vehicles, fname, sroutes=None, svehicles=[], comments="", maxspeed=27.7, depTimeFactor=1):
     f = open(fname, "w")
     
     f.write("<routes>\n")
@@ -206,8 +206,10 @@ def printSUMORoutes(routes, vehicles, fname, sroutes=None, svehicles=[], comment
     #f.write("\t<vType id=\"Car\" accel=\"2.5\" decel=\"4.0\" apparentDecel=\"3.8\" emergencyDecel=\"4.0\" sigma=\"0.7\" length=\"4.6\" tau=\"1.1\" minGap=\"3.3\" width=\"1.9\" maxSpeed=\"33.33\" speedFactor=\"0.95\" speedDev=\"0.2\" vClass=\"passenger\" />\n")
     
     #Novo Porto (11/2019)
-    f.write("<vType id=\"SCar\" length=\"4.75\" minGap=\"1.20\" maxSpeed=\"22.22\" vClass=\"private\" color=\"yellow\" decel=\"5.5\"/>")
-    f.write("<vType id=\"Car\" length=\"4.75\" minGap=\"1.20\" maxSpeed=\"22.22\" vClass=\"private\" color=\"240,230,2\" decel=\"5.5\"/>")
+    #f.write("<vType id=\"SCar\" length=\"4.75\" minGap=\"1.20\" maxSpeed=\"22.22\" vClass=\"private\" color=\"yellow\" decel=\"5.5\"/>")
+    #f.write("<vType id=\"Car\" length=\"4.75\" minGap=\"1.20\" maxSpeed=\"22.22\" vClass=\"private\" color=\"240,230,2\" decel=\"5.5\"/>")
+    
+    f.write("".join([vtype for _,vtype in vtypes]))
     
     for rid, arcSeq in routes.items():
         arcs = []
@@ -232,14 +234,17 @@ def printSUMORoutes(routes, vehicles, fname, sroutes=None, svehicles=[], comment
     ns = len(svehicles)
     
     vehicles.extend(svehicles)
-    depTimes = np.array([dt for dt,_,_ in vehicles])
+    depTimes = np.array([dt for dt,_,_,_ in vehicles])
     ix = np.argsort(depTimes)
+    vtypesname = [vtype for vtype,_ in vtypes]
     for i in ix:
-        dpt, carid, rid = vehicles[i]
+        dpt, carid, rid, vt = vehicles[i]
         if i < nd:
-            f.write("\t<vehicle depart=\"%.1f\" id=\"veh%s\" route=\"route%s\" type=\"Car\" color=\"1,0,0\" departSpeed=\"max\" />\n" % (depTimeFactor*dpt, carid, rid))
+            f.write("\t<vehicle depart=\"%.1f\" id=\"veh%s\" route=\"route%s\" type=\"%s\" color=\"1,0,0\" departSpeed=\"max\" />\n" % (depTimeFactor*dpt, carid, rid, vtypesname[vt]))
+            #f.write("\t<vehicle depart=\"%.1f\" id=\"veh%s\" route=\"route%s\" type=\"Car\" color=\"1,0,0\" departSpeed=\"max\" />\n" % (depTimeFactor*dpt, carid, rid))
         else:
-            f.write("\t<vehicle depart=\"%.1f\" id=\"sveh%s\" route=\"sroute%s\" type=\"SCar\" departSpeed=\"max\" />\n" % (depTimeFactor*dpt, carid, rid))
+            f.write("\t<vehicle depart=\"%.1f\" id=\"sveh%s\" route=\"sroute%s\" type=\"%s\" departSpeed=\"max\" />\n" % (depTimeFactor*dpt, carid, rid, vtypesname[vt]))
+            #f.write("\t<vehicle depart=\"%.1f\" id=\"sveh%s\" route=\"sroute%s\" type=\"SCar\" departSpeed=\"max\" />\n" % (depTimeFactor*dpt, carid, rid))
     
     f.write("\n\n<!--\n %s \n-->\n\n" % comments)
 
@@ -257,12 +262,14 @@ def SUMOToCSV_routes(netfile, roufile, obname, oroufile, dynamicVTypes=["EcoRout
     pathsd = {}
     pathsdedge = {}
     
+    vtfile = open(obname+'-vtypes.in', 'w')
     rfile = open(obname+'-routes.dat', 'w')
     sdfile = open(obname+'-sdemand.in', 'w')
     dfile = open(obname+'-demand.in', 'w')
     sdefile = open(obname+'-source-destiny.in', 'w') #source and destiny edges
     drfile = open(obname+'-dyn-initial-routes-nodes.txt', 'w')
     
+    vtypes, vtypesattrib = [], []
     vehicles, svehicles = [], []
     routes, sroutes = {}, {}
     sroutesl = []
@@ -274,7 +281,16 @@ def SUMOToCSV_routes(netfile, roufile, obname, oroufile, dynamicVTypes=["EcoRout
     nr = 0
     for child in root:
 
-        if child.tag == "route":
+        if child.tag == "vType":
+            vtype = child
+
+            vtypestr = ET.tostring(vtype).decode().strip()
+            vtfile.write("%s\n" % vtypestr)
+
+            vtypes.append(vtype.attrib.get("id"))
+            vtypesattrib.append("\t{}\n".format(vtypestr))
+
+        elif child.tag == "route":
             route = child
 
             edges = route.attrib.get("edges").split()
@@ -302,21 +318,26 @@ def SUMOToCSV_routes(netfile, roufile, obname, oroufile, dynamicVTypes=["EcoRout
             vehicle = child
 
             if vehicle.attrib.get("type") not in dynamicVTypes:
+                
+                vt = vtypes.index(vehicle.attrib.get("type"))
 
-                sdfile.write("%s\t%d\t%d\n" % (vehicle.attrib.get("depart").replace(",","."), pathsd[vehicle.attrib.get("route")][0], 0))
+                sdfile.write("%s\t%d\t%d\t%d\n" % (vehicle.attrib.get("depart").replace(",","."), pathsd[vehicle.attrib.get("route")][0], 0, vt))
                 
                 #get static routes and vehicles
                 srouteid = vehicle.attrib.get("route")
                 srid = sroutes[srouteid][0] if srouteid in sroutes else len(sroutes)
                 sroutes[srouteid] = (srid, allroutes[srouteid])
                 
-                svehicles.append((float(vehicle.attrib.get("depart").replace(",",".")), nsv, srid))
+                svehicles.append((float(vehicle.attrib.get("depart").replace(",",".")), nsv, srid, vt))
                 if srid == len(sroutesl):
                     sroutesl.append(allroutes[srouteid])
                 nsv += 1
                 
             else:
-                dfile.write("%s\n" % vehicle.attrib.get("depart").replace(",","."))
+                
+                vt = vtypes.index(vehicle.attrib.get("type"))
+
+                dfile.write("%s\t%d\n" % (vehicle.attrib.get("depart").replace(",","."), vt))
                 
                 path = pathsd[vehicle.attrib.get("route")][1]
                 pathe = pathsdedge[vehicle.attrib.get("route")][1]
@@ -328,7 +349,7 @@ def SUMOToCSV_routes(netfile, roufile, obname, oroufile, dynamicVTypes=["EcoRout
                 routeid = vehicle.attrib.get("route")
                 rid = routes[routeid][0] if routeid in routes else len(routes)
                 routes[routeid] = (rid, allroutes[routeid])
-                vehicles.append((float(vehicle.attrib.get("depart").replace(",",".")), ndv, rid))
+                vehicles.append((float(vehicle.attrib.get("depart").replace(",",".")), ndv, rid, vt))
                 ndv += 1
                 
                 
@@ -337,8 +358,9 @@ def SUMOToCSV_routes(netfile, roufile, obname, oroufile, dynamicVTypes=["EcoRout
     sroutes = sroutesl
     
     #save base routes
-    printSUMORoutes(routes, vehicles, oroufile, sroutes=sroutes, svehicles=svehicles)
+    printSUMORoutes(list(zip(vtypes, vtypesattrib)), routes, vehicles, oroufile, sroutes=sroutes, svehicles=svehicles)
                 
+    vtfile.close()
     rfile.close()
     sdfile.close()
     dfile.close()
