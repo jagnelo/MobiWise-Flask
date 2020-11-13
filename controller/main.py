@@ -377,30 +377,20 @@ def simulation_run_optimized(scenario, objective1, objective2):
            }, 200
 
 
-
-
 @app.route("/api/<scenario>/<objective1>/<objective2>/base/view", methods=["GET"])
 def base_view(scenario, objective1, objective2):
-    # "--gui-settings-file gui-settings.xml"
-    # "--additional-files moreOutputInfo.xml"
-    # "--net-file " + netfile
-    # " --route-files " + roufile
-    # "--device.emissions.probability 1.0"
-    # "--emission-output.precision 6"
-    # "--collision.action warn"
-    # "--time-to-teleport -1"
-    # "--window-size 800,600"
-    # "--window-pos 0,0"
-
     tc = testcases[scenario]
     files = {
         "gui-settings": open("gui-settings.xml", "rb"),
         "additional-files": open("moreOutputInfo.xml", "rb"),
         "net-file": open(os.path.join(tc["ifolder"], tc["netfile"]), "rb"),
-        "route-files": open(os.path.join(tc["ofolder"], "inputdata", tc["bname"]) + "-base.rou.xml", "rb")
+        "route-files": open(os.path.join(tc["ofolder"], "inputdata", tc["bname"]) + "-base.rou.xml", "rb"),
+        "edge-data-out": open("edge-data-out.xml", "rb"),
+        "basecars-emission-by-edges-out": open("basecars-emission-by-edges-out.xml", "rb")
     }
 
-    r = requests.post("http://localhost:8002/api/", files=files)
+    r = requests.post("http://localhost:8002/api/vnc/request", files=files)
+    print(r.content)
     return {"success": True}, 200
 
 
