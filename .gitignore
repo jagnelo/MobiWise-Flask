@@ -2,6 +2,9 @@
 .idea/
 
 snapshots/
+dataSets/
+ecorouting/
+results/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
