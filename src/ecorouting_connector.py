@@ -13,7 +13,12 @@ def check_content():
     tcs = get_test_cases()
     total_objective_combinations = utils.get_objective_combinations()
     count_combs_total = len(total_objective_combinations)
-    expected_simulations_left = 0
+    simulations_total = 0
+    simulations_done = 0
+    heatmaps_total = 0
+    heatmaps_done = 0
+    videos_total = 0
+    videos_done = 0
 
     def verbose(value: bool) -> str:
         return "FOUND" if value else "MISSING"
@@ -25,9 +30,9 @@ def check_content():
         return os.path.join(*paths)
 
     print("Checking content...")
-    for key in tcs:
-        tc = tcs[key]
-        print("Test case: %s (%s)" % (tc["prettyName"], key))
+    for scenario in tcs:
+        tc = tcs[scenario]
+        print("Test case: %s (%s)" % (tc["prettyName"], scenario))
 
         data_dir = tc["ifolder"]
         data_dir_exists = exists(data_dir)
@@ -44,12 +49,26 @@ def check_content():
                 if utils.is_objective_pair(name):
                     done_objective_combinations.append(name)
         res_base_roufile_exists = exists(join(res_dir, "inputdata", tc["bname"]) + "-base.rou.xml")
-        if not res_base_roufile_exists:
-            expected_simulations_left += 1
+        simulations_total += 1
+        if res_base_roufile_exists:
+            simulations_done += 1
         count_combs_done = len(done_objective_combinations)
-        expected_simulations_left += count_combs_total - count_combs_done
-        print_info = (verbose(res_dir_exists), verbose(res_base_roufile_exists), count_combs_done, count_combs_total)
-        print("\tResults directory: %s | Base route file: %s | Objective combinations: %d/%d" % print_info)
+        count_combs_left = count_combs_total - count_combs_done
+        simulations_total += count_combs_left
+        heatmaps_total += count_combs_left
+        videos_total += count_combs_left
+        heatmap_base_exists = exists(join(Globals.HEATMAPS_DIR, utils.format_file_name_base(scenario), "jpg"))
+        heatmaps_total += 1
+        if heatmap_base_exists:
+            heatmaps_done += 1
+        video_base_exists = exists(join(Globals.VIDEOS_DIR, utils.format_file_name_base(scenario), "mp4"))
+        videos_total += 1
+        if video_base_exists:
+            videos_done += 1
+        print_info = (verbose(res_dir_exists), verbose(res_base_roufile_exists), verbose(heatmap_base_exists),
+                      verbose(video_base_exists), count_combs_done, count_combs_total)
+        print("\tResults directory: %s | Base route file: %s | Heatmap file: %s | Video file: %s | "
+              "Objective combinations: %d/%d" % print_info)
 
         for combination in done_objective_combinations:
             comb_dir = join(res_dir, combination)
@@ -63,8 +82,6 @@ def check_content():
                     solutions_total.append(name)
                     if any([file.endswith(".rou.xml") for file in os.listdir(join(comb_dir, name))]):
                         solutions_done.append(name)
-                    else:
-                        expected_simulations_left += 1
             objective1, objective2 = utils.reverse_format_objective_names(combination)
             objective1_pretty = Globals.METRICS[objective1]["pretty"]
             objective2_pretty = Globals.METRICS[objective2]["pretty"]
@@ -80,12 +97,24 @@ def check_content():
             for solution in solutions_total:
                 sol_dir = join(comb_dir, solution)
                 sol_sim_roufile_exists = exists(join(sol_dir, tc["bname"]) + ".rou.xml")
-                if not sol_sim_roufile_exists:
-                    expected_simulations_left += 1
+                simulations_total += 1
+                if sol_sim_roufile_exists:
+                    simulations_done += 1
                 solution_number = int(solution.replace("solution", ""))
                 solution_pretty = "Solution %d" % solution_number
-                print_info = (solution_pretty, verbose(sol_sim_roufile_exists))
-                print("\t\t\t%s: Sim route file: %s" % print_info)
+                image_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
+                sol_heatmap_sim_exists = exists(join(Globals.HEATMAPS_DIR, image_name, "jpg"))
+                heatmaps_total +=1
+                if sol_heatmap_sim_exists:
+                    heatmaps_done += 1
+                video_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
+                sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, video_name, "mp4"))
+                videos_total += 1
+                if sol_video_sim_exists:
+                    videos_done += 1
+                print_info = (solution_pretty, verbose(sol_sim_roufile_exists),
+                              verbose(sol_heatmap_sim_exists), verbose(sol_video_sim_exists))
+                print("\t\t\t%s: Sim route file: %s | Heatmap file: %s | Video file: %s" % print_info)
         print()
-    print_info = (expected_simulations_left)
-    print("Finished checking content: At least %d simulations are left to do (approximate count)" % print_info)
+    print_info = (simulations_done, simulations_total, heatmaps_done, heatmaps_total, videos_done, videos_total)
+    print("Finished checking content: Simulations done: %d/%d | Heatmaps done: %d/%d | Videos done: %d/%d" % print_info)
