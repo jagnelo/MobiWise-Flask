@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 import utils
 from ecorouting.testcases import testcases
@@ -104,7 +105,7 @@ def check_content():
                 solution_pretty = "Solution %d" % solution_number
                 image_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
                 sol_heatmap_sim_exists = exists(join(Globals.HEATMAPS_DIR, image_name, "jpg"))
-                heatmaps_total +=1
+                heatmaps_total += 1
                 if sol_heatmap_sim_exists:
                     heatmaps_done += 1
                 video_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
@@ -118,3 +119,8 @@ def check_content():
         print()
     print_info = (simulations_done, simulations_total, heatmaps_done, heatmaps_total, videos_done, videos_total)
     print("Finished checking content: Simulations done: %d/%d | Heatmaps done: %d/%d | Videos done: %d/%d" % print_info)
+
+
+def call_ecorouting():
+    cmd = "python main-interactive.py -t ang-est --mode 1"
+    ecorouting_proc = subprocess.Popen(cmd.split(" "), cwd="../ecorouting")
