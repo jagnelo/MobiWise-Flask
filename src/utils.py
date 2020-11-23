@@ -1,4 +1,5 @@
 import os
+import shutil
 from enum import Enum
 
 from globals import Globals
@@ -6,11 +7,11 @@ from globals import Globals
 
 def format_objective_names(objective1, objective2):
     o = sorted([objective1, objective2])
-    return "%s%s%s" % (o[0], Globals.objective_separator, o[1])
+    return "%s%s%s" % (o[0], Globals.OBJECTIVE_SEPARATOR, o[1])
 
 
-def format_db_entry_key(scenario, objective1, objective2):
-    return "%s%s%s" % (scenario, Globals.scenario_separator, format_objective_names(objective1, objective2))
+def format_scenario_name(scenario, objective1, objective2):
+    return "%s%s%s" % (scenario, Globals.SCENARIO_SEPARATOR, format_objective_names(objective1, objective2))
 
 
 def format_file_name_base(scenario):
@@ -18,7 +19,7 @@ def format_file_name_base(scenario):
 
 
 def format_file_name_sim(scenario, objective1, objective2, solution):
-    return "%s.sim%d" % (format_db_entry_key(scenario, objective1, objective2), solution)
+    return "%s.sim%d" % (format_scenario_name(scenario, objective1, objective2), solution)
 
 
 def get_file_path_or_default(path, name, extension):
@@ -34,14 +35,30 @@ def get_video_cmd(video_name):
     return Globals.FFMPEG_CMD % (snapshots_dir, videos_dir)
 
 
-def setup_snapshots_dir():
-    if not os.path.exists(Globals.SNAPSHOTS_DIR):
-        os.mkdir(Globals.SNAPSHOTS_DIR)
+# creates a given directory if it does not exist
+def ensure_dir_exists(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+        print("Created directory %s" % path)
 
 
-def clear_snapshots():
-    for file in os.listdir(Globals.SNAPSHOTS_DIR):
-        os.remove(os.path.join(Globals.SNAPSHOTS_DIR, file))
+# empties the content (if any) of a given directory
+def clear_dir(path):
+    if os.path.exists(path) and os.path.isdir(path):
+        for name in os.listdir(path):
+            child_path = os.path.join(path, name)
+            if os.path.isdir(os.path.join(path, name)):
+                shutil.rmtree(child_path, ignore_errors=True)
+            if os.path.isfile(os.path.join(path, name)):
+                os.remove(child_path)
+    print("Emptied directory %s" % path)
+
+
+# empties the contents (if any) and removes a given directory
+def clear_and_remove_dir(path):
+    if os.path.exists(path) and os.path.isdir(path):
+        shutil.rmtree(path, ignore_errors=True)
+        print("Emptied and removed directory %s" % path)
 
 
 def read_eval_file(file_name):
@@ -98,13 +115,12 @@ def get_objective_combinations():
 
 
 def is_objective_pair(name):
-    split = name.split(Globals.objective_separator)
+    split = name.split(Globals.OBJECTIVE_SEPARATOR)
     return len(split) == 2 and split[0] in Globals.METRICS and split[1] in Globals.METRICS
 
 
 def reverse_format_objective_names(name):
     if not is_objective_pair(name):
         return None
-    split = name.split(Globals.objective_separator)
+    split = name.split(Globals.OBJECTIVE_SEPARATOR)
     return split[0], split[1]
-
