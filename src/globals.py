@@ -16,23 +16,28 @@ class Globals:
     SCENARIO_SEPARATOR = "."
 
     ECOROUTING_DIR = os.path.join("..", "ecorouting")
-    SNAPSHOTS_DIR = os.path.join("..", "snapshots")
-    VIDEOS_DIR = os.path.join("..", "videos")
-    HEATMAPS_DIR = os.path.join("..", "heatmaps")
+
+    SUMO_GUI_SETTINGS_FILE_NAME = "gui-settings.xml"
+    SUMO_MAX_TIMEOUT = 4 * 60 * 60
+    SUMO_MAX_THREADS = 8
+
     LOGS_DIR = os.path.join("..", "logs")
 
+    SNAPSHOTS_DIR = "snapshots"
     SNAPSHOTS_COUNT = 200_000
     SNAPSHOTS_FILE_TYPE = "png"
-    SNAPSHOTS_NAME = "snapshot%d." + SNAPSHOTS_FILE_TYPE
+    SNAPSHOTS_FILE_NAME = "snapshot%d." + SNAPSHOTS_FILE_TYPE
+    SNAPSHOTS_XML_ELEMENT = "\t<snapshot file=\"%s\" time=\"%d\"/>"
 
-    SUMO_MAX_TIMEOUT = 4*60*60
-
+    VIDEOS_DIR = os.path.join("..", "videos")
     VIDEOS_FILE_TYPE = "mp4"
+    FFMPEG_CMD = 'ffmpeg -y -framerate 30 -i "%s" -pix_fmt yuv420p "%s.' + VIDEOS_FILE_TYPE + '"'
+    VIDEOS_RESOLUTION = {
+        "width": 640,   # 1280,
+        "height": 480   # 960
+    }
 
+    HEATMAPS_DIR = os.path.join("..", "heatmaps")
     HEATMAPS_FILE_TYPE = "png"
-
-    # -filter:v "crop=in_w/2:in_h:in_w/4:in_h" ' \
-    FFMPEG_CMD = 'ffmpeg -y -framerate 30 -i "%s" ' \
-                 '-pix_fmt yuv420p "%s.' + VIDEOS_FILE_TYPE + '"'
 
     VNC_MANAGER_API = "http://localhost:8002/api/"

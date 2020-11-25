@@ -1,17 +1,205 @@
 import os
-import shutil
-import subprocess
+from subprocess import STDOUT, PIPE, TimeoutExpired
 
 import utils
 from ecorouting.testcases import testcases
 from globals import Globals
+from spopen import SPopen
+from task import Task, RunMode
+
+
+class EcoRoutingTask(Task):
+    def __init__(self, scenario):
+        Task.__init__(self)
+        self.cwd = Globals.ECOROUTING_DIR
+        self.scenario = scenario
+
+    def get_run_mode(self) -> RunMode:
+        raise NotImplementedError
+
+    def get_additional_args(self):
+        raise NotImplementedError
+
+    def needs_heatmap_config(self):
+        raise NotImplementedError
+
+    def needs_video_config(self):
+        raise NotImplementedError
+
+    def get_cmd(self):
+        cmd = "python main-interactive.py -t %s %s" % (self.scenario, self.get_additional_args())
+        if self.needs_heatmap_config():
+            pass
+        if self.needs_video_config():
+            cmd += " --gui"
+        return cmd
+
+    def before_simulation(self, heatmap, video):
+        if self.cwd != os.getcwd():
+            utils.ensure_dir_exists(self.cwd)
+            utils.clear_dir(self.cwd)
+            utils.copy_dir_contents(Globals.ECOROUTING_DIR, self.cwd)
+
+        if heatmap:
+            pass
+        if video:
+            utils.add_snapshots_to_gui_settings(self.cwd)
+            utils.ensure_dir_exists(os.path.join(self.cwd, Globals.SNAPSHOTS_DIR))
+            geometry = "%dx%d" % (Globals.VIDEOS_RESOLUTION["width"], Globals.VIDEOS_RESOLUTION["height"])
+            display = self.env["DISPLAY"]
+            os.system("vncserver %s -noxstartup -geometry %s" % (display, geometry))
+
+    def run(self, process: SPopen):
+        raise NotImplementedError
+
+    def start(self):
+        cmd = self.get_cmd()
+        cmd_array = cmd.split(" ")
+        eco_proc = SPopen(cmd_array, cwd=self.cwd, env=self.env, stdout=PIPE, stdin=PIPE, stderr=STDOUT)
+        display = self.env["DISPLAY"]
+        print("Started EcoRouting process (display = %s | cwd = %s | cmd = %s)" % (display, self.cwd, cmd))
+        self.run(eco_proc)
+        print("Terminated EcoRouting process (display = %s | cwd = %s | cmd = %s)" % (display, self.cwd, cmd))
+
+    def after_simulation(self, heatmap, video, file_name=None):
+        if heatmap and file_name:
+            pass
+        if video and file_name:
+            path = os.path.join(self.cwd, Globals.SNAPSHOTS_DIR)
+            os.system(utils.get_video_cmd(path, file_name))
+            utils.clear_and_remove_dir(path)
+            display = self.env["DISPLAY"]
+            os.system("vncserver -kill %s" % display)
+
+        if self.cwd != os.getcwd():
+            utils.clear_and_remove_dir(self.cwd)
+
+
+class Base(EcoRoutingTask):
+    def __init__(self, scenario, heatmap: bool, video: bool):
+        EcoRoutingTask.__init__(self, scenario)
+        self.heatmap = heatmap
+        self.video = video
+
+    def get_run_mode(self) -> RunMode:
+        return RunMode.IsolatedParallel
+
+    def get_additional_args(self):
+        return "--mode 1"
+
+    def needs_heatmap_config(self):
+        return self.heatmap
+
+    def needs_video_config(self):
+        return self.video
+
+    def run(self, process: SPopen):
+        self.before_simulation(self.heatmap, self.video)
+        eco_proc = process.start()
+        try:
+            out = eco_proc.communicate(timeout=Globals.SUMO_MAX_TIMEOUT)
+            print(out[0].decode().rstrip())
+            file_name = utils.format_file_name_base(self.scenario)
+            self.after_simulation(self.heatmap, self.video, file_name)
+        except BaseException as e:
+            if isinstance(e, TimeoutExpired):
+                print("EcoRouting process exceeded %d seconds, and will be terminated" % Globals.SUMO_MAX_TIMEOUT)
+            else:
+                print("ERROR: ", e)
+        finally:
+            eco_proc.terminate()
+
+
+class Pred(EcoRoutingTask):
+    def __init__(self, scenario, objective1, objective2):
+        EcoRoutingTask.__init__(self, scenario)
+        self.objective1 = objective1
+        self.objective2 = objective2
+
+    def get_run_mode(self) -> RunMode:
+        return RunMode.Parallel
+
+    def get_additional_args(self):
+        return "--mode 2 --obj1 %s --obj2 %s" % (self.objective1, self.objective2)
+
+    def needs_heatmap_config(self):
+        return False
+
+    def needs_video_config(self):
+        return False
+
+    def run(self, process: SPopen):
+        eco_proc = process.start()
+        try:
+            out = eco_proc.communicate(input=b"-1\n", timeout=Globals.SUMO_MAX_TIMEOUT)
+            print(out[0].decode().rstrip())
+        except BaseException as e:
+            if isinstance(e, TimeoutExpired):
+                print("EcoRouting process exceeded %d seconds, and will be terminated" % Globals.SUMO_MAX_TIMEOUT)
+            else:
+                print("ERROR: ", e)
+        finally:
+            eco_proc.terminate()
+
+
+class Sim(Pred):
+    def __init__(self, scenario, objective1, objective2, solution: int, heatmap: bool, video: bool):
+        Pred.__init__(self, scenario, objective1, objective2)
+        self.solution = solution
+        self.heatmap = heatmap
+        self.video = video
+
+    def get_run_mode(self) -> RunMode:
+        return RunMode.IsolatedParallel
+
+    def needs_heatmap_config(self):
+        return self.heatmap
+
+    def needs_video_config(self):
+        return self.video
+
+    def run(self, process: SPopen):
+        self.before_simulation(self.heatmap, self.video)
+        eco_proc = process.start()
+        try:
+            eco_proc.stdin.write(b"%d\n" % self.solution)
+            eco_proc.stdin.flush()
+            out = eco_proc.communicate(input=b"-1\n", timeout=Globals.SUMO_MAX_TIMEOUT)
+            print(out[0].decode().rstrip())
+            file_name = utils.format_file_name_sim(self.scenario, self.objective1, self.objective2, self.solution)
+            self.after_simulation(self.heatmap, self.video, file_name)
+        except BaseException as e:
+            if isinstance(e, TimeoutExpired):
+                print("EcoRouting process exceeded %d seconds, and will be terminated" % Globals.SUMO_MAX_TIMEOUT)
+            else:
+                print("ERROR: ", e)
+        finally:
+            eco_proc.terminate()
+
+
+class EcoRoutingTaskManager:
+    class TaskObj:
+        def __init__(self, name, task: Task):
+            self.name = name
+            self.task = task
+
+    def __init__(self):
+        self.tasks = {}
+
+    def add_task(self, name, task: Task, sequence_name=""):
+        if sequence_name not in self.tasks:
+            self.tasks[sequence_name] = []
+        self.tasks[sequence_name].append(EcoRoutingTaskManager.TaskObj(name, task))
+
+    def run_tasks(self):
+        pass
 
 
 def get_test_cases():
     return testcases
 
 
-def check_content():
+def check_content() -> EcoRoutingTaskManager:
     tcs = get_test_cases()
     total_objective_combinations = utils.get_objective_combinations()
     count_combs_total = len(total_objective_combinations)
@@ -21,7 +209,7 @@ def check_content():
     heatmaps_done = 0
     videos_total = 0
     videos_done = 0
-    tasks = {}
+    task_manager = EcoRoutingTaskManager()
 
     def verbose(value: bool) -> str:
         return "FOUND" if value else "MISSING"
@@ -60,13 +248,13 @@ def check_content():
         simulations_total += count_combs_left
         heatmaps_total += count_combs_left
         videos_total += count_combs_left
-        image_name = utils.format_file_name_base(scenario)
-        heatmap_base_exists = exists(join(Globals.HEATMAPS_DIR, image_name, Globals.HEATMAPS_FILE_TYPE))
+        image_name = "%s.%s" % (utils.format_file_name_base(scenario), Globals.HEATMAPS_FILE_TYPE)
+        heatmap_base_exists = exists(join(Globals.HEATMAPS_DIR, image_name))
         heatmaps_total += 1
         if heatmap_base_exists:
             heatmaps_done += 1
-        video_name = utils.format_file_name_base(scenario)
-        video_base_exists = exists(join(Globals.VIDEOS_DIR, video_name, Globals.VIDEOS_FILE_TYPE))
+        video_name = "%s.%s" % (utils.format_file_name_base(scenario), Globals.VIDEOS_FILE_TYPE)
+        video_base_exists = exists(join(Globals.VIDEOS_DIR, video_name))
         videos_total += 1
         if video_base_exists:
             videos_done += 1
@@ -75,8 +263,18 @@ def check_content():
         print("\tResults directory: %s | Base route file: %s | Heatmap file: %s | Video file: %s | "
               "Objective combinations: %d/%d" % print_info)
 
-        task_name = utils.format_file_name_base(scenario)
-        tasks[task_name] = Base(scenario, not heatmap_base_exists, not video_base_exists)
+        if not res_base_roufile_exists or not heatmap_base_exists or not video_base_exists:
+            base_task_name = utils.format_file_name_base(scenario)
+            task = Base(scenario, not heatmap_base_exists, not video_base_exists)
+            task_manager.add_task(base_task_name, task)
+            continue
+
+        for combination in total_objective_combinations:
+            if combination not in done_objective_combinations:
+                objective1, objective2 = utils.reverse_format_objective_names(combination)
+                pred_task_name = utils.format_scenario_name(scenario, objective1, objective2)
+                task = Pred(scenario, objective1, objective2)
+                task_manager.add_task(pred_task_name, task)
 
         for combination in done_objective_combinations:
             comb_dir = join(res_dir, combination)
@@ -102,9 +300,7 @@ def check_content():
             print("\t\t%s (%s): Base results file: %s | Pred results file: %s | Sim results file: %s | "
                   "Solutions: %d/%d" % print_info)
 
-            # sol_task_name = utils.format_scenario_name(scenario, objective1, objective2)
-            # tasks[sol_task_name] = Sim(scenario, objective1, objective2,, not he
-
+            sol_status = {}
             for solution in solutions_total:
                 sol_dir = join(comb_dir, solution)
                 sol_sim_roufile_exists = exists(join(sol_dir, tc["bname"]) + ".rou.xml")
@@ -114,12 +310,14 @@ def check_content():
                 solution_number = int(solution.replace("solution", ""))
                 solution_pretty = "Solution %d" % solution_number
                 sol_image_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
-                sol_heatmap_sim_exists = exists(join(Globals.HEATMAPS_DIR, sol_image_name, Globals.HEATMAPS_FILE_TYPE))
+                sol_image_name = "%s.%s" % (sol_image_name, Globals.HEATMAPS_FILE_TYPE)
+                sol_heatmap_sim_exists = exists(join(Globals.HEATMAPS_DIR, sol_image_name))
                 heatmaps_total += 1
                 if sol_heatmap_sim_exists:
                     heatmaps_done += 1
                 sol_video_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
-                sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, sol_video_name, Globals.VIDEOS_FILE_TYPE))
+                sol_video_name = "%s.%s" % (sol_video_name, Globals.VIDEOS_FILE_TYPE)
+                sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, sol_video_name))
                 videos_total += 1
                 if sol_video_sim_exists:
                     videos_done += 1
@@ -127,181 +325,28 @@ def check_content():
                               verbose(sol_heatmap_sim_exists), verbose(sol_video_sim_exists))
                 print("\t\t\t%s: Sim route file: %s | Heatmap file: %s | Video file: %s" % print_info)
 
+                sol_status[solution_number] = {"roufile_exists": sol_sim_roufile_exists,
+                                               "heatmap_exists": sol_heatmap_sim_exists,
+                                               "video_exists": sol_video_sim_exists}
+
+            if sol_status:
+                solutions = []
+                heatmaps = []
+                videos = []
+                for sol in sol_status:
+                    roufile_exists = sol_status[sol]["roufile_exists"]
+                    heatmap_exists = sol_status[sol]["heatmap_exists"]
+                    video_exists = sol_status[sol]["video_exists"]
+                    if not roufile_exists or not heatmap_exists or not video_exists:
+                        solutions.append(sol)
+                        heatmaps.append(not heatmap_exists)
+                        videos.append(not video_exists)
+                if solutions and heatmaps and videos:
+                    sol_task_name = utils.format_scenario_name(scenario, objective1, objective2)
+                    task = Sim(scenario, objective1, objective2, solutions, heatmaps, videos)
+                    task_manager.add_task(sol_task_name, task)
+
         print()
     print_info = (simulations_done, simulations_total, heatmaps_done, heatmaps_total, videos_done, videos_total)
     print("Finished checking content: Simulations done: %d/%d | Heatmaps done: %d/%d | Videos done: %d/%d" % print_info)
-
-
-class EcoRoutingTask:
-    gui_settings_original = os.path.join(Globals.ECOROUTING_DIR, "gui-settings.xml")
-    gui_settings_backup = os.path.join(Globals.ECOROUTING_DIR, "gui-settings.xml.BAK")
-
-    def __init__(self, scenario, heatmap, video):
-        self.scenario = scenario
-        self.heatmap = heatmap
-        self.video = video
-
-    def get_args(self):
-        raise NotImplementedError
-
-    # code to run before calling the EcoRouting process
-    def setup(self):
-        if self.heatmap:
-            pass
-        if self.video:
-            os.system("vncserver :1 -noxstartup -geometry 400x300")     # 1280x960")
-            if os.path.exists(EcoRoutingTask.gui_settings_backup):
-                if os.path.exists(EcoRoutingTask.gui_settings_original):
-                    os.remove(EcoRoutingTask.gui_settings_original)
-                os.rename(EcoRoutingTask.gui_settings_backup, EcoRoutingTask.gui_settings_original)
-
-            shutil.copyfile(EcoRoutingTask.gui_settings_original, EcoRoutingTask.gui_settings_backup)
-            utils.ensure_dir_exists(Globals.SNAPSHOTS_DIR)
-            utils.clear_dir(Globals.SNAPSHOTS_DIR)
-            snapshots_dir_abs = os.path.abspath(Globals.SNAPSHOTS_DIR)
-            snapshot_name = os.path.join(snapshots_dir_abs, Globals.SNAPSHOTS_NAME)
-            snapshot_xml = '\t<snapshot file="%s" time="%d"/>'
-            snapshot_str = "\n".join([snapshot_xml % (snapshot_name % i, i) for i in range(Globals.SNAPSHOTS_COUNT)])
-
-            with open(EcoRoutingTask.gui_settings_original, "r") as f:
-                content = f.read()
-
-            content = content.replace("</viewsettings>", "%s\n</viewsettings>" % snapshot_str)
-
-            with open(EcoRoutingTask.gui_settings_original, "w") as f:
-                f.write(content)
-
-            del content
-
-    def run(self):
-        cmd = "python main-interactive.py -t %s %s" % (self.scenario, self.get_args())
-        env = os.environ.copy()
-        if self.heatmap:
-            pass
-        if self.video:
-            cmd += " --gui"
-            env["DISPLAY"] = ":1"
-        eco_proc = subprocess.Popen(cmd.split(" "), stdout=subprocess.PIPE, stdin=subprocess.PIPE,
-                                    stderr=subprocess.STDOUT, cwd=Globals.ECOROUTING_DIR, env=env)
-        try:
-            print("Starting EcoRouting process (cmd = %s)" % cmd)
-            self._run(eco_proc)
-            # eco_proc.communicate(timeout=30)  # Globals.SUMO_MAX_TIMEOUT)
-        except BaseException as e:
-            if isinstance(e, subprocess.TimeoutExpired):
-                print_info = (Globals.SUMO_MAX_TIMEOUT, cmd)
-                print("Current EcoRouting process exceeded %d seconds, and will be terminated (cmd = %s)" % print_info)
-            else:
-                print("ERROR: ", e)
-        finally:
-            eco_proc.terminate()
-            print("EcoRouting process terminated")
-
-    def _run(self, eco_proc: subprocess.Popen):
-        raise NotImplementedError
-
-    # code to run before a simulation starts
-    def before_simulation(self):
-        if self.heatmap:
-            pass
-        if self.video:
-            utils.ensure_dir_exists(Globals.SNAPSHOTS_DIR)
-            utils.clear_dir(Globals.SNAPSHOTS_DIR)
-
-    # code to run after a simulation finishes
-    def after_simulation(self, file_name=None):
-        if self.heatmap and file_name:
-            pass
-        if self.video and file_name:
-            os.system(utils.get_video_cmd(file_name))
-
-    # code to run after the EcoRouting process terminates
-    def teardown(self):
-        if self.heatmap:
-            pass
-        if self.video:
-            os.system("vncserver -kill :1")
-            utils.clear_and_remove_dir(Globals.SNAPSHOTS_DIR)
-            os.remove(EcoRoutingTask.gui_settings_original)
-            os.rename(EcoRoutingTask.gui_settings_backup, EcoRoutingTask.gui_settings_original)
-
-
-class Base(EcoRoutingTask):
-    def __init__(self, scenario, heatmap, video):
-        EcoRoutingTask.__init__(self, scenario, heatmap, video)
-
-    def get_args(self):
-        return "--mode 1"
-
-    def _run(self, eco_proc: subprocess.Popen):
-        # because here the process has already been started, it might not be safe to call
-        # this function as it clears the contents of SNAPSHOTS_DIR
-        # (this is only useful for the Sim mode, because multiple simulations are run
-        # whereas only one is run in the Base mode, and SNAPSHOTS_DIR is already created
-        # and cleared by the setup() function)
-        # self.before_simulation()
-        line = " "
-        while line:
-            line = eco_proc.stdout.readline().decode().rstrip()
-            print(line)
-        try:
-            eco_proc.communicate()
-        except:
-            pass
-        self.after_simulation(utils.format_file_name_base(self.scenario))
-
-
-# IMPORTANT NOTE
-# This is quite a weak solution, but it is the only way to fully integrate the EcoRouting module with the
-# rest of the MobiWise system, and it is entirely dependent on line 106 of main-interactive.py
-#
-#   106     sel = int(input("Enter solution number or -1 to exit\n"))
-#
-# If the parameter of the input() function is changed, this solution is no longer valid, and the thread
-# calling eco_proc.stdout.readline() WILL BLOCK indefinitely (i.e., deadlock)
-class Sim(EcoRoutingTask):
-    ecorouting_input_str = "Enter solution number or -1 to exit"
-
-    def __init__(self, scenario, objective1, objective2, solutions, heatmap, video):
-        EcoRoutingTask.__init__(self, scenario, heatmap, video)
-        self.objective1 = objective1
-        self.objective2 = objective2
-        self.solutions = solutions
-
-    def get_args(self):
-        return "--mode 2 --obj1 %s --obj2 %s" % (self.objective1, self.objective2)
-
-    def _run(self, eco_proc: subprocess.Popen):
-        self.read_until_line(eco_proc.stdout, Sim.ecorouting_input_str)
-        for sol in self.solutions:
-            self.before_simulation()
-            self.write_to_fd(eco_proc.stdin, "%d" % sol)
-            self.read_until_line(eco_proc.stdout, Sim.ecorouting_input_str)
-            self.after_simulation(utils.format_file_name_sim(self.scenario, self.objective1, self.objective2, sol))
-        # self.read_until_line(eco_proc.stdout, Sim.ecorouting_input_str)
-        self.write_to_fd(eco_proc.stdin, "-1")
-
-    # reads the STDOUT of a given file descriptor until a given line is found
-    # returns a list with each of the lines read
-    @staticmethod
-    def read_until_line(fd, line):
-        out = ""
-        lines = []
-        while line not in out:
-            out = fd.readline().decode().rstrip()
-            lines.append(out)
-            print(out)
-        return lines
-
-    # writes a line to a given STDIN file descriptor, in either byte or string modes
-    @staticmethod
-    def write_to_fd(fd, line, byte=True):
-        s = "%s\n" % line
-        fd.write(s.encode() if byte else s)
-        fd.flush()
-
-
-def call_ecorouting(ecorouting_task: EcoRoutingTask):
-    ecorouting_task.setup()
-    ecorouting_task.run()
-    ecorouting_task.teardown()
+    return task_manager

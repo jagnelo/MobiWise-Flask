@@ -1,4 +1,5 @@
 import os
+import re
 import shutil
 from enum import Enum
 
@@ -29,32 +30,40 @@ def get_file_path_or_default(path, name, extension):
     return file_path
 
 
-def get_video_cmd(video_name):
-    snapshots_dir = os.path.join(Globals.SNAPSHOTS_DIR, "snapshot%d.png")
+def get_video_cmd(snapshots_dir, video_name):
+    path = os.path.join(snapshots_dir, Globals.SNAPSHOTS_FILE_NAME)
     videos_dir = os.path.join(Globals.VIDEOS_DIR, video_name)
-    return Globals.FFMPEG_CMD % (snapshots_dir, videos_dir)
+    return Globals.FFMPEG_CMD % (path, videos_dir)
 
 
-# creates a given directory if it does not exist
 def ensure_dir_exists(path):
     if not os.path.exists(path):
         os.makedirs(path)
         print("Created directory %s" % path)
 
 
-# empties the content (if any) of a given directory
+def copy_dir_contents(path_src, path_dst):
+    if os.path.exists(path_src) and os.path.isdir(path_src):
+        ensure_dir_exists(path_dst)
+        shutil.copytree(path_src, path_dst, dirs_exist_ok=True)
+        print("Copied contents of directory %s to directory %s" % (path_src, path_dst))
+
+
 def clear_dir(path):
     if os.path.exists(path) and os.path.isdir(path):
+        removed_something = False
         for name in os.listdir(path):
             child_path = os.path.join(path, name)
             if os.path.isdir(os.path.join(path, name)):
                 shutil.rmtree(child_path, ignore_errors=True)
+                removed_something = True
             if os.path.isfile(os.path.join(path, name)):
                 os.remove(child_path)
-    print("Emptied directory %s" % path)
+                removed_something = True
+        if removed_something:
+            print("Emptied directory %s" % path)
 
 
-# empties the contents (if any) and removes a given directory
 def clear_and_remove_dir(path):
     if os.path.exists(path) and os.path.isdir(path):
         shutil.rmtree(path, ignore_errors=True)
@@ -81,8 +90,8 @@ def read_eval_file(file_name):
 
 def get_simulation_files(netfile, roufile):
     return {
-        "gui-settings": open("gui-settings.xml", "rb"),
-        "additional-files": open("moreOutputInfo.xml", "rb"),
+        "gui-settings": open(Globals.SUMO_GUI_SETTINGS_FILE_NAME, "rb"),
+        "additional-files": open(moreOutputInfo.xml, "rb"),
         "net-file": open(netfile, "rb"),
         "route-files": open(roufile, "rb"),
         "edge-data-out": open("edge-data-out.xml", "rb"),
@@ -124,3 +133,35 @@ def reverse_format_objective_names(name):
         return None
     split = name.split(Globals.OBJECTIVE_SEPARATOR)
     return split[0], split[1]
+
+
+def add_snapshots_to_gui_settings(path_to_gui_settings):
+    remove_snapshots_from_gui_settings(path_to_gui_settings)
+    snapshot_file_name = os.path.join(Globals.SNAPSHOTS_DIR, Globals.SNAPSHOTS_FILE_NAME)
+    snapshot_str = "\n".join([Globals.SNAPSHOTS_XML_ELEMENT % (snapshot_file_name % i, i) for i in
+                              range(Globals.SNAPSHOTS_COUNT)])
+    gui_settings = os.path.join(path_to_gui_settings, Globals.SUMO_GUI_SETTINGS_FILE_NAME)
+    with open(gui_settings, "r") as f:
+        content = f.read()
+
+    content = content.replace("</viewsettings>", "%s\n</viewsettings>" % snapshot_str)
+
+    with open(gui_settings, "w") as f:
+        f.write(content)
+
+    del content
+
+
+def remove_snapshots_from_gui_settings(path_to_gui_settings):
+    xml_line = Globals.SNAPSHOTS_XML_ELEMENT
+    regex = re.compile(xml_line.replace("%s", ".+").replace("%d", "[0-9]+").strip())
+    gui_settings = os.path.join(path_to_gui_settings, Globals.SUMO_GUI_SETTINGS_FILE_NAME)
+    with open(gui_settings, "r") as f:
+        content = f.readlines()
+
+    content = [line for line in content if not regex.match(line.strip())]
+
+    with open(gui_settings, "w") as f:
+        f.writelines(content)
+
+    del content
