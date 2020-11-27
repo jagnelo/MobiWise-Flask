@@ -132,7 +132,7 @@ function r = foo(TRACI_PORT)
 
 	import traci.constants
 
-	system(['sumo-gui' ' -c ' 'porto_server.sumocfg' ' --xml-validation ' 'never' ' --remote-port ' TRACI_PORT ' --start&'])
+	system(['sumo-gui' ' -c ' 'porto_server.sumocfg' ' --xml-validation ' 'never' ' --remote-port ' TRACI_PORT ' --window-pos ' '0,0' ' --window-size ' '$(xdpyinfo | awk ''/dimensions/{print $2}'' | awk ''{gsub(\"x\", \",\")} {print}'')' ' --start&'])
 	% initialize connection matlab/sumo
 	[traciVersion,sumoVersion] = traci.init(str2num(TRACI_PORT))
 	timer = 0;

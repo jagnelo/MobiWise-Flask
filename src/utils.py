@@ -2,6 +2,8 @@ import os
 import re
 import shutil
 from enum import Enum
+from importlib import machinery, util
+from types import ModuleType
 
 from globals import Globals
 
@@ -13,6 +15,10 @@ def format_objective_names(objective1, objective2):
 
 def format_scenario_name(scenario, objective1, objective2):
     return "%s%s%s" % (scenario, Globals.SCENARIO_SEPARATOR, format_objective_names(objective1, objective2))
+
+
+def format_solution_name(scenario, objective1, objective2, solution):
+    return "%s%s%s" % (format_scenario_name(scenario, objective1, objective2), Globals.SOLUTION_SEPARATOR, solution)
 
 
 def format_file_name_base(scenario):
@@ -165,3 +171,12 @@ def remove_snapshots_from_gui_settings(path_to_gui_settings):
         f.writelines(content)
 
     del content
+
+
+def is_module_available(module_name):
+    return util.find_spec(module_name)
+
+
+def import_module(path_to_py_file, module_name) -> ModuleType:
+    loader = machinery.SourceFileLoader(module_name, path_to_py_file)
+    return loader.load_module(module_name)

@@ -1,7 +1,12 @@
 import os
 
 
-class Globals:
+class NoInit:
+    def __init__(self):
+        raise RuntimeError
+
+
+class Globals(NoInit):
     METRICS = {
         "ttime": {"unit": "s", "pretty": "Time"},
         "length": {"unit": "km", "pretty": "Length"},
@@ -12,14 +17,15 @@ class Globals:
         "cost_nox": {"unit": "g", "pretty": "NOx"}
     }
 
-    OBJECTIVE_SEPARATOR = "-"
     SCENARIO_SEPARATOR = "."
+    OBJECTIVE_SEPARATOR = "-"
+    SOLUTION_SEPARATOR = "."
 
     ECOROUTING_DIR = os.path.join("..", "ecorouting")
 
     SUMO_GUI_SETTINGS_FILE_NAME = "gui-settings.xml"
     SUMO_MAX_TIMEOUT = 4 * 60 * 60
-    SUMO_MAX_THREADS = 8
+    SUMO_MAX_THREADS = 20
 
     LOGS_DIR = os.path.join("..", "logs")
 

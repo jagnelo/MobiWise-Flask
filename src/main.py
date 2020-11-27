@@ -112,4 +112,5 @@ def optimized_video(scenario, objective1, objective2, solution):
 
 
 if __name__ == "__main__":
+    eco.check_content()
     # app.run(port=8001)
