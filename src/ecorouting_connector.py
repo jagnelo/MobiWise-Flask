@@ -1,6 +1,7 @@
 import os
+import time
 from subprocess import STDOUT, PIPE, TimeoutExpired
-from typing import Dict, Union
+from typing import Dict, Callable, List
 
 import utils
 from globals import Globals
@@ -53,7 +54,8 @@ class EcoRoutingTask(Task):
         self.before()
         self.status = TaskStatus.Running
         try:
-            self.mode.run(eco_proc)
+            # self.mode.run(eco_proc)
+            time.sleep(1)
         except BaseException as e:
             print("[task ID = %s] ERROR: " % self.task_id, e)
             self.status = TaskStatus.Failed
@@ -76,7 +78,7 @@ class EcoRoutingVideoTask(EcoRoutingTask):
         return TaskRunMode.Isolated
 
     def get_cmd(self):
-        return EcoRoutingTask.get_cmd(self).append("--gui")
+        return EcoRoutingTask.get_cmd(self) + ["--gui"]
 
     def before(self):
         EcoRoutingTask.before(self)
@@ -163,28 +165,88 @@ class Sim(Pred):
 
 
 class EcoRoutingTaskManager(TaskManager):
-    def get_dependency_tree(self, root: TaskDependency, task_list: list) -> TaskDependency:
-        eco_tasks = []
+    def get_dependency_tree(self, root: TaskDependency, task_list: List[Task]) -> TaskDependency:
+        base_tasks = []
+        pred_tasks = []
+        sim_tasks = []
         for task in task_list:
             if isinstance(task, EcoRoutingTask):
-                if type(task.mode) in [Base, Pred, Sim]:
-                    eco_tasks.append(task)
+                if type(task.mode) is Base:
+                    base_tasks.append(task)
+                elif type(task.mode) is Pred:
+                    pred_tasks.append(task)
+                elif type(task.mode) is Sim:
+                    sim_tasks.append(task)
                 else:
                     print_info = (task.mode.__class__.__name__, task.task_id)
                     print("WARNING: Unknown EcoRoutingMode %s for EcoRoutingTask task ID = %s " % print_info)
             else:
                 print("WARNING: Task task ID = %s is not a subclass of EcoRoutingTask" % task.task_id)
 
-        while eco_tasks:
-            task = eco_tasks.pop(0)
-            if type(task) is Base:
-                pass
-            elif type(task) is Pred:
-                pass
-            elif type(task) is Sim:
-                pass
+        def find_matching_task_dep(dep_tree: TaskDependency, condition: Callable[[TaskDependency], bool]):
+            res = None
+            if condition(dep_tree):
+                res = dep_tree
             else:
-                eco_tasks.append(task)
+                for child in dep_tree.children:
+                    res = find_matching_task_dep(child, condition)
+                    if res:
+                        break
+            return res
+
+        def find_all_matching_task_deps(dep_tree: TaskDependency, condition: Callable[[TaskDependency], bool]):
+            res = []
+            if condition(dep_tree):
+                res.append(dep_tree)
+            for child in dep_tree.children:
+                res.extend(find_all_matching_task_deps(child, condition))
+            return res
+
+        for base_task in base_tasks:
+            base_task_dep = TaskDependency(base_task)
+            root.add_child(base_task_dep)
+        for pred_task in pred_tasks:
+            pred_task_dep = TaskDependency(pred_task)
+
+            def f_base_parent(dep: TaskDependency) -> bool:
+                if isinstance(dep.task, EcoRoutingTask) and isinstance(dep.task.mode, Base):
+                    return dep.task.scenario == pred_task.scenario
+                return False
+
+            parent_base_task_dep = find_matching_task_dep(root, f_base_parent)
+            if parent_base_task_dep:
+                parent_base_task_dep.add_child(pred_task_dep)
+            else:
+                root.add_child(pred_task_dep)
+
+        for sim_task in sim_tasks:
+            sim_task_dep = TaskDependency(sim_task)
+
+            def f_sim_parent(dep: TaskDependency) -> bool:
+                if isinstance(dep.task, EcoRoutingTask):
+                    if isinstance(dep.task.mode, Sim) and isinstance(sim_task.mode, Sim):
+                        return dep.task.scenario == sim_task.scenario and \
+                               dep.task.mode.objective1 == sim_task.mode.objective1 and \
+                               dep.task.mode.objective2 == sim_task.mode.objective2 and \
+                               dep.task.mode.solution != sim_task.mode.solution
+                return False
+
+            def f_pred_parent(dep: TaskDependency) -> bool:
+                if isinstance(dep.task, EcoRoutingTask):
+                    if isinstance(dep.task.mode, Pred) and isinstance(sim_task.mode, Sim):
+                        return dep.task.scenario == sim_task.scenario and \
+                               dep.task.mode.objective1 == sim_task.mode.objective1 and \
+                               dep.task.mode.objective2 == sim_task.mode.objective2
+                return False
+
+            parent_sim_task_deps = find_all_matching_task_deps(root, f_sim_parent)
+            parent_pred_task_dep = find_matching_task_dep(root, f_pred_parent)
+            if parent_sim_task_deps:
+                parent_sim_task_deps[-1].add_child(sim_task_dep)
+            elif parent_pred_task_dep:
+                parent_pred_task_dep.add_child(sim_task_dep)
+            else:
+                root.add_child(sim_task_dep)
 
         return root
 
@@ -203,7 +265,7 @@ def check_content() -> Dict[str, EcoRoutingTask]:
     heatmaps_done = 0
     videos_total = 0
     videos_done = 0
-    tasks = {}
+    tasks: Dict[str, EcoRoutingTask] = {}
 
     def verbose(value: bool) -> str:
         return "FOUND" if value else "MISSING"

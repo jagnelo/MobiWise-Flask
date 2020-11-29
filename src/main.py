@@ -112,5 +112,9 @@ def optimized_video(scenario, objective1, objective2, solution):
 
 
 if __name__ == "__main__":
-    eco.check_content()
+    tasks = eco.check_content()
+    task_manager = eco.EcoRoutingTaskManager(1)
+    for name, task in tasks.items():
+        task_manager.add_task(task)
+    task_manager.start()
     # app.run(port=8001)

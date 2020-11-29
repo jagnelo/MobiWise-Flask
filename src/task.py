@@ -1,7 +1,9 @@
 import os
+import time
 from enum import Enum
 import threading
 from threading import Thread, Lock, RLock
+from typing import List, Dict
 
 
 class TaskStatus(Enum):
@@ -68,21 +70,21 @@ class TaskManager:
 
     class ThreadInfo:
         def __init__(self, thread_id: int, thread: Thread):
-            self.thread_id = thread_id
-            self.thread = thread
+            self.thread_id: int = thread_id
+            self.thread: Thread = thread
 
     def __init__(self, max_parallel_tasks):
         self.max_parallel_tasks = max_parallel_tasks
-        self.tasks = {}
+        self.tasks: Dict[str, Task] = {}
         self.dep_tree_lock = Lock()
         self.thread_pool_rlock = RLock()
-        self.thread_info_pool = {}
+        self.thread_info_pool: Dict[str, TaskManager.ThreadInfo] = {}
 
     def add_task(self, task: Task):
         if task.task_id not in self.tasks:
             self.tasks[task.task_id] = task
 
-    def get_dependency_tree(self, root: TaskDependency, task_list: list) -> TaskDependency:
+    def get_dependency_tree(self, root: TaskDependency, task_list: List[Task]) -> TaskDependency:
         raise NotImplementedError
 
     def start(self):
@@ -121,7 +123,7 @@ class TaskManager:
                 if len(self.thread_info_pool) >= self.max_parallel_tasks:
                     return
                 thread_id = get_available_thread_id()
-                thread_name = "TaskManager Thread%d" % thread_id
+                thread_name = "TaskManager%d" % thread_id
                 thread_info = TaskManager.ThreadInfo(thread_id, Thread(target=run, name=thread_name))
                 self.thread_info_pool[thread_name] = thread_info
                 thread_info.thread.start()
@@ -129,10 +131,31 @@ class TaskManager:
         def check_thread_pool():
             with self.thread_pool_rlock:
                 threads_left = self.max_parallel_tasks - len(self.thread_info_pool)
-                for i in range(len(threads_left)):
+                for i in range(threads_left):
                     spawn_thread()
 
         check_thread_pool()
+
+        def poll():
+            keep_running = True
+            while keep_running:
+                count_total = len(self.tasks)
+                count_completed = 0
+                count_available = 0
+                for k, v in self.tasks.items():
+                    count_available += 1 if v.status == TaskStatus.Available else 0
+                    count_completed += 1 if v.status == TaskStatus.Completed else 0
+
+                print_info = (count_available, count_completed, count_total)
+                print("TaskManager status: Available tasks: %d | Completed tasks: %d | Total tasks: %d" % print_info)
+                time.sleep(5)
+                if count_completed >= count_total:
+                    keep_running = False
+
+        poll_thread = Thread(target=poll)
+        poll_thread.start()
+
+        poll_thread.join()
 
     def get_available_task(self) -> Task:
 
@@ -152,5 +175,6 @@ class TaskManager:
             root.task.status = TaskStatus.Completed
             task_list = [self.tasks[t_id] for t_id in self.tasks]
             task_to_run = find_next_available_task(self.get_dependency_tree(root, task_list))
-            task_to_run.status = TaskStatus.Taken
+            if task_to_run:
+                task_to_run.status = TaskStatus.Taken
             return task_to_run
