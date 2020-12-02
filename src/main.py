@@ -113,6 +113,7 @@ def optimized_video(scenario, objective1, objective2, solution):
 
 if __name__ == "__main__":
     tasks = eco.check_content()
+    tasks = {k: v for k, v in tasks.items() if k in ["portoBV_8AM9AM", "portoBV_8AM9AM_heatmap"]}
     task_manager = eco.EcoRoutingTaskManager(1)
     for name, task in tasks.items():
         task_manager.add_task(task)

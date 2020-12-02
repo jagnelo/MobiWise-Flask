@@ -1,9 +1,9 @@
 import os
 import re
 import shutil
-from enum import Enum
 from importlib import machinery, util
 from types import ModuleType
+from typing import List, Tuple
 
 from globals import Globals
 
@@ -96,27 +96,10 @@ def read_eval_file(file_name):
 
 def get_simulation_files(netfile, roufile):
     return {
-        "gui-settings": open(Globals.SUMO_GUI_SETTINGS_FILE_NAME, "rb"),
-        "additional-files": open(moreOutputInfo.xml, "rb"),
+        "gui-settings": open(Globals.ECOROUTING_GUI_SETTINGS_FILE_NAME, "rb"),
         "net-file": open(netfile, "rb"),
-        "route-files": open(roufile, "rb"),
-        "edge-data-out": open("edge-data-out.xml", "rb"),
-        "basecars-emission-by-edges-out": open("basecars-emission-by-edges-out.xml", "rb")
+        "route-files": open(roufile, "rb")
     }
-
-
-class TextFormat(Enum):
-    Red = "\033[1;31m"
-    Blue = "\033[1;34m"
-    Cyan = "\033[1;36m"
-    Green = "\033[0;32m"
-    Reverse = "\033[;7m"
-
-
-def format_text(text:str, format:TextFormat, bold=False):
-    Reset = "\033[0;0m"
-    Bold = "\033[;1m"
-    return (Bold if bold else "") + format.value + text + Reset
 
 
 def get_objective_combinations():
@@ -142,11 +125,11 @@ def reverse_format_objective_names(name):
 
 
 def add_snapshots_to_gui_settings(path_to_gui_settings):
-    remove_snapshots_from_gui_settings(path_to_gui_settings)
+    # remove_snapshots_from_gui_settings(path_to_gui_settings)
     snapshot_file_name = os.path.join(Globals.SNAPSHOTS_DIR, Globals.SNAPSHOTS_FILE_NAME)
     snapshot_str = "\n".join([Globals.SNAPSHOTS_XML_ELEMENT % (snapshot_file_name % i, i) for i in
                               range(Globals.SNAPSHOTS_COUNT)])
-    gui_settings = os.path.join(path_to_gui_settings, Globals.SUMO_GUI_SETTINGS_FILE_NAME)
+    gui_settings = os.path.join(path_to_gui_settings, Globals.ECOROUTING_GUI_SETTINGS_FILE_NAME)
     with open(gui_settings, "r") as f:
         content = f.read()
 
@@ -161,7 +144,7 @@ def add_snapshots_to_gui_settings(path_to_gui_settings):
 def remove_snapshots_from_gui_settings(path_to_gui_settings):
     xml_line = Globals.SNAPSHOTS_XML_ELEMENT
     regex = re.compile(xml_line.replace("%s", ".+").replace("%d", "[0-9]+").strip())
-    gui_settings = os.path.join(path_to_gui_settings, Globals.SUMO_GUI_SETTINGS_FILE_NAME)
+    gui_settings = os.path.join(path_to_gui_settings, Globals.ECOROUTING_GUI_SETTINGS_FILE_NAME)
     with open(gui_settings, "r") as f:
         content = f.readlines()
 
@@ -173,6 +156,44 @@ def remove_snapshots_from_gui_settings(path_to_gui_settings):
     del content
 
 
+def merge_additional_files_content(file_src, file_dest, xml_tags: list):
+    content_to_add = []
+    with open(file_src, "r") as f:
+        for line in f.readlines():
+            for xml_tag in xml_tags:
+                if line.replace("<", "").replace(">", "").strip().startswith(xml_tag):
+                    content_to_add.append(line.strip())
+                    break
+    content_to_add_str = "\n".join(content_to_add)
+
+    with open(file_dest, "r") as f:
+        content = f.read()
+
+    content = content.replace("</additional>", "%s\n</additional>" % content_to_add_str)
+
+    with open(file_dest, "w") as f:
+        f.write(content)
+
+    del content
+
+
+def remove_tags_from_xml(file, tags: List[Tuple[str, str]]):
+    with open(file, "r") as f:
+        content = f.read()
+
+    for tag in tags:
+        start = tag[0]
+        end = tag[1]
+        content = re.sub("(%s.*?%s)" % (start, end), "", content, flags=re.DOTALL)
+
+    content = re.sub("\n(\n)+", "", content)
+
+    with open(file, "w") as f:
+        f.write(content)
+
+    del content
+
+
 def is_module_available(module_name):
     return util.find_spec(module_name)
 
@@ -180,3 +201,15 @@ def is_module_available(module_name):
 def import_module(path_to_py_file, module_name) -> ModuleType:
     loader = machinery.SourceFileLoader(module_name, path_to_py_file)
     return loader.load_module(module_name)
+
+
+def convert_base_file_name_to_TEMA_spec(file_name, period, location):
+    name = file_name.replace(".xml", "")
+    suffix = Globals.TEMA_FILE_NAME_BASE_SUFFIX
+    return "%s_%s_Routing_%s_%s" % (name, period, location, suffix)
+
+
+def convert_sim_file_name_to_TEMA_spec(file_name, period, location, solution):
+    name = file_name.replace(".xml", "")
+    suffix = Globals.TEMA_FILE_NAME_SIM_SUFFIX_FORMAT % int(solution)
+    return "%s_%s_Routing_%s_%s" % (name, period, location, suffix)

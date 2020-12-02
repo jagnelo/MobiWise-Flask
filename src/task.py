@@ -34,7 +34,13 @@ class Task:
     def get_display_mode(self) -> TaskRunMode:
         raise NotImplementedError
 
+    def before(self):
+        raise NotImplementedError
+
     def start(self):
+        raise NotImplementedError
+
+    def after(self):
         raise NotImplementedError
 
 
