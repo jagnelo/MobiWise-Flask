@@ -270,8 +270,8 @@ class EcoRoutingTask(Task):
         self.after()
         if self.status != TaskStatus.Failed:
             self.status = TaskStatus.Completed
-        print_info = (self.task_id, self.status.value, self.cwd, cmd)
-        logger.info("EcoRouting", "Terminated EcoRouting process (task ID = %s | stats = %s | cwd = %s | cmd = %s)" % print_info)
+        print_info = (self.task_id, self.status.name, self.cwd, cmd)
+        logger.info("EcoRouting", "Terminated EcoRouting process (task ID = %s | status = %s | cwd = %s | cmd = %s)" % print_info)
 
     def after(self):
         if self.cwd != os.getcwd():
@@ -323,7 +323,7 @@ class EcoRoutingVideoTask(EcoRoutingTask):
         snapshots_path = os.path.join(self.cwd, Globals.SNAPSHOTS_DIR)
         # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
         # os.system(utils.get_video_cmd(src_path, self.video_name))
-        gztar_file = self.video_name + Globals.VIDEOS_TARGZ_FILE_TYPE
+        gztar_file = "%s.%s" % (self.video_name, Globals.VIDEOS_TARGZ_FILE_TYPE)
         path_to_gztar_file = os.path.join(self.cwd, gztar_file)
         logger.debug("EcoRouting", "[EcoRoutingVideo] compressing %s to %s" % (snapshots_path, gztar_file))
         with tarfile.open(path_to_gztar_file, "w:gz") as tar:
@@ -404,7 +404,7 @@ class TEMATask(Task):
         self.after()
         if self.status != TaskStatus.Failed:
             self.status = TaskStatus.Completed
-        print_info = (self.task_id, self.status.value, self.cwd)
+        print_info = (self.task_id, self.status.name, self.cwd)
         logger.info("TEMA", "Terminated TEMA process (task ID = %s | status = %s | cwd = %s)" % print_info)
 
     def after(self):
