@@ -1,6 +1,6 @@
 import os
 import shutil
-import threading
+import tarfile
 from subprocess import STDOUT, PIPE, TimeoutExpired
 from typing import Dict, Callable, List, Tuple
 
@@ -293,8 +293,6 @@ class EcoRoutingTask(Task):
 
 
 class EcoRoutingVideoTask(EcoRoutingTask):
-    gztar_lock = threading.Lock()
-
     def __init__(self, task_id, scenario, mode: EcoRoutingMode, video_name: str):
         EcoRoutingTask.__init__(self, task_id, scenario, mode)
         self.video_name = video_name
@@ -322,20 +320,19 @@ class EcoRoutingVideoTask(EcoRoutingTask):
         EcoRoutingTask.start(self)
 
     def after(self):
-        src_path = os.path.join(self.cwd, Globals.SNAPSHOTS_DIR)
+        snapshots_path = os.path.join(self.cwd, Globals.SNAPSHOTS_DIR)
         # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
         # os.system(utils.get_video_cmd(src_path, self.video_name))
-        dst_path = os.path.join(self.cwd, self.video_name)
-        logger.debug("EcoRouting", "[EcoRoutingVideo] waiting for gztar lock")
-        with EcoRoutingVideoTask.gztar_lock:
-            logger.debug("EcoRouting", "[EcoRoutingVideo] got gztar lock")
-            logger.debug("EcoRouting", "[EcoRoutingVideo] compressing %s to tar.gz archive" % src_path)
-            path_to_gztar = shutil.make_archive(dst_path, 'gztar', src_path)
-            logger.debug("EcoRouting", "[EcoRoutingVideo] tar.gz archive created at %s" % path_to_gztar)
-        logger.debug("EcoRouting", "[EcoRoutingVideo] released gztar lock")
-        gztar = path_to_gztar.split(os.sep)[-1]
-        shutil.move(path_to_gztar, os.path.join(Globals.VIDEOS_TARGZ_DIR, gztar))
-        utils.clear_and_remove_dir(src_path)
+        gztar_file = self.video_name + Globals.VIDEOS_TARGZ_FILE_TYPE
+        path_to_gztar_file = os.path.join(self.cwd, gztar_file)
+        logger.debug("EcoRouting", "[EcoRoutingVideo] compressing %s to %s" % (snapshots_path, gztar_file))
+        with tarfile.open(path_to_gztar_file, "w:gz") as tar:
+            tar.add(snapshots_path, arcname=os.path.basename(snapshots_path))
+        logger.debug("EcoRouting", "[EcoRoutingVideo] %s created at %s" % (gztar_file, path_to_gztar_file))
+        dst_path = os.path.join(Globals.VIDEOS_TARGZ_DIR, gztar_file)
+        shutil.move(path_to_gztar_file, dst_path)
+        logger.debug("EcoRouting", "[EcoRoutingVideo] %s moved to %s" % (path_to_gztar_file, dst_path))
+        utils.clear_and_remove_dir(snapshots_path)
         display = self.env["DISPLAY"]
         # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
         os.system("vncserver -kill %s" % display)
