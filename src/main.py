@@ -123,16 +123,19 @@ def main():
     utils.ensure_dir_exists(Globals.VIDEOS_TARGZ_DIR)
     utils.ensure_dir_exists(Globals.VIDEOS_DIR)
     utils.ensure_dir_exists(Globals.HEATMAPS_DIR)
-    task_manager = eco.EcoRoutingTaskManager(Globals.TASK_MANAGER_MAX_THREADS)
-    for name, task in eco.check_content().items():
-        task_manager.add_task(task)
+
+    def update_tasks(silent=True):
+        for _, task in eco.check_content(silent=silent).items():
+            task_manager.add_task(task)
+
+    task_manager = eco.EcoRoutingTaskManager(Globals.TASK_MANAGER_MAX_THREADS, update_tasks)
+    update_tasks(silent=False)
     task_manager.start()
     last_status = datetime.now()
     try:
-        while True:
+        while task_manager.running:
             print_status = (datetime.now() - last_status).total_seconds() >= 300
-            for name, task in eco.check_content(silent=not print_status).items():
-                task_manager.add_task(task)
+            update_tasks(silent=not print_status)
             if print_status:
                 task_manager.status()
                 last_status = datetime.now()

@@ -236,11 +236,13 @@ class EcoRoutingTask(Task):
         except BaseException as e:
             logger.error("EcoRouting", "Error in task ID = %s: %s" % (self.task_id, e))
             self.status = TaskStatus.Failed
-        self.status = TaskStatus.Completing
+        if self.status != TaskStatus.Failed:
+            self.status = TaskStatus.Completing
         self.after()
-        self.status = TaskStatus.Completed
-        print_info = (self.task_id, self.cwd, cmd)
-        logger.info("EcoRouting", "Terminated EcoRouting process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
+        if self.status != TaskStatus.Failed:
+            self.status = TaskStatus.Completed
+        print_info = (self.task_id, self.status.value, self.cwd, cmd)
+        logger.info("EcoRouting", "Terminated EcoRouting process (task ID = %s | stats = %s | cwd = %s | cmd = %s)" % print_info)
 
     def after(self):
         if self.cwd != os.getcwd():
@@ -363,10 +365,13 @@ class TEMATask(Task):
         except BaseException as e:
             logger.error("TEMA", "Error in task ID = %s: %s" % (self.task_id, e))
             self.status = TaskStatus.Failed
-        self.status = TaskStatus.Completing
+        if self.status != TaskStatus.Failed:
+            self.status = TaskStatus.Completing
         self.after()
-        self.status = TaskStatus.Completed
-        logger.info("TEMA", "Terminated TEMA process (task ID = %s | cwd = %s)" % (self.task_id, self.cwd))
+        if self.status != TaskStatus.Failed:
+            self.status = TaskStatus.Completed
+        print_info = (self.task_id, self.status.value, self.cwd)
+        logger.info("TEMA", "Terminated TEMA process (task ID = %s | status = %s | cwd = %s)" % print_info)
 
     def after(self):
         display = self.env["DISPLAY"]
@@ -560,7 +565,9 @@ def check_content(silent=True) -> Dict[str, Task]:
         heatmap_base_exists = exists(join(Globals.HEATMAPS_DIR, image_name))
         video_name = utils.format_file_name_base(scenario)
         video_extension = ".%s" % Globals.VIDEOS_FILE_TYPE
-        video_base_exists = exists(join(Globals.VIDEOS_DIR, video_name + video_extension))
+        video_targz_extension = ".%s" % Globals.VIDEOS_TARGZ_FILE_TYPE
+        video_base_exists = exists(join(Globals.VIDEOS_DIR, video_name + video_extension)) or \
+                            exists(join(Globals.VIDEOS_TARGZ_DIR, video_name + video_targz_extension))
         print_info = (verbose(res_dir_exists), verbose(res_base_roufile_exists), verbose(heatmap_base_exists),
                       verbose(video_base_exists), count_combs_done, count_combs_total)
         if not silent:
@@ -625,7 +632,9 @@ def check_content(silent=True) -> Dict[str, Task]:
                 sol_heatmap_sim_exists = exists(join(Globals.HEATMAPS_DIR, sol_image_name))
                 sol_video_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
                 video_extension = ".%s" % Globals.VIDEOS_FILE_TYPE
-                sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, sol_video_name + video_extension))
+                video_targz_extension = ".%s" % Globals.VIDEOS_TARGZ_FILE_TYPE
+                sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, sol_video_name + video_extension)) or \
+                                       exists(join(Globals.VIDEOS_TARGZ_DIR, sol_video_name + video_targz_extension))
                 print_info = (solution_pretty, verbose(sol_sim_roufile_exists),
                               verbose(sol_heatmap_sim_exists), verbose(sol_video_sim_exists))
                 if not silent:
