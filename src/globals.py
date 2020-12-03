@@ -61,8 +61,8 @@ class Globals(NoInit):
     VIDEOS_TARGZ_FILE_TYPE = "tar.gz"
     FFMPEG_CMD = 'ffmpeg -y -framerate 30 -i "%s" -pix_fmt yuv420p "%s.' + VIDEOS_FILE_TYPE + '"'
     VIDEOS_RESOLUTION = {
-        "width": 400,   # 1280,
-        "height": 300   # 960
+        "width": 1280,
+        "height": 960
     }
 
     HEATMAPS_DIR = os.path.join("..", "media", "heatmaps")
