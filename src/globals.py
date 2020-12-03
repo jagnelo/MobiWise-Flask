@@ -42,10 +42,11 @@ class Globals(NoInit):
     SUMO_EDGE_DATA_XML_TAG = "edgeData"
 
     TASK_MANAGER_MAX_TIMEOUT = 60 * 60 * 2
-    TASK_MANAGER_MAX_THREADS = 8
+    TASK_MANAGER_MAX_THREADS = os.cpu_count()
 
     LOGS_DIR = os.path.join("..", "logs")
     LOGS_LEVEL_INFO = "INFO"
+    LOGS_LEVEL_DEBUG = "DEBUG"
     LOGS_LEVEL_WARN = "WARN"
     LOGS_LEVEL_ERROR = "ERROR"
 

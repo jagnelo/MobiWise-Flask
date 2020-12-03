@@ -43,9 +43,13 @@ class EcoRoutingMode:
         raise NotImplementedError
 
     def run_eco_indicator(self, process: SPopen):
+        logger.debug("TEMA", "[Eco-Indicator] starting Popen process")
         eco_ind_proc = process.start()
+        logger.debug("TEMA", "[Eco-Indicator] started Popen process")
         try:
+            logger.debug("TEMA", "[Eco-Indicator] waiting for eco_proc.communicate()")
             out = eco_ind_proc.communicate(timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
+            logger.debug("TEMA", "[Eco-Indicator] eco_proc.communicate() finished")
             logger.info("TEMA", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
@@ -53,12 +57,18 @@ class EcoRoutingMode:
                 logger.info("TEMA", "TEMA Eco-Indicator process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
+            logger.debug("TEMA", "[Eco-Indicator] terminating Popen process")
             eco_ind_proc.terminate()
+            logger.debug("TEMA", "[Eco-Indicator] terminated Popen process")
 
     def run_heatmaps(self, process: SPopen):
-        eco_ind_proc = process.start()
+        logger.debug("TEMA", "[Heatmaps] starting Popen process")
+        heatmaps_proc = process.start()
+        logger.debug("TEMA", "[Heatmaps] started Popen process")
         try:
-            out = eco_ind_proc.communicate(timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
+            logger.debug("TEMA", "[Heatmaps] waiting for eco_proc.communicate()")
+            out = heatmaps_proc.communicate(timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
+            logger.debug("TEMA", "[Heatmaps] eco_proc.communicate() finished")
             logger.info("TEMA", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
@@ -66,7 +76,9 @@ class EcoRoutingMode:
                 logger.info("TEMA", "TEMA Heatmaps process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
-            eco_ind_proc.terminate()
+            logger.debug("TEMA", "[Heatmaps] terminating Popen process")
+            heatmaps_proc.terminate()
+            logger.debug("TEMA", "[Heatmaps] terminated Popen process")
 
 
 class Base(EcoRoutingMode):
@@ -104,9 +116,13 @@ class Base(EcoRoutingMode):
         return "Trips%s_baseline.rou.xml" % tc["period"]
 
     def run_ecorouting(self, process: SPopen):
+        logger.debug("EcoRouting", "[Base] starting Popen process")
         eco_proc = process.start()
+        logger.debug("EcoRouting", "[Base] started Popen process")
         try:
+            logger.debug("EcoRouting", "[Base] waiting for eco_proc.communicate()")
             out = eco_proc.communicate(timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
+            logger.debug("EcoRouting", "[Base] eco_proc.communicate() finished")
             logger.info("EcoRouting", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
@@ -114,7 +130,9 @@ class Base(EcoRoutingMode):
                 logger.info("EcoRouting", "EcoRouting Base process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
+            logger.debug("EcoRouting", "[Base] terminating Popen process")
             eco_proc.terminate()
+            logger.debug("EcoRouting", "[Base] terminated Popen process")
 
 
 class Pred(EcoRoutingMode):
@@ -129,9 +147,13 @@ class Pred(EcoRoutingMode):
         return ["--mode", "2", "--obj1", self.objective1, "--obj2", self.objective2]
 
     def run_ecorouting(self, process: SPopen):
+        logger.debug("EcoRouting", "[Pred] starting Popen process")
         eco_proc = process.start()
+        logger.debug("EcoRouting", "[Pred] started Popen process")
         try:
+            logger.debug("EcoRouting", "[Pred] waiting for eco_proc.communicate(-1)")
             out = eco_proc.communicate(input=b"-1\n", timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
+            logger.debug("EcoRouting", "[Pred] eco_proc.communicate(-1) finished")
             logger.info("EcoRouting", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
@@ -139,7 +161,9 @@ class Pred(EcoRoutingMode):
                 logger.info("EcoRouting", "EcoRouting Pred process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
+            logger.debug("EcoRouting", "[Pred] terminating Popen process")
             eco_proc.terminate()
+            logger.debug("EcoRouting", "[Pred] terminated Popen process")
 
 
 class Sim(Pred):
@@ -181,11 +205,17 @@ class Sim(Pred):
         return "%s_%s_%s_solution%d.rou.xml" % (tc["bname"], period, location, self.solution)
 
     def run_ecorouting(self, process: SPopen):
+        logger.debug("EcoRouting", "[Sim] starting Popen process")
         eco_proc = process.start()
+        logger.debug("EcoRouting", "[Sim] started Popen process")
         try:
+            logger.debug("EcoRouting", "[Sim] writing %d to eco_proc.stdin" % self.solution)
             eco_proc.stdin.write(b"%d\n" % self.solution)
             eco_proc.stdin.flush()
+            logger.debug("EcoRouting", "[Sim] flushed eco_proc.stdin")
+            logger.debug("EcoRouting", "[Sim] waiting for eco_proc.communicate(-1)")
             out = eco_proc.communicate(input=b"-1\n", timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
+            logger.debug("EcoRouting", "[Sim] eco_proc.communicate(-1) finished")
             logger.info("EcoRouting", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
@@ -193,7 +223,9 @@ class Sim(Pred):
                 logger.info("EcoRouting", "EcoRouting Sim process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
+            logger.debug("EcoRouting", "[Sim] terminating Popen process")
             eco_proc.terminate()
+            logger.debug("EcoRouting", "[Sim] terminated Popen process")
 
 
 class EcoRoutingTask(Task):

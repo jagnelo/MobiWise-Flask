@@ -30,6 +30,9 @@ class Logger:
     def info(self, source, message):
         self.log(Globals.LOGS_LEVEL_INFO, source, message)
 
+    def debug(self, source, message):
+        self.log(Globals.LOGS_LEVEL_DEBUG, source, message)
+
     def warn(self, source, message):
         self.log(Globals.LOGS_LEVEL_WARN, source, message)
 
