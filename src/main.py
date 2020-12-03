@@ -1,4 +1,8 @@
 import os
+import threading
+import time
+from datetime import datetime
+
 import requests
 
 import utils
@@ -8,6 +12,7 @@ from flask_cors import CORS
 from dotenv import load_dotenv, find_dotenv
 
 from globals import Globals
+from logger import logger
 
 load_dotenv(find_dotenv())
 
@@ -90,13 +95,13 @@ def optimized_view(scenario, objective1, objective2, solution):
 @app.route("/api/<scenario>/base/heatmap", methods=["GET"])
 def base_heatmap(scenario):
     image_name = utils.format_file_name_base(scenario)
-    return send_file(utils.get_file_path_or_default(Globals.HEATMAPS_DIR, image_name, "jpg"), mimetype="image/jpeg")
+    return send_file(utils.get_file_path_or_default(Globals.HEATMAPS_DIR, image_name, "png"), mimetype="image/png")
 
 
 @app.route("/api/<scenario>/optimized/<objective1>/<objective2>/heatmap/<solution>", methods=["GET"])
 def optimized_heatmap(scenario, objective1, objective2, solution):
     image_name = utils.format_file_name_sim(scenario, objective1, objective2, int(solution))
-    return send_file(utils.get_file_path_or_default(Globals.HEATMAPS_DIR, image_name, "jpg"), mimetype="image/jpeg")
+    return send_file(utils.get_file_path_or_default(Globals.HEATMAPS_DIR, image_name, "png"), mimetype="image/png")
 
 
 @app.route("/api/<scenario>/base/video", methods=["GET"])
@@ -111,11 +116,37 @@ def optimized_video(scenario, objective1, objective2, solution):
     return send_file(utils.get_file_path_or_default(Globals.VIDEOS_DIR, video_name, "mp4"), mimetype="video/mp4")
 
 
-if __name__ == "__main__":
-    tasks = eco.check_content()
-    tasks = {k: v for k, v in tasks.items() if k in ["portoBV_8AM9AM", "portoBV_8AM9AM_heatmap"]}
-    task_manager = eco.EcoRoutingTaskManager(1)
-    for name, task in tasks.items():
+def main():
+    threading.current_thread().name = "Main"
+    logger.info("Main", "---------------------- MobiWise backend starting ----------------------")
+    utils.ensure_dir_exists(Globals.LOGS_DIR)
+    utils.ensure_dir_exists(Globals.VIDEOS_TARGZ_DIR)
+    utils.ensure_dir_exists(Globals.VIDEOS_DIR)
+    utils.ensure_dir_exists(Globals.HEATMAPS_DIR)
+    task_manager = eco.EcoRoutingTaskManager(Globals.TASK_MANAGER_MAX_THREADS)
+    for name, task in eco.check_content().items():
         task_manager.add_task(task)
     task_manager.start()
+    last_status = datetime.now()
+    try:
+        while True:
+            print_status = (datetime.now() - last_status).total_seconds() >= 300
+            for name, task in eco.check_content(silent=not print_status).items():
+                task_manager.add_task(task)
+            if print_status:
+                task_manager.status()
+                last_status = datetime.now()
+            logger.flush()
+            time.sleep(60)
+    except:
+        pass
+    finally:
+        logger.flush()
+        task_manager.stop(wait=True)
+        logger.info("Main", "---------------------- MobiWise backend stopping ----------------------")
+        logger.flush()
+
+
+if __name__ == "__main__":
+    main()
     # app.run(port=8001)

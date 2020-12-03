@@ -41,10 +41,13 @@ class Globals(NoInit):
 
     SUMO_EDGE_DATA_XML_TAG = "edgeData"
 
-    TASK_MANAGER_MAX_TIMEOUT = 60 * 60 * 1.5
-    TASK_MANAGER_MAX_THREADS = 40
+    TASK_MANAGER_MAX_TIMEOUT = 60 * 60 * 2
+    TASK_MANAGER_MAX_THREADS = 8
 
     LOGS_DIR = os.path.join("..", "logs")
+    LOGS_LEVEL_INFO = "INFO"
+    LOGS_LEVEL_WARN = "WARN"
+    LOGS_LEVEL_ERROR = "ERROR"
 
     SNAPSHOTS_DIR = "snapshots"
     SNAPSHOTS_COUNT = 200_000
@@ -53,11 +56,13 @@ class Globals(NoInit):
     SNAPSHOTS_XML_ELEMENT = "\t<snapshot file=\"%s\" time=\"%d\"/>"
 
     VIDEOS_DIR = os.path.join("..", "media", "videos")
+    VIDEOS_TARGZ_DIR = os.path.join("..", "media", "videos.tar.gz")
     VIDEOS_FILE_TYPE = "mp4"
+    VIDEOS_TARGZ_FILE_TYPE = "tar.gz"
     FFMPEG_CMD = 'ffmpeg -y -framerate 30 -i "%s" -pix_fmt yuv420p "%s.' + VIDEOS_FILE_TYPE + '"'
     VIDEOS_RESOLUTION = {
-        "width": 1280,
-        "height": 960
+        "width": 400,   # 1280,
+        "height": 300   # 960
     }
 
     HEATMAPS_DIR = os.path.join("..", "media", "heatmaps")

@@ -1,9 +1,11 @@
+from datetime import datetime
 import os
-import time
 from enum import Enum
 import threading
 from threading import Thread, Lock, RLock
 from typing import List, Dict
+
+from logger import logger
 
 
 class TaskStatus(Enum):
@@ -85,6 +87,7 @@ class TaskManager:
         self.dep_tree_lock = Lock()
         self.thread_pool_rlock = RLock()
         self.thread_info_pool: Dict[str, TaskManager.ThreadInfo] = {}
+        self.running = False
 
     def add_task(self, task: Task):
         if task.task_id not in self.tasks:
@@ -94,12 +97,13 @@ class TaskManager:
         raise NotImplementedError
 
     def start(self):
+        self.running = True
 
         def run():
             thread_name = threading.current_thread().getName()
-            print("Thread %s starting" % thread_name)
+            logger.info("TaskManager", "Thread %s starting" % thread_name)
             task = TaskManager.dummy_task
-            while task:
+            while task and self.running:
                 task = self.get_available_task()
                 if task:
                     if task.get_cwd_mode() == TaskRunMode.Isolated:
@@ -107,12 +111,16 @@ class TaskManager:
                     with self.thread_pool_rlock:
                         if task.get_display_mode() == TaskRunMode.Isolated:
                             task.env["DISPLAY"] = ":%d" % self.thread_info_pool[thread_name].thread_id
-                    print("Thread %s is starting task ID = %s" % (thread_name, task.task_id))
+                    logger.info("TaskManager", "Thread %s is starting task ID = %s" % (thread_name, task.task_id))
+                    date_start = datetime.now()
                     task.start()
-                    print("Thread %s finished task ID = %s" % (thread_name, task.task_id))
+                    delta_seconds = (datetime.now() - date_start).total_seconds()
+                    print_info = (thread_name, task.task_id, delta_seconds)
+                    logger.info("TaskManager", "Thread %s finished task ID = %s in %d seconds" % print_info)
                     check_thread_pool()
-            print("Thread %s has no task to run" % thread_name)
-            print("Thread %s stopping" % thread_name)
+            if not task:
+                logger.info("TaskManager", "Thread %s has no task to run" % thread_name)
+            logger.info("TaskManager", "Thread %s stopping" % thread_name)
             with self.thread_pool_rlock:
                 self.thread_info_pool.pop(thread_name)
 
@@ -142,26 +150,46 @@ class TaskManager:
 
         check_thread_pool()
 
-        def poll():
-            keep_running = True
-            while keep_running:
-                count_total = len(self.tasks)
-                count_completed = 0
-                count_available = 0
-                for k, v in self.tasks.items():
-                    count_available += 1 if v.status == TaskStatus.Available else 0
-                    count_completed += 1 if v.status == TaskStatus.Completed else 0
+    def stop(self, wait=False):
+        self.running = False
+        if wait:
+            self.wait_for_all()
 
-                print_info = (count_available, count_completed, count_total)
-                print("TaskManager status: Available tasks: %d | Completed tasks: %d | Total tasks: %d" % print_info)
-                time.sleep(5)
-                if count_completed >= count_total:
-                    keep_running = False
+    def wait_for_all(self):
+        while self.thread_info_pool:
+            k = list(self.thread_info_pool)[-1]
+            self.thread_info_pool[k].thread.join()
 
-        poll_thread = Thread(target=poll)
-        poll_thread.start()
+    def status(self):
+        count_total = len(self.tasks)
+        count_available = 0
+        count_taken = 0
+        count_starting = 0
+        count_running = 0
+        count_completing = 0
+        count_completed = 0
+        count_failed = 0
 
-        poll_thread.join()
+        for _, v in self.tasks.items():
+            count_available += 1 if v.status == TaskStatus.Available else 0
+            count_taken += 1 if v.status == TaskStatus.Taken else 0
+            count_starting += 1 if v.status == TaskStatus.Starting else 0
+            count_running += 1 if v.status == TaskStatus.Running else 0
+            count_completing += 1 if v.status == TaskStatus.Completing else 0
+            count_completed += 1 if v.status == TaskStatus.Completed else 0
+            count_failed += 1 if v.status == TaskStatus.Failed else 0
+
+        total = "Total: %d" % count_total
+        available = "Available: %d" % count_available
+        taken = "Taken: %d" % count_taken
+        starting = "Starting: %d" % count_starting
+        running = "Running: %d" % count_running
+        completing = "Completing: %d" % count_completing
+        completed = "Completed: %d" % count_completed
+        failed = "Failed: %d" % count_failed
+
+        print_info = (available, taken, starting, running, completing, completed, failed, total)
+        logger.info("TaskManager", "Task status: %s | %s | %s | %s | %s | %s | %s | %s" % print_info)
 
     def get_available_task(self) -> Task:
 

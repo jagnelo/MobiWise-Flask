@@ -6,6 +6,7 @@ from types import ModuleType
 from typing import List, Tuple
 
 from globals import Globals
+from logger import logger
 
 
 def format_objective_names(objective1, objective2):
@@ -42,20 +43,22 @@ def get_video_cmd(snapshots_dir, video_name):
     return Globals.FFMPEG_CMD % (path, videos_dir)
 
 
-def ensure_dir_exists(path):
+def ensure_dir_exists(path, silent=False):
     if not os.path.exists(path):
         os.makedirs(path)
-        print("Created directory %s" % path)
+        if not silent:
+            logger.info("Utils", "Created directory %s" % path)
 
 
-def copy_dir_contents(path_src, path_dst):
+def copy_dir_contents(path_src, path_dst, silent=False):
     if os.path.exists(path_src) and os.path.isdir(path_src):
         ensure_dir_exists(path_dst)
         shutil.copytree(path_src, path_dst, dirs_exist_ok=True)
-        print("Copied contents of directory %s to directory %s" % (path_src, path_dst))
+        if not silent:
+            logger.info("Utils", "Copied contents of directory %s to directory %s" % (path_src, path_dst))
 
 
-def clear_dir(path):
+def clear_dir(path, silent=False):
     if os.path.exists(path) and os.path.isdir(path):
         removed_something = False
         for name in os.listdir(path):
@@ -66,14 +69,15 @@ def clear_dir(path):
             if os.path.isfile(os.path.join(path, name)):
                 os.remove(child_path)
                 removed_something = True
-        if removed_something:
-            print("Emptied directory %s" % path)
+        if removed_something and not silent:
+            logger.info("Utils", "Emptied directory %s" % path)
 
 
-def clear_and_remove_dir(path):
+def clear_and_remove_dir(path, silent=False):
     if os.path.exists(path) and os.path.isdir(path):
         shutil.rmtree(path, ignore_errors=True)
-        print("Emptied and removed directory %s" % path)
+        if not silent:
+            logger.info("Utils", "Emptied and removed directory %s" % path)
 
 
 def read_eval_file(file_name):

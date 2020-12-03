@@ -5,6 +5,7 @@ from typing import Dict, Callable, List, Tuple
 
 import utils
 from globals import Globals
+from logger import logger
 
 if not utils.is_module_available("ecorouting"):
     module = utils.import_module(os.path.join(Globals.ECOROUTING_DIR, "testcases.py"), "testcases")
@@ -35,6 +36,9 @@ class EcoRoutingMode:
     def get_route_file(self, scenario) -> Tuple[str, str]:
         raise NotImplementedError
 
+    def get_TEMA_route_file(self, scenario):
+        raise NotImplementedError
+
     def run_ecorouting(self, process: SPopen):
         raise NotImplementedError
 
@@ -42,11 +46,11 @@ class EcoRoutingMode:
         eco_ind_proc = process.start()
         try:
             out = eco_ind_proc.communicate(timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
-            print(out[0].decode().rstrip())
+            logger.info("TEMA", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
                 timeout = Globals.TASK_MANAGER_MAX_TIMEOUT
-                print("TEMA Eco-Indicator process exceeded %d seconds, and will be terminated" % timeout)
+                logger.info("TEMA", "TEMA Eco-Indicator process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
             eco_ind_proc.terminate()
@@ -55,11 +59,11 @@ class EcoRoutingMode:
         eco_ind_proc = process.start()
         try:
             out = eco_ind_proc.communicate(timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
-            print(out[0].decode().rstrip())
+            logger.info("TEMA", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
                 timeout = Globals.TASK_MANAGER_MAX_TIMEOUT
-                print("TEMA Heatmaps process exceeded %d seconds, and will be terminated" % timeout)
+                logger.info("TEMA", "TEMA Heatmaps process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
             eco_ind_proc.terminate()
@@ -78,7 +82,7 @@ class Base(EcoRoutingMode):
         file_all_veh = Globals.TEMA_ALL_VEHICLES_EDGE_DATA_FILE_NAME
         file_noise = Globals.TEMA_NOISE_EDGE_DATA_FILE_NAME
         return [
-            (file_rou, "Trips%s_baseline.rou.xml" % tc["period"]),
+            (file_rou, self.get_TEMA_route_file(scenario)),
             (file_route_veh, utils.convert_base_file_name_to_TEMA_spec(file_route_veh, period, location)),
             (file_all_veh, utils.convert_base_file_name_to_TEMA_spec(file_all_veh, period, location)),
             (file_noise, utils.convert_base_file_name_to_TEMA_spec(file_noise, period, location))
@@ -95,15 +99,19 @@ class Base(EcoRoutingMode):
         tc = get_test_cases()[scenario]
         return self.get_output_dir(scenario), "%s-base.rou.xml" % tc["bname"]
 
+    def get_TEMA_route_file(self, scenario):
+        tc = get_test_cases()[scenario]
+        return "Trips%s_baseline.rou.xml" % tc["period"]
+
     def run_ecorouting(self, process: SPopen):
         eco_proc = process.start()
         try:
             out = eco_proc.communicate(timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
-            print(out[0].decode().rstrip())
+            logger.info("EcoRouting", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
                 timeout = Globals.TASK_MANAGER_MAX_TIMEOUT
-                print("EcoRouting Base process exceeded %d seconds, and will be terminated" % timeout)
+                logger.info("EcoRouting", "EcoRouting Base process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
             eco_proc.terminate()
@@ -124,11 +132,11 @@ class Pred(EcoRoutingMode):
         eco_proc = process.start()
         try:
             out = eco_proc.communicate(input=b"-1\n", timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
-            print(out[0].decode().rstrip())
+            logger.info("EcoRouting", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
                 timeout = Globals.TASK_MANAGER_MAX_TIMEOUT
-                print("EcoRouting Pred process exceeded %d seconds, and will be terminated" % timeout)
+                logger.info("EcoRouting", "EcoRouting Pred process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
             eco_proc.terminate()
@@ -151,7 +159,7 @@ class Sim(Pred):
         file_all_veh = Globals.TEMA_ALL_VEHICLES_EDGE_DATA_FILE_NAME
         file_noise = Globals.TEMA_NOISE_EDGE_DATA_FILE_NAME
         return [
-            (file_rou, "%s_%s_%s_solution%d.rou.xml" % (tc["bname"], period, location, self.solution)),
+            (file_rou, self.get_TEMA_route_file(scenario)),
             (file_route_veh, utils.convert_sim_file_name_to_TEMA_spec(file_route_veh, period, location, self.solution)),
             (file_all_veh, utils.convert_sim_file_name_to_TEMA_spec(file_all_veh, period, location, self.solution)),
             (file_noise, utils.convert_sim_file_name_to_TEMA_spec(file_noise, period, location, self.solution))
@@ -166,17 +174,23 @@ class Sim(Pred):
         tc = get_test_cases()[scenario]
         return self.get_output_dir(scenario), "%s.rou.xml" % tc["bname"]
 
-    def run(self, process: SPopen):
+    def get_TEMA_route_file(self, scenario):
+        tc = get_test_cases()[scenario]
+        period = tc["period"]
+        location = tc["location"]
+        return "%s_%s_%s_solution%d.rou.xml" % (tc["bname"], period, location, self.solution)
+
+    def run_ecorouting(self, process: SPopen):
         eco_proc = process.start()
         try:
             eco_proc.stdin.write(b"%d\n" % self.solution)
             eco_proc.stdin.flush()
             out = eco_proc.communicate(input=b"-1\n", timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
-            print(out[0].decode().rstrip())
+            logger.info("EcoRouting", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
                 timeout = Globals.TASK_MANAGER_MAX_TIMEOUT
-                print("EcoRouting Sim process exceeded %d seconds, and will be terminated" % timeout)
+                logger.info("EcoRouting", "EcoRouting Sim process exceeded %d seconds, and will be terminated" % timeout)
             raise
         finally:
             eco_proc.terminate()
@@ -209,22 +223,24 @@ class EcoRoutingTask(Task):
 
     def start(self):
         if self.cwd == os.getcwd() or self.cwd == Globals.ECOROUTING_DIR:
-            print("WARNING: EcoRoutingTask task ID = %s is set for cwd %s" % (self.task_id, self.cwd))
+            logger.warn("EcoRouting", "EcoRoutingTask task ID = %s is set for cwd %s" % (self.task_id, self.cwd))
         cmd = self.get_cmd()
         eco_proc = SPopen(cmd, cwd=self.cwd, env=self.env, stdout=PIPE, stdin=PIPE, stderr=STDOUT)
-        print("Started EcoRouting process (task ID = %s | cwd = %s | cmd = %s)" % (self.task_id, self.cwd, cmd))
+        print_info = (self.task_id, self.cwd, cmd)
+        logger.info("EcoRouting", "Started EcoRouting process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
         self.status = TaskStatus.Starting
         self.before()
         self.status = TaskStatus.Running
         try:
             self.mode.run_ecorouting(eco_proc)
         except BaseException as e:
-            print("[task ID = %s] ERROR: " % self.task_id, e)
+            logger.error("EcoRouting", "Error in task ID = %s: %s" % (self.task_id, e))
             self.status = TaskStatus.Failed
         self.status = TaskStatus.Completing
         self.after()
         self.status = TaskStatus.Completed
-        print("Terminated EcoRouting process (task ID = %s | cwd = %s | cmd = %s)" % (self.task_id, self.cwd, cmd))
+        print_info = (self.task_id, self.cwd, cmd)
+        logger.info("EcoRouting", "Terminated EcoRouting process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
 
     def after(self):
         if self.cwd != os.getcwd():
@@ -262,29 +278,37 @@ class EcoRoutingVideoTask(EcoRoutingTask):
         utils.ensure_dir_exists(os.path.join(self.cwd, Globals.SNAPSHOTS_DIR))
         geometry = "%dx%d" % (Globals.VIDEOS_RESOLUTION["width"], Globals.VIDEOS_RESOLUTION["height"])
         display = self.env["DISPLAY"]
+        # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
         os.system("vncserver %s -noxstartup -geometry %s" % (display, geometry))
 
     def start(self):
         if self.env["DISPLAY"] == ":0":
-            print("WARNING: EcoRoutingVideoTask task ID = %s is set for DISPLAY :0" % self.task_id)
+            logger.warn("EcoRouting", "EcoRoutingVideoTask task ID = %s is set for DISPLAY :0" % self.task_id)
         display = self.env["DISPLAY"]
-        print("Running EcoRouting process on DISPLAY %s through a VNC server" % display)
+        logger.info("EcoRouting", "Running EcoRouting process on DISPLAY %s through a VNC server" % display)
         EcoRoutingTask.start(self)
 
     def after(self):
-        path = os.path.join(self.cwd, Globals.SNAPSHOTS_DIR)
-        os.system(utils.get_video_cmd(path, self.video_name))
-        utils.clear_and_remove_dir(path)
+        src_path = os.path.join(self.cwd, Globals.SNAPSHOTS_DIR)
+        # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
+        # os.system(utils.get_video_cmd(src_path, self.video_name))
+        dst_path = os.path.join(self.cwd, self.video_name)
+        path_to_gztar = shutil.make_archive(dst_path, 'gztar', src_path)
+        gztar = path_to_gztar.split(os.sep)[-1]
+        shutil.move(path_to_gztar, os.path.join(Globals.VIDEOS_TARGZ_DIR, gztar))
+        utils.clear_and_remove_dir(src_path)
         display = self.env["DISPLAY"]
+        # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
         os.system("vncserver -kill %s" % display)
         EcoRoutingTask.after(self)
 
 
 class TEMATask(Task):
-    def __init__(self, task_id, scenario, mode: EcoRoutingMode):
+    def __init__(self, task_id, scenario, mode: EcoRoutingMode, image_name):
         Task.__init__(self, task_id)
         self.scenario = scenario
         self.mode = mode
+        self.image_name = image_name
 
     def get_cwd_mode(self) -> TaskRunMode:
         return TaskRunMode.Isolated
@@ -306,50 +330,54 @@ class TEMATask(Task):
 
         geometry = "%dx%d" % (Globals.HEATMAPS_RESOLUTION["width"], Globals.HEATMAPS_RESOLUTION["height"])
         display = self.env["DISPLAY"]
+        # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
         os.system("vncserver %s -noxstartup -geometry %s" % (display, geometry))
 
     def start(self):
         if self.env["DISPLAY"] == ":0":
-            print("WARNING: TEMATask task ID = %s is set for DISPLAY :0" % self.task_id)
+            logger.warn("TEMA", "TEMATask task ID = %s is set for DISPLAY :0" % self.task_id)
         display = self.env["DISPLAY"]
-        print("Running TEMA process on DISPLAY %s through a VNC server" % display)
+        logger.info("TEMA", "Running TEMA process on DISPLAY %s through a VNC server" % display)
         if self.cwd == os.getcwd() or self.cwd == Globals.ECOROUTING_DIR:
-            print("WARNING: TEMATask task ID = %s is set for cwd %s" % (self.task_id, self.cwd))
-        eco_ind_cmd = ["run_eco_indicator.sh", Globals.MATLAB_RUNTIME_DIR]
+            logger.warn("TEMA", "TEMATask task ID = %s is set for cwd %s" % (self.task_id, self.cwd))
+        eco_ind_cmd = ["bash", "run_eco_indicator.sh", Globals.MATLAB_RUNTIME_DIR]
         net_file = self.mode.get_net_file(self.scenario)[1]
-        rou_file = self.mode.get_route_file(self.scenario)[1]
-        traci_port = Globals.TEMA_TRACI_BASE_PORT + int(display.replace(":", ""))
-        heatmap_cmd = ["run_heatmaps.sh", Globals.MATLAB_RUNTIME_DIR, net_file, rou_file, traci_port]
+        rou_file = self.mode.get_TEMA_route_file(self.scenario)
+        traci_port = str(Globals.TEMA_TRACI_BASE_PORT + int(display.replace(":", "")))
+        heatmap_cmd = ["bash", "run_heatmaps.sh", Globals.MATLAB_RUNTIME_DIR, net_file, rou_file, traci_port]
         eco_ind_proc = SPopen(eco_ind_cmd, cwd=self.cwd, env=self.env, stdout=PIPE, stdin=PIPE, stderr=STDOUT)
         heatmap_proc = SPopen(heatmap_cmd, cwd=self.cwd, env=self.env, stdout=PIPE, stdin=PIPE, stderr=STDOUT)
-        print("Started TEMA process (task ID = %s | cwd = %s)" % (self.task_id, self.cwd))
+        logger.info("TEMA", "Started TEMA process (task ID = %s | cwd = %s)" % (self.task_id, self.cwd))
         self.status = TaskStatus.Starting
         self.before()
         self.status = TaskStatus.Running
         try:
             print_info = (self.task_id, self.cwd, eco_ind_cmd)
-            print("Started TEMA Eco-Indicator process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
+            logger.info("TEMA", "Started TEMA Eco-Indicator process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
             self.mode.run_eco_indicator(eco_ind_proc)
-            print("Terminated TEMA Eco-Indicator process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
+            logger.info("TEMA", "Terminated TEMA Eco-Indicator process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
             print_info = (self.task_id, self.cwd, heatmap_cmd)
-            print("Started TEMA Heatmaps process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
+            logger.info("TEMA", "Started TEMA Heatmaps process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
             self.mode.run_heatmaps(heatmap_proc)
-            print("Terminated TEMA Heatmaps process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
+            logger.info("TEMA", "Terminated TEMA Heatmaps process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
         except BaseException as e:
-            print("[task ID = %s] ERROR: " % self.task_id, e)
+            logger.error("TEMA", "Error in task ID = %s: %s" % (self.task_id, e))
             self.status = TaskStatus.Failed
         self.status = TaskStatus.Completing
         self.after()
         self.status = TaskStatus.Completed
-        print("Terminated TEMA process (task ID = %s | cwd = %s)" % (self.task_id, self.cwd))
+        logger.info("TEMA", "Terminated TEMA process (task ID = %s | cwd = %s)" % (self.task_id, self.cwd))
 
     def after(self):
         display = self.env["DISPLAY"]
+        # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
         os.system("vncserver -kill %s" % display)
         if self.cwd != os.getcwd():
-            # find all *.png files (i.e., heatmaps)
-            # fix their names!!!!!!!!!!!!!!!!!! damn tema shitty work.......
-            # move all heatmap files (with corrected names) to the heatmaps folder
+            path_dst = os.path.join(Globals.HEATMAPS_DIR, self.image_name)
+            utils.ensure_dir_exists(path_dst)
+            for file in os.listdir(self.cwd):
+                if file.endswith(Globals.HEATMAPS_FILE_TYPE):
+                    shutil.move(os.path.join(self.cwd, file), os.path.join(path_dst, file))
             utils.clear_and_remove_dir(self.cwd)
 
 
@@ -370,7 +398,7 @@ class EcoRoutingTaskManager(TaskManager):
                     sim_tasks.append(task)
                 else:
                     print_info = (task.mode.__class__.__name__, task.task_id)
-                    print("WARNING: Unknown EcoRoutingMode %s for EcoRoutingTask task ID = %s " % print_info)
+                    logger.warn("TaskManager", "Unknown EcoRoutingMode %s for EcoRoutingTask task ID = %s " % print_info)
             elif isinstance(task, TEMATask):
                 if type(task.mode) is Base:
                     base_heatmap_tasks.append(task)
@@ -378,10 +406,10 @@ class EcoRoutingTaskManager(TaskManager):
                     sim_heatmap_tasks.append(task)
                 else:
                     print_info = (task.mode.__class__.__name__, task.task_id)
-                    print("WARNING: Unknown EcoRoutingMode %s for TEMATask task ID = %s " % print_info)
+                    logger.warn("TaskManager", "Unknown EcoRoutingMode %s for TEMATask task ID = %s " % print_info)
             else:
                 print_info = (task.__class__.__name__, task.task_id)
-                print("WARNING: Task %s task ID = %s is not an acceptable subclass of Task" % print_info)
+                logger.warn("TaskManager", "Task %s task ID = %s is not an acceptable subclass of Task" % print_info)
 
         def find_matching_task_dep(dep_tree: TaskDependency, condition: Callable[[TaskDependency], bool]):
             res = None
@@ -411,7 +439,7 @@ class EcoRoutingTaskManager(TaskManager):
 
             def f_base_parent(dep: TaskDependency) -> bool:
                 if isinstance(dep.task, EcoRoutingTask) and isinstance(dep.task.mode, Base):
-                    return dep.task.scenario == pred_task.scenario
+                    return dep.task.scenario == base_heatmap_task.scenario
                 return False
 
             parent_base_task_dep = find_matching_task_dep(root, f_base_parent)
@@ -468,11 +496,11 @@ class EcoRoutingTaskManager(TaskManager):
 
             def f_sim_parent(dep: TaskDependency) -> bool:
                 if isinstance(dep.task, EcoRoutingTask):
-                    if isinstance(dep.task.mode, Sim) and isinstance(sim_task.mode, Sim):
-                        return dep.task.scenario == sim_task.scenario and \
-                               dep.task.mode.objective1 == sim_task.mode.objective1 and \
-                               dep.task.mode.objective2 == sim_task.mode.objective2 and \
-                               dep.task.mode.solution == sim_task.mode.solution
+                    if isinstance(dep.task.mode, Sim) and isinstance(sim_heatmap_task.mode, Sim):
+                        return dep.task.scenario == sim_heatmap_task.scenario and \
+                               dep.task.mode.objective1 == sim_heatmap_task.mode.objective1 and \
+                               dep.task.mode.objective2 == sim_heatmap_task.mode.objective2 and \
+                               dep.task.mode.solution == sim_heatmap_task.mode.solution
                 return False
 
             parent_sim_task_dep = find_matching_task_dep(root, f_sim_parent)
@@ -485,10 +513,11 @@ class EcoRoutingTaskManager(TaskManager):
 
 
 def get_test_cases():
-    return testcases
+    excluded = ["ang-est", "portoSB_8AM9AM_fewerv", "portoA3_6PM7PM"]
+    return {k: v for k, v in testcases.items() if k not in excluded}
 
 
-def check_content() -> Dict[str, Task]:
+def check_content(silent=True) -> Dict[str, Task]:
     tcs = get_test_cases()
     total_objective_combinations = utils.get_objective_combinations()
     count_combs_total = len(total_objective_combinations)
@@ -503,17 +532,20 @@ def check_content() -> Dict[str, Task]:
     def join(*paths: str) -> str:
         return os.path.join(*paths)
 
-    print("Checking content...")
+    if not silent:
+        logger.info("ContentChecker", "Checking content...")
     for scenario in tcs:
         tc = tcs[scenario]
-        print("Test case: %s (%s)" % (tc["prettyName"], scenario))
+        if not silent:
+            logger.info("ContentChecker", "Test case: %s (%s)" % (tc["prettyName"], scenario))
 
         data_dir = tc["ifolder"]
         data_dir_exists = exists(data_dir)
         data_netfile_exists = exists(join(data_dir, tc["netfile"]))
         data_roufile_exists = exists(join(data_dir, tc["roufile"]))
         print_info = (verbose(data_dir_exists), verbose(data_netfile_exists), verbose(data_roufile_exists))
-        print("\tDataset directory: %s | Net file: %s | Route file: %s" % print_info)
+        if not silent:
+            logger.info("ContentChecker", "\tDataset directory: %s | Net file: %s | Route file: %s" % print_info)
 
         res_dir = tc["ofolder"]
         res_dir_exists = exists(res_dir)
@@ -524,15 +556,16 @@ def check_content() -> Dict[str, Task]:
                     done_objective_combinations.append(name)
         res_base_roufile_exists = exists(join(res_dir, "inputdata", tc["bname"]) + "-base.rou.xml")
         count_combs_done = len(done_objective_combinations)
-        count_combs_left = count_combs_total - count_combs_done
         image_name = "%s.%s" % (utils.format_file_name_base(scenario), Globals.HEATMAPS_FILE_TYPE)
         heatmap_base_exists = exists(join(Globals.HEATMAPS_DIR, image_name))
-        video_name = "%s.%s" % (utils.format_file_name_base(scenario), Globals.VIDEOS_FILE_TYPE)
-        video_base_exists = exists(join(Globals.VIDEOS_DIR, video_name))
+        video_name = utils.format_file_name_base(scenario)
+        video_extension = ".%s" % Globals.VIDEOS_FILE_TYPE
+        video_base_exists = exists(join(Globals.VIDEOS_DIR, video_name + video_extension))
         print_info = (verbose(res_dir_exists), verbose(res_base_roufile_exists), verbose(heatmap_base_exists),
                       verbose(video_base_exists), count_combs_done, count_combs_total)
-        print("\tResults directory: %s | Base route file: %s | Heatmap file: %s | Video file: %s | "
-              "Objective combinations: %d/%d" % print_info)
+        if not silent:
+            logger.info("ContentChecker", "\tResults directory: %s | Base route file: %s | Heatmap file: %s | "
+                                          "Video file: %s | Objective combinations: %d/%d" % print_info)
 
         base_task_name = scenario
         base_task_mode = Base()
@@ -542,11 +575,11 @@ def check_content() -> Dict[str, Task]:
             base_task.status = TaskStatus.Completed
         tasks[base_task_name] = base_task
         base_heatmap_task_name = "%s_heatmap" % base_task_name
-        base_task_heatmap = TEMATask(base_heatmap_task_name, scenario, base_task_mode)
+        base_task_heatmap = TEMATask(base_heatmap_task_name, scenario, base_task_mode, "")
         if heatmap_base_exists:
             # FIXME -> the Completed status should NOT be attributed here; works for now
             base_task_heatmap.status = TaskStatus.Completed
-        tasks[base_heatmap_task_name] = base_task_heatmap
+        # tasks[base_heatmap_task_name] = base_task_heatmap
 
         for combination in total_objective_combinations:
             objective1, objective2 = utils.reverse_format_objective_names(combination)
@@ -578,8 +611,9 @@ def check_content() -> Dict[str, Task]:
             print_info = (combination_pretty, combination, verbose(comb_base_eval_exists),
                           verbose(comb_pred_eval_exists), verbose(comb_sim_eval_exists),
                           count_sols_done, count_sols_total)
-            print("\t\t%s (%s): Base results file: %s | Pred results file: %s | Sim results file: %s | "
-                  "Solutions: %d/%d" % print_info)
+            if not silent:
+                logger.info("ContentChecker", "\t\t%s (%s): Base results file: %s | Pred results file: %s | "
+                                              "Sim results file: %s | Solutions: %d/%d" % print_info)
 
             for solution in solutions_total:
                 sol_dir = join(comb_dir, solution)
@@ -590,11 +624,13 @@ def check_content() -> Dict[str, Task]:
                 sol_image_name = "%s.%s" % (sol_image_name, Globals.HEATMAPS_FILE_TYPE)
                 sol_heatmap_sim_exists = exists(join(Globals.HEATMAPS_DIR, sol_image_name))
                 sol_video_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
-                sol_video_name = "%s.%s" % (sol_video_name, Globals.VIDEOS_FILE_TYPE)
-                sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, sol_video_name))
+                video_extension = ".%s" % Globals.VIDEOS_FILE_TYPE
+                sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, sol_video_name + video_extension))
                 print_info = (solution_pretty, verbose(sol_sim_roufile_exists),
                               verbose(sol_heatmap_sim_exists), verbose(sol_video_sim_exists))
-                print("\t\t\t%s: Sim route file: %s | Heatmap file: %s | Video file: %s" % print_info)
+                if not silent:
+                    logger.info("ContentChecker", "\t\t\t%s: Sim route file: %s | Heatmap file: %s | "
+                                                  "Video file: %s" % print_info)
 
                 sol_task_name = utils.format_solution_name(scenario, objective1, objective2, solution_number)
                 sol_task_mode = Sim(objective1, objective2, solution_number)
@@ -604,13 +640,14 @@ def check_content() -> Dict[str, Task]:
                     sol_task.status = TaskStatus.Completed
                 tasks[sol_task_name] = sol_task
                 sol_heatmap_task_name = "%s_heatmap" % sol_task_name
-                sol_task_heatmap = TEMATask(sol_heatmap_task_name, scenario, sol_task_mode)
+                sol_task_heatmap = TEMATask(sol_heatmap_task_name, scenario, sol_task_mode, "")
                 if sol_heatmap_sim_exists:
                     # FIXME -> the Completed status should NOT be attributed here; works for now
                     sol_task_heatmap.status = TaskStatus.Completed
-                tasks[sol_heatmap_task_name] = sol_task_heatmap
-        print()
+                # tasks[sol_heatmap_task_name] = sol_task_heatmap
 
     completed_tasks = sum([v.status == TaskStatus.Completed for k, v in tasks.items()])
-    print("Finished checking content: Completed tasks: %d/%d" % (completed_tasks, len(tasks)))
+    if not silent:
+        logger.info("ContentChecker", "Finished checking content: "
+                                      "Completed tasks: %d/%d" % (completed_tasks, len(tasks)))
     return tasks
