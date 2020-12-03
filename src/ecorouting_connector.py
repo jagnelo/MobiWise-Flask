@@ -1,5 +1,6 @@
 import os
 import shutil
+import threading
 from subprocess import STDOUT, PIPE, TimeoutExpired
 from typing import Dict, Callable, List, Tuple
 
@@ -209,13 +210,9 @@ class Sim(Pred):
         eco_proc = process.start()
         logger.debug("EcoRouting", "[Sim] started Popen process")
         try:
-            logger.debug("EcoRouting", "[Sim] writing %d to eco_proc.stdin" % self.solution)
-            eco_proc.stdin.write(b"%d\n" % self.solution)
-            eco_proc.stdin.flush()
-            logger.debug("EcoRouting", "[Sim] flushed eco_proc.stdin")
-            logger.debug("EcoRouting", "[Sim] waiting for eco_proc.communicate(-1)")
-            out = eco_proc.communicate(input=b"-1\n", timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
-            logger.debug("EcoRouting", "[Sim] eco_proc.communicate(-1) finished")
+            logger.debug("EcoRouting", "[Sim] waiting for eco_proc.communicate(%d\\n-1\\n)" % self.solution)
+            out = eco_proc.communicate(input=b"%d\n-1\n" % self.solution, timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
+            logger.debug("EcoRouting", "[Sim] eco_proc.communicate(%d\\n-1\\n) finished" % self.solution)
             logger.info("EcoRouting", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
@@ -296,6 +293,8 @@ class EcoRoutingTask(Task):
 
 
 class EcoRoutingVideoTask(EcoRoutingTask):
+    gztar_lock = threading.Lock()
+
     def __init__(self, task_id, scenario, mode: EcoRoutingMode, video_name: str):
         EcoRoutingTask.__init__(self, task_id, scenario, mode)
         self.video_name = video_name
@@ -327,7 +326,13 @@ class EcoRoutingVideoTask(EcoRoutingTask):
         # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
         # os.system(utils.get_video_cmd(src_path, self.video_name))
         dst_path = os.path.join(self.cwd, self.video_name)
-        path_to_gztar = shutil.make_archive(dst_path, 'gztar', src_path)
+        logger.debug("EcoRouting", "[EcoRoutingVideo] waiting for gztar lock")
+        with EcoRoutingVideoTask.gztar_lock:
+            logger.debug("EcoRouting", "[EcoRoutingVideo] got gztar lock")
+            logger.debug("EcoRouting", "[EcoRoutingVideo] compressing %s to tar.gz archive" % src_path)
+            path_to_gztar = shutil.make_archive(dst_path, 'gztar', src_path)
+            logger.debug("EcoRouting", "[EcoRoutingVideo] tar.gz archive created at %s" % path_to_gztar)
+        logger.debug("EcoRouting", "[EcoRoutingVideo] released gztar lock")
         gztar = path_to_gztar.split(os.sep)[-1]
         shutil.move(path_to_gztar, os.path.join(Globals.VIDEOS_TARGZ_DIR, gztar))
         utils.clear_and_remove_dir(src_path)
