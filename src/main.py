@@ -128,7 +128,7 @@ def main():
         for _, task in eco.check_content(silent=silent).items():
             task_manager.add_task(task)
 
-    task_manager = eco.EcoRoutingTaskManager(2 * Globals.TASK_MANAGER_MAX_THREADS, update_tasks)
+    task_manager = eco.EcoRoutingTaskManager(Globals.TASK_MANAGER_MAX_THREADS, update_tasks)
     update_tasks(silent=False)
     task_manager.start()
     last_status = datetime.now()
