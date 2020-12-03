@@ -199,7 +199,8 @@ class TaskManager:
 
         print_info = (available, taken, starting, running, completing, completed, failed, total)
         logger.info("TaskManager", "Task status: %s | %s | %s | %s | %s | %s | %s | %s" % print_info)
-        logger.info("TaskManager", "Failed task IDs:")
+        if which_failed:
+            logger.info("TaskManager", "Failed task IDs:")
         for t_id in which_failed:
             logger.info("TaskManager", "\tTask ID = %s" % t_id)
 

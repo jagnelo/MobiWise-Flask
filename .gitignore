@@ -5,6 +5,7 @@ media/
 dataSets/
 ecorouting/
 results/
+TaskManager*/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
