@@ -121,9 +121,9 @@ class TaskManager:
                     delta_seconds = (datetime.now() - date_start).total_seconds()
                     print_info = (thread_name, task.task_id, delta_seconds)
                     logger.info("TaskManager", "Thread %s finished task ID = %s in %d seconds" % print_info)
-                    check_thread_pool()
                     with self.callback_rlock:
                         self.on_task_finish_callback()
+                    check_thread_pool()
             if not task:
                 logger.info("TaskManager", "Thread %s has no task to run" % thread_name)
             logger.info("TaskManager", "Thread %s stopping" % thread_name)
