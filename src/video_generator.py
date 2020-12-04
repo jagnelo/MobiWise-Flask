@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 import utils
 from globals import Globals
@@ -21,11 +22,15 @@ def generate_video_from_targz(targz_file_name):
     src_dir = os.path.join(Globals.VIDEOS_TARGZ_DIR, targz_file_name)
     dst_dir = os.path.join(Globals.VIDEOS_TARGZ_DIR, file_name)
     utils.unzip_targz(src_dir, dst_dir)
-    files_in_dst = os.listdir(dst_dir)
-    if len(files_in_dst) == 1 and os.path.isdir(os.path.join(dst_dir, files_in_dst[0])):
-        snapshots_dir = os.path.join(dst_dir, files_in_dst[0])
-        video_name = "%s.%s" % (file_name, Globals.VIDEOS_FILE_TYPE)
-        path = os.path.join(snapshots_dir, Globals.SNAPSHOTS_FILE_NAME)
-        videos_dir = os.path.join(Globals.VIDEOS_DIR, video_name)
-        return Globals.FFMPEG_CMD % (path, videos_dir)
+    if os.path.exists(os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)):
+        dst_dir = os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)
+    video_name = "%s.%s" % (file_name, Globals.VIDEOS_FILE_TYPE)
+    snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
+    video_path = os.path.join(Globals.VIDEOS_DIR, video_name)
+    cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
+    try:
+        subprocess.run(cmd.split(" "), check=True)
+        print("SUCCESS")
+    except subprocess.CalledProcessError as e:
+        print("ERROR: ", e)
 
