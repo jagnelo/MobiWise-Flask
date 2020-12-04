@@ -40,9 +40,11 @@ def generate_video_from_targz(targz_file_name):
         dst_dir = os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)
     snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
     video_path = os.path.join(Globals.VIDEOS_DIR, file_name)
-    cmd = 'ffmpeg -y -r 30 -i "snapshot%s.png" -vcodec libx264 -crf 28 -pix_fmt yuv420p "../videos/%s.mp4"' % ("%d", file_name)
-    print("CMD", cmd.split(" "))
-    proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE, cwd=dst_dir)
+    cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
+    print("CMD", cmd)
+    print("CWD", os.getcwd())
+    return
+    proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
     stdout, stderr = proc.communicate()
     print(stdout.decode().rstrip())
     if stderr:
