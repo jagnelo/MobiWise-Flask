@@ -49,7 +49,7 @@ class Logger:
     def write(log: Log):
         if not os.path.exists(Globals.LOGS_DIR):
             os.makedirs(Globals.LOGS_DIR)
-        file_name = os.path.join(Globals.LOGS_DIR, log.thread + ".log")
+        file_name = os.path.join(Globals.LOGS_DIR, "%s.%s" % (log.thread, Globals.LOGS_FILE_TYPE))
         timestamp = str(log.timestamp)
         sep = "  "
         spaces = (" " * len(timestamp)) + sep

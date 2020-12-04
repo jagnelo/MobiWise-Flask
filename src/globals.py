@@ -44,11 +44,13 @@ class Globals(NoInit):
     TASK_MANAGER_MAX_TIMEOUT = 60 * 60 * 2
     TASK_MANAGER_MAX_THREADS = os.cpu_count()
 
+    LOGS_OLD_NAME = "old logs"
     LOGS_DIR = os.path.join("..", "logs")
     LOGS_LEVEL_INFO = "INFO"
     LOGS_LEVEL_DEBUG = "DEBUG"
     LOGS_LEVEL_WARN = "WARN"
     LOGS_LEVEL_ERROR = "ERROR"
+    LOGS_FILE_TYPE = "log"
 
     SNAPSHOTS_DIR = "snapshots"
     SNAPSHOTS_COUNT = 200_000

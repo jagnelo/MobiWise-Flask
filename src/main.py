@@ -1,4 +1,5 @@
 import os
+import shutil
 import threading
 import time
 from datetime import datetime
@@ -116,13 +117,31 @@ def optimized_video(scenario, objective1, objective2, solution):
     return send_file(utils.get_file_path_or_default(Globals.VIDEOS_DIR, video_name, "mp4"), mimetype="video/mp4")
 
 
-def main():
-    threading.current_thread().name = "Main"
-    logger.info("Main", "---------------------- MobiWise backend starting ----------------------")
-    utils.ensure_dir_exists(Globals.LOGS_DIR)
+def setup():
+    if os.path.exists(Globals.LOGS_DIR):
+        old_logs = []
+        log_files = []
+        for file in os.listdir(Globals.LOGS_DIR):
+            if os.path.isdir(os.path.join(Globals.LOGS_DIR, file)) and file.startswith(Globals.LOGS_OLD_NAME):
+                old_logs.append(file)
+            elif file.endswith(".%s" % Globals.LOGS_FILE_TYPE):
+                log_files.append(file)
+        old_logs_num = len(old_logs) + 1
+        old_logs_dir = os.path.join(Globals.LOGS_DIR, "%s %d" % (Globals.LOGS_OLD_NAME, old_logs_num))
+        utils.ensure_dir_exists(old_logs_dir)
+        for file in log_files:
+            shutil.move(os.path.join(Globals.LOGS_DIR, file), os.path.join(old_logs_dir, file))
+    else:
+        utils.ensure_dir_exists(Globals.LOGS_DIR)
     utils.ensure_dir_exists(Globals.VIDEOS_TARGZ_DIR)
     utils.ensure_dir_exists(Globals.VIDEOS_DIR)
     utils.ensure_dir_exists(Globals.HEATMAPS_DIR)
+
+
+def main():
+    threading.current_thread().name = "Main"
+    logger.info("Main", "---------------------- MobiWise backend starting ----------------------")
+    setup()
 
     def update_tasks(silent=True):
         for _, task in eco.check_content(silent=silent).items():
