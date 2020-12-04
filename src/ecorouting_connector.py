@@ -40,6 +40,8 @@ class EcoRoutingMode:
         raise NotImplementedError
 
     def run_ecorouting(self, process: SPopen):
+        # TODO: Detect return code from Popen process, and if it is not 0 the task MUST be considered as status = Failed
+        #       If the task has failed, additionally, the EcoRouting output directory MUST be removed
         raise NotImplementedError
 
     def run_eco_indicator(self, process: SPopen):
@@ -550,7 +552,7 @@ class EcoRoutingTaskManager(TaskManager):
 
 
 def get_test_cases():
-    excluded = ["ang-est", "portoSB_8AM9AM_fewerv", "portoA3_6PM7PM"]
+    excluded = ["ang-est", "portoSB_8AM9AM_fewerv"]
     return {k: v for k, v in testcases.items() if k not in excluded}
 
 
