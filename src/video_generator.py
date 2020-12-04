@@ -29,15 +29,23 @@ def generate_video_from_targz(targz_file_name):
     snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
     video_path = os.path.join(Globals.VIDEOS_DIR, file_name)
     cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
-    proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
-    stdout, stderr = proc.communicate()
-    logger.info("VideoGenerator", stdout.decode().rstrip())
-    if stderr:
-        logger.error("VideoGenerator", stderr.decode().rstrip())
-    mp4_file_name = "%s.%s" % (video_path, Globals.VIDEOS_FILE_TYPE)
-    if proc.returncode == 0 and os.path.exists(mp4_file_name):
-        logger.info("VideoGenerator", "Video %s generated successfully" % mp4_file_name)
-        os.remove(src_dir)
-    else:
-        logger.error("VideoGenerator", "Failed to generate video %s" % mp4_file_name)
+    try:
+        proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+        stdout, stderr = proc.communicate()
+        logger.info("VideoGenerator", stdout.decode().rstrip())
+        if stderr:
+            logger.error("VideoGenerator", stderr.decode().rstrip())
+        mp4_file_name = "%s.%s" % (video_path, Globals.VIDEOS_FILE_TYPE)
+        if proc.returncode == 0 and os.path.exists(mp4_file_name):
+            logger.info("VideoGenerator", "Video %s generated successfully" % mp4_file_name)
+            os.remove(src_dir)
+        else:
+            logger.error("VideoGenerator", "Failed to generate video %s" % mp4_file_name)
+    except BaseException as e:
+        logger.error("VideoGenerator", str(e))
     utils.clear_and_remove_dir(dst_dir)
+
+
+if __name__ == '__main__':
+    for file in find_video_targz_files():
+        generate_video_from_targz(file)
