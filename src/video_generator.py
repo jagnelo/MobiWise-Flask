@@ -33,7 +33,7 @@ def unzip_targz(path_to_targz_file, unzip_to_dir):
 def generate_video_from_targz(targz_file_name):
     file_name = targz_file_name.replace("." + Globals.VIDEOS_TARGZ_FILE_TYPE, "")
     src_dir = os.path.join(Globals.VIDEOS_TARGZ_DIR, targz_file_name)
-    dst_dir = os.path.join(Globals.VIDEOS_TARGZ_DIR, file_name)
+    dst_dir = os.path.join(Globals.VIDEOS_DIR, file_name)
     # utils.unzip_targz(src_dir, dst_dir)
     unzip_targz(src_dir, dst_dir)
     if os.path.exists(os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)):
@@ -43,7 +43,6 @@ def generate_video_from_targz(targz_file_name):
     cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
     print("CMD", cmd)
     print("CWD", os.getcwd())
-    return
     proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
     stdout, stderr = proc.communicate()
     print(stdout.decode().rstrip())
