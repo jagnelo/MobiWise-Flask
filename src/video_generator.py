@@ -48,4 +48,6 @@ def generate_video_from_targz(targz_file_name):
 
 if __name__ == '__main__':
     for file in find_video_targz_files():
+        logger.info("VideoGenerator", "Generating video from %s" % file)
         generate_video_from_targz(file)
+        logger.flush()
