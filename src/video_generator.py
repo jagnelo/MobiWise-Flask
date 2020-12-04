@@ -1,6 +1,8 @@
 import os
+import shutil
 import subprocess
 import tarfile
+from datetime import datetime
 from subprocess import STDOUT, PIPE
 
 # import utils
@@ -40,14 +42,17 @@ def generate_video_from_targz(targz_file_name):
     snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
     video_path = os.path.join(Globals.VIDEOS_DIR, file_name)
     cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
-    print("CMD", cmd.split(" "))
-    proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
-    stdout, stderr = proc.communicate()
-    print(stdout.decode().rstrip())
-    if stderr:
-        print(stderr.decode().rstrip())
-    if proc.returncode == 0 and os.path.exists("%s.%s" % (video_path, Globals.VIDEOS_FILE_TYPE)):
+    start_time = datetime.now()
+    os.system(cmd)
+    delta_seconds = (datetime.now() - start_time).total_seconds()
+    # proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+    # stdout, stderr = proc.communicate()
+    # print(stdout.decode().rstrip())
+    # if stderr:
+    #     print(stderr.decode().rstrip())
+    # if proc.returncode == 0 and os.path.exists("%s.%s" % (video_path, Globals.VIDEOS_FILE_TYPE)):
+    if delta_seconds > 20 and os.path.exists("%s.%s" % (video_path, Globals.VIDEOS_FILE_TYPE)):
         print("FFMPEG TERMINATED OK")
     else:
         print("FFMPEG TERMINATED BADLY")
-    # utils.clear_and_remove_dir(dst_dir)
+    shutil.rmtree(dst_dir, ignore_errors=True)
