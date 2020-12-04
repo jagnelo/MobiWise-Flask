@@ -60,7 +60,7 @@ class Globals(NoInit):
     VIDEOS_TARGZ_DIR = os.path.join("..", "media", "videos.tar.gz")
     VIDEOS_FILE_TYPE = "mp4"
     VIDEOS_TARGZ_FILE_TYPE = "tar.gz"
-    FFMPEG_CMD = 'ffmpeg -y -framerate 30 -i "%s" -pix_fmt yuv420p "%s.' + VIDEOS_FILE_TYPE + '"'
+    FFMPEG_CMD = 'ffmpeg -y -framerate 30 -i "%s" -vcodec libx264 -crf 20 -pix_fmt yuv420p "%s.' + VIDEOS_FILE_TYPE + '"'
     VIDEOS_RESOLUTION = {
         "width": 1280,
         "height": 960

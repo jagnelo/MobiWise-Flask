@@ -1,6 +1,5 @@
 import os
 import shutil
-import tarfile
 from subprocess import STDOUT, PIPE, TimeoutExpired
 from typing import Dict, Callable, List, Tuple
 
@@ -326,8 +325,7 @@ class EcoRoutingVideoTask(EcoRoutingTask):
         gztar_file = "%s.%s" % (self.video_name, Globals.VIDEOS_TARGZ_FILE_TYPE)
         path_to_gztar_file = os.path.join(self.cwd, gztar_file)
         logger.debug("EcoRouting", "[EcoRoutingVideo] compressing %s to %s" % (snapshots_path, gztar_file))
-        with tarfile.open(path_to_gztar_file, "w:gz") as tar:
-            tar.add(snapshots_path, arcname=os.path.basename(snapshots_path))
+        utils.zip_targz(path_to_gztar_file, snapshots_path, Globals.SNAPSHOTS_DIR)
         logger.debug("EcoRouting", "[EcoRoutingVideo] %s created at %s" % (gztar_file, path_to_gztar_file))
         dst_path = os.path.join(Globals.VIDEOS_TARGZ_DIR, gztar_file)
         shutil.move(path_to_gztar_file, dst_path)

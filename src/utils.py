@@ -1,6 +1,7 @@
 import os
 import re
 import shutil
+import tarfile
 from importlib import machinery, util
 from types import ModuleType
 from typing import List, Tuple
@@ -35,12 +36,6 @@ def get_file_path_or_default(path, name, extension):
     if not os.path.exists(file_path):
         file_path = os.path.join(path, "default.%s" % extension)
     return file_path
-
-
-def get_video_cmd(snapshots_dir, video_name):
-    path = os.path.join(snapshots_dir, Globals.SNAPSHOTS_FILE_NAME)
-    videos_dir = os.path.join(Globals.VIDEOS_DIR, video_name)
-    return Globals.FFMPEG_CMD % (path, videos_dir)
 
 
 def ensure_dir_exists(path, silent=False):
@@ -217,3 +212,14 @@ def convert_sim_file_name_to_TEMA_spec(file_name, period, location, solution):
     name = file_name.replace(".xml", "")
     suffix = Globals.TEMA_FILE_NAME_SIM_SUFFIX_FORMAT % int(solution)
     return "%s_%s_Routing_%s_%s" % (name, period, location, suffix)
+
+
+def zip_targz(path_to_targz_file, dir_to_zip, targz_root_dir):
+    with tarfile.open(path_to_targz_file, "w:gz") as tar:
+        tar.add(dir_to_zip, arcname=targz_root_dir)
+
+
+def unzip_targz(path_to_targz_file, unzip_to_dir):
+    with tarfile.open(path_to_targz_file, "r:gz") as tar:
+        tar.extractall(path=unzip_to_dir)
+

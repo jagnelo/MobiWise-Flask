@@ -146,6 +146,8 @@ def main():
     finally:
         logger.flush()
         task_manager.stop(wait=True)
+        eco.check_content(silent=False)
+        task_manager.status()
         logger.info("Main", "---------------------- MobiWise backend stopping ----------------------")
         logger.flush()
 
