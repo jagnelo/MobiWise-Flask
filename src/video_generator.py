@@ -1,6 +1,6 @@
 import os
 import subprocess
-from subprocess import PIPE
+from subprocess import PIPE, STDOUT
 
 import utils
 from globals import Globals
@@ -30,7 +30,7 @@ def generate_video_from_targz(targz_file_name):
     video_path = os.path.join(Globals.VIDEOS_DIR, file_name)
     cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
     try:
-        proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+        proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=STDOUT)
         stdout, stderr = proc.communicate()
         logger.info("VideoGenerator", stdout.decode().rstrip())
         if stderr:

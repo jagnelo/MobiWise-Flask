@@ -599,7 +599,8 @@ def check_content(silent=True) -> Dict[str, Task]:
         video_extension = ".%s" % Globals.VIDEOS_FILE_TYPE
         video_targz_extension = ".%s" % Globals.VIDEOS_TARGZ_FILE_TYPE
         video_base_exists = exists(join(Globals.VIDEOS_DIR, video_name + video_extension)) or \
-                            exists(join(Globals.VIDEOS_TARGZ_DIR, video_name + video_targz_extension))
+                            exists(join(Globals.VIDEOS_TARGZ_DIR, video_name + video_targz_extension)) or \
+                            True
         print_info = (verbose(res_dir_exists), verbose(res_base_roufile_exists), verbose(heatmap_base_exists),
                       verbose(video_base_exists), count_combs_done, count_combs_total)
         if not silent:
@@ -608,7 +609,8 @@ def check_content(silent=True) -> Dict[str, Task]:
 
         base_task_name = scenario
         base_task_mode = Base()
-        base_task = EcoRoutingVideoTask(base_task_name, scenario, base_task_mode, video_name)
+        # base_task = EcoRoutingVideoTask(base_task_name, scenario, base_task_mode, video_name)
+        base_task = EcoRoutingTask(base_task_name, scenario, base_task_mode)
         if res_base_roufile_exists and video_base_exists:
             # FIXME -> the Completed status should NOT be attributed here; works for now
             base_task.status = TaskStatus.Completed
@@ -675,7 +677,8 @@ def check_content(silent=True) -> Dict[str, Task]:
 
                 sol_task_name = utils.format_solution_name(scenario, objective1, objective2, solution_number)
                 sol_task_mode = Sim(objective1, objective2, solution_number)
-                sol_task = EcoRoutingVideoTask(sol_task_name, scenario, sol_task_mode, sol_video_name)
+                # sol_task = EcoRoutingVideoTask(sol_task_name, scenario, sol_task_mode, sol_video_name)
+                sol_task = EcoRoutingTask(sol_task_name, scenario, sol_task_mode)
                 if sol_sim_roufile_exists and sol_video_sim_exists:
                     # FIXME -> the Completed status should NOT be attributed here; works for now
                     sol_task.status = TaskStatus.Completed

@@ -71,6 +71,8 @@ def clear_dir(path, silent=False):
 def clear_and_remove_dir(path, silent=False):
     if os.path.exists(path) and os.path.isdir(path):
         shutil.rmtree(path, ignore_errors=True)
+        if os.path.exists(path):
+            os.rmdir(path)
         if not silent:
             logger.info("Utils", "Emptied and removed directory %s" % path)
 
