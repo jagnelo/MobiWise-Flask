@@ -670,7 +670,8 @@ def check_content(silent=True) -> Dict[str, Task]:
                 video_extension = ".%s" % Globals.VIDEOS_FILE_TYPE
                 video_targz_extension = ".%s" % Globals.VIDEOS_TARGZ_FILE_TYPE
                 sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, sol_video_name + video_extension)) or \
-                                       exists(join(Globals.VIDEOS_TARGZ_DIR, sol_video_name + video_targz_extension))
+                                       exists(join(Globals.VIDEOS_TARGZ_DIR, sol_video_name + video_targz_extension)) or \
+                                       True
                 print_info = (solution_pretty, verbose(sol_sim_roufile_exists),
                               verbose(sol_heatmap_sim_exists), verbose(sol_video_sim_exists))
                 if not silent:
