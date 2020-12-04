@@ -1,11 +1,10 @@
 import os
-import shutil
 import subprocess
-import tarfile
-from subprocess import STDOUT, PIPE
+from subprocess import PIPE
 
-# import utils
+import utils
 from globals import Globals
+from logger import logger
 
 
 def find_video_targz_files():
@@ -20,43 +19,25 @@ def find_video_targz_files():
     return files
 
 
-def zip_targz(path_to_targz_file, dir_to_zip, targz_root_dir):
-    with tarfile.open(path_to_targz_file, "w:gz") as tar:
-        tar.add(dir_to_zip, arcname=targz_root_dir)
-
-
-def unzip_targz(path_to_targz_file, unzip_to_dir):
-    with tarfile.open(path_to_targz_file, "r:gz") as tar:
-        tar.extractall(path=unzip_to_dir)
-
-
 def generate_video_from_targz(targz_file_name):
     file_name = targz_file_name.replace("." + Globals.VIDEOS_TARGZ_FILE_TYPE, "")
     src_dir = os.path.join(Globals.VIDEOS_TARGZ_DIR, targz_file_name)
     dst_dir = os.path.join(Globals.VIDEOS_DIR, file_name)
-    # utils.unzip_targz(src_dir, dst_dir)
-    unzip_targz(src_dir, dst_dir)
+    utils.unzip_targz(src_dir, dst_dir)
     if os.path.exists(os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)):
         dst_dir = os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)
-    snapshots_path = os.path.join(dst_dir, "snapshot%05d.png")   # Globals.SNAPSHOTS_FILE_NAME)
-    for snapshot in os.listdir(dst_dir):
-        number = snapshot.replace("snapshot", "").replace(".png", "")
-        new_number = ((5 - len(number)) * "0") + number
-        new_snapshot = snapshot.replace(number, new_number)
-        os.rename(os.path.join(dst_dir, snapshot), os.path.join(dst_dir, new_snapshot))
+    snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
     video_path = os.path.join(Globals.VIDEOS_DIR, file_name)
     cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
-    print("CMD", cmd)
-    print("CWD", os.getcwd())
     proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
     stdout, stderr = proc.communicate()
-    print(stdout.decode().rstrip())
+    logger.info("VideoGenerator", stdout.decode().rstrip())
     if stderr:
-        print(stderr.decode().rstrip())
-    if proc.returncode == 0 and os.path.exists("%s.%s" % (video_path, Globals.VIDEOS_FILE_TYPE)):
-        print("FFMPEG TERMINATED OK")
+        logger.error("VideoGenerator", stderr.decode().rstrip())
+    mp4_file_name = "%s.%s" % (video_path, Globals.VIDEOS_FILE_TYPE)
+    if proc.returncode == 0 and os.path.exists(mp4_file_name):
+        logger.info("VideoGenerator", "Video %s generated successfully" % mp4_file_name)
+        os.remove(src_dir)
     else:
-        print("FFMPEG TERMINATED BADLY")
-    shutil.rmtree(dst_dir, ignore_errors=True)
-    os.rmdir(dst_dir)
-    # utils.clear_and_remove_dir(dst_dir)
+        logger.error("VideoGenerator", "Failed to generate video %s" % mp4_file_name)
+    utils.clear_and_remove_dir(dst_dir)
