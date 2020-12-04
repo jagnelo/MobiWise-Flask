@@ -38,7 +38,12 @@ def generate_video_from_targz(targz_file_name):
     unzip_targz(src_dir, dst_dir)
     if os.path.exists(os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)):
         dst_dir = os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)
-    snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
+    snapshots_path = os.path.join(dst_dir, "snapshot%05d.png")   # Globals.SNAPSHOTS_FILE_NAME)
+    for snapshot in os.listdir(dst_dir):
+        number = snapshot.replace("snapshot", "").replace(".png", "")
+        new_number = ((5 - len(number)) * "0") + number
+        new_snapshot = snapshot.replace(number, new_number)
+        os.rename(os.path.join(dst_dir, snapshot), os.path.join(dst_dir, new_snapshot))
     video_path = os.path.join(Globals.VIDEOS_DIR, file_name)
     cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
     print("CMD", cmd)
