@@ -1,8 +1,9 @@
 import os
 import subprocess
+import tarfile
 from subprocess import STDOUT, PIPE
 
-import utils
+# import utils
 from globals import Globals
 
 
@@ -18,11 +19,22 @@ def find_video_targz_files():
     return files
 
 
+def zip_targz(path_to_targz_file, dir_to_zip, targz_root_dir):
+    with tarfile.open(path_to_targz_file, "w:gz") as tar:
+        tar.add(dir_to_zip, arcname=targz_root_dir)
+
+
+def unzip_targz(path_to_targz_file, unzip_to_dir):
+    with tarfile.open(path_to_targz_file, "r:gz") as tar:
+        tar.extractall(path=unzip_to_dir)
+
+
 def generate_video_from_targz(targz_file_name):
     file_name = targz_file_name.replace("." + Globals.VIDEOS_TARGZ_FILE_TYPE, "")
     src_dir = os.path.join(Globals.VIDEOS_TARGZ_DIR, targz_file_name)
     dst_dir = os.path.join(Globals.VIDEOS_TARGZ_DIR, file_name)
-    utils.unzip_targz(src_dir, dst_dir)
+    # utils.unzip_targz(src_dir, dst_dir)
+    unzip_targz(src_dir, dst_dir)
     if os.path.exists(os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)):
         dst_dir = os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)
     snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
@@ -38,4 +50,4 @@ def generate_video_from_targz(targz_file_name):
         print("FFMPEG TERMINATED OK")
     else:
         print("FFMPEG TERMINATED BADLY")
-    utils.clear_and_remove_dir(dst_dir)
+    # utils.clear_and_remove_dir(dst_dir)
