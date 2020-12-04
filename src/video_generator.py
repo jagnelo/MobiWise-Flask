@@ -28,7 +28,8 @@ def generate_video_from_targz(targz_file_name):
     snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
     video_path = os.path.join(Globals.VIDEOS_DIR, file_name)
     cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
-    proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=STDOUT)
+    print("CMD", cmd.split(" "))
+    proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
     stdout, stderr = proc.communicate()
     print(stdout.decode().rstrip())
     if stderr:
