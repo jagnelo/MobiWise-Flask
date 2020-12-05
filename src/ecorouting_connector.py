@@ -49,9 +49,9 @@ class EcoRoutingMode:
         eco_ind_proc = process.start()
         logger.debug("TEMA", "[Eco-Indicator] started Popen process")
         try:
-            logger.debug("TEMA", "[Eco-Indicator] waiting for eco_proc.communicate()")
+            logger.debug("TEMA", "[Eco-Indicator] waiting for eco_ind_proc.communicate()")
             out = eco_ind_proc.communicate(timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
-            logger.debug("TEMA", "[Eco-Indicator] eco_proc.communicate() finished")
+            logger.debug("TEMA", "[Eco-Indicator] eco_ind_proc.communicate() finished")
             logger.info("TEMA", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
@@ -68,9 +68,9 @@ class EcoRoutingMode:
         heatmaps_proc = process.start()
         logger.debug("TEMA", "[Heatmaps] started Popen process")
         try:
-            logger.debug("TEMA", "[Heatmaps] waiting for eco_proc.communicate()")
+            logger.debug("TEMA", "[Heatmaps] waiting for heatmaps_proc.communicate()")
             out = heatmaps_proc.communicate(timeout=Globals.TASK_MANAGER_MAX_TIMEOUT)
-            logger.debug("TEMA", "[Heatmaps] eco_proc.communicate() finished")
+            logger.debug("TEMA", "[Heatmaps] heatmaps_proc.communicate() finished")
             logger.info("TEMA", out[0].decode().rstrip())
         except BaseException as e:
             if isinstance(e, TimeoutExpired):
@@ -376,11 +376,13 @@ class TEMATask(Task):
         logger.info("TEMA", "Running TEMA process on DISPLAY %s through a VNC server" % display)
         if self.cwd == os.getcwd() or self.cwd == Globals.ECOROUTING_DIR:
             logger.warn("TEMA", "TEMATask task ID = %s is set for cwd %s" % (self.task_id, self.cwd))
-        eco_ind_cmd = ["bash", "run_eco_indicator.sh", Globals.MATLAB_RUNTIME_DIR]
+        # eco_ind_cmd = ["bash", "run_eco_indicator.sh", Globals.MATLAB_RUNTIME_DIR]
+        eco_ind_cmd = ["eco_indicator"]
         net_file = self.mode.get_net_file(self.scenario)[1]
         rou_file = self.mode.get_TEMA_route_file(self.scenario)
         traci_port = str(Globals.TEMA_TRACI_BASE_PORT + int(display.replace(":", "")))
-        heatmap_cmd = ["bash", "run_heatmaps.sh", Globals.MATLAB_RUNTIME_DIR, net_file, rou_file, traci_port]
+        # heatmap_cmd = ["bash", "run_heatmaps.sh", Globals.MATLAB_RUNTIME_DIR, net_file, rou_file, traci_port]
+        heatmap_cmd = ["heatmaps", net_file, rou_file, traci_port]
         eco_ind_proc = SPopen(eco_ind_cmd, cwd=self.cwd, env=self.env, stdout=PIPE, stdin=PIPE, stderr=STDOUT)
         heatmap_proc = SPopen(heatmap_cmd, cwd=self.cwd, env=self.env, stdout=PIPE, stdin=PIPE, stderr=STDOUT)
         logger.info("TEMA", "Started TEMA process (task ID = %s | cwd = %s)" % (self.task_id, self.cwd))
