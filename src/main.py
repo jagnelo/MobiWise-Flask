@@ -118,6 +118,7 @@ def optimized_video(scenario, objective1, objective2, solution):
 
 
 def setup():
+    threading.current_thread().name = "Main"
     if os.path.exists(Globals.LOGS_DIR):
         old_logs = []
         log_files = []
@@ -139,7 +140,6 @@ def setup():
 
 
 def main():
-    threading.current_thread().name = "Main"
     logger.info("Main", "---------------------- MobiWise backend starting ----------------------")
 
     def update_tasks(silent=True):
