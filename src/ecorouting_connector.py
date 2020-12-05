@@ -18,7 +18,7 @@ from task import Task, TaskStatus, TaskManager, TaskDependency, TaskRunMode
 
 
 class EcoRoutingMode:
-    TEMA_lock = threading.Lock()
+    TEMA_lock = threading.RLock()
 
     def can_generate_TEMA_data(self):
         raise NotImplementedError
