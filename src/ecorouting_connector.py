@@ -17,6 +17,9 @@ from spopen import SPopen
 from task import Task, TaskStatus, TaskManager, TaskDependency, TaskRunMode
 
 
+file_copy_lock = threading.RLock()
+
+
 class EcoRoutingMode:
     TEMA_lock = threading.RLock()
 
@@ -49,9 +52,8 @@ class EcoRoutingMode:
 
     def run_eco_indicator(self, process: SPopen):
         logger.debug("TEMA", "[Eco-Indicator] starting Popen process")
-        EcoRoutingMode.TEMA_lock.acquire(blocking=True, timeout=10)
-        eco_ind_proc = process.start()
-        EcoRoutingMode.TEMA_lock.release()
+        with EcoRoutingMode.TEMA_lock:
+            eco_ind_proc = process.start()
         logger.debug("TEMA", "[Eco-Indicator] started Popen process")
         try:
             logger.debug("TEMA", "[Eco-Indicator] waiting for eco_ind_proc.communicate()")
@@ -70,9 +72,8 @@ class EcoRoutingMode:
 
     def run_heatmaps(self, process: SPopen):
         logger.debug("TEMA", "[Heatmaps] starting Popen process")
-        EcoRoutingMode.TEMA_lock.acquire(blocking=True, timeout=10)
-        heatmaps_proc = process.start()
-        EcoRoutingMode.TEMA_lock.release()
+        with EcoRoutingMode.TEMA_lock:
+            heatmaps_proc = process.start()
         logger.debug("TEMA", "[Heatmaps] started Popen process")
         try:
             logger.debug("TEMA", "[Heatmaps] waiting for heatmaps_proc.communicate()")
@@ -252,7 +253,8 @@ class EcoRoutingTask(Task):
         if self.cwd != os.getcwd():
             utils.ensure_dir_exists(self.cwd)
             utils.clear_dir(self.cwd)
-            utils.copy_dir_contents(Globals.ECOROUTING_DIR, self.cwd)
+            with file_copy_lock:
+                utils.copy_dir_contents(Globals.ECOROUTING_DIR, self.cwd)
             if self.mode.can_generate_TEMA_data():
                 src = os.path.join(get_test_cases()[self.scenario]["ifolder"], Globals.TEMA_ADDITIONAL_FILES_FILE_NAME)
                 dst = os.path.join(self.cwd, Globals.ECOROUTING_ADDITIONAL_FILES_FILE_NAME)
@@ -286,17 +288,18 @@ class EcoRoutingTask(Task):
             if self.mode.can_generate_TEMA_data():
                 out_dir = self.mode.get_output_dir(self.scenario)
                 all_veh_edge_data = os.path.join(self.cwd, Globals.TEMA_ALL_VEHICLES_EDGE_DATA_FILE_NAME)
-                if os.path.exists(all_veh_edge_data) and os.path.isfile(all_veh_edge_data):
-                    dst = os.path.join(out_dir, Globals.TEMA_ALL_VEHICLES_EDGE_DATA_FILE_NAME)
-                    shutil.copyfile(all_veh_edge_data, dst)
-                routing_veh_edge_data = os.path.join(self.cwd, Globals.TEMA_ROUTING_VEHICLES_EDGE_DATA_FILE_NAME)
-                if os.path.exists(routing_veh_edge_data) and os.path.isfile(routing_veh_edge_data):
-                    dst = os.path.join(out_dir, Globals.TEMA_ROUTING_VEHICLES_EDGE_DATA_FILE_NAME)
-                    shutil.copyfile(routing_veh_edge_data, dst)
-                noise_edge_data = os.path.join(self.cwd, Globals.TEMA_NOISE_EDGE_DATA_FILE_NAME)
-                if os.path.exists(noise_edge_data) and os.path.isfile(noise_edge_data):
-                    dst = os.path.join(out_dir, Globals.TEMA_NOISE_EDGE_DATA_FILE_NAME)
-                    shutil.copyfile(noise_edge_data, dst)
+                with file_copy_lock:
+                    if os.path.exists(all_veh_edge_data) and os.path.isfile(all_veh_edge_data):
+                        dst = os.path.join(out_dir, Globals.TEMA_ALL_VEHICLES_EDGE_DATA_FILE_NAME)
+                        shutil.copyfile(all_veh_edge_data, dst)
+                    routing_veh_edge_data = os.path.join(self.cwd, Globals.TEMA_ROUTING_VEHICLES_EDGE_DATA_FILE_NAME)
+                    if os.path.exists(routing_veh_edge_data) and os.path.isfile(routing_veh_edge_data):
+                        dst = os.path.join(out_dir, Globals.TEMA_ROUTING_VEHICLES_EDGE_DATA_FILE_NAME)
+                        shutil.copyfile(routing_veh_edge_data, dst)
+                    noise_edge_data = os.path.join(self.cwd, Globals.TEMA_NOISE_EDGE_DATA_FILE_NAME)
+                    if os.path.exists(noise_edge_data) and os.path.isfile(noise_edge_data):
+                        dst = os.path.join(out_dir, Globals.TEMA_NOISE_EDGE_DATA_FILE_NAME)
+                        shutil.copyfile(noise_edge_data, dst)
             utils.clear_and_remove_dir(self.cwd)
 
 
@@ -363,13 +366,14 @@ class TEMATask(Task):
         if self.cwd != os.getcwd():
             utils.ensure_dir_exists(self.cwd)
             utils.clear_dir(self.cwd)
-            utils.copy_dir_contents(Globals.TEMA_DIR, self.cwd)
-            net_file_path, net_file = self.mode.get_net_file(self.scenario)
-            shutil.copyfile(os.path.join(net_file_path, net_file), os.path.join(self.cwd, net_file))
-            for file_src, file_dst in self.mode.get_TEMA_files(self.scenario):
-                src_path = os.path.join(self.mode.get_output_dir(self.scenario), file_src)
-                dst_path = os.path.join(self.cwd, file_dst)
-                shutil.copyfile(src_path, dst_path)
+            with file_copy_lock:
+                utils.copy_dir_contents(Globals.TEMA_DIR, self.cwd)
+                net_file_path, net_file = self.mode.get_net_file(self.scenario)
+                shutil.copyfile(os.path.join(net_file_path, net_file), os.path.join(self.cwd, net_file))
+                for file_src, file_dst in self.mode.get_TEMA_files(self.scenario):
+                    src_path = os.path.join(self.mode.get_output_dir(self.scenario), file_src)
+                    dst_path = os.path.join(self.cwd, file_dst)
+                    shutil.copyfile(src_path, dst_path)
 
         geometry = "%dx%d" % (Globals.HEATMAPS_RESOLUTION["width"], Globals.HEATMAPS_RESOLUTION["height"])
         display = self.env["DISPLAY"]
