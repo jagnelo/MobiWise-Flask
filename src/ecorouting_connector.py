@@ -49,8 +49,9 @@ class EcoRoutingMode:
 
     def run_eco_indicator(self, process: SPopen):
         logger.debug("TEMA", "[Eco-Indicator] starting Popen process")
-        with EcoRoutingMode.TEMA_lock:
-            eco_ind_proc = process.start()
+        EcoRoutingMode.TEMA_lock.acquire(blocking=True, timeout=10)
+        eco_ind_proc = process.start()
+        EcoRoutingMode.TEMA_lock.release()
         logger.debug("TEMA", "[Eco-Indicator] started Popen process")
         try:
             logger.debug("TEMA", "[Eco-Indicator] waiting for eco_ind_proc.communicate()")
@@ -69,8 +70,9 @@ class EcoRoutingMode:
 
     def run_heatmaps(self, process: SPopen):
         logger.debug("TEMA", "[Heatmaps] starting Popen process")
-        with EcoRoutingMode.TEMA_lock:
-            heatmaps_proc = process.start()
+        EcoRoutingMode.TEMA_lock.acquire(blocking=True, timeout=10)
+        heatmaps_proc = process.start()
+        EcoRoutingMode.TEMA_lock.release()
         logger.debug("TEMA", "[Heatmaps] started Popen process")
         try:
             logger.debug("TEMA", "[Heatmaps] waiting for heatmaps_proc.communicate()")
