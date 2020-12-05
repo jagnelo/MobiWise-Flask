@@ -578,6 +578,8 @@ def check_content(silent=True) -> Dict[str, Task]:
     tcs = get_test_cases()
     total_objective_combinations = utils.get_objective_combinations()
     count_combs_total = len(total_objective_combinations)
+    TEMA_files = [Globals.TEMA_ALL_VEHICLES_EDGE_DATA_FILE_NAME, Globals.TEMA_NOISE_EDGE_DATA_FILE_NAME,
+                  Globals.TEMA_ROUTING_VEHICLES_EDGE_DATA_FILE_NAME]
     tasks: Dict[str, Task] = {}
 
     def verbose(value: bool) -> str:
@@ -612,6 +614,7 @@ def check_content(silent=True) -> Dict[str, Task]:
                 if utils.is_objective_pair(name):
                     done_objective_combinations.append(name)
         res_base_roufile_exists = exists(join(res_dir, "inputdata", tc["bname"]) + "-base.rou.xml")
+        res_base_TEMA_exists = all([exists(join(res_dir, "inputdata", file)) for file in TEMA_files])
         count_combs_done = len(done_objective_combinations)
         image_name = "%s.%s" % (utils.format_file_name_base(scenario), Globals.HEATMAPS_FILE_TYPE)
         heatmap_base_exists = exists(join(Globals.HEATMAPS_DIR, image_name))
@@ -620,18 +623,19 @@ def check_content(silent=True) -> Dict[str, Task]:
         video_targz_extension = ".%s" % Globals.VIDEOS_TARGZ_FILE_TYPE
         video_base_exists = exists(join(Globals.VIDEOS_DIR, video_name + video_extension)) or \
                             exists(join(Globals.VIDEOS_TARGZ_DIR, video_name + video_targz_extension)) or \
-                            True
-        print_info = (verbose(res_dir_exists), verbose(res_base_roufile_exists), verbose(heatmap_base_exists),
-                      verbose(video_base_exists), count_combs_done, count_combs_total)
+                            True    # FIXME: this must be fixed, obviously
+        print_info = (verbose(res_dir_exists), verbose(res_base_roufile_exists), verbose(res_base_TEMA_exists),
+                      verbose(heatmap_base_exists), verbose(video_base_exists), count_combs_done, count_combs_total)
         if not silent:
-            logger.info("ContentChecker", "\tResults directory: %s | Base route file: %s | Heatmap file: %s | "
-                                          "Video file: %s | Objective combinations: %d/%d" % print_info)
+            logger.info("ContentChecker", "\tResults directory: %s | Base route file: %s | TEMA files: %s | "
+                                          "Heatmap file: %s | Video file: %s | "
+                                          "Objective combinations: %d/%d" % print_info)
 
         base_task_name = scenario
         base_task_mode = Base()
         # base_task = EcoRoutingVideoTask(base_task_name, scenario, base_task_mode, video_name)
         base_task = EcoRoutingTask(base_task_name, scenario, base_task_mode)
-        if res_base_roufile_exists and video_base_exists:
+        if res_base_roufile_exists and res_base_TEMA_exists and video_base_exists:
             # FIXME -> the Completed status should NOT be attributed here; works for now
             base_task.status = TaskStatus.Completed
         tasks[base_task_name] = base_task
@@ -679,6 +683,7 @@ def check_content(silent=True) -> Dict[str, Task]:
             for solution in solutions_total:
                 sol_dir = join(comb_dir, solution)
                 sol_sim_roufile_exists = exists(join(sol_dir, tc["bname"]) + ".rou.xml")
+                sol_sim_TEMA_exists = all([exists(join(sol_dir, file)) for file in TEMA_files])
                 solution_number = int(solution.replace("solution", ""))
                 solution_pretty = "Solution %d" % solution_number
                 sol_image_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
@@ -689,18 +694,18 @@ def check_content(silent=True) -> Dict[str, Task]:
                 video_targz_extension = ".%s" % Globals.VIDEOS_TARGZ_FILE_TYPE
                 sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, sol_video_name + video_extension)) or \
                                        exists(join(Globals.VIDEOS_TARGZ_DIR, sol_video_name + video_targz_extension)) or \
-                                       True
-                print_info = (solution_pretty, verbose(sol_sim_roufile_exists),
+                                       True     # FIXME: this must be fixed, obviously
+                print_info = (solution_pretty, verbose(sol_sim_roufile_exists), verbose(sol_sim_TEMA_exists),
                               verbose(sol_heatmap_sim_exists), verbose(sol_video_sim_exists))
                 if not silent:
-                    logger.info("ContentChecker", "\t\t\t%s: Sim route file: %s | Heatmap file: %s | "
-                                                  "Video file: %s" % print_info)
+                    logger.info("ContentChecker", "\t\t\t%s: Sim route file: %s | TEMA files: %s | "
+                                                  "Heatmap file: %s | Video file: %s" % print_info)
 
                 sol_task_name = utils.format_solution_name(scenario, objective1, objective2, solution_number)
                 sol_task_mode = Sim(objective1, objective2, solution_number)
                 # sol_task = EcoRoutingVideoTask(sol_task_name, scenario, sol_task_mode, sol_video_name)
                 sol_task = EcoRoutingTask(sol_task_name, scenario, sol_task_mode)
-                if sol_sim_roufile_exists and sol_video_sim_exists:
+                if sol_sim_roufile_exists and sol_sim_TEMA_exists and sol_video_sim_exists:
                     # FIXME -> the Completed status should NOT be attributed here; works for now
                     sol_task.status = TaskStatus.Completed
                 tasks[sol_task_name] = sol_task
