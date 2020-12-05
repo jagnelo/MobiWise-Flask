@@ -421,9 +421,14 @@ class TEMATask(Task):
         if self.cwd != os.getcwd():
             path_dst = os.path.join(Globals.HEATMAPS_DIR, self.image_name)
             utils.ensure_dir_exists(path_dst)
+            heatmaps_count = 0
             for file in os.listdir(self.cwd):
                 if file.endswith(Globals.HEATMAPS_FILE_TYPE):
                     shutil.move(os.path.join(self.cwd, file), os.path.join(path_dst, file))
+                    heatmaps_count += 1
+            if heatmaps_count == 0:
+                utils.clear_and_remove_dir(path_dst)
+                self.status = TaskStatus.Failed
             utils.clear_and_remove_dir(self.cwd)
 
 
