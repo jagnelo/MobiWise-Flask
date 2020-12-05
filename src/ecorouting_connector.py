@@ -1,5 +1,6 @@
 import os
 import shutil
+import threading
 from subprocess import STDOUT, PIPE, TimeoutExpired
 from typing import Dict, Callable, List, Tuple
 
@@ -17,6 +18,8 @@ from task import Task, TaskStatus, TaskManager, TaskDependency, TaskRunMode
 
 
 class EcoRoutingMode:
+    TEMA_lock = threading.Lock()
+
     def can_generate_TEMA_data(self):
         raise NotImplementedError
 
@@ -46,7 +49,8 @@ class EcoRoutingMode:
 
     def run_eco_indicator(self, process: SPopen):
         logger.debug("TEMA", "[Eco-Indicator] starting Popen process")
-        eco_ind_proc = process.start()
+        with EcoRoutingMode.TEMA_lock:
+            eco_ind_proc = process.start()
         logger.debug("TEMA", "[Eco-Indicator] started Popen process")
         try:
             logger.debug("TEMA", "[Eco-Indicator] waiting for eco_ind_proc.communicate()")
@@ -65,7 +69,8 @@ class EcoRoutingMode:
 
     def run_heatmaps(self, process: SPopen):
         logger.debug("TEMA", "[Heatmaps] starting Popen process")
-        heatmaps_proc = process.start()
+        with EcoRoutingMode.TEMA_lock:
+            heatmaps_proc = process.start()
         logger.debug("TEMA", "[Heatmaps] started Popen process")
         try:
             logger.debug("TEMA", "[Heatmaps] waiting for heatmaps_proc.communicate()")
@@ -377,12 +382,12 @@ class TEMATask(Task):
         if self.cwd == os.getcwd() or self.cwd == Globals.ECOROUTING_DIR:
             logger.warn("TEMA", "TEMATask task ID = %s is set for cwd %s" % (self.task_id, self.cwd))
         # eco_ind_cmd = ["bash", "run_eco_indicator.sh", Globals.MATLAB_RUNTIME_DIR]
-        eco_ind_cmd = ["eco_indicator"]
+        eco_ind_cmd = ["./eco_indicator"]
         net_file = self.mode.get_net_file(self.scenario)[1]
         rou_file = self.mode.get_TEMA_route_file(self.scenario)
         traci_port = str(Globals.TEMA_TRACI_BASE_PORT + int(display.replace(":", "")))
         # heatmap_cmd = ["bash", "run_heatmaps.sh", Globals.MATLAB_RUNTIME_DIR, net_file, rou_file, traci_port]
-        heatmap_cmd = ["heatmaps", net_file, rou_file, traci_port]
+        heatmap_cmd = ["./heatmaps", net_file, rou_file, traci_port]
         eco_ind_proc = SPopen(eco_ind_cmd, cwd=self.cwd, env=self.env, stdout=PIPE, stdin=PIPE, stderr=STDOUT)
         heatmap_proc = SPopen(heatmap_cmd, cwd=self.cwd, env=self.env, stdout=PIPE, stdin=PIPE, stderr=STDOUT)
         logger.info("TEMA", "Started TEMA process (task ID = %s | cwd = %s)" % (self.task_id, self.cwd))
