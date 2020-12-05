@@ -141,7 +141,6 @@ def setup():
 def main():
     threading.current_thread().name = "Main"
     logger.info("Main", "---------------------- MobiWise backend starting ----------------------")
-    setup()
 
     def update_tasks(silent=True):
         for _, task in eco.check_content(silent=silent).items():
@@ -172,5 +171,6 @@ def main():
 
 
 if __name__ == "__main__":
+    setup()
     main()
     # app.run(port=8001)

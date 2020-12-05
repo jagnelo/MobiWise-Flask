@@ -552,7 +552,7 @@ class EcoRoutingTaskManager(TaskManager):
 
 
 def get_test_cases():
-    excluded = ["ang-est", "portoSB_8AM9AM_fewerv"]
+    excluded = ["ang-est", "portoSB_8AM9AM_fewerv", "portoA3_6PM7PM"]
     return {k: v for k, v in testcases.items() if k not in excluded}
 
 
@@ -618,11 +618,11 @@ def check_content(silent=True) -> Dict[str, Task]:
             base_task.status = TaskStatus.Completed
         tasks[base_task_name] = base_task
         base_heatmap_task_name = "%s_heatmap" % base_task_name
-        base_task_heatmap = TEMATask(base_heatmap_task_name, scenario, base_task_mode, "")
+        base_task_heatmap = TEMATask(base_heatmap_task_name, scenario, base_task_mode, image_name)
         if heatmap_base_exists:
             # FIXME -> the Completed status should NOT be attributed here; works for now
             base_task_heatmap.status = TaskStatus.Completed
-        # tasks[base_heatmap_task_name] = base_task_heatmap
+        tasks[base_heatmap_task_name] = base_task_heatmap
 
         for combination in total_objective_combinations:
             objective1, objective2 = utils.reverse_format_objective_names(combination)
@@ -687,11 +687,11 @@ def check_content(silent=True) -> Dict[str, Task]:
                     sol_task.status = TaskStatus.Completed
                 tasks[sol_task_name] = sol_task
                 sol_heatmap_task_name = "%s_heatmap" % sol_task_name
-                sol_task_heatmap = TEMATask(sol_heatmap_task_name, scenario, sol_task_mode, "")
+                sol_task_heatmap = TEMATask(sol_heatmap_task_name, scenario, sol_task_mode, sol_image_name)
                 if sol_heatmap_sim_exists:
                     # FIXME -> the Completed status should NOT be attributed here; works for now
                     sol_task_heatmap.status = TaskStatus.Completed
-                # tasks[sol_heatmap_task_name] = sol_task_heatmap
+                tasks[sol_heatmap_task_name] = sol_task_heatmap
 
     completed_tasks = sum([v.status == TaskStatus.Completed for k, v in tasks.items()])
     if not silent:
