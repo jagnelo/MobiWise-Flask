@@ -29,7 +29,7 @@ def generate_video_from_targz(targz_file_name):
     utils.unzip_targz(src_dir, dst_dir)
     if os.path.exists(os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)):
         dst_dir = os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)
-    snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
+    snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)
     for snapshot_name in os.listdir(snapshots_path):
         snapshot = os.path.join(snapshots_path, snapshot_name)
         f = magic.from_file(snapshot)
