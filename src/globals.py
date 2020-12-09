@@ -75,4 +75,4 @@ class Globals(NoInit):
         "height": 1080
     }
 
-    VNC_MANAGER_API = "http://localhost:8002/api/"
+    VNC_MANAGER_API = "http://localhost:5001/api/"
