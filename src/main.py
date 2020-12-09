@@ -139,7 +139,8 @@ def base_video(scenario):
 
 @app.route("/api/<scenario>/optimized/<objective1>/<objective2>/video/<solution>", methods=["GET"])
 def optimized_video(scenario, objective1, objective2, solution):
-    video_name = utils.format_file_name_sim(scenario, objective1, objective2, int(solution))
+    sol = 0     # FIXME: should be int(solution)
+    video_name = utils.format_file_name_sim(scenario, objective1, objective2, sol)
     video_name = video_name + "." + Globals.VIDEOS_FILE_TYPE
     return send_file(os.path.join(Globals.VIDEOS_DIR, video_name), mimetype="video/mp4")
 
