@@ -32,6 +32,7 @@ class Globals(NoInit):
     TEMA_NOISE_EDGE_DATA_FILE_NAME = "edge_noise_data.xml"
     TEMA_FILE_NAME_BASE_SUFFIX = "baseline.xml"
     TEMA_FILE_NAME_SIM_SUFFIX_FORMAT = "optimal_solution%d.xml"
+    TEMA_RESULTS_FILE_NAME = "TEMA-results.res"
     TEMA_TRACI_BASE_PORT = 8813
     TEMA_METRICS = {
         "co2": {"unit": "g/km/vehicle", "pretty": "CO2"},
@@ -40,6 +41,7 @@ class Globals(NoInit):
         "travel_time": {"unit": "s", "pretty": "Travel time"}
     }
 
+    MATLAB_LIB_DIR = os.path.join("..", "lib", "MATLAB")
     MATLAB_RUNTIME_DIR = os.path.abspath(os.path.join(os.sep, "usr", "local", "MATLAB", "MATLAB_Runtime", "v99"))
 
     XML_COMMENT_TAGS = ("<!--", "-->")

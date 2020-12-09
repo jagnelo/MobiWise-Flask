@@ -368,6 +368,7 @@ class TEMATask(Task):
             utils.clear_dir(self.cwd)
             with file_copy_lock:
                 utils.copy_dir_contents(Globals.TEMA_DIR, self.cwd)
+                utils.copy_dir_contents(Globals.MATLAB_LIB_DIR, self.cwd)
                 net_file_path, net_file = self.mode.get_net_file(self.scenario)
                 shutil.copyfile(os.path.join(net_file_path, net_file), os.path.join(self.cwd, net_file))
                 for file_src, file_dst in self.mode.get_TEMA_files(self.scenario):
@@ -432,6 +433,9 @@ class TEMATask(Task):
                 if file.endswith(Globals.HEATMAPS_FILE_TYPE):
                     shutil.move(os.path.join(self.cwd, file), os.path.join(path_dst, file))
                     heatmaps_count += 1
+                if file.endswith("results.txt"):
+                    out_dir = self.mode.get_output_dir(self.scenario)
+                    shutil.move(os.path.join(self.cwd, file), os.path.join(out_dir, Globals.TEMA_RESULTS_FILE_NAME))
             if heatmaps_count == 0:
                 utils.clear_and_remove_dir(path_dst)
                 self.status = TaskStatus.Failed

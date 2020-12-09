@@ -282,22 +282,21 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 	    end
 	    
 	    if repository(i,4) == 1
-			HOUR = num2str(repository(i,2),2);
-			first_number = HOUR(1);
-			second_number = HOUR(2);
-			co2gkm_name = [first_number, period, second_number, period, '_co2gkm_heatmap_Boavista', scenario, '.png'];
+		HOUR = num2str(repository(i,2),2);
+		first_number = HOUR(1);
+		second_number = HOUR(2);
+		co2gkm_name = [first_number, period, second_number, period, scenario, '_co2gkm_heatmap_Boavista.png'];
 	    elseif repository(i,4) == 2
-			HOUR = num2str(repository(i,2),2);
-			first_number = HOUR(1);
-			second_number = HOUR(2);
-			co2gkm_name = [first_number, period, second_number, period, '_co2gkm_heatmap_SaoBento', scenario, '.png'];
+		HOUR = num2str(repository(i,2),2);
+		first_number = HOUR(1);
+		second_number = HOUR(2);
+		co2gkm_name = [first_number, period, second_number, period, scenario, '_co2gkm_heatmap_SaoBento.png'];
 	    else
-			HOUR = num2str(repository(i,2),2);
-			first_number = HOUR(1);
-			second_number = HOUR(2);
-			co2gkm_name = [first_number, period, second_number, period, '_co2gkm_heatmap_A3', scenario, '.png'];
+		HOUR = num2str(repository(i,2),2);
+		first_number = HOUR(1);
+		second_number = HOUR(2);
+		co2gkm_name = [first_number, period, second_number, period, scenario, '_co2gkm_heatmap_A3.png'];
 	    end
-	    co2gkm_name = ['co2', scenario, ' - ', datestr(now), '.png'];
 	    % create .png image
 	    imwrite(CO2_SC,co2gkm_name)
 	    % -------------------------------------------------------------------------
@@ -377,22 +376,21 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 	    
 	    % set name accordingly
 	    if repository(i,4) == 1
-			HOUR = num2str(repository(i,2),2);
-			first_number = HOUR(1);
-			second_number = HOUR(2);
-			emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_Boavista', scenario, '.png'];
+		HOUR = num2str(repository(i,2),2);
+		first_number = HOUR(1);
+		second_number = HOUR(2);
+		emissions_indicator_name = [first_number, period, second_number, period, scenario, '_emissions_indicator_heatmap_Boavista.png'];
 	    elseif repository(i,4) == 2
-			HOUR = num2str(repository(i,2),2);
-			first_number = HOUR(1);
-			second_number = HOUR(2);
-		emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_SaoBento', scenario, '.png'];
+		HOUR = num2str(repository(i,2),2);
+		first_number = HOUR(1);
+		second_number = HOUR(2);
+		emissions_indicator_name = [first_number, period, second_number, period, scenario, '_emissions_indicator_heatmap_SaoBento.png'];
 	    else
-			HOUR = num2str(repository(i,2),2);
-			first_number = HOUR(1);
-			second_number = HOUR(2);
-			emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_A3', scenario, '.png'];
+		HOUR = num2str(repository(i,2),2);
+		first_number = HOUR(1);
+		second_number = HOUR(2);
+		emissions_indicator_name = [first_number, period, second_number, period, scenario, '_emissions_indicator_heatmap_A3.png'];
 	    end
-	    emissions_indicator_name = ['emissions_indicator', scenario, ' - ', datestr(now), '.png'];
 	    % create .png image
 	    imwrite(Emissions_Ind_SC,emissions_indicator_name)
 	    % -------------------------------------------------------------------------
@@ -472,22 +470,21 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 	    
 	    % set name accordingly
 	    if repository(i,4) == 1
-			HOUR = num2str(repository(i,2),2);
-			first_number = HOUR(1);
-			second_number = HOUR(2);
-			eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_Boavista', scenario, '.png'];
+		HOUR = num2str(repository(i,2),2);
+		first_number = HOUR(1);
+		second_number = HOUR(2);
+		eco_indicator_name = [first_number, period, second_number, period, scenario, '_eco_indicator_heatmap_Boavista.png'];
 	    elseif repository(i,4) == 2
-			HOUR = num2str(repository(i,2),2);
-			first_number = HOUR(1);
-			second_number = HOUR(2);
-			eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_SaoBento', scenario, '.png'];
+		HOUR = num2str(repository(i,2),2);
+		first_number = HOUR(1);
+		second_number = HOUR(2);
+		eco_indicator_name = [first_number, period, second_number, period, scenario, '_eco_indicator_heatmap_SaoBento.png'];
 	    else
-			HOUR = num2str(repository(i,2),2);
-			first_number = HOUR(1);
-			second_number = HOUR(2);
-			eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_A3', scenario, '.png'];
+		HOUR = num2str(repository(i,2),2);
+		first_number = HOUR(1);
+		second_number = HOUR(2);
+		eco_indicator_name = [first_number, period, second_number, period, scenario, '_eco_indicator_heatmap_A3.png'];
 	    end
-	    eco_indicator_name = ['eco_indicator', scenario, ' - ', datestr(now), '.png'];
 	    % create .png image
 	    imwrite(eco_indicator_SC,eco_indicator_name)
 	    % -------------------------------------------------------------------------
@@ -582,7 +579,6 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 			second_number = HOUR(2);
 			travel_time_name = [first_number, period, second_number, period, scenario, '_travel_time_heatmap_A3.png'];
 		end
-		travel_time_name = ['travel_time', scenario, ' - ', datestr(now), '.png'];
 		% create .png image
 		imwrite(travel_time_SC,travel_time_name)
 		% -------------------------------------------------------------------------
@@ -714,19 +710,18 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 					HOUR = num2str(repository(i,2),2);
 					first_number = HOUR(1);
 					second_number = HOUR(2);
-					co2gkm_name = [first_number, period, second_number, period,'_co2gkm_heatmap_Boavista', scenario, '_routes.png'];
+					co2gkm_name = [first_number, period, second_number, period,'_co2gkm_heatmap_Boavista_baseline_routes.png'];
 				elseif repository(i,4) == 2
 					HOUR = num2str(repository(i,2),2);
 					first_number = HOUR(1);
 					second_number = HOUR(2);
-					co2gkm_name = [first_number, period, second_number, period, '_co2gkm_heatmap_SaoBento', scenario, '_routes.png'];
+					co2gkm_name = [first_number, period, second_number, period, '_co2gkm_heatmap_SaoBento_baseline_routes.png'];
 				else
 					HOUR = num2str(repository(i,2),2);
 					first_number = HOUR(1);
 					second_number = HOUR(2);
-					co2gkm_name = [first_number, period, second_number, period, '_co2gkm_heatmap_A3', scenario, '_routes.png'];
+					co2gkm_name = [first_number, period, second_number, period, '_co2gkm_heatmap_A3_baseline_routes.png'];
 				end
-				co2gkm_name = ['co2', scenario, ' - ', datestr(now), '_routes.png'];
 				% create .png image
 				imwrite(CO2_SC,co2gkm_name)
 				% -------------------------------------------------------------------------
@@ -814,19 +809,18 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 					HOUR = num2str(repository(i,2),2);
 					first_number = HOUR(1);
 					second_number = HOUR(2);
-					emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_Boavista', scenario, '_routes.png'];
+					emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_Boavista_baseline_routes.png'];
 				elseif repository(i,4) == 2
 					HOUR = num2str(repository(i,2),2);
 					first_number = HOUR(1);
 					second_number = HOUR(2);
-					emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_SaoBento', scenario, '_routes.png'];
+					emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_SaoBento_baseline_routes.png'];
 				else
 					HOUR = num2str(repository(i,2),2);
 					first_number = HOUR(1);
 					second_number = HOUR(2);
-					emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_A3', scenario, '_routes.png'];
+					emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_A3_baseline_routes.png'];
 				end
-				emissions_indicator_name = ['emissions_indicator', scenario, ' - ', datestr(now), '_routes.png'];
 				% create .png image
 				imwrite(Emissions_Ind_SC,emissions_indicator_name)
 				% -------------------------------------------------------------------------
@@ -914,19 +908,18 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 					HOUR = num2str(repository(i,2),2);
 					first_number = HOUR(1);
 					second_number = HOUR(2);
-					eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_Boavista', scenario, '_routes.png'];
+					eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_Boavista_baseline_routes.png'];
 				elseif repository(i,4) == 2
 					HOUR = num2str(repository(i,2),2);
 					first_number = HOUR(1);
 					second_number = HOUR(2);
-					eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_SaoBento', scenario, '_routes.png'];
+					eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_SaoBento_baseline_routes.png'];
 				else
 					HOUR = num2str(repository(i,2),2);
 					first_number = HOUR(1);
 					second_number = HOUR(2);
-					eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_A3', scenario, '_routes.png'];
+					eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_A3_baseline_routes.png'];
 				end
-				eco_indicator_name = ['eco_indicator', scenario, ' - ', datestr(now), '_routes.png'];
 				% create .png image
 				imwrite(eco_indicator_SC,eco_indicator_name)
 				
@@ -1027,7 +1020,6 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 					second_number = HOUR(2);
 					travel_time_name = [first_number, period, second_number, period, '_travel_time_heatmap_A3_baseline_routes.png'];
 				end
-				travel_time_name = ['travel_time', scenario, ' - ', datestr(now), '.png'];
 				% create .png image
 				imwrite(travel_time_SC,travel_time_name)
 				% -------------------------------------------------------------------------
@@ -1204,7 +1196,6 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 					second_number = HOUR(2);
 					co2gkm_name = [first_number, period, second_number, period, '_co2gkm_heatmap_A3', scenario, '.png'];
 				end
-				co2gkm_name = ['co2', scenario, ' - ', datestr(now), '.png'];
 				% create .png image
 				imwrite(CO2_SC,co2gkm_name)
 				% -------------------------------------------------------------------------
@@ -1304,7 +1295,6 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 					second_number = HOUR(2);
 					emissions_indicator_name = [first_number, period, second_number, period, '_emissions_indicator_heatmap_A3', scenario, '.png'];
 				end
-				emissions_indicator_name = ['emissions_indicator', scenario, ' - ', datestr(now), '.png'];
 				% create .png image
 				imwrite(Emissions_Ind_SC,emissions_indicator_name)
 				% -------------------------------------------------------------------------
@@ -1404,7 +1394,6 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 					second_number = HOUR(2);
 					eco_indicator_name = [first_number, period, second_number, period, '_eco_indicator_heatmap_A3', scenario, '.png'];
 				end
-				eco_indicator_name = ['eco_indicator', scenario, ' - ', datestr(now), '.png'];
 				% create .png image
 				imwrite(eco_indicator_SC,eco_indicator_name)
 				% -------------------------------------------------------------------------
@@ -1504,7 +1493,6 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 					second_number = HOUR(2);
 					travel_time_name = [first_number, period, second_number, period, '_travel_time_heatmap_A3', scenario, '.png'];
 				end
-				travel_time_name = ['travel_time', scenario, ' - ', datestr(now), '.png'];
 				% create .png image
 				imwrite(travel_time_SC,travel_time_name)
 			end
