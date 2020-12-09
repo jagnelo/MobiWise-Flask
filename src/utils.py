@@ -97,7 +97,7 @@ def read_eval_file(file_name):
 
 def get_simulation_files(netfile, roufile):
     return {
-        "gui-settings": open(Globals.ECOROUTING_GUI_SETTINGS_FILE_NAME, "rb"),
+        "gui-settings": open(os.path.join(Globals.ECOROUTING_DIR, Globals.ECOROUTING_GUI_SETTINGS_FILE_NAME), "rb"),
         "net-file": open(netfile, "rb"),
         "route-files": open(roufile, "rb")
     }
