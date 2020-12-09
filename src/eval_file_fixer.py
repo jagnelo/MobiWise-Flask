@@ -10,7 +10,8 @@ def find_objetive_pair_dirs():
     dirs = []
     for scenario, info in eco.get_test_cases().items():
         for obj_pair in utils.get_objective_combinations():
-            dirs.append(os.path.join(info["ofolder"], utils.format_objective_names(*obj_pair)))
+            objectives = utils.reverse_format_objective_names(obj_pair)
+            dirs.append(os.path.join(info["ofolder"], utils.format_objective_names(*objectives)))
     return dirs
 
 
