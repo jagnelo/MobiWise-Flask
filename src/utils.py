@@ -109,7 +109,7 @@ def read_eval_file(file_name):
 
 def write_eval_file(file_name, header: list, data: list):
     f = open(file_name, "w")
-    header_str = " ".join(header)
+    header_str = " ".join(["#"] + header)
     f.write(header_str + "\n")
     items_str = []
     for item in data:

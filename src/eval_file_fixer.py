@@ -18,8 +18,8 @@ def fix_eval_file(dir):
     header = []
     solution_evs = {}
     for file in os.listdir(dir):
-        if os.path.isdir(file) and "solution" in file:
-            sol_dir = os.path.join(dir, file)
+        sol_dir = os.path.join(dir, file)
+        if os.path.isdir(sol_dir) and file.startswith("solution"):
             for sol_file in os.listdir(sol_dir):
                 if sol_file.endswith("sim.ev"):
                     sol_sim_ev = utils.read_ev_file(os.path.join(sol_dir, sol_file))
@@ -33,7 +33,7 @@ def fix_eval_file(dir):
         sols = list(solution_evs)
         ordered_sols = sorted(sols, key=lambda x: int(x.replace("solution", "")))
         for sol in ordered_sols:
-            sol_values = {solution_evs[sol][h] if solution_evs[sol] else float(0) for h in header}
+            sol_values = {h: solution_evs[sol][h] if solution_evs[sol] else float(0) for h in header}
             data.append(sol_values)
         utils.write_eval_file(os.path.join(dir, "sim_fixed.eval"), header, data)
         logger.info("EvalFileFixer", "Fixed sim.eval file at %s" % dir)
