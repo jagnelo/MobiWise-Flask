@@ -37,7 +37,7 @@ def generate_video_from_targz(targz_file_name):
             logger.warn("VideoGenerator", "Snapshot %s has dimensions 1x1 and will be removed" % snapshot_name)
             os.remove(snapshot)
     video_path = os.path.join(Globals.VIDEOS_DIR, file_name)
-    snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)
+    snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
     cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
     try:
         proc = subprocess.Popen(cmd.split(" "), stdout=PIPE, stdin=PIPE, stderr=STDOUT)
