@@ -5,13 +5,17 @@ import time
 from datetime import datetime
 
 import requests
+from apscheduler.schedulers.background import BackgroundScheduler
 
+import eval_file_fixer
+import heatmap_organizer
 import utils
 import ecorouting_connector as eco
 from flask import Flask, send_file
 from flask_cors import CORS
 from dotenv import load_dotenv, find_dotenv
 
+import video_generator
 from globals import Globals
 from logger import logger
 
@@ -54,8 +58,12 @@ def data(scenario, objective1, objective2):
     pred = utils.read_eval_file(os.path.join(tc["ofolder"], path, "pred.eval"))
     pred = {h: pred[h] for h in pred if h in [h for h in Globals.METRICS]}
 
-    sim = utils.read_eval_file(os.path.join(tc["ofolder"], path, "sim.eval"))
-    sim = {h: sim[h] for h in sim if h in [h for h in Globals.METRICS]}
+    if os.path.exists(os.path.join(tc["ofolder"], path, "sim_fixed.eval")):
+        sim = utils.read_eval_file(os.path.join(tc["ofolder"], path, "sim_fixed.eval"))
+        sim = {h: sim[h] for h in sim if h in [h for h in Globals.METRICS]}
+    else:
+        sim = utils.read_eval_file(os.path.join(tc["ofolder"], path, "sim.eval"))
+        sim = {h: sim[h] for h in sim if h in [h for h in Globals.METRICS]}
 
     return {
                "success": True,
@@ -146,6 +154,12 @@ def main():
         for _, task in eco.check_content(silent=silent).items():
             task_manager.add_task(task)
 
+    scheduler = BackgroundScheduler()
+    scheduler.start()
+    scheduler.add_job(eval_file_fixer.run, 'interval', seconds=60*15)
+    scheduler.add_job(heatmap_organizer.run, 'interval', seconds=60*15)
+    scheduler.add_job(video_generator.run, 'interval', seconds=60*15)
+
     task_manager = eco.EcoRoutingTaskManager(Globals.TASK_MANAGER_MAX_THREADS, update_tasks)
     update_tasks(silent=False)
     task_manager.start()
@@ -165,6 +179,7 @@ def main():
         logger.flush()
         task_manager.stop(wait=True)
         eco.check_content(silent=False)
+        scheduler.shutdown()
         task_manager.status()
         logger.info("Main", "---------------------- MobiWise backend stopping ----------------------")
         logger.flush()

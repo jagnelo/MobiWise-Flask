@@ -77,6 +77,18 @@ def clear_and_remove_dir(path, silent=False):
             logger.info("Utils", "Emptied and removed directory %s" % path)
 
 
+def read_ev_file(file_name):
+    f = open(file_name, "r")
+    data = {}
+    for line in f.readlines():
+        items = line.strip().split("\t")
+        if len(items) == 2:
+            header, value = items[0].strip(), float(items[1].strip())
+            data[header] = value
+    f.close()
+    return data
+
+
 def read_eval_file(file_name):
     f = open(file_name, "r")
     line = f.readline()
@@ -93,6 +105,18 @@ def read_eval_file(file_name):
             ev[headers[j]].append(values[j])
 
     return ev
+
+
+def write_eval_file(file_name, header: list, data: list):
+    f = open(file_name, "w")
+    header_str = " ".join(header)
+    f.write(header_str + "\n")
+    items_str = []
+    for item in data:
+        item_str = " ".join(["{:.18e}".format(item[h]) for h in header])
+        items_str.append(item_str)
+    f.write("\n".join(items_str))
+    f.close()
 
 
 def get_simulation_files(netfile, roufile):
@@ -224,4 +248,3 @@ def zip_targz(path_to_targz_file, dir_to_zip, targz_root_dir):
 def unzip_targz(path_to_targz_file, unzip_to_dir):
     with tarfile.open(path_to_targz_file, "r:gz") as tar:
         tar.extractall(path=unzip_to_dir)
-

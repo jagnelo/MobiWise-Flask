@@ -350,11 +350,11 @@ class EcoRoutingVideoTask(EcoRoutingTask):
 
 
 class TEMATask(Task):
-    def __init__(self, task_id, scenario, mode: EcoRoutingMode, image_name):
+    def __init__(self, task_id, scenario, mode: EcoRoutingMode, image_dir_name):
         Task.__init__(self, task_id)
         self.scenario = scenario
         self.mode = mode
-        self.image_name = image_name
+        self.image_dir_name = image_dir_name
 
     def get_cwd_mode(self) -> TaskRunMode:
         return TaskRunMode.Isolated
@@ -425,7 +425,7 @@ class TEMATask(Task):
         # FIXME: replace os.system by subprocess in order to redirect output to logger's STDOUT
         os.system("vncserver -kill %s" % display)
         if self.cwd != os.getcwd():
-            path_dst = os.path.join(Globals.HEATMAPS_DIR, self.image_name)
+            path_dst = os.path.join(Globals.HEATMAPS_DIR, self.image_dir_name)
             utils.ensure_dir_exists(path_dst)
             heatmaps_count = 0
             for file in os.listdir(self.cwd):
@@ -616,14 +616,13 @@ def check_content(silent=True) -> Dict[str, Task]:
         res_base_roufile_exists = exists(join(res_dir, "inputdata", tc["bname"]) + "-base.rou.xml")
         res_base_TEMA_exists = all([exists(join(res_dir, "inputdata", file)) for file in TEMA_files])
         count_combs_done = len(done_objective_combinations)
-        image_name = "%s.%s" % (utils.format_file_name_base(scenario), Globals.HEATMAPS_FILE_TYPE)
-        heatmap_base_exists = exists(join(Globals.HEATMAPS_DIR, image_name))
+        image_dir_name = utils.format_file_name_base(scenario)
+        heatmap_base_exists = exists(join(Globals.HEATMAPS_DIR, image_dir_name))
         video_name = utils.format_file_name_base(scenario)
         video_extension = ".%s" % Globals.VIDEOS_FILE_TYPE
         video_targz_extension = ".%s" % Globals.VIDEOS_TARGZ_FILE_TYPE
         video_base_exists = exists(join(Globals.VIDEOS_DIR, video_name + video_extension)) or \
-                            exists(join(Globals.VIDEOS_TARGZ_DIR, video_name + video_targz_extension)) or \
-                            True    # FIXME: this must be fixed, obviously
+                            exists(join(Globals.VIDEOS_TARGZ_DIR, video_name + video_targz_extension))
         print_info = (verbose(res_dir_exists), verbose(res_base_roufile_exists), verbose(res_base_TEMA_exists),
                       verbose(heatmap_base_exists), verbose(video_base_exists), count_combs_done, count_combs_total)
         if not silent:
@@ -633,14 +632,14 @@ def check_content(silent=True) -> Dict[str, Task]:
 
         base_task_name = scenario
         base_task_mode = Base()
-        # base_task = EcoRoutingVideoTask(base_task_name, scenario, base_task_mode, video_name)
-        base_task = EcoRoutingTask(base_task_name, scenario, base_task_mode)
+        base_task = EcoRoutingVideoTask(base_task_name, scenario, base_task_mode, video_name)
+        # base_task = EcoRoutingTask(base_task_name, scenario, base_task_mode)
         if res_base_roufile_exists and res_base_TEMA_exists and video_base_exists:
             # FIXME -> the Completed status should NOT be attributed here; works for now
             base_task.status = TaskStatus.Completed
         tasks[base_task_name] = base_task
         base_heatmap_task_name = "%s_heatmap" % base_task_name
-        base_task_heatmap = TEMATask(base_heatmap_task_name, scenario, base_task_mode, image_name)
+        base_task_heatmap = TEMATask(base_heatmap_task_name, scenario, base_task_mode, image_dir_name)
         if heatmap_base_exists:
             # FIXME -> the Completed status should NOT be attributed here; works for now
             base_task_heatmap.status = TaskStatus.Completed
@@ -686,15 +685,13 @@ def check_content(silent=True) -> Dict[str, Task]:
                 sol_sim_TEMA_exists = all([exists(join(sol_dir, file)) for file in TEMA_files])
                 solution_number = int(solution.replace("solution", ""))
                 solution_pretty = "Solution %d" % solution_number
-                sol_image_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
-                sol_image_name = "%s.%s" % (sol_image_name, Globals.HEATMAPS_FILE_TYPE)
-                sol_heatmap_sim_exists = exists(join(Globals.HEATMAPS_DIR, sol_image_name))
+                sol_image_dir_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
+                sol_heatmap_sim_exists = exists(join(Globals.HEATMAPS_DIR, sol_image_dir_name))
                 sol_video_name = utils.format_file_name_sim(scenario, objective1, objective2, solution_number)
                 video_extension = ".%s" % Globals.VIDEOS_FILE_TYPE
                 video_targz_extension = ".%s" % Globals.VIDEOS_TARGZ_FILE_TYPE
                 sol_video_sim_exists = exists(join(Globals.VIDEOS_DIR, sol_video_name + video_extension)) or \
-                                       exists(join(Globals.VIDEOS_TARGZ_DIR, sol_video_name + video_targz_extension)) or \
-                                       True     # FIXME: this must be fixed, obviously
+                                       exists(join(Globals.VIDEOS_TARGZ_DIR, sol_video_name + video_targz_extension))
                 print_info = (solution_pretty, verbose(sol_sim_roufile_exists), verbose(sol_sim_TEMA_exists),
                               verbose(sol_heatmap_sim_exists), verbose(sol_video_sim_exists))
                 if not silent:
@@ -703,14 +700,19 @@ def check_content(silent=True) -> Dict[str, Task]:
 
                 sol_task_name = utils.format_solution_name(scenario, objective1, objective2, solution_number)
                 sol_task_mode = Sim(objective1, objective2, solution_number)
-                # sol_task = EcoRoutingVideoTask(sol_task_name, scenario, sol_task_mode, sol_video_name)
-                sol_task = EcoRoutingTask(sol_task_name, scenario, sol_task_mode)
+                # FIXME: rather than always generating a video for solution #1, this should be done for the
+                #        best solution of a given metric pair
+                if solution_number == 1:
+                    sol_task = EcoRoutingVideoTask(sol_task_name, scenario, sol_task_mode, sol_video_name)
+                else:
+                    sol_task = EcoRoutingTask(sol_task_name, scenario, sol_task_mode)
+                    sol_video_sim_exists = True
                 if sol_sim_roufile_exists and sol_sim_TEMA_exists and sol_video_sim_exists:
                     # FIXME -> the Completed status should NOT be attributed here; works for now
                     sol_task.status = TaskStatus.Completed
                 tasks[sol_task_name] = sol_task
                 sol_heatmap_task_name = "%s_heatmap" % sol_task_name
-                sol_task_heatmap = TEMATask(sol_heatmap_task_name, scenario, sol_task_mode, sol_image_name)
+                sol_task_heatmap = TEMATask(sol_heatmap_task_name, scenario, sol_task_mode, sol_image_dir_name)
                 if sol_heatmap_sim_exists:
                     # FIXME -> the Completed status should NOT be attributed here; works for now
                     sol_task_heatmap.status = TaskStatus.Completed

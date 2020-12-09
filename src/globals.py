@@ -8,7 +8,7 @@ class NoInit:
 
 class Globals(NoInit):
     METRICS = {
-        "ttime": {"unit": "s", "pretty": "Time"},
+        "ttime": {"unit": "s", "pretty": "Travel time"},
         "length": {"unit": "km", "pretty": "Length"},
         "cost_co": {"unit": "g", "pretty": "CO"},
         "cost_co2": {"unit": "g", "pretty": "CO2"},
@@ -33,6 +33,7 @@ class Globals(NoInit):
     TEMA_FILE_NAME_BASE_SUFFIX = "baseline.xml"
     TEMA_FILE_NAME_SIM_SUFFIX_FORMAT = "optimal_solution%d.xml"
     TEMA_TRACI_BASE_PORT = 8813
+    TEMA_METRICS = ["co2", "eco_indicator", "emissions_indicator", "travel_time"]
 
     MATLAB_RUNTIME_DIR = os.path.abspath(os.path.join(os.sep, "usr", "local", "MATLAB", "MATLAB_Runtime", "v99"))
 

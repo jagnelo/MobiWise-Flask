@@ -1,6 +1,9 @@
 import os
+import re
 import subprocess
 from subprocess import PIPE, STDOUT
+
+import magic
 
 import utils
 from globals import Globals
@@ -27,6 +30,13 @@ def generate_video_from_targz(targz_file_name):
     if os.path.exists(os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)):
         dst_dir = os.path.join(dst_dir, Globals.SNAPSHOTS_DIR)
     snapshots_path = os.path.join(dst_dir, Globals.SNAPSHOTS_FILE_NAME)
+    for snapshot_name in os.listdir(snapshots_path):
+        snapshot = os.path.join(snapshots_path, snapshot_name)
+        f = magic.from_file(snapshot)
+        w, h = re.search('(\d+) x (\d+)', f).groups()
+        if int(w) == 1 and int(h) == 1:
+            logger.warn("VideoGenerator", "Snapshot %s has dimensions 1x1 and will be removed" % snapshot_name)
+            os.remove(snapshot)
     video_path = os.path.join(Globals.VIDEOS_DIR, file_name)
     cmd = Globals.FFMPEG_CMD % (snapshots_path, video_path)
     try:
@@ -46,8 +56,13 @@ def generate_video_from_targz(targz_file_name):
     utils.clear_and_remove_dir(dst_dir)
 
 
-if __name__ == '__main__':
+def run():
     for file in find_video_targz_files():
         logger.info("VideoGenerator", "Generating video from %s" % file)
         generate_video_from_targz(file)
-        logger.flush()
+        if __name__ == '__main__':
+            logger.flush()
+
+
+if __name__ == '__main__':
+    run()
