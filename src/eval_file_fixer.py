@@ -44,10 +44,14 @@ def fix_eval_file(dir):
 
 def run():
     for dir in find_objetive_pair_dirs():
-        logger.info("EvalFileFixer", "Fixing sim.eval file at %s" % dir)
-        fix_eval_file(dir)
-        if __name__ == '__main__':
-            logger.flush()
+        try:
+            logger.info("EvalFileFixer", "Fixing sim.eval file at %s" % dir)
+            fix_eval_file(dir)
+        except BaseException as e:
+            logger.error("EvalFileFixer", str(e))
+        finally:
+            if __name__ == '__main__':
+                logger.flush()
 
 
 if __name__ == '__main__':
