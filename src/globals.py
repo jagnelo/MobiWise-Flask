@@ -7,7 +7,15 @@ class NoInit:
 
 
 class Globals(NoInit):
-    METRICS = {
+
+    SCENARIO_SEPARATOR = "."
+    OBJECTIVE_SEPARATOR = "-"
+    SOLUTION_SEPARATOR = "."
+
+    ECOROUTING_DIR = os.path.join("..", "ecorouting")
+    ECOROUTING_GUI_SETTINGS_FILE_NAME = "gui-settings.xml"
+    ECOROUTING_ADDITIONAL_FILES_FILE_NAME = "moreOutputInfo.xml"
+    ECOROUTING_METRICS = {
         "ttime": {"unit": "s", "pretty": "Travel time"},
         "length": {"unit": "km", "pretty": "Length"},
         "cost_co": {"unit": "g", "pretty": "CO"},
@@ -17,14 +25,6 @@ class Globals(NoInit):
         "cost_nox": {"unit": "g", "pretty": "NOx"}
     }
 
-    SCENARIO_SEPARATOR = "."
-    OBJECTIVE_SEPARATOR = "-"
-    SOLUTION_SEPARATOR = "."
-
-    ECOROUTING_DIR = os.path.join("..", "ecorouting")
-    ECOROUTING_GUI_SETTINGS_FILE_NAME = "gui-settings.xml"
-    ECOROUTING_ADDITIONAL_FILES_FILE_NAME = "moreOutputInfo.xml"
-
     TEMA_DIR = os.path.join("..", "tema", "bin")
     TEMA_ADDITIONAL_FILES_FILE_NAME = "Additional_Files.add.xml"
     TEMA_ROUTING_VEHICLES_EDGE_DATA_FILE_NAME = "edges_Routing_data.xml"
@@ -33,7 +33,12 @@ class Globals(NoInit):
     TEMA_FILE_NAME_BASE_SUFFIX = "baseline.xml"
     TEMA_FILE_NAME_SIM_SUFFIX_FORMAT = "optimal_solution%d.xml"
     TEMA_TRACI_BASE_PORT = 8813
-    TEMA_METRICS = ["co2", "eco_indicator", "emissions_indicator", "travel_time"]
+    TEMA_METRICS = {
+        "co2": {"unit": "g/km/vehicle", "pretty": "CO2"},
+        "eco_indicator": {"unit": "€ cents/vehicle", "pretty": "Eco-indicator"},
+        "emissions_indicator": {"unit": "€ cents/vehicle", "pretty": "Emissions indicator"},
+        "travel_time": {"unit": "s", "pretty": "Travel time"}
+    }
 
     MATLAB_RUNTIME_DIR = os.path.abspath(os.path.join(os.sep, "usr", "local", "MATLAB", "MATLAB_Runtime", "v99"))
 

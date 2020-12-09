@@ -31,13 +31,6 @@ def format_file_name_sim(scenario, objective1, objective2, solution):
     return "%s.sim%d" % (format_scenario_name(scenario, objective1, objective2), solution)
 
 
-def get_file_path_or_default(path, name, extension):
-    file_path = os.path.join(path, "%s.%s" % (name, extension))
-    if not os.path.exists(file_path):
-        file_path = os.path.join(path, "default.%s" % extension)
-    return file_path
-
-
 def ensure_dir_exists(path, silent=False):
     if not os.path.exists(path):
         os.makedirs(path)
@@ -129,8 +122,8 @@ def get_simulation_files(netfile, roufile):
 
 def get_objective_combinations():
     combinations = set()
-    for objective1 in Globals.METRICS:
-        for objective2 in Globals.METRICS:
+    for objective1 in Globals.ECOROUTING_METRICS:
+        for objective2 in Globals.ECOROUTING_METRICS:
             if objective1 != objective2:
                 objectives = format_objective_names(objective1, objective2)
                 combinations.add(objectives)
@@ -139,7 +132,7 @@ def get_objective_combinations():
 
 def is_objective_pair(name):
     split = name.split(Globals.OBJECTIVE_SEPARATOR)
-    return len(split) == 2 and split[0] in Globals.METRICS and split[1] in Globals.METRICS
+    return len(split) == 2 and split[0] in Globals.ECOROUTING_METRICS and split[1] in Globals.ECOROUTING_METRICS
 
 
 def reverse_format_objective_names(name):

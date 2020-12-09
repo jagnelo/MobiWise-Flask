@@ -667,8 +667,8 @@ def check_content(silent=True) -> Dict[str, Task]:
                     if any([file.endswith(".rou.xml") for file in os.listdir(join(comb_dir, name))]):
                         solutions_done.append(name)
             objective1, objective2 = utils.reverse_format_objective_names(combination)
-            objective1_pretty = Globals.METRICS[objective1]["pretty"]
-            objective2_pretty = Globals.METRICS[objective2]["pretty"]
+            objective1_pretty = Globals.ECOROUTING_METRICS[objective1]["pretty"]
+            objective2_pretty = Globals.ECOROUTING_METRICS[objective2]["pretty"]
             combination_pretty = utils.format_objective_names(objective1_pretty, objective2_pretty)
             count_sols_total = len(solutions_total)
             count_sols_done = len(solutions_done)
