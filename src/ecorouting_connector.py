@@ -406,10 +406,10 @@ class TEMATask(Task):
             logger.info("TEMA", "Started TEMA Eco-Indicator process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
             self.mode.run_eco_indicator(eco_ind_proc)
             logger.info("TEMA", "Terminated TEMA Eco-Indicator process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
-            # print_info = (self.task_id, self.cwd, heatmap_cmd)
-            # logger.info("TEMA", "Started TEMA Heatmaps process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
-            # self.mode.run_heatmaps(heatmap_proc)
-            # logger.info("TEMA", "Terminated TEMA Heatmaps process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
+            print_info = (self.task_id, self.cwd, heatmap_cmd)
+            logger.info("TEMA", "Started TEMA Heatmaps process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
+            self.mode.run_heatmaps(heatmap_proc)
+            logger.info("TEMA", "Terminated TEMA Heatmaps process (task ID = %s | cwd = %s | cmd = %s)" % print_info)
         except BaseException as e:
             logger.error("TEMA", "Error in task ID = %s: %s" % (self.task_id, e))
             self.status = TaskStatus.Failed
@@ -427,18 +427,18 @@ class TEMATask(Task):
         os.system("vncserver -kill %s" % display)
         if self.cwd != os.getcwd():
             path_dst = os.path.join(Globals.HEATMAPS_DIR, self.image_dir_name)
-            # utils.ensure_dir_exists(path_dst)
+            utils.ensure_dir_exists(path_dst)
             heatmaps_count = 0
             for file in os.listdir(self.cwd):
-                # if file.endswith(Globals.HEATMAPS_FILE_TYPE):
-                #     shutil.move(os.path.join(self.cwd, file), os.path.join(path_dst, file))
-                #     heatmaps_count += 1
+                if file.endswith(Globals.HEATMAPS_FILE_TYPE):
+                    shutil.move(os.path.join(self.cwd, file), os.path.join(path_dst, file))
+                    heatmaps_count += 1
                 if file.endswith("results.txt"):
                     out_dir = self.mode.get_output_dir(self.scenario)
                     shutil.move(os.path.join(self.cwd, file), os.path.join(out_dir, Globals.TEMA_RESULTS_FILE_NAME))
-            # if heatmaps_count == 0:
-            #     utils.clear_and_remove_dir(path_dst)
-            #     self.status = TaskStatus.Failed
+            if heatmaps_count == 0:
+                utils.clear_and_remove_dir(path_dst)
+                self.status = TaskStatus.Failed
             utils.clear_and_remove_dir(self.cwd)
 
 
