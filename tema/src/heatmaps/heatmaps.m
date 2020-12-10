@@ -225,6 +225,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 	    timer = timer + 5;
 	    traci.simulationStep(timer);
 	    % take screenshot to save CO2 g/km per vehicle heatmap
+	    traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+	    traci.gui.setSchema('View #0', 'heatmaps');			% reset the color schema back to "heatmaps" to force the display to update
+	    while all(traci.gui.getSchema('View #0') == 'standard')
+	    	pause(1);						% pause for 1 second to allow for the display to update
+	    end
 	    CO2_SC = getscreen;
 	    imwrite(CO2_SC.cdata,'CO2_heatmap_draft.png')
 	    
@@ -332,6 +337,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 	    timer = timer + 5;
 	    traci.simulationStep(timer);
 	    % take screenshot to save emissions indicator heatmap
+	    traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+	    traci.gui.setSchema('View #0', 'heatmaps');			% reset the color schema back to "heatmaps" to force the display to update
+	    while all(traci.gui.getSchema('View #0') == 'standard')
+	    	pause(1);						% pause for 1 second to allow for the display to update
+	    end
 	    Emissions_Ind_SC = getscreen;
 	    imwrite(Emissions_Ind_SC.cdata,'emissions_indicator_heatmap_draft.png')
 	    
@@ -426,6 +436,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 	    timer = timer + 5;
 	    traci.simulationStep(timer);
 	    % take screenshot to save eco_indicator heatmap
+	    traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+	    traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+	    while all(traci.gui.getSchema('View #0') == 'standard')
+	    	pause(1);						% pause for 1 second to allow for the display to update
+	    end
 	    eco_indicator_SC = getscreen;
 	    imwrite(eco_indicator_SC.cdata,'eco_indicator_heatmap_draft.png')
 	    
@@ -520,6 +535,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 		timer = timer + 5;
 		traci.simulationStep(timer);
 		% take screenshot to save travel time heatmap
+		traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+		traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+		while all(traci.gui.getSchema('View #0') == 'standard')
+			pause(1);						% pause for 1 second to allow for the display to update
+		end
 		travel_time_SC = getscreen;
 		imwrite(travel_time_SC.cdata,'travel_time_heatmap_draft.png')
 		
@@ -657,6 +677,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				timer = timer + 5;
 				traci.simulationStep(timer);
 				% take screenshot to save CO2 g/km per vehicle heatmap
+				traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+				traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+				while all(traci.gui.getSchema('View #0') == 'standard')
+					pause(1);						% pause for 1 second to allow for the display to update
+				end
 				CO2_SC = getscreen;
 				imwrite(CO2_SC.cdata,'CO2_heatmap_baseline_routes_draft.png')
 				
@@ -762,6 +787,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				timer = timer + 5;
 				traci.simulationStep(timer);
 				% take screenshot to save emissions indicator heatmap
+				traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+				traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+				while all(traci.gui.getSchema('View #0') == 'standard')
+					pause(1);						% pause for 1 second to allow for the display to update
+				end
 				Emissions_Ind_SC = getscreen;
 				imwrite(Emissions_Ind_SC.cdata,'emissions_indicator_heatmap_baseline_routes_draft.png')
 				
@@ -861,6 +891,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				timer = timer + 5;
 				traci.simulationStep(timer);
 				% take screenshot to save eco_indicator heatmap
+				traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+				traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+				while all(traci.gui.getSchema('View #0') == 'standard')
+					pause(1);						% pause for 1 second to allow for the display to update
+				end
 				eco_indicator_SC = getscreen;
 				imwrite(eco_indicator_SC.cdata,'eco_indicator_heatmap_baseline_routes_draft.png')
 				
@@ -961,6 +996,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				timer = timer + 5;
 				traci.simulationStep(timer);
 				% take screenshot to save travel time heatmap
+				traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+				traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+				while all(traci.gui.getSchema('View #0') == 'standard')
+					pause(1);						% pause for 1 second to allow for the display to update
+				end
 				travel_time_SC = getscreen;
 				imwrite(travel_time_SC.cdata,'travel_time_heatmap_baseline_routes_draft.png')
 				
@@ -1123,6 +1163,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				timer = timer + 5;
 				traci.simulationStep(timer);
 				% take screenshot to save CO2 g/km per vehicle heatmap
+				traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+				traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+				while all(traci.gui.getSchema('View #0') == 'standard')
+					pause(1);						% pause for 1 second to allow for the display to update
+				end
 				CO2_SC = getscreen;
 				imwrite(CO2_SC.cdata,'CO2_heatmap_optimal_routes_draft.png')
 				
@@ -1236,6 +1281,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				timer = timer + 5;
 				traci.simulationStep(timer);
 				% take screenshot to save emissions indicator heatmap
+				traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+				traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+				while all(traci.gui.getSchema('View #0') == 'standard')
+					pause(1);						% pause for 1 second to allow for the display to update
+				end
 				Emissions_Ind_SC = getscreen;
 				imwrite(Emissions_Ind_SC.cdata,'emissions_indicator_heatmap_optimal_routes_draft.png')
 				
@@ -1335,6 +1385,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				timer = timer + 5;
 				traci.simulationStep(timer);
 				% take screenshot to save eco_indicator heatmap
+				traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+				traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+				while all(traci.gui.getSchema('View #0') == 'standard')
+					pause(1);						% pause for 1 second to allow for the display to update
+				end
 				eco_indicator_SC = getscreen;
 				imwrite(eco_indicator_SC.cdata,'eco_indicator_heatmap_optimal_routes_draft.png')
 				
@@ -1434,6 +1489,11 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				timer = timer + 5;
 				traci.simulationStep(timer);
 				% take screenshot to save travel_time heatmap
+				traci.gui.setSchema('View #0', 'standard');			% change the color schema to the standard one
+				traci.gui.setSchema('View #0', 'heatmaps');		% reset the color schema back to "heatmaps" to force the display to update
+				while all(traci.gui.getSchema('View #0') == 'standard')
+					pause(1);						% pause for 1 second to allow for the display to update
+				end
 				travel_time_SC = getscreen;
 				imwrite(travel_time_SC.cdata,'travel_time_heatmap_optimal_routes_draft.png')
 				
