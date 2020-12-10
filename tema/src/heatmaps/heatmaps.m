@@ -230,6 +230,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 	    while all(traci.gui.getSchema('View #0') == 'standard')
 	    	pause(1);						% pause for 1 second to allow for the display to update
 	    end
+	    pause(3);
 	    CO2_SC = getscreen;
 	    imwrite(CO2_SC.cdata,'CO2_heatmap_draft.png')
 	    
@@ -342,6 +343,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 	    while all(traci.gui.getSchema('View #0') == 'standard')
 	    	pause(1);						% pause for 1 second to allow for the display to update
 	    end
+	    pause(3);
 	    Emissions_Ind_SC = getscreen;
 	    imwrite(Emissions_Ind_SC.cdata,'emissions_indicator_heatmap_draft.png')
 	    
@@ -441,6 +443,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 	    while all(traci.gui.getSchema('View #0') == 'standard')
 	    	pause(1);						% pause for 1 second to allow for the display to update
 	    end
+	    pause(3);
 	    eco_indicator_SC = getscreen;
 	    imwrite(eco_indicator_SC.cdata,'eco_indicator_heatmap_draft.png')
 	    
@@ -540,6 +543,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 		while all(traci.gui.getSchema('View #0') == 'standard')
 			pause(1);						% pause for 1 second to allow for the display to update
 		end
+		pause(3);
 		travel_time_SC = getscreen;
 		imwrite(travel_time_SC.cdata,'travel_time_heatmap_draft.png')
 		
@@ -682,6 +686,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				while all(traci.gui.getSchema('View #0') == 'standard')
 					pause(1);						% pause for 1 second to allow for the display to update
 				end
+				pause(3);
 				CO2_SC = getscreen;
 				imwrite(CO2_SC.cdata,'CO2_heatmap_baseline_routes_draft.png')
 				
@@ -792,6 +797,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				while all(traci.gui.getSchema('View #0') == 'standard')
 					pause(1);						% pause for 1 second to allow for the display to update
 				end
+				pause(3);
 				Emissions_Ind_SC = getscreen;
 				imwrite(Emissions_Ind_SC.cdata,'emissions_indicator_heatmap_baseline_routes_draft.png')
 				
@@ -896,6 +902,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				while all(traci.gui.getSchema('View #0') == 'standard')
 					pause(1);						% pause for 1 second to allow for the display to update
 				end
+				pause(3);
 				eco_indicator_SC = getscreen;
 				imwrite(eco_indicator_SC.cdata,'eco_indicator_heatmap_baseline_routes_draft.png')
 				
@@ -1001,6 +1008,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				while all(traci.gui.getSchema('View #0') == 'standard')
 					pause(1);						% pause for 1 second to allow for the display to update
 				end
+				pause(3);
 				travel_time_SC = getscreen;
 				imwrite(travel_time_SC.cdata,'travel_time_heatmap_baseline_routes_draft.png')
 				
@@ -1168,6 +1176,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				while all(traci.gui.getSchema('View #0') == 'standard')
 					pause(1);						% pause for 1 second to allow for the display to update
 				end
+				pause(3);
 				CO2_SC = getscreen;
 				imwrite(CO2_SC.cdata,'CO2_heatmap_optimal_routes_draft.png')
 				
@@ -1286,6 +1295,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				while all(traci.gui.getSchema('View #0') == 'standard')
 					pause(1);						% pause for 1 second to allow for the display to update
 				end
+				pause(3);
 				Emissions_Ind_SC = getscreen;
 				imwrite(Emissions_Ind_SC.cdata,'emissions_indicator_heatmap_optimal_routes_draft.png')
 				
@@ -1390,6 +1400,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				while all(traci.gui.getSchema('View #0') == 'standard')
 					pause(1);						% pause for 1 second to allow for the display to update
 				end
+				pause(3);
 				eco_indicator_SC = getscreen;
 				imwrite(eco_indicator_SC.cdata,'eco_indicator_heatmap_optimal_routes_draft.png')
 				
@@ -1494,6 +1505,7 @@ function output = heatmaps(NET_FILE, ROU_FILE, TRACI_PORT)
 				while all(traci.gui.getSchema('View #0') == 'standard')
 					pause(1);						% pause for 1 second to allow for the display to update
 				end
+				pause(3);
 				travel_time_SC = getscreen;
 				imwrite(travel_time_SC.cdata,'travel_time_heatmap_optimal_routes_draft.png')
 				
