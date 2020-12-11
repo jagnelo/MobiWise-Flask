@@ -133,7 +133,8 @@ def base_heatmap(scenario, metric, type):
         file_name = metric + "_routes." + Globals.HEATMAPS_FILE_TYPE
     else:
         file_name = metric + "." + Globals.HEATMAPS_FILE_TYPE
-    return send_file(os.path.join(Globals.HEATMAPS_DIR, image_dir_name, file_name), mimetype="image/png")
+    path = os.path.join(Globals.HEATMAPS_DIR, image_dir_name, file_name)
+    return send_file(path, mimetype="image/png")
 
 
 @app.route("/api/<scenario>/optimized/<objective1>/<objective2>/heatmap/<solution>/<metric>/<type>", methods=["GET"])
@@ -143,13 +144,17 @@ def optimized_heatmap(scenario, objective1, objective2, solution, metric, type):
         file_name = metric + "_routes." + Globals.HEATMAPS_FILE_TYPE
     else:
         file_name = metric + "." + Globals.HEATMAPS_FILE_TYPE
-    return send_file(os.path.join(Globals.HEATMAPS_DIR, image_dir_name, file_name), mimetype="image/png")
+    path = os.path.join(Globals.HEATMAPS_DIR, image_dir_name, file_name)
+    if not os.path.exists(path):
+        path = os.path.join(Globals.HEATMAPS_DIR, utils.format_file_name_base(scenario), file_name)
+    return send_file(path, mimetype="image/png")
 
 
 @app.route("/api/<scenario>/base/video", methods=["GET"])
 def base_video(scenario):
     video_name = utils.format_file_name_base(scenario) + "." + Globals.VIDEOS_FILE_TYPE
-    return send_file(os.path.join(Globals.VIDEOS_DIR, video_name), mimetype="video/mp4")
+    path = os.path.join(Globals.VIDEOS_DIR, video_name)
+    return send_file(path, mimetype="video/mp4")
 
 
 @app.route("/api/<scenario>/optimized/<objective1>/<objective2>/video/<solution>", methods=["GET"])
@@ -157,7 +162,10 @@ def optimized_video(scenario, objective1, objective2, solution):
     sol = 0  # FIXME: should be int(solution)
     video_name = utils.format_file_name_sim(scenario, objective1, objective2, sol)
     video_name = video_name + "." + Globals.VIDEOS_FILE_TYPE
-    return send_file(os.path.join(Globals.VIDEOS_DIR, video_name), mimetype="video/mp4")
+    path = os.path.join(Globals.VIDEOS_DIR, video_name)
+    if not os.path.exists(path):
+        path = os.path.join(Globals.VIDEOS_DIR, utils.format_file_name_base(scenario) + "." + Globals.VIDEOS_FILE_TYPE)
+    return send_file(path, mimetype="video/mp4")
 
 
 def setup():
