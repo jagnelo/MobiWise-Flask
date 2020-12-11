@@ -82,5 +82,6 @@ class Globals(NoInit):
         "width": 1920,
         "height": 1080
     }
+    HEATMAP_EXPECTED_COUNT = 8  # 2 of each type (full, routes) for each of the 4 TEMA_METRICS
 
     VNC_MANAGER_API = "http://localhost:5001/api/"

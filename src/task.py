@@ -92,8 +92,9 @@ class TaskManager:
         self.running = False
 
     def add_task(self, task: Task):
+        retrial_statuses = [TaskStatus.Failed, TaskStatus.Completed]
         if task.task_id not in self.tasks or (task.task_id in self.tasks and
-                                              self.tasks[task.task_id].status == TaskStatus.Failed and
+                                              self.tasks[task.task_id].status in retrial_statuses and
                                               task.status == TaskStatus.Available):
             self.tasks[task.task_id] = task
 

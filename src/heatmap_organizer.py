@@ -30,6 +30,8 @@ def organize_heatmap(dir):
                     if file != new_file:
                         os.rename(os.path.join(path, file), os.path.join(path, new_file))
                         logger.info("HeatmapOrganizer", "Renamed %s to %s in %s" % (file, new_file, path))
+        else:
+            os.remove(os.path.join(path, file))
 
 
 def run():

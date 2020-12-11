@@ -260,6 +260,22 @@ def convert_sim_file_name_to_TEMA_spec(file_name, period, location, solution):
     return "%s_%s_Routing_%s_%s" % (name, period, location, suffix)
 
 
+def get_base_route_file_name_per_TEMA_spec(period):
+    return "Trips%s_baseline.rou.xml" % period
+
+
+def get_sim_route_file_name_per_TEMA_spec(bname, period, location, solution):
+    return "%s_%s_%s_solution%d.rou.xml" % (bname, period, location, solution)
+
+
+def get_base_res_file_name_per_TEMA_spec(period, location):
+    return "%s_baseline_Routing_%s_results.txt" % (period, location)
+
+
+def get_sim_res_file_name_per_TEMA_spec(period, location, solution):
+    return "%s_optimized_solution%d_Routing_%s_results.txt" % (period, solution, location)
+
+
 def zip_targz(path_to_targz_file, dir_to_zip, targz_root_dir):
     with tarfile.open(path_to_targz_file, "w:gz") as tar:
         tar.add(dir_to_zip, arcname=targz_root_dir)
