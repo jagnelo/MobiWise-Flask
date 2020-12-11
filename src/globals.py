@@ -21,7 +21,7 @@ class Globals(NoInit):
         "cost_co": {"unit": "g", "pretty": "CO"},
         "cost_co2": {"unit": "g", "pretty": "CO2"},
         "cost_PMx": {"unit": "g", "pretty": "PMx"},
-        "cost_hc": {"unit": "g", "pretty": "HC"},
+        # "cost_hc": {"unit": "g", "pretty": "HC"},
         "cost_nox": {"unit": "g", "pretty": "NOx"}
     }
 
