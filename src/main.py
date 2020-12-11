@@ -7,6 +7,7 @@ from datetime import datetime
 import requests
 from apscheduler.schedulers.background import BackgroundScheduler
 
+import TEMA_eval_file_generator
 import eval_file_fixer
 import heatmap_organizer
 import utils
@@ -65,25 +66,40 @@ def data(scenario, objective1, objective2):
     base = utils.read_eval_file(os.path.join(tc["ofolder"], path, "base.eval"))
     base = {h: base[h] for h in base if h in [h for h in Globals.ECOROUTING_METRICS]}
 
+    baseTEMA = utils.read_eval_file(os.path.join(tc["ofolder"], path, "baseTEMA.eval"))
+    factor = "totalvehicles"
+    eco_baseTEMA = [baseTEMA[h] * baseTEMA[factor] for h in baseTEMA if h == "eco_indicator"]
+    baseTEMA = {h: baseTEMA[h] * baseTEMA[factor] for h in baseTEMA if h in [h for h in Globals.ECOROUTING_METRICS]}
+
     pred = utils.read_eval_file(os.path.join(tc["ofolder"], path, "pred.eval"))
     pred = {h: pred[h] for h in pred if h in [h for h in Globals.ECOROUTING_METRICS]}
 
-    if os.path.exists(os.path.join(tc["ofolder"], path, "sim_fixed.eval")):
-        sim = utils.read_eval_file(os.path.join(tc["ofolder"], path, "sim_fixed.eval"))
-        sim = {h: sim[h] for h in sim if h in [h for h in Globals.ECOROUTING_METRICS]}
-    else:
-        sim = utils.read_eval_file(os.path.join(tc["ofolder"], path, "sim.eval"))
-        sim = {h: sim[h] for h in sim if h in [h for h in Globals.ECOROUTING_METRICS]}
+    sim = utils.read_eval_file(os.path.join(tc["ofolder"], path, "sim_fixed.eval"))
+    sim = {h: sim[h] for h in sim if h in [h for h in Globals.ECOROUTING_METRICS]}
+
+    simTEMA = utils.read_eval_file(os.path.join(tc["ofolder"], path, "simTEMA.eval"))
+    eco_simTEMA = [simTEMA[h] * simTEMA[factor] for h in simTEMA if h == "eco_indicator"]
+    simTEMA = {h: simTEMA[h] * simTEMA[factor] for h in simTEMA if h in [h for h in Globals.ECOROUTING_METRICS]}
+
+    eco_indicator = Globals.TEMA_METRICS["eco_indicator"]
 
     return {
                "success": True,
                "data": {
-                       "objective1": objective1,
-                       "objective2": objective2,
-                       "base": {**base},
-                       "pred": {**pred},
-                       "sim": {**sim}
+                   "objective1": objective1,
+                   "objective2": objective2,
+                   "base": {**base},
+                   "baseTEMA": {**baseTEMA},
+                   "pred": {**pred},
+                   "sim": {**sim},
+                   "simTEMA": {**simTEMA},
+                   "eco_indicator": {
+                       "pretty_name": eco_indicator["pretty"],
+                       "unit": eco_indicator["unit"],
+                       "baseTEMA": eco_baseTEMA,
+                       "simTEMA": eco_simTEMA
                    }
+               }
            }, 200
 
 
@@ -139,7 +155,7 @@ def base_video(scenario):
 
 @app.route("/api/<scenario>/optimized/<objective1>/<objective2>/video/<solution>", methods=["GET"])
 def optimized_video(scenario, objective1, objective2, solution):
-    sol = 0     # FIXME: should be int(solution)
+    sol = 0  # FIXME: should be int(solution)
     video_name = utils.format_file_name_sim(scenario, objective1, objective2, sol)
     video_name = video_name + "." + Globals.VIDEOS_FILE_TYPE
     return send_file(os.path.join(Globals.VIDEOS_DIR, video_name), mimetype="video/mp4")
@@ -176,9 +192,10 @@ def main():
 
     scheduler = BackgroundScheduler()
     scheduler.start()
-    scheduler.add_job(eval_file_fixer.run, 'interval', seconds=60*15)
-    scheduler.add_job(heatmap_organizer.run, 'interval', seconds=60*15)
-    scheduler.add_job(video_generator.run, 'interval', seconds=60*15)
+    scheduler.add_job(eval_file_fixer.run, 'interval', seconds=60 * 15)
+    scheduler.add_job(TEMA_eval_file_generator.run, 'interval', seconds=60 * 15)
+    scheduler.add_job(heatmap_organizer.run, 'interval', seconds=60 * 15)
+    scheduler.add_job(video_generator.run, 'interval', seconds=60 * 15)
 
     task_manager = eco.EcoRoutingTaskManager(Globals.TASK_MANAGER_MAX_THREADS, update_tasks)
     update_tasks(silent=False)

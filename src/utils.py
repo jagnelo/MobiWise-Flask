@@ -90,14 +90,14 @@ def read_eval_file(file_name):
     lines = [l for l in f.readlines() if l.strip()]
     f.close()
 
-    ev = {h: [] for h in headers}
+    eval = {h: [] for h in headers}
     for i in range(len(lines)):
         line = lines[i]
         values = [float(v.strip()) for v in line.split(" ")]
         for j in range(len(values)):
-            ev[headers[j]].append(values[j])
+            eval[headers[j]].append(values[j])
 
-    return ev
+    return eval
 
 
 def write_eval_file(file_name, header: list, data: list):
@@ -110,6 +110,33 @@ def write_eval_file(file_name, header: list, data: list):
         items_str.append(item_str)
     f.write("\n".join(items_str))
     f.close()
+
+
+def read_res_file(file_name):
+    f = open(file_name, "r")
+    line = f.readline()
+    headers = [h.strip() for h in line.split("\t")]
+    lines = [l for l in f.readlines() if l.strip()]
+    f.close()
+
+    res = {h: [] for h in headers}
+    for i in range(len(lines)):
+        line = lines[i]
+        values = [float(v.strip()) for v in line.split("\t")]
+        for j in range(len(values)):
+            res[headers[j]].append(values[j])
+
+    return res
+
+
+def res_to_ev(res):
+    ev = {}
+    for h in res:
+        if h != "link":
+            ev[h] = sum(res[h])
+    ev["cost_PMx"] = ev["cost_pm10"] + ev["cost_pm25"]
+
+    return ev
 
 
 def get_simulation_files(netfile, roufile):

@@ -17,7 +17,7 @@ class Globals(NoInit):
     ECOROUTING_ADDITIONAL_FILES_FILE_NAME = "moreOutputInfo.xml"
     ECOROUTING_METRICS = {
         "ttime": {"unit": "s", "pretty": "Travel time"},
-        "length": {"unit": "km", "pretty": "Length"},
+        "length": {"unit": "km", "pretty": "Travel distance"},
         "cost_co": {"unit": "g", "pretty": "CO"},
         "cost_co2": {"unit": "g", "pretty": "CO2"},
         "cost_PMx": {"unit": "g", "pretty": "PMx"},
@@ -36,8 +36,8 @@ class Globals(NoInit):
     TEMA_TRACI_BASE_PORT = 8813
     TEMA_METRICS = {
         "co2": {"unit": "g/km/vehicle", "pretty": "CO2"},
-        "eco_indicator": {"unit": "€ cents/vehicle", "pretty": "Eco-indicator"},
-        "emissions_indicator": {"unit": "€ cents/vehicle", "pretty": "Emissions indicator"},
+        "eco_indicator": {"unit": "€/vehicle", "pretty": "Eco-indicator"},
+        "emissions_indicator": {"unit": "€/vehicle", "pretty": "Emissions indicator"},
         "travel_time": {"unit": "s", "pretty": "Travel time"}
     }
 
