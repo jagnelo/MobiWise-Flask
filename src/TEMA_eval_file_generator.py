@@ -13,10 +13,14 @@ def find_TEMA_res_file_dirs():
     dirs = []
     for scenario, info in eco.get_test_cases().items():
         in_dir_base = [os.path.join(info["ofolder"], "inputdata")]
+        if not os.path.exists(in_dir_base[0]):
+            break
         for obj_pair in utils.get_objective_combinations():
             in_dirs_sim = []
             sols = []
             out_dir = os.path.join(info["ofolder"], obj_pair)
+            if not os.path.exists(out_dir):
+                break
             for file in os.listdir(out_dir):
                 if os.path.isdir(os.path.join(out_dir, file)) and file.startswith("solution"):
                     sols.append(file)
