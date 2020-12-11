@@ -578,7 +578,7 @@ class EcoRoutingTaskManager(TaskManager):
 
             def f_base_parent(dep: TaskDependency) -> bool:
                 if isinstance(dep.task, EcoRoutingTask) and isinstance(dep.task.mode, Base):
-                    return dep.task.scenario == base_heatmap_task.scenario
+                    return dep.task.scenario == base_eco_indicator_task.scenario
                 return False
 
             parent_base_task_dep = find_matching_task_dep(root, f_base_parent)
@@ -649,11 +649,11 @@ class EcoRoutingTaskManager(TaskManager):
 
             def f_sim_parent(dep: TaskDependency) -> bool:
                 if isinstance(dep.task, EcoRoutingTask):
-                    if isinstance(dep.task.mode, Sim) and isinstance(sim_heatmap_task.mode, Sim):
-                        return dep.task.scenario == sim_heatmap_task.scenario and \
-                               dep.task.mode.objective1 == sim_heatmap_task.mode.objective1 and \
-                               dep.task.mode.objective2 == sim_heatmap_task.mode.objective2 and \
-                               dep.task.mode.solution == sim_heatmap_task.mode.solution
+                    if isinstance(dep.task.mode, Sim) and isinstance(sim_eco_indicator_task.mode, Sim):
+                        return dep.task.scenario == sim_eco_indicator_task.scenario and \
+                               dep.task.mode.objective1 == sim_eco_indicator_task.mode.objective1 and \
+                               dep.task.mode.objective2 == sim_eco_indicator_task.mode.objective2 and \
+                               dep.task.mode.solution == sim_eco_indicator_task.mode.solution
                 return False
 
             parent_sim_task_dep = find_matching_task_dep(root, f_sim_parent)
