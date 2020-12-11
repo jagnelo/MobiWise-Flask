@@ -122,9 +122,9 @@ def read_res_file(file_name):
     res = {h: [] for h in headers}
     for i in range(len(lines)):
         line = lines[i]
-        values = [float(v.strip()) for v in line.split("\t")]
+        values = [v.strip() for v in line.split("\t")]
         for j in range(len(values)):
-            res[headers[j]].append(values[j])
+            res[headers[j]].append(float(values[j]) if headers[j] != "link" else values[j])
 
     return res
 
