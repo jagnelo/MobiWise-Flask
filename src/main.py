@@ -68,7 +68,7 @@ def data(scenario, objective1, objective2):
 
     baseTEMA = utils.read_eval_file(os.path.join(tc["ofolder"], path, "baseTEMA.eval"))
     factor = "totalvehicles"
-    eco_baseTEMA = [baseTEMA[h] * baseTEMA[factor] for h in baseTEMA if h == "eco_indicator"]
+    eco_baseTEMA = [baseTEMA[h] * baseTEMA[factor] for h in baseTEMA if h == "cost_eco_indicator"]
     baseTEMA = {h: baseTEMA[h] * baseTEMA[factor] for h in baseTEMA if h in [h for h in Globals.ECOROUTING_METRICS]}
 
     pred = utils.read_eval_file(os.path.join(tc["ofolder"], path, "pred.eval"))
@@ -78,10 +78,8 @@ def data(scenario, objective1, objective2):
     sim = {h: sim[h] for h in sim if h in [h for h in Globals.ECOROUTING_METRICS]}
 
     simTEMA = utils.read_eval_file(os.path.join(tc["ofolder"], path, "simTEMA.eval"))
-    eco_simTEMA = [simTEMA[h] * simTEMA[factor] for h in simTEMA if h == "eco_indicator"]
+    eco_simTEMA = [simTEMA[h] * simTEMA[factor] for h in simTEMA if h == "cost_eco_indicator"]
     simTEMA = {h: simTEMA[h] * simTEMA[factor] for h in simTEMA if h in [h for h in Globals.ECOROUTING_METRICS]}
-
-    eco_indicator = Globals.TEMA_METRICS["eco_indicator"]
 
     return {
                "success": True,
@@ -94,8 +92,8 @@ def data(scenario, objective1, objective2):
                    "sim": {**sim},
                    "simTEMA": {**simTEMA},
                    "eco_indicator": {
-                       "pretty_name": eco_indicator["pretty"],
-                       "unit": eco_indicator["unit"],
+                       "pretty_name": Globals.TEMA_METRICS["eco_indicator"]["pretty"],
+                       "unit": "€",
                        "baseTEMA": eco_baseTEMA,
                        "simTEMA": eco_simTEMA
                    }
