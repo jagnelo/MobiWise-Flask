@@ -772,7 +772,7 @@ def check_content(silent=True) -> Dict[str, Task]:
             base_video_exists = check_video(base_media_name)
             task = EcoRoutingVideoTask(base_ecorouting_task_name, scenario, base_task_mode, base_media_name)
             base_tasks[base_ecorouting_task_name] = task
-            check_task_completeness(task, base_video_exists)
+            check_task_completeness(task, base_video_exists, base_TEMA_data_exists, base_rou_exists)
 
             base_heatmap_exists = check_heatmap(base_media_name)
             task = TEMAHeatmapsTask(base_heatmap_task_name, scenario, base_task_mode, base_media_name)
@@ -843,7 +843,7 @@ def check_content(silent=True) -> Dict[str, Task]:
                             # FIXME: only generate video for each 1st solution -> should be removed!!!
                             if sol_number == 1:
                                 sim_tasks[sim_ecorouting_task_name] = task
-                            check_task_completeness(task, sim_video_exists)
+                            check_task_completeness(task, sim_video_exists, sim_TEMA_data_exists, sim_rou_exists)
 
                             sim_heatmap_exists = check_heatmap(sim_media_name)
                             task = TEMAHeatmapsTask(sim_heatmap_task_name, scenario, sim_task_mode, sim_media_name)
