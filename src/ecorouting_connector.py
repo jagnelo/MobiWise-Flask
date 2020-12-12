@@ -838,12 +838,12 @@ def check_content(silent=True) -> Dict[str, Task]:
 
                             sim_media_name = utils.format_file_name_sim(scenario, obj1, obj2, sol_number)
 
+                            sim_video_exists = check_video(sim_media_name)
+                            task = EcoRoutingVideoTask(sim_ecorouting_task_name, scenario, sim_task_mode, sim_media_name)
                             # FIXME: only generate video for each 1st solution -> should be removed!!!
                             if sol_number == 1:
-                                sim_video_exists = check_video(sim_media_name)
-                                task = EcoRoutingVideoTask(sim_ecorouting_task_name, scenario, sim_task_mode, sim_media_name)
                                 sim_tasks[sim_ecorouting_task_name] = task
-                                check_task_completeness(task, sim_video_exists)
+                            check_task_completeness(task, sim_video_exists)
 
                             sim_heatmap_exists = check_heatmap(sim_media_name)
                             task = TEMAHeatmapsTask(sim_heatmap_task_name, scenario, sim_task_mode, sim_media_name)
