@@ -854,8 +854,8 @@ def check_content(silent=True) -> Dict[str, Task]:
                             for task_id, sim_task in sim_tasks.items():
                                 tasks[task_id] = sim_task
 
-                            log.append("\t\t\tSimulation: Route file: %s | TEMA data: %s | TEMA results file: %s | "
-                                       "Video file: %s | Heatmaps: %s" % (verbose(sim_rou_exists),
+                            log.append("\t\t\tSolution %d: Route file: %s | TEMA data: %s | TEMA results file: %s | "
+                                       "Video file: %s | Heatmaps: %s" % (sol_number, verbose(sim_rou_exists),
                                                                           verbose(sim_TEMA_data_exists),
                                                                           verbose(sim_TEMA_res_exists),
                                                                           verbose(sim_video_exists),
