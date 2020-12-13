@@ -4,7 +4,7 @@ import shutil
 import tarfile
 from importlib import machinery, util
 from types import ModuleType
-from typing import List, Tuple
+from typing import List, Tuple, Callable
 
 from globals import Globals
 from logger import logger
@@ -130,9 +130,15 @@ def read_res_file(file_name):
 
 
 def res_to_TEMA_ev(res):
+    
+    def protect(c: Callable[[int], float], i: int):
+        try:
+            return c(i)
+        except:
+            return float(0)
 
-    def for_each(c: callable):
-        return [c(i) for i in range(len(res["link"]))]
+    def for_each(c: Callable[[int], float]):
+        return [protect(c, i) for i in range(len(res["link"]))]
 
     def avg(l: list):
         return sum(l)/len(l)
