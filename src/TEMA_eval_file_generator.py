@@ -39,7 +39,7 @@ def generate_TEMA_eval_file(input_dirs: list, output_file: str):
     for input_dir in input_dirs:
         if Globals.TEMA_RESULTS_FILE_NAME in os.listdir(input_dir):
             res_sol = utils.read_res_file(os.path.join(input_dir, Globals.TEMA_RESULTS_FILE_NAME))
-            ev_sol = utils.res_to_ev(res_sol)
+            ev_sol = utils.res_to_TEMA_ev(res_sol)
             for h in ev_sol:
                 header.add(h)
             eval.append(ev_sol)

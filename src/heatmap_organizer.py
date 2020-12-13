@@ -21,7 +21,7 @@ def organize_heatmap(dir):
     for file in os.listdir(path):
         file_name = file.lower()
         if "draft" not in file_name:
-            for metric in Globals.TEMA_METRICS:
+            for metric in Globals.TEMA_HEATMAPS_METRICS:
                 if metric in file_name:
                     if "routes" in file_name:
                         new_file = "%s_%s.%s" % (metric, "routes", Globals.HEATMAPS_FILE_TYPE)

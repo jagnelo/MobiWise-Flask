@@ -129,14 +129,34 @@ def read_res_file(file_name):
     return res
 
 
-def res_to_ev(res):
-    ev = {}
-    for h in res:
-        if h != "link":
-            ev[h] = sum(res[h])
-    ev["cost_PMx"] = ev["cost_pm10"] + ev["cost_pm25"]
+def res_to_TEMA_ev(res):
 
-    return ev
+    def for_each(c: callable):
+        return [c(i) for i in range(len(res["link"]))]
+
+    def avg(l: list):
+        return sum(l)/len(l)
+
+    ttime = res["ttime"]
+    length = res["length"]
+    cost_co2 = res["cost_co2"]
+    cost_co = res["cost_co"]
+    cost_pm10 = res["cost_pm10"]
+    cost_pm25 = res["cost_pm25"]
+    cost_nox = res["cost_nox"]
+    cost_eco_indicator = res["cost_eco_indicator"]
+    totalvehicles = res["totalvehicles"]
+
+    return {
+        "ttime":                sum(for_each(lambda i: ttime[i] * totalvehicles[i]))/3600,
+        "length":               sum(for_each(lambda i: (length[i]/1000) * totalvehicles[i])),
+        "cost_co2":             sum(cost_co2)/1_000_000,
+        "cost_co2_veh":         avg(for_each(lambda i: cost_co2[i]/((length[i]/1000) * totalvehicles[i]))),
+        "cost_co":              sum(cost_co)/1000,
+        "cost_PMx":             sum(for_each(lambda i: cost_pm10[i] + cost_pm25[i]))/1000,
+        "cost_nox":             sum(cost_nox)/1000,
+        "cost_eco_indicator":   sum(for_each(lambda i: cost_eco_indicator[i] * totalvehicles[i]))
+    }
 
 
 def get_simulation_files(netfile, roufile):

@@ -34,11 +34,21 @@ class Globals(NoInit):
     TEMA_FILE_NAME_SIM_SUFFIX_FORMAT = "optimal_solution%d.xml"
     TEMA_RESULTS_FILE_NAME = "TEMA-results.res"
     TEMA_TRACI_BASE_PORT = 8813
-    TEMA_METRICS = {
+    TEMA_HEATMAPS_METRICS = {
         "co2": {"unit": "g/km/vehicle", "pretty": "CO2"},
         "eco_indicator": {"unit": "€/vehicle", "pretty": "Eco-indicator"},
         "emissions_indicator": {"unit": "€/vehicle", "pretty": "Emissions indicator"},
         "travel_time": {"unit": "s", "pretty": "Travel time"}
+    }
+    TEMA_RESULTS_METRICS = {
+        "ttime": {"unit": "h", "pretty": "Travel time"},
+        "length": {"unit": "km", "pretty": "Travel distance"},
+        "cost_co2": {"unit": "ton", "pretty": "CO2"},
+        "cost_co2_veh": {"unit": "g/veh.km", "pretty": "CO2"},
+        "cost_co": {"unit": "kg", "pretty": "CO"},
+        "cost_PMx": {"unit": "kg", "pretty": "PMx"},
+        "cost_nox": {"unit": "kg", "pretty": "NOx"},
+        "cost_eco_indicator": {"unit": "€", "pretty": "Eco-indicator"}
     }
 
     MATLAB_LIB_DIR = os.path.join("..", "lib", "MATLAB")

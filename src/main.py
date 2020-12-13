@@ -47,13 +47,23 @@ def objectives():
            }, 200
 
 
-@app.route("/api/objectives/tema", methods=["GET"])
-def TEMA_objectives():
+@app.route("/api/objectives/tema/results", methods=["GET"])
+def TEMA_results_objectives():
     return {
                "success": True,
-               "objectives": [h for h in Globals.TEMA_METRICS],
-               "pretty_names": [Globals.TEMA_METRICS[h]["pretty"] for h in Globals.TEMA_METRICS],
-               "units": [Globals.TEMA_METRICS[h]["unit"] for h in Globals.TEMA_METRICS]
+               "objectives": [h for h in Globals.TEMA_RESULTS_METRICS],
+               "pretty_names": [Globals.TEMA_RESULTS_METRICS[h]["pretty"] for h in Globals.TEMA_RESULTS_METRICS],
+               "units": [Globals.TEMA_RESULTS_METRICS[h]["unit"] for h in Globals.TEMA_RESULTS_METRICS]
+           }, 200
+
+
+@app.route("/api/objectives/tema/heatmaps", methods=["GET"])
+def TEMA_heatmaps_objectives():
+    return {
+               "success": True,
+               "objectives": [h for h in Globals.TEMA_HEATMAPS_METRICS],
+               "pretty_names": [Globals.TEMA_HEATMAPS_METRICS[h]["pretty"] for h in Globals.TEMA_HEATMAPS_METRICS],
+               "units": [Globals.TEMA_HEATMAPS_METRICS[h]["unit"] for h in Globals.TEMA_HEATMAPS_METRICS]
            }, 200
 
 
@@ -61,26 +71,22 @@ def TEMA_objectives():
 def data(scenario, objective1, objective2):
     testcases = eco.get_test_cases()
     tc = testcases[scenario]
-    path = utils.format_objective_names(objective1, objective2)
+    path = os.path.join(tc["ofolder"], utils.format_objective_names(objective1, objective2))
 
-    base = utils.read_eval_file(os.path.join(tc["ofolder"], path, "base.eval"))
+    base = utils.read_eval_file(os.path.join(path, "base.eval"))
     base = {h: base[h] for h in base if h in [h for h in Globals.ECOROUTING_METRICS]}
 
-    baseTEMA = utils.read_eval_file(os.path.join(tc["ofolder"], path, "baseTEMA.eval"))
-    factor = "totalvehicles"
-    eco_ind = "cost_eco_indicator"
-    eco_baseTEMA = [baseTEMA[eco_ind][i] * baseTEMA[factor][i] for i in range(len(baseTEMA[eco_ind]))]
-    baseTEMA = {h: [baseTEMA[h][i] * baseTEMA[factor][i] for i in range(len(baseTEMA[h]))] for h in baseTEMA if h in [h for h in Globals.ECOROUTING_METRICS]}
-
-    pred = utils.read_eval_file(os.path.join(tc["ofolder"], path, "pred.eval"))
+    pred = utils.read_eval_file(os.path.join(path, "pred.eval"))
     pred = {h: pred[h] for h in pred if h in [h for h in Globals.ECOROUTING_METRICS]}
 
-    sim = utils.read_eval_file(os.path.join(tc["ofolder"], path, "sim_fixed.eval"))
+    sim = utils.read_eval_file(os.path.join(path, "sim_fixed.eval"))
     sim = {h: sim[h] for h in sim if h in [h for h in Globals.ECOROUTING_METRICS]}
 
-    simTEMA = utils.read_eval_file(os.path.join(tc["ofolder"], path, "simTEMA.eval"))
-    eco_simTEMA = [simTEMA[eco_ind][i] * simTEMA[factor][i] for i in range(len(simTEMA[eco_ind]))]
-    simTEMA = {h: [simTEMA[h][i] * simTEMA[factor][i] for i in range(len(simTEMA[h]))] for h in simTEMA if h in [h for h in Globals.ECOROUTING_METRICS]}
+    baseTEMA = utils.read_eval_file(os.path.join(path, "baseTEMA.eval"))
+    baseTEMA = {h: baseTEMA[h] for h in baseTEMA if h in [h for h in Globals.TEMA_RESULTS_METRICS]}
+
+    simTEMA = utils.read_eval_file(os.path.join(path, "simTEMA.eval"))
+    simTEMA = {h: simTEMA[h] for h in simTEMA if h in [h for h in Globals.TEMA_RESULTS_METRICS]}
 
     return {
                "success": True,
@@ -88,16 +94,10 @@ def data(scenario, objective1, objective2):
                    "objective1": objective1,
                    "objective2": objective2,
                    "base": {**base},
-                   "baseTEMA": {**baseTEMA},
                    "pred": {**pred},
                    "sim": {**sim},
+                   "baseTEMA": {**baseTEMA},
                    "simTEMA": {**simTEMA},
-                   "eco_indicator": {
-                       "pretty_name": Globals.TEMA_METRICS["eco_indicator"]["pretty"],
-                       "unit": "€",
-                       "baseTEMA": eco_baseTEMA,
-                       "simTEMA": eco_simTEMA
-                   }
                }
            }, 200
 
