@@ -21,7 +21,7 @@ class Globals(NoInit):
         "cost_co": {"unit": "g", "pretty": "CO"},
         "cost_co2": {"unit": "g", "pretty": "CO2"},
         "cost_PMx": {"unit": "g", "pretty": "PMx"},
-        # "cost_hc": {"unit": "g", "pretty": "HC"},
+        "cost_hc": {"unit": "g", "pretty": "HC"},
         "cost_nox": {"unit": "g", "pretty": "NOx"}
     }
 
@@ -44,7 +44,7 @@ class Globals(NoInit):
         "ttime": {"unit": "h", "pretty": "Travel time"},
         "length": {"unit": "km", "pretty": "Travel distance"},
         "cost_co2": {"unit": "ton", "pretty": "CO2"},
-        "cost_co2_veh": {"unit": "g/veh.km", "pretty": "CO2"},
+        "cost_co2_veh": {"unit": "g/vehicle km", "pretty": "CO2"},
         "cost_co": {"unit": "kg", "pretty": "CO"},
         "cost_PMx": {"unit": "kg", "pretty": "PMx"},
         "cost_nox": {"unit": "kg", "pretty": "NOx"},
