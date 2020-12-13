@@ -36,8 +36,8 @@ class Globals(NoInit):
     TEMA_TRACI_BASE_PORT = 8813
     TEMA_HEATMAPS_METRICS = {
         "co2": {"unit": "g/km/vehicle", "pretty": "CO2"},
-        "eco_indicator": {"unit": "€/vehicle", "pretty": "Eco-indicator"},
-        "emissions_indicator": {"unit": "€/vehicle", "pretty": "Emissions indicator"},
+        "eco_indicator": {"unit": "€ cents/vehicle", "pretty": "Eco-indicator"},
+        "emissions_indicator": {"unit": "€ cents/vehicle", "pretty": "Emissions indicator"},
         "travel_time": {"unit": "s", "pretty": "Travel time"}
     }
     TEMA_RESULTS_METRICS = {
