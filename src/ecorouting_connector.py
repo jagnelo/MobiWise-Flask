@@ -764,7 +764,7 @@ def check_content(silent=True) -> Dict[str, Task]:
             check_task_completeness(task, base_TEMA_data_exists, base_rou_exists)
 
             task = TEMAEcoIndicatorTask(base_eco_indicator_task_name, scenario, base_task_mode)
-            # base_tasks[base_eco_indicator_task_name] = task
+            base_tasks[base_eco_indicator_task_name] = task
             check_task_completeness(task, base_TEMA_res_exists)
 
             base_media_name = utils.format_file_name_base(scenario)
@@ -776,7 +776,7 @@ def check_content(silent=True) -> Dict[str, Task]:
 
             base_heatmap_exists = check_heatmap(base_media_name)
             task = TEMAHeatmapsTask(base_heatmap_task_name, scenario, base_task_mode, base_media_name)
-            # base_tasks[base_heatmap_task_name] = task
+            base_tasks[base_heatmap_task_name] = task
             check_task_completeness(task, base_heatmap_exists)
             
             for task_id, base_task in base_tasks.items():
@@ -833,7 +833,7 @@ def check_content(silent=True) -> Dict[str, Task]:
                             check_task_completeness(task, sim_TEMA_data_exists, sim_rou_exists)
 
                             task = TEMAEcoIndicatorTask(sim_eco_indicator_task_name, scenario, sim_task_mode)
-                            # sim_tasks[sim_eco_indicator_task_name] = task
+                            sim_tasks[sim_eco_indicator_task_name] = task
                             check_task_completeness(task, sim_TEMA_res_exists)
 
                             sim_media_name = utils.format_file_name_sim(scenario, obj1, obj2, sol_number)
@@ -847,7 +847,7 @@ def check_content(silent=True) -> Dict[str, Task]:
 
                             sim_heatmap_exists = check_heatmap(sim_media_name)
                             task = TEMAHeatmapsTask(sim_heatmap_task_name, scenario, sim_task_mode, sim_media_name)
-                            # sim_tasks[sim_heatmap_task_name] = task
+                            sim_tasks[sim_heatmap_task_name] = task
                             check_task_completeness(task, sim_heatmap_exists)
 
                             for task_id, sim_task in sim_tasks.items():
