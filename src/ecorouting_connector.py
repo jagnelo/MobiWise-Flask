@@ -798,7 +798,7 @@ def check_content(silent=True) -> Dict[str, Task]:
                 base_eval_exists = exists(base_eval)
                 pred_eval_exists = exists(pred_eval)
 
-                pred_ecorouting_task_name = scenario
+                pred_ecorouting_task_name = utils.format_scenario_name(scenario, obj1, obj2)
                 pred_task_mode = Pred(obj1, obj2)
 
                 task = EcoRoutingTask(pred_ecorouting_task_name, scenario, pred_task_mode)
