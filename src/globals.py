@@ -59,7 +59,7 @@ class Globals(NoInit):
 
     SUMO_EDGE_DATA_XML_TAG = "edgeData"
 
-    TASK_MANAGER_MAX_TIMEOUT = 60 * 60 * 2
+    TASK_MANAGER_MAX_TIMEOUT = 60 * 60 * 3
     TASK_MANAGER_MAX_THREADS = os.cpu_count()
 
     LOGS_OLD_NAME = "old logs"
