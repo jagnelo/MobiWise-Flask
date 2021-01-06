@@ -506,7 +506,7 @@ class TEMAHeatmapsTask(Task):
                     def file_exists() -> bool:
                         return os.path.exists(file_dst) and os.path.isfile(file_dst)
 
-                    utils.wait_for(file_exists, Globals.WAIT_MILLIS)
+                    utils.wait_until(file_exists, Globals.WAIT_MILLIS)
                     heatmaps_count += 1
             if heatmaps_count != Globals.HEATMAP_EXPECTED_COUNT:
                 print_info = (heatmaps_count, self.cwd, Globals.HEATMAP_EXPECTED_COUNT)
