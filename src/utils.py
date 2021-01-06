@@ -2,6 +2,7 @@ import os
 import re
 import shutil
 import tarfile
+import time
 from importlib import machinery, util
 from types import ModuleType
 from typing import List, Tuple, Callable
@@ -310,3 +311,12 @@ def zip_targz(path_to_targz_file, dir_to_zip, targz_root_dir):
 def unzip_targz(path_to_targz_file, unzip_to_dir):
     with tarfile.open(path_to_targz_file, "r:gz") as tar:
         tar.extractall(path=unzip_to_dir)
+
+
+def wait(millis=0):
+    time.sleep(millis/1000)
+
+
+def wait_until(condition: Callable[[], bool], millis=0):
+    while not condition():
+        wait(millis)

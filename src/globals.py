@@ -95,3 +95,5 @@ class Globals(NoInit):
     HEATMAP_EXPECTED_COUNT = 8  # 2 of each type (full, routes) for each of the 4 TEMA_METRICS
 
     VNC_MANAGER_API = "http://localhost:5001/api/"
+
+    WAIT_MILLIS = 100
