@@ -1,4 +1,5 @@
 import os
+import random
 import shutil
 import threading
 from subprocess import STDOUT, PIPE, TimeoutExpired
@@ -872,4 +873,11 @@ def check_content(silent=True) -> Dict[str, Task]:
     if not silent:
         logger.info("ContentChecker", "\n".join(log))
 
-    return tasks
+    # shuffle dict keys
+    keys = list(tasks.keys())
+    random.shuffle(keys)
+    tasks_shuffled = {}
+    for key in keys:
+        tasks_shuffled[key] = tasks[key]
+
+    return tasks_shuffled
