@@ -510,7 +510,7 @@ class TEMAHeatmapsTask(Task):
                     heatmaps_count += 1
             if heatmaps_count != Globals.HEATMAP_EXPECTED_COUNT:
                 print_info = (heatmaps_count, self.cwd, Globals.HEATMAP_EXPECTED_COUNT)
-                logger.error("TEMA", "Only %d heatmap files were found in %s out of an expected %d" % print_info)
+                logger.error("TEMA", "Found %d heatmap files in %s out of an expected %d" % print_info)
                 utils.clear_and_remove_dir(path_dst)
                 self.status = TaskStatus.Failed
             utils.clear_and_remove_dir(self.cwd)
