@@ -19,10 +19,10 @@ class Logger:
         self.logs = []
         self.logs_rlock = threading.RLock()
 
-    def log(self, level, source, message, direct_write=False):
+    def log(self, level, source, message, auto_flush=False):
         log = Logger.Log(datetime.now(), level, threading.current_thread().name, source, message)
         with self.logs_rlock:
-            if direct_write:
+            if auto_flush:
                 Logger.write(log)
             else:
                 self.logs.append(log)
@@ -73,7 +73,7 @@ class StreamRedirect(object):
         self.linebuf = ''
 
     def write(self, buf):
-        logger.log(self.level, self.source, buf, direct_write=True)
+        logger.log(self.level, self.source, buf, auto_flush=True)
 
     def flush(self):
         pass
