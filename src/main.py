@@ -180,9 +180,10 @@ def optimized_video(scenario, objective1, objective2, solution):
 
 
 def main():
+    threading.current_thread().name = "Main"
+
     logger.info("Main", "---------------------- MobiWise backend starting ----------------------")
 
-    threading.current_thread().name = "ContentChecker"
     if os.path.exists(Globals.LOGS_DIR):
         old_logs = []
         log_files = []
@@ -240,7 +241,7 @@ def main():
 
 
 if __name__ == "__main__":
-    threading.current_thread().name = "Main"
+    threading.current_thread().name = "Launcher"
     running = True
     content_checker_thread = threading.Thread(target=main)
     content_checker_thread.start()
