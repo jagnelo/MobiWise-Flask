@@ -41,10 +41,10 @@
             </colorScheme>
             <colorScheme name="by allowed speed (lanewise)" interpolated="1">
 		<entry color="black" threshold="0.99"/>
-                <entry color="green" threshold="2.04"/>
-                <entry color="yellow" threshold="5.40"/>
-                <entry color="255,153,18" threshold="8.77"/>
-                <entry color="red" threshold="12.13"/>
+                <entry color="green" threshold="1.70"/>
+                <entry color="255,255,0" threshold="2.20"/>
+                <entry color="255,70,0" threshold="6.70"/>
+                <entry color="255,0,0" threshold="8.70"/>
             </colorScheme>
             <colorScheme name="by current occupancy (lanewise, brutto)" interpolated="1">
                 <entry color="235,235,235" threshold="0.00"/>
