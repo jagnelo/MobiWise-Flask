@@ -710,18 +710,20 @@ def check_content(silent=True) -> Dict[str, Task]:
     def join(*paths: str) -> str:
         return os.path.join(*paths)
 
-    def check_TEMA_simulation_data(path) -> bool:
+    def check_TEMA_simulation_data(path: str) -> bool:
+        if not exists(path):
+            return False
         files = os.listdir(path)
         return Globals.TEMA_ALL_VEHICLES_EDGE_DATA_FILE_NAME in files and \
                Globals.TEMA_NOISE_EDGE_DATA_FILE_NAME in files and \
                Globals.TEMA_ROUTING_VEHICLES_EDGE_DATA_FILE_NAME in files
 
-    def check_video(video_name) -> bool:
+    def check_video(video_name: str) -> bool:
         path_mp4 = join(Globals.VIDEOS_DIR, video_name + "." + Globals.VIDEOS_FILE_TYPE)
         path_targz = join(Globals.VIDEOS_TARGZ_DIR, video_name + "." + Globals.VIDEOS_TARGZ_FILE_TYPE)
         return (exists(path_mp4) and os.path.isfile(path_mp4)) or (exists(path_targz) and os.path.isfile(path_targz))
 
-    def check_heatmap(heatmap_dir_name) -> bool:
+    def check_heatmap(heatmap_dir_name: str) -> bool:
         path = join(Globals.HEATMAPS_DIR, heatmap_dir_name)
         if exists(path) and os.path.isdir(path):
             heatmaps = [f for f in os.listdir(path) if f.endswith(Globals.HEATMAPS_FILE_TYPE) and "draft" not in f]
