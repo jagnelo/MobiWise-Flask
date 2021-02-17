@@ -154,8 +154,8 @@ def optimized_heatmap(scenario, objective1, objective2, solution, metric, type):
     else:
         file_name = metric + "." + Globals.HEATMAPS_FILE_TYPE
     path = os.path.join(Globals.HEATMAPS_DIR, image_dir_name, file_name)
-    if not os.path.exists(path):
-        path = os.path.join(Globals.HEATMAPS_DIR, utils.format_file_name_base(scenario), file_name)
+    # if not os.path.exists(path):
+    #     path = os.path.join(Globals.HEATMAPS_DIR, utils.format_file_name_base(scenario), file_name)
     return send_file(path, mimetype="image/png")
 
 
